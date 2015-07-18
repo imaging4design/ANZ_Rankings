@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 
-		<!-- This is a comment -->
+		<!-- This is a comment thats been updated -->
 
 		<div class="span12">
 			<!--DISPLAY ATHLETES NAMES (Alpha) IN THIS DIV-->
