@@ -1,0 +1,103 @@
+/********************************************************************************/
+/* RESET CSS */
+/********************************************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/********************************************************************************/
+/* TEMPLATE STRUCTURE CSS */
+/********************************************************************************/
+html, body {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #333;
+	background-color: #FAFAFA;
+}
+#wrap {
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: visible;
+}
+#header {
+	width: 1000px;
+	margin:0 auto 0 auto;
+}
+#contentArea {
+	width: 1000px;
+	margin:0 auto;
+	overflow: hidden;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	background-color:#FFF;
+}
+#footer {
+	width: 1000px;
+	height:40px;
+	position: relative;
+	text-align: center;
+	margin:0 auto 15px auto;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	background-color:#FFF;
+}
+/* CLEAR FIX*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.colFull {
+	width:960px;
+	margin:0 auto;
+	float: left;
+	padding:30px 20px;
+	overflow: hidden;
+}
