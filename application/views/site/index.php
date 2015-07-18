@@ -1,8 +1,6 @@
 <div class="container">
 	<div class="row">
 
-		<!-- This is a comment thats been updated again and again and again -->
-
 		<div class="span12">
 			<!--DISPLAY ATHLETES NAMES (Alpha) IN THIS DIV-->
   			<div class="athleteArea"></div>
