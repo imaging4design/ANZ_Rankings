@@ -5,6 +5,8 @@
 			<!--DISPLAY ATHLETES NAMES (Alpha) IN THIS DIV-->
   			<div class="athleteArea"></div>
 
+
+  			<!-- USED TO DISPLAY SPECIAL ONE-OFF MESSAGES (with expiry date) -->
   			<?php
 				$date_value = "2015-07-12";
 				$current_date = date("Y-m-d");
