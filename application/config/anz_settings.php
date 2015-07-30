@@ -1,6 +1,14 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*****************************************************/
+// ATHLETES WHO HAVE PASSED AWAY
+/*****************************************************/
+// We do not wish to display these athletes Age in Years / Days on their profile
+$config['passed'] = array(
+	'516570',
+);
+
+/*****************************************************/
 // EVENTS INDEX (REFERENCE)
 /*****************************************************/
 // Displays the complete events list with with corresponding eventID's

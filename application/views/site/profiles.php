@@ -76,10 +76,20 @@
 				// Display Athlete Name Date of Birth details
 				echo '<div class="slab reversed textLarge">' . $athlete->nameFirst . ' ' . strtoupper($athlete->nameLast) . '</div>';
 				echo '<div style="clear:both;"></div>';
-
 				echo '<div class="slab reversed textMed">Date of Birth</div><div class="slab textMed red">' . $DOB . '</div><br>';
-				echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red">' . age_from_dob($athlete->DOB) . ' years ' . daysLeftForBirthday($athlete->DOB) . ' days</div>';
+				
+				// Only display athlete age (in years / days) if they are still alive
+				if( in_array( $athlete->athleteID, $this->config->item('passed') ))
+				{
+					echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red"><img src="../../../css/css_images/icons/cross.png"></div>';
+				}
+				else {
+					echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red">' . age_from_dob($athlete->DOB) . ' years ' . daysLeftForBirthday($athlete->DOB) . ' days</div>';
+				}
+
 				echo '<div style="clear:both;"></div>';
+
+
 
 
 				if($this->uri->segment(3) != 'athlete')
