@@ -3,10 +3,11 @@
 		
 		<h1>Add <small>(News Article)</small></h1>
 
-		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
-
-		<div id="showDelete"></div><!--Load jQuery DELETE message-->
-		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
 
 
 		<div class="well well-trans">
@@ -48,7 +49,7 @@
 
 			<div class="row">
 				<div class="col-md-8">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="heading" style="display:block;">Heading</label>
 						<input type="text" name="heading" id="heading" class="form-control" value="<?php echo set_value('heading'); ?>" />
 					</div>
@@ -59,7 +60,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="bodyContent" style="display:block;">Article:</label>
 						<textarea name="bodyContent" id="bodyContent" cols="128" rows="20"><?php echo set_value('bodyContent'); ?></textarea>
 						<!--DISPLAY THE CKEDITOR-->
@@ -72,9 +73,9 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="submit"></label>
-						<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Article" />
+						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Article" />
 					</div>
 				</div><!--ENDS col-->
 			</div><!--ENDS row-->
@@ -90,57 +91,19 @@
 
 
 
-
-
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
-
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var newsID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/news_con/delete_news'; ?>',
-		type: 'POST',
-		data: 'newsID=' + newsID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
-
-});
-</script>
-
-
-
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
 <script type="text/javascript">
 
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 
 	//This will force all CKEDITOR instances in the form to update their respective fields-->
 	for ( instance in CKEDITOR.instances )
-							CKEDITOR.instances[instance].updateElement();
+	
+	CKEDITOR.instances[instance].updateElement();
 
 	//UPDATES THE CKEDITOR TEXTBOX (iFrame) WHEN PASTED INTO / NEEDS THIS TO PASS ITS VALUE ASYNCHRONOUSLY-->
 	CKEDITOR.instances["bodyContent"].document.on('keydown', function(event)
@@ -160,7 +123,6 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 	});
 	
 	
-
 	var token_admin = $('#token_admin').val();
 	var type = $('input:radio[name=type]:checked').val();
 	var heading = $('#heading').val();
@@ -177,25 +139,21 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&heading=' + heading
 		+ '&bodyContent=' + escape(bodyContent),
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
+					$('#loading').fadeOut(500, function() {
+							$(this).remove();
+					});
+					
+					$('#showEntry').html(result);
 								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
-								
-						}
-				});
+				}
+			});
 		
 		return false;
 		
 	});
 
-
-	
-	});
+});
 
 </script>

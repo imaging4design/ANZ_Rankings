@@ -3,15 +3,15 @@
   
 		<h1>Add New Result <small>(Multi Event)</small></h1>
 
-		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
-
-		<div id="showDelete"></div><!--Load jQuery DELETE message-->
-		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
 
 		<div class="well well-trans">
 
 			<?php echo form_open('admin/multis_con/add_result_multi', array('class' => 'results')); ?>
-
 
 				<!--Adds hidden CSRF unique token
 				This will be verified in the controller against
@@ -65,7 +65,7 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="athlete">Athlete:</label>
 							<input type="text" name="athleteID" id="athleteID" class="form-control" />
 							<!--DON'T REMOVE class="athlete" (required for auto-populate!)-->
@@ -73,28 +73,28 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="points">Points:</label>
 							<input type="text" name="points" id="points"class="form-control" value="<?php echo set_value('points'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="wind">Wind:</label>
 							<input type="text" name="wind" id="wind"class="form-control" value="<?php echo set_value('wind'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="placing">Placing:</label>
 							<input type="text" name="placing" id="placing"class="form-control" value="<?php echo set_value('placing'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="record">Record:</label>
 							<input type="text" name="record" id="record"class="form-control" value="<?php echo set_value('record'); ?>" />
 						</div>
@@ -171,7 +171,7 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<?php
 								// Display full list of events drop down menu
 								echo '<label for="ageGroup">Age Group:</label>';
@@ -185,14 +185,14 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="competition">Competition:</label>
 							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<?php
 								// Display drop down menu for default venues
 								echo get_venues(); // See global helper
@@ -201,7 +201,7 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="venue_other">Venue (Other):</label>
 							<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
 						</div>
@@ -212,7 +212,7 @@
 			  
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<!-- jQuery UI Date Picker -->
 							<label for="date">Date: </label>
 							<input type="text" id="date" class="form-control" name="date" />
@@ -224,8 +224,8 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
-							<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Result" />
+						<div class="form-group-md">
+							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
@@ -321,68 +321,29 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&venue_other=' + escape(venue_other)
 		+ '&date=' + date,
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
-								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
-								
-								$("#athleteID, #points, #placing, #record, #e01, #e02, #e03, #e04, #e05, #e06, #e07, #e08, #e09, #e10").val(''); 
-								
-								//Clears the AthleteID field when onFocus
-								$('#competition, #venue_other').one("focus", function() {
-									$(this).val("");
-								});
-								
-								
-						}
+				$('#loading').fadeOut(500, function() {
+					$(this).remove();
 				});
+				
+				$('#showEntry').html(result);
+				
+				$("#athleteID, #points, #placing, #record, #e01, #e02, #e03, #e04, #e05, #e06, #e07, #e08, #e09, #e10").val(''); 
+				
+				//Clears the AthleteID field when onFocus
+				$('#competition, #venue_other').one("focus", function() {
+					$(this).val("");
+				});
+								
+			}
+			
+		});
 		
 		return false;
 		
 	});
-
-
 	
-	});
-
-</script>
-
-
-<script>
-
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var resultID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/multis_con/delete_results_multi'; ?>',
-		type: 'POST',
-		data: 'resultID=' + resultID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
-
 });
+
 </script>

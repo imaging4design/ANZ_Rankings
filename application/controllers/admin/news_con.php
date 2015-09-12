@@ -69,29 +69,34 @@ class News_con extends CI_Controller
 		// If form post data validates and CSRF $token == session $token update result
 		if($this->form_validation->run() == TRUE && $this->input->post('token_admin') == $this->session->userdata('token_admin')) 
 		{
-		// Insert new athlete
-		$this->news_model->add_news($data);
-		
-		echo $this->update_text_message = '<span class="message_success">New Article Added!</span>';
-		
-		echo '<p>' . $data['date'] . '</p>';
-		echo '<p>' . $data['type'] . '</p>';
-		echo '<p>' . $data['heading'] . '</p>';
-		echo '<p>' . $data['bodyContent'] . '</p>';
-		
-		// Set up an attribute '<em>'
-		// Why?
-		// Because jQuery needs it to identify what the current resultID is
-		// Then if admin wishes to delete the record - jQuery knows which one to delete
-		// See this line in the results form page (var resultID = $("em").attr("title");)
-		echo '<em title="' . $this->db->insert_id() . '"></em>';
-		
-    echo '<div class="dotted"></div>';
+			// Insert new athlete
+			$this->news_model->add_news($data);
+
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> New record added!<br /></div>';
+			
+			echo '<p>' . $data['date'] . '</p>';
+			echo '<p>' . $data['type'] . '</p>';
+			echo '<p>' . $data['heading'] . '</p>';
+			echo '<p>' . $data['bodyContent'] . '</p>';
+			
+			// Set up an attribute '<em>'
+			// Why?
+			// Because jQuery needs it to identify what the current resultID is
+			// Then if admin wishes to delete the record - jQuery knows which one to delete
+			// See this line in the results form page (var resultID = $("em").attr("title");)
+			echo '<em title="' . $this->db->insert_id() . '"></em>';
+			
+	    	// Show 'Edit' button so admin can edit result if incorrectly input
+			echo anchor('admin/news_con/populate_news/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo '</div>';
 			
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS add_news()

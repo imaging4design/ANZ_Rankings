@@ -1,12 +1,13 @@
 <div class="row">
 	<div class="col-md-12">
 
-		<h1>Add Results <small>(Relays)</small></h1>
+		<h1>Add New Result <small>(Relays)</small></h1>
 
-		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
-
-		<div id="showDelete"></div><!--Load jQuery DELETE message-->
-		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
 
 		<div class="well well-trans">
 
@@ -23,7 +24,7 @@
 					<div class="col-md-6">
 						<?php
 							// Display full list of events drop down menu
-							echo '<div class="form-group-lg">';
+							echo '<div class="form-group-md">';
 							echo '<label for="eventID">Event: </label>';
 							echo buildEventsDropdown(); // See global helper
 							echo '</div>';
@@ -33,7 +34,7 @@
 					<div class="col-md-6">
 						<?php
 							// Display full list of ageGroups drop down menu
-							echo '<div class="form-group-lg">';
+							echo '<div class="form-group-md">';
 							echo '<label for="ageGroup">AgeGroup: </label>';
 							echo buildAgeGroupDropdown(); // See global helper
 							echo '</div>';
@@ -45,21 +46,21 @@
 			  
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="time">Time:</label>
 			  				<input type="text" name="time" id="time" class="form-control" value="<?php echo set_value('time'); ?>" />
 			  			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="placing">Placing:</label>
 			 				<input type="text" name="placing" id="placing" class="form-control" value="<?php echo set_value('placing'); ?>" />
 			 			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="record">Record:</label>
 			  				<input type="text" name="record" id="record" class="form-control" value="<?php echo set_value('record'); ?>" />
 			  			</div>
@@ -70,28 +71,28 @@
 
 				<div class="row">
 					<div class="col-md-3">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="athlete01">Athlete 1:</label>
 			  				<input type="text" name="athlete01" id="athlete01" class="form-control" value="<?php echo set_value('athlete01'); ?>" />
 			  			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-3">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="athlete02">Athlete 2:</label>
 			  				<input type="text" name="athlete02" id="athlete02" class="form-control" value="<?php echo set_value('athlete02'); ?>" />
 			 			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-3">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="athlete03">Athlete 3:</label>
 			  				<input type="text" name="athlete03" id="athlete03" class="form-control" value="<?php echo set_value('athlete03'); ?>" />
 			  			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-3">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="athlete04">Athlete 4</label>
 			  				<input type="text" name="athlete04" id="athlete04" class="form-control" value="<?php echo set_value('athlete04'); ?>" />
 			  			</div>
@@ -102,21 +103,21 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="team">Team:</label>
 			  				<input type="text" name="team" id="team" class="form-control" value="<?php echo set_value('team'); ?>" />
 			  			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="competition">Competition:</label>
 			  				<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
 			 			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="in_out">Indoors / Outdoors:</label>
 							<?php echo in_out(set_value('in_out')); ?>
 			  			</div>
@@ -127,7 +128,7 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<?php
 								// Display drop down menu for default venues
 								echo get_venues(); // See global helper
@@ -136,14 +137,14 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="venue_other">Venue (Other):</label>
 			  				<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
 			 			</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<!-- jQuery UI Date Picker -->
 							<label for="date">Date: </label>
 							<input type="text" id="date" class="form-control" name="date" />
@@ -155,15 +156,13 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="submit"></label>
-							<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Relay Result" />
+							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
 
-
-			  
 
 
 			<?php echo form_close(); ?>
@@ -172,43 +171,6 @@
 
 	</div><!--ENDS col-->
 </div><!--ENDS row-->
-
-
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
-
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var resultID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/relays_con/delete_relay'; ?>',
-		type: 'POST',
-		data: 'resultID=' + resultID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
-
-});
-</script>
-
 
 
 
@@ -267,8 +229,6 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 								});
 								
 								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
 								
 								$("#time, #placing, #record, #athlete01, #athlete02, #athlete03, #athlete04, #venue_other").val(''); 
 								

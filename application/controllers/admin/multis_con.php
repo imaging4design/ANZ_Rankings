@@ -169,49 +169,55 @@ class Multis_con extends CI_Controller
 		{
 			$this->multis_model->add_result_multi($data);
 			
-			echo $this->update_text_message = '<span class="message_success">New record added!</span>';
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> New record added!<br /></div>';
 			
 			// Display confirmation of uploaded result to screen
 			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
-      echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:1.1em;">';
-      echo '<tr style="font-weight:700; text-align:right;">';
-        echo '<td><div align="left">Athlete</div></td>';
-        echo '<td>Event</td>';
-        echo '<td>Age Group</td>';
-        echo '<td>Points</td>';
-				echo '<td>Placing</td>';
-        echo '<td>Wind</td>';
-        echo '<td>Record</td>';
-        echo '<td>Centre</td>';
-        echo '<td>Competition</td>';
-				echo '<td>Venue</td>';
-        echo '<td>Date</td>';
-      echo '</tr>';
-      echo '<tr style="text-align:right;">';
-        echo '<td><div align="left">' . $this->input->post('athleteID') . '</div></td>';
-        echo '<td>' . $event . '</td>';
-        echo '<td>' . $data['ageGroup'] . '</td>';
-        echo '<td>' . $data['points'] . '</td>';
-        echo '<td>' . $data['placing'] . '</td>';
-				echo '<td>' . $data['wind'] . '</td>';
-        echo '<td>' . $data['record'] . '</td>';
-        echo '<td>' . $centreID . '</td>';
-        echo '<td>' . $data['competition'] . '</td>';
-				echo '<td>' . $data['venue'] . '</td>';
-        echo '<td>' . $data['date'] . '</td>';
-      echo '</tr>';
-			echo '<tr style="text-align:right;">';
-        echo '<td colspan="11">'.$data['e01'].' | '.$data['e02'].' | '.$data['e03'].' | '.$data['e04'].' | '.$data['e05'].' | '.$data['e06'].' | '.$data['e07'].' | '.$data['e08'].' | '.$data['e09'].' | '.$data['e10'].'</td>';
-      echo '</tr>';
-    echo '</table>';
-		
-		echo '<em title="' . $this->db->insert_id() . '"></em>';
-		
-    echo '<div class="dotted"></div>';  
+			echo '<table class="table table-condensed table-bordered">';
+				echo '<tr>';
+					echo '<td>Athlete</td>';
+					echo '<td>Event</td>';
+					echo '<td>Age Group</td>';
+					echo '<td>Points</td>';
+					echo '<td>Placing</td>';
+					echo '<td>Wind</td>';
+					echo '<td>Record</td>';
+					echo '<td>Centre</td>';
+					echo '<td>Competition</td>';
+					echo '<td>Venue</td>';
+					echo '<td>Date</td>';
+				echo '</tr>';
+				echo '<tr>';
+				echo '<td>' . $this->input->post('athleteID') . '</td>';
+					echo '<td>' . $event . '</td>';
+					echo '<td>' . $data['ageGroup'] . '</td>';
+					echo '<td>' . $data['points'] . '</td>';
+					echo '<td>' . $data['placing'] . '</td>';
+					echo '<td>' . $data['wind'] . '</td>';
+					echo '<td>' . $data['record'] . '</td>';
+					echo '<td>' . $centreID . '</td>';
+					echo '<td>' . $data['competition'] . '</td>';
+					echo '<td>' . $data['venue'] . '</td>';
+					echo '<td>' . $data['date'] . '</td>';
+				echo '</tr>';
+				echo '<tr>';
+					echo '<td colspan="11">'.$data['e01'].' | '.$data['e02'].' | '.$data['e03'].' | '.$data['e04'].' | '.$data['e05'].' | '.$data['e06'].' | '.$data['e07'].' | '.$data['e08'].' | '.$data['e09'].' | '.$data['e10'].'</td>';
+				echo '</tr>';
+			echo '</table>';
+
+			echo '<em title="' . $this->db->insert_id() . '"></em>';
+
+			// Show 'Edit' button so admin can edit result if incorrectly input
+			echo anchor('admin/multis_con/populate_results/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+
+			echo '</div>';  
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error">', '</div>');
+			echo '</div>'; 
 		}
 		
 	} //ENDS add_result_multi()

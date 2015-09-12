@@ -67,7 +67,7 @@ h5 {
 */
 label {
   font-size: 16px;
-  margin: 6px 5px;
+  margin: 4px 0;
 }
 .radio label,
 .checkbox label {
@@ -173,6 +173,7 @@ select:-moz-focusring {
 */
 .btn {
   margin-top: 10px;
+  padding: 10px 16px 7px 16px;
   border: none;
   border-bottom: solid 4px transparent;
   border-radius: 0;
@@ -183,6 +184,7 @@ a.btn:hover {
 }
 .btn-red {
   margin-top: 10px;
+  padding: 10px 16px 7px 16px;
   border: none;
   border-bottom: solid 4px transparent;
   border-radius: 0;

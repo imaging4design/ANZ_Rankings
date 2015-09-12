@@ -3,10 +3,11 @@
 		
 		<h1>Add <small>(Records)</small></h1>
 
-		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
-
-		<div id="showDelete"></div><!--Load jQuery DELETE message-->
-		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
 
 
 		<div class="well well-trans">
@@ -22,7 +23,7 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameFirst">Record Type:</label>
 						<?php
 							// Select type of record (i.e., Allcomers, National etc ...)
@@ -32,7 +33,7 @@
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameFirst">Age Group:</label>
 						<?php
 							// Select an ageGroup
@@ -42,7 +43,7 @@
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameFirst">Indoors/Outdoors:</label>
 						<?php
 							// Indoor / Outdoors
@@ -56,7 +57,7 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameFirst">Event:</label>
 						<?php
 							// Select an ageGroup
@@ -72,21 +73,21 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameFirst">First Name:</label>
 						<input type="text" name="nameFirst" id="nameFirst" class="form-control" value="<?php echo set_value('nameFirst'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameLast">Last Name:</label>
 						<input type="text" name="nameLast" id="nameLast" class="form-control" value="<?php echo set_value('nameLast'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="country">Country:</label>
 						<input type="text" name="country" id="country" class="form-control" value="<?php echo set_value('country'); ?>" />
 					</div>
@@ -97,23 +98,23 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="result">Result:</label>
 						<input type="text" name="result" id="result" class="form-control" value="<?php echo set_value('result'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="venue">Venue of Record:</label>
 						<input type="text" name="venue" id="venue" class="form-control" value="<?php echo set_value('venue'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<!-- jQuery UI Date Picker -->
-						<div class="form-group-lg">
+						<div class="form-group-md">
 							<label for="date">Date: </label>
 							<input type="text" id="date" class="form-control" name="date" />
 						</div>
@@ -125,9 +126,9 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="submit"></label>
-						<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Record" />
+						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Record" />
 					</div>
 				</div><!--ENDS col-->
 			</div><!--ENDS row-->
@@ -170,42 +171,6 @@ $('#in_out').change(function() {
 </script>
 
 
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
-
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var recordID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/records_con/delete_record'; ?>',
-		type: 'POST',
-		data: 'recordID=' + recordID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
-
-});
-</script>
-
-
 
 
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
@@ -214,7 +179,7 @@ $('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' 
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 	var token_admin = $('#token_admin').val();
 	var recordType = $('#recordType').val();
@@ -252,27 +217,23 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&month=' + month
 		+ '&year=' + year,
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
+					$('#loading').fadeOut(500, function() {
+						$(this).remove();
+					});
+					
+					$('#showEntry').html(result);
+					
+					$("#result, #nameFirst, #nameLast, #country, #venue").val(''); 
 								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
-								
-								$("#result, #nameFirst, #nameLast, #country, #venue").val(''); 
-								
-						}
-				});
+				}
+		});
 		
 		return false;
 		
 	});
-
-
 	
-	});
+});
 
 </script>

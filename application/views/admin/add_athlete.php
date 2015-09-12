@@ -3,10 +3,12 @@
 		
 		<h3>Add <small>(Athlete)</small></h3>
 
-		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
 
-		<div id="showDelete"></div><!--Load jQuery DELETE message-->
-		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
 
 		<div class="well well-trans">
 
@@ -20,7 +22,7 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="athleteID">Athlete ID</label>
 						<input type="text" name="athleteID" id="athleteID" class="form-control" value="<?php echo set_value('athleteID'); ?>" />
 					</div>
@@ -31,14 +33,14 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameFirst">First Name</label>
 						<input type="text" name="nameFirst" id="nameFirst" class="form-control" value="<?php echo set_value('nameFirst'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-6">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="nameLast">Last Name</label>
 						<input type="text" name="nameLast" id="nameLast" class="form-control" value="<?php echo set_value('nameLast'); ?>" />
 					</div>
@@ -49,7 +51,7 @@
 
 			<div class="row">
 				<div class="col-md-8">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<?php
 							// Display drop down menus for date (day, month, year)
 							echo '<label for="date">Date of Birth: </label>';
@@ -72,7 +74,7 @@
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="gender">Gender</label>
 						<?php
 							$options = array(
@@ -90,7 +92,7 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<?php
 							// Display full list of 'centres' drop down menu
 							echo '<label for="centreID">Centre: </label>';
@@ -100,7 +102,7 @@
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<?php
 							// Display full list of 'clubs' drop down menu
 							echo '<label for="clubID">Club: </label>';
@@ -114,14 +116,14 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="coach">Coach:</label>
 						<input type="text" name="coach" id="coach" class="form-control" value="<?php echo set_value('coach'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-8">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="coach_former">Former Coaches:</label>
 						<input type="text" name="coach_former" id="coach_former" class="form-control" value="<?php echo set_value('coach_former'); ?>" />
 					</div>
@@ -132,35 +134,12 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-lg">
+					<div class="form-group-md">
 						<label for="submit"></label>
-						<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Athlete" />
+						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Athlete" />
 					</div>
 				</div><!--ENDS col-->
 			</div><!--ENDS row-->
-
-
-
-
-			
-
-
-			
-
-			
-
-
-			
-
-			
-
-			
-
-			
-
-
-			
-			  
 
 
 
@@ -175,51 +154,13 @@
 
 
 
-
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
-
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var athleteID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/athlete_con/delete_athlete'; ?>',
-		type: 'POST',
-		data: 'athleteID=' + athleteID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
-
-});
-</script>
-
-
-
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
 <script type="text/javascript">
 
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 	var token_admin = $('#token_admin').val();
 	var athleteID = $('#athleteID').val();
@@ -253,27 +194,23 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&coach=' + escape(coach)
 		+ '&coach_former=' + escape(coach_former),
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
+					$('#loading').fadeOut(500, function() {
+						$(this).remove();
+					});
+					
+					$('#showEntry').html(result);
+					
+					$("#athleteID, #nameFirst, #nameLast, #gender, #coach, #coach_former").val(''); 
 								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
-								
-								$("#athleteID, #nameFirst, #nameLast, #gender, #coach, #coach_former").val(''); 
-								
-						}
-				});
+				}
+			});
 		
 		return false;
 		
 	});
 
-
-	
-	});
+});
 
 </script>

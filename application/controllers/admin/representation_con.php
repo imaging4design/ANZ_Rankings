@@ -104,19 +104,21 @@ class Representation_con extends CI_Controller
 			// Insert new results
 			$this->representation_model->add_new_representation($data);
 			
-			echo $this->update_text_message = '<span class="message_success">New representation added!</span>';
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> New record added!<br /></div>';
+
 			
-			// Display confirmation of uploaded result to screen
-			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
-			echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:1.1em;">';
-				echo '<tr style="font-weight:700; text-align:right;">';
+				// Display confirmation of uploaded result to screen
+				// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
+			echo '<table class="table table-condensed table-bordered">';
+				echo '<tr>';
 					echo '<td>Year</td>';
 					echo '<td>Competition</td>';
 					echo '<td>Event</td>';
 					echo '<td>Performance</td>';
 					echo '<td>Position</td>';
 				echo '</tr>';
-				echo '<tr style="text-align:right;">';
+				echo '<tr>';
 					echo '<td>' . $data['year'] . '</td>';
 					echo '<td>' . $data['competition'] . '</td>';
 					echo '<td>' . $data['eventID'] . '</td>';
@@ -124,20 +126,24 @@ class Representation_con extends CI_Controller
 					echo '<td>' . $data['position'] . '</td>';
 				echo '</tr>';
 			echo '</table>';
+
+			// Set up an attribute '<em>'
+			// Why?
+			// Because jQuery needs it to identify what the current recordID is
+			// Then if admin wishes to delete the record - jQuery knows which one to delete
+			// See this line in the records form page ( var recordID = $("em").attr("title"); )
+			echo '<em title="' . $this->db->insert_id() . '"></em>';
 		
-		// Set up an attribute '<em>'
-		// Why?
-		// Because jQuery needs it to identify what the current recordID is
-		// Then if admin wishes to delete the record - jQuery knows which one to delete
-		// See this line in the records form page ( var recordID = $("em").attr("title"); )
-		echo '<em title="' . $this->db->insert_id() . '"></em>';
-		
-    		echo '<div class="dotted"></div>';  
+    		// Show 'Edit' button so admin can edit result if incorrectly input
+			echo anchor('admin/representation_con/populate_representation/'.$this->db->insert_id().'/'.$data['athleteID'].'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo '</div>';  
 
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS add_new_representation()

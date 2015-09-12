@@ -175,46 +175,53 @@ class Athlete_con extends CI_Controller
 		// Insert new athlete
 		$this->athletes_model->add_athlete($data);
 		
-		echo $this->update_text_message = '<span class="message_success">New Athlete Added!</span>';
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> New record added!<br /></div>';
+
 		
-		// Display confirmation of uploaded result to screen
-		// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
-		  echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:1.1em;">';
-		  echo '<tr style="font-weight:700; text-align:right;">';
-			echo '<td><div align="left">Athlete ID</div></td>';
-			echo '<td>First Name</td>';
-			echo '<td>Last Name</td>';
-			echo '<td>DOB</td>';
-			echo '<td>Gender</td>';
-			echo '<td>Centre</td>';
-			echo '<td>Club</td>';
-			echo '<td>Coach</td>';
-		  echo '</tr>';
-		  echo '<tr style="text-align:right;">';
-			echo '<td><div align="left">' . $data['athleteID'] . '</div></td>';
-			echo '<td>' . $data['nameFirst'] . '</td>';
-			echo '<td>' . $data['nameLast'] . '</td>';
-			echo '<td>' . $data['DOB'] . '</td>';
-			echo '<td>' . $data['gender'] . '</td>';
-			echo '<td>' . $centre . '</td>';
-			echo '<td>' . $club . '</td>';
-			echo '<td>' . $data['coach'] . '</td>';
-		  echo '</tr>';
-		echo '</table>';
+			// Display confirmation of uploaded result to screen
+			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
+			echo '<table class="table table-condensed table-bordered">';
+				echo '<tr>';
+					echo '<td>Athlete ID</td>';
+					echo '<td>First Name</td>';
+					echo '<td>Last Name</td>';
+					echo '<td>DOB</td>';
+					echo '<td>Gender</td>';
+					echo '<td>Centre</td>';
+					echo '<td>Club</td>';
+					echo '<td>Coach</td>';
+				echo '</tr>';
+					echo '<tr>';
+					echo '<td><div align="left">' . $data['athleteID'] . '</div></td>';
+					echo '<td>' . $data['nameFirst'] . '</td>';
+					echo '<td>' . $data['nameLast'] . '</td>';
+					echo '<td>' . $data['DOB'] . '</td>';
+					echo '<td>' . $data['gender'] . '</td>';
+					echo '<td>' . $centre . '</td>';
+					echo '<td>' . $club . '</td>';
+					echo '<td>' . $data['coach'] . '</td>';
+				echo '</tr>';
+			echo '</table>';
+
 		
-		// Set up an attribute '<em>'
-		// Why?
-		// Because jQuery needs it to identify what the current resultID is
-		// Then if admin wishes to delete the record - jQuery knows which one to delete
-		// See this line in the results form page (var resultID = $("em").attr("title");)
-		echo '<em title="' . $this->session->userdata('athleteID') . '"></em>';
-		
-    echo '<div class="dotted"></div>';
+			// Set up an attribute '<em>'
+			// Why?
+			// Because jQuery needs it to identify what the current resultID is
+			// Then if admin wishes to delete the record - jQuery knows which one to delete
+			// See this line in the results form page (var resultID = $("em").attr("title");)
+			echo '<em title="' . $this->session->userdata('athleteID') . '"></em>';
+			
+	    	// Show 'Edit' button so admin can edit result if incorrectly input
+			echo anchor('admin/athlete_con/populate_athlete/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo '</div>';
 			
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS add_athlete()
