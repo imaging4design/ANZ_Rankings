@@ -3,13 +3,18 @@
 | IMPORTS (MIXINS)
 |-----------------------------------------------------------------------------------------------------------------
 */
+@colWhite: #FFF;
+@colRed: #F30;
+@colGreen: #99CC00;
+@colGreyLight: #F0F2F1;
+
 .transition-fast {
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  -webkit-transform: translateZ(0);
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	-webkit-transform: translateZ(0);
 }
 .shadow {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -17,76 +22,89 @@
 |-----------------------------------------------------------------------------------------------------------------
 */
 body {
-  font-family: 'Roboto Condensed', sans-serif;
-  padding-top: 70px;
-  background: #f0f2f1;
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-top: 70px;
+	background: @colGreyLight;
 }
+
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | TYPOGRAPHY
 |-----------------------------------------------------------------------------------------------------------------
 */
 h1 {
-  font-size: 36px;
-  font-weight: normal;
+	font-size: 36px;
+	font-weight: normal;
 }
 h2 {
-  font-size: 30px;
+	font-size: 30px;
 }
 h3 {
-  font-size: 26px;
+	font-size: 26px;
 }
 h4 {
-  font-size: 22px;
+	font-size: 22px;
 }
 h5 {
-  font-size: 18px;
+	font-size: 18px;
 }
+p {
+
+}
+
 .center {
-  text-align: center;
+	text-align: center;
 }
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | LISTS
 |-----------------------------------------------------------------------------------------------------------------
 */
+
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | LINKS
 |-----------------------------------------------------------------------------------------------------------------
 */
+
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | MENUS
 |-----------------------------------------------------------------------------------------------------------------
 */
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | FORMS
 |-----------------------------------------------------------------------------------------------------------------
 */
+
 label {
-  font-size: 16px;
-  margin: 6px 5px;
+	font-size: 16px;
+	margin: 6px 5px;
 }
-.radio label,
+.radio label, 
 .checkbox label {
-  font-weight: 400;
+	font-weight: 400;
 }
 select {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 input.form-control {
-  border: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -moz-transition: none;
-  -webkit-transition: none;
-  border: solid 1px #DDD;
+	border:none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+	border:solid 1px #DDD;
 }
 input.form-control:focus {
-  /*border:none;
+	/*border:none;
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -95,184 +113,152 @@ input.form-control:focus {
 	border:solid 1px #DDD;*/
 }
 select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
+    color: transparent;
+    text-shadow: 0 0 0 #000;
 }
 .form-control:focus {
-  border-color: none;
-  box-shadow: none;
-  outline: 0;
+	border-color: none;
+	box-shadow: none;
+	outline: 0;
 }
 .form-control {
-  margin-bottom: 10px;
-  border-radius: 0;
+    margin-bottom: 10px;
+	border-radius: 0;
 }
 .form-group-lg .form-control {
-  margin-bottom: 10px;
-  border-radius: 0;
-  height: 46px;
-  padding: 10px 16px;
-  font-size: 16px;
-  line-height: 1.33333;
+	margin-bottom: 10px;
+	border-radius: 0;
+	height: 46px;
+	padding: 10px 16px;
+	font-size: 16px;
+	line-height: 1.33333;
 }
 .form-group-md .form-control {
-  margin-bottom: 10px;
-  border-radius: 0;
-  height: 38px;
-  padding: 10px 16px;
-  font-size: 13px;
-  line-height: 1.33333;
+	margin-bottom: 10px;
+	border-radius: 0;
+	height: 38px;
+	padding: 10px 16px;
+	font-size: 13px;
+	line-height: 1.33333;
 }
 .form-group-sm .form-control {
-  margin-bottom: 10px;
-  border-radius: 0;
-  height: 38px;
-  padding: 8px;
-  font-size: 13px;
-  line-height: 1.33333;
+	margin-bottom: 10px;
+	border-radius: 0;
+	height: 38px;
+	padding: 8px;
+	font-size: 13px;
+	line-height: 1.33333;
 }
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | ERROR / SUCCESS MESSAGES
 |-----------------------------------------------------------------------------------------------------------------
 */
 .message {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
 .message_success {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #99cc00;
+	.message;
+	color: @colGreen;
 }
 .message_error {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ff3300;
+	.message;
+	color: @colRed;
 }
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | TABLES
 |-----------------------------------------------------------------------------------------------------------------
 */
 .table {
-  margin-bottom: 8px;
+	margin-bottom: 8px;
 }
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | IMAGES
 |-----------------------------------------------------------------------------------------------------------------
 */
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | BUTTONS
 |-----------------------------------------------------------------------------------------------------------------
 */
 .btn {
-  margin-top: 10px;
-  border: none;
-  border-bottom: solid 4px transparent;
-  border-radius: 0;
-  text-transform: uppercase;
+	margin-top: 10px;
+	border: none;
+	border-bottom: solid 4px transparent;
+	border-radius: 0;
+	text-transform: uppercase;
 }
 a.btn:hover {
-  color: #FFF;
+	color: #FFF;
 }
 .btn-red {
-  margin-top: 10px;
-  border: none;
-  border-bottom: solid 4px transparent;
-  border-radius: 0;
-  text-transform: uppercase;
-  color: #FFF;
-  background-color: #F30;
-  border-bottom: solid 4px #333;
+	.btn;
+	color: #FFF;
+	background-color: #F30;
+	border-bottom: solid 4px #333;
 }
 .btn-red:hover {
-  color: #FFF;
-  background-color: #F30;
+	color: #FFF;
+	background-color: #F30;
 }
 #delButton {
-  margin-bottom: 20px;
-  display: none;
+	margin-bottom: 20px;
+	display: none;
 }
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | COLOURS
 |-----------------------------------------------------------------------------------------------------------------
 */
+
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | PADDING / MARGINS
 |-----------------------------------------------------------------------------------------------------------------
 */
-.mar10 {
-  margin: 10px 0;
-}
-.marTop10 {
-  margin-top: 10px;
-}
-.marBot10 {
-  margin-bottom: 10px;
-}
-.mar20 {
-  margin: 20px 0;
-}
-.marTop20 {
-  margin-top: 20px;
-}
-.marBot20 {
-  margin-bottom: 20px;
-}
-.mar60 {
-  margin: 60px 0;
-}
-.marTop60 {
-  margin-top: 60px;
-}
-.marBot60 {
-  margin-bottom: 60px;
-}
-.pad10 {
-  padding: 10px 0;
-}
-.padTop10 {
-  padding-top: 10px;
-}
-.padBot10 {
-  padding-bottom: 10px;
-}
-.pad20 {
-  padding: 20px 0;
-}
-.padTop20 {
-  padding-top: 20px;
-}
-.padBot20 {
-  padding-bottom: 20px;
-}
-.pad60 {
-  padding: 60px 0;
-}
-.padTop60 {
-  padding-top: 60px;
-}
-.padBot60 {
-  padding-bottom: 60px;
-}
+.mar10 { margin: 10px 0; }
+.marTop10 { margin-top: 10px; }
+.marBot10 { margin-bottom: 10px; }
+.mar20 { margin: 20px 0; }
+.marTop20 { margin-top: 20px; }
+.marBot20 { margin-bottom: 20px; }
+.mar60 { margin: 60px 0; }
+.marTop60 { margin-top: 60px; }
+.marBot60 { margin-bottom: 60px; }
+
+.pad10 { padding: 10px 0; }
+.padTop10 { padding-top: 10px; }
+.padBot10 { padding-bottom: 10px; }
+.pad20 { padding: 20px 0; }
+.padTop20 { padding-top: 20px; }
+.padBot20 { padding-bottom: 20px; }
+.pad60 { padding: 60px 0; }
+.padTop60 { padding-top: 60px; }
+.padBot60 { padding-bottom: 60px; }
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | ICONS
 |-----------------------------------------------------------------------------------------------------------------
 */
+
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | MISC
 |-----------------------------------------------------------------------------------------------------------------
 */
+
+
 /*
 |-----------------------------------------------------------------------------------------------------------------
 | BOOTSTRAP - OVERIDES
@@ -280,39 +266,50 @@ a.btn:hover {
 */
 /* Well */
 .well {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  background: #ffffff;
-  min-height: 20px;
-  padding: 20px 30px 30px 30px;
-  margin-bottom: 20px;
+	.shadow;
+	background: @colWhite;
+    min-height: 20px;
+    padding: 20px 30px 30px 30px;
+    margin-bottom: 20px;
 }
 .well-success {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  background: #ffffff;
-  min-height: 20px;
-  padding: 20px 30px 30px 30px;
-  margin-bottom: 20px;
-  padding: 20px 30px 10px 30px;
-  border-top: solid 4px #99cc00;
-  border-bottom: solid 4px #99cc00;
+	.well;
+	padding: 20px 30px 10px 30px;
+	border-top: solid 4px @colGreen;
+	border-bottom: solid 4px @colGreen;
 }
 .well-error {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-  background: #ffffff;
-  min-height: 20px;
-  padding: 20px 30px 30px 30px;
-  margin-bottom: 20px;
-  padding: 20px 30px 10px 30px;
-  border-top: solid 4px #ff3300;
-  border-bottom: solid 4px #ff3300;
+	.well;
+	padding: 20px 30px 10px 30px;
+	border-top: solid 4px @colRed;
+	border-bottom: solid 4px @colRed;
 }
+
+
+
+
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .navbar-nav {
-    float: right;
-  }
+	.navbar-nav {
+	    float: right;
+	}
 }
+
+@media (min-width: 768px) and (max-width: 978px) {
+	
+}
+
 /* Medium devices (desktops, 992px and up) */
+@media (min-width: 979px) {
+
+	
+}
+
 /* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	
+}

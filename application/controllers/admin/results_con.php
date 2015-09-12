@@ -192,55 +192,63 @@ class Results_con extends CI_Controller
 			// Insert new results
 			$this->results_model->add_result_ind($data);
 			
-			echo $this->update_text_message = '<span class="message_success">New record added!</span>';
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> New record added!<br /></div>';
 			
 			// Display confirmation of uploaded result to screen
 			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
-      echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:1.1em;">';
-      echo '<tr style="font-weight:700; text-align:right;">';
-        echo '<td><div align="left">Athlete</div></td>';
-        echo '<td>Event</td>';
-        echo '<td>Age Group</td>';
-        echo '<td>Time</td>';
-        echo '<td>Wind</td>';
-        echo '<td>Dist/Height</td>';
-				echo '<td>Implement</td>';
-        echo '<td>Record</td>';
-        echo '<td>Centre</td>';
-        echo '<td>Placing</td>';
-        echo '<td>In/Out</td>';
-        echo '<td>Venue</td>';
-        echo '<td>Date</td>';
-      echo '</tr>';
-      echo '<tr style="text-align:right;">';
-        echo '<td><div align="left">' . $this->input->post('athleteID') . '</div></td>';
-        echo '<td>' . $event . '</td>';
-        echo '<td>' . $data['ageGroup'] . '</td>';
-        echo '<td>' . $data['time'] . '</td>';
-        echo '<td>' . $data['wind'] . '</td>';
-        echo '<td>' . $data['distHeight'] . '</td>';
-	echo '<td>' . $implement . '</td>';
-        echo '<td>' . $data['record'] . '</td>';
-        echo '<td>' . $centreID . '</td>';
-        echo '<td>' . $data['placing'] . '</td>';
-        echo '<td>' . $data['in_out'] . '</td>';
-        echo '<td>' . $data['venue'] . '</td>';
-        echo '<td>' . $data['date'] . '</td>';
-      echo '</tr>';
-    echo '</table>';
-		
-		// Set up an attribute '<em>'
-		// Why?
-		// Because jQuery needs it to identify what the current resultID is
-		// Then if admin wishes to delete the record - jQuery knows which one to delete
-		// See this line in the results form page (var resultID = $("em").attr("title");)
-		echo '<em title="' . $this->db->insert_id() . '"></em>';
-		
-    echo '<div class="dotted"></div>';  
+
+			echo '<table class="table table-condensed table-bordered">';
+				echo '<tr>';
+					echo '<td>Athlete</td>';
+					echo '<td>Event</td>';
+					echo '<td>Age Group</td>';
+					echo '<td>Time</td>';
+					echo '<td>Wind</td>';
+					echo '<td>Dist/Height</td>';
+					echo '<td>Implement</td>';
+					echo '<td>Record</td>';
+					echo '<td>Centre</td>';
+					echo '<td>Placing</td>';
+					echo '<td>In/Out</td>';
+					echo '<td>Venue</td>';
+					echo '<td>Date</td>';
+				echo '</tr>';
+				echo '<tr>';
+					echo '<td>' . $this->input->post('athleteID') . '</td>';
+					echo '<td>' . $event . '</td>';
+					echo '<td>' . $data['ageGroup'] . '</td>';
+					echo '<td>' . $data['time'] . '</td>';
+					echo '<td>' . $data['wind'] . '</td>';
+					echo '<td>' . $data['distHeight'] . '</td>';
+					echo '<td>' . $implement . '</td>';
+					echo '<td>' . $data['record'] . '</td>';
+					echo '<td>' . $centreID . '</td>';
+					echo '<td>' . $data['placing'] . '</td>';
+					echo '<td>' . $data['in_out'] . '</td>';
+					echo '<td>' . $data['venue'] . '</td>';
+					echo '<td>' . $data['date'] . '</td>';
+				echo '</tr>';
+			echo '</table>';
+
+
+			// Set up an attribute '<em>'
+			// Why?
+			// Because jQuery needs it to identify what the current 'resultID' is
+			// Then if admin wishes to delete the record - jQuery knows which one to delete
+			// See this line in the results form page (var resultID = $("em").attr("title");)
+			echo '<em title="' . $this->db->insert_id() . '"></em>';
+
+			// Show 'Edit' button so admin can edit result if incorrectly input
+			echo anchor('admin/results_con/populate_results/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo '</div>';
+
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS add_result_ind()
@@ -288,7 +296,7 @@ class Results_con extends CI_Controller
 		
 		// WHAT IS THE date?
 		// Combine $day, $month and $year into variable '$date'
-		$day 		= $this->input->post('day');
+		$day 	= $this->input->post('day');
 		$month 	= $this->input->post('month');
 		$year 	= $this->input->post('year');
 		$date 	= $year . '-' . $month . '-' .$day;
@@ -351,10 +359,12 @@ class Results_con extends CI_Controller
 		if(in_array($this->input->post('eventID'), $this->config->item('seperate_performances')))
 		{
 			foreach($this->config->item($config_item) as $key => $value): // Get $config_item from above
+
 				if($this->input->post('ageGroup') == $key)
 				{
 					$implement = $value;
 				}
+
 			endforeach;
 		}
 		
@@ -389,45 +399,45 @@ class Results_con extends CI_Controller
 			
 			// Display confirmation of uploaded result to screen
 			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
-      echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:1.1em;">';
-      echo '<tr style="font-weight:700; text-align:right;">';
-        echo '<td><div align="left">Athlete</div></td>';
-        echo '<td>Event</td>';
-        echo '<td>Age Group</td>';
-        echo '<td>Time</td>';
-        echo '<td>Wind</td>';
-        echo '<td>Dist/Height</td>';
-        echo '<td>Record</td>';
-        echo '<td>Centre</td>';
-        echo '<td>Placing</td>';
-        echo '<td>In/Out</td>';
-        echo '<td>Venue</td>';
-        echo '<td>Date</td>';
-      echo '</tr>';
-      echo '<tr style="text-align:right;">';
-        echo '<td><div align="left">' . $this->input->post('athleteID') . '</div></td>';
-        echo '<td>' . $event . '</td>';
-        echo '<td>' . $data['ageGroup'] . '</td>';
-        echo '<td>' . $data['time'] . '</td>';
-        echo '<td>' . $data['wind'] . '</td>';
-        echo '<td>' . $data['distHeight'] . '</td>';
-        echo '<td>' . $data['record'] . '</td>';
-        echo '<td>' . $centreID . '</td>';
-        echo '<td>' . $data['placing'] . '</td>';
-        echo '<td>' . $data['in_out'] . '</td>';
-        echo '<td>' . $data['venue'] . '</td>';
-        echo '<td>' . $data['date'] . '</td>';
-      echo '</tr>';
-    echo '</table>';
-		
-		// Set up an attribute '<em>'
-		// Why?
-		// Because jQuery needs it to identify what the current resultID is
-		// Then if admin wishes to delete the record - jQuery knows which one to delete
-		// See this line in the results form page (var resultID = $("em").attr("title");)
-		echo '<em title="' . $data['resultID'] . '"></em>';
-		
-    echo '<div class="dotted"></div>';  
+			echo '<table class="table table-condensed table-bordered">';
+				echo '<tr>';
+					echo '<td>Athlete</td>';
+					echo '<td>Event</td>';
+					echo '<td>Age Group</td>';
+					echo '<td>Time</td>';
+					echo '<td>Wind</td>';
+					echo '<td>Dist/Height</td>';
+					echo '<td>Record</td>';
+					echo '<td>Centre</td>';
+					echo '<td>Placing</td>';
+					echo '<td>In/Out</td>';
+					echo '<td>Venue</td>';
+					echo '<td>Date</td>';
+				echo '</tr>';
+				echo '<tr>';
+					echo '<td>' . $this->input->post('athleteID') . '</td>';
+					echo '<td>' . $event . '</td>';
+					echo '<td>' . $data['ageGroup'] . '</td>';
+					echo '<td>' . $data['time'] . '</td>';
+					echo '<td>' . $data['wind'] . '</td>';
+					echo '<td>' . $data['distHeight'] . '</td>';
+					echo '<td>' . $data['record'] . '</td>';
+					echo '<td>' . $centreID . '</td>';
+					echo '<td>' . $data['placing'] . '</td>';
+					echo '<td>' . $data['in_out'] . '</td>';
+					echo '<td>' . $data['venue'] . '</td>';
+					echo '<td>' . $data['date'] . '</td>';
+				echo '</tr>';
+			echo '</table>';
+
+			// Set up an attribute '<em>'
+			// Why?
+			// Because jQuery needs it to identify what the current resultID is
+			// Then if admin wishes to delete the record - jQuery knows which one to delete
+			// See this line in the results form page (var resultID = $("em").attr("title");)
+			echo '<em title="' . $data['resultID'] . '"></em>';
+
+			echo '<div class="dotted"></div>';  
 		} 
 		else 
 		{

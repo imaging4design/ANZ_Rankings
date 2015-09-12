@@ -1,97 +1,183 @@
-<div class="colFull"><!--START COLLFULL-->
-  
-<h3>Add Results (Individual Events)</h3><br />
+<div class="row">
+	<div class="col-md-12">
+		
+		<h1>Add New Result <small>(Individual Event)</small></h1>
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
-
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
-
-<?php echo form_open('admin/results_con/add_result_ind', array('class' => 'results')); ?>
-
-	<!--Adds hidden CSRF unique token
-	This will be verified in the controller against
-	the $this->session->userdata('token') before
-	returning any results data-->
-	<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
-
-	<?php
-		// Display full list of events drop down menu
-		echo '<label for="eventID" style="display:inline;">Event: </label>';
-		//echo buildEventsDropdown(); // See global helper
-		echo buildRecordEventsDropdown($value='', $selected='', $label=''); // See global helper
-	?> 
-
-	<div class="dotted"></div>
-
-	<label for="athlete">Athlete:</label>
-	<input type="text" name="athleteID" id="athleteID" size="40" />
-	<!--DON'T REMOVE id="athlete" (required for auto-populate!)-->
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
 
 
-	<span id="trackEvent"><!-- Show/Hide with jQuery depending on event selected! -->
-		<label for="time" style="margin-left:20px;">Time:</label>
-		<input type="text" name="time" id="time" size="6" value="<?php echo set_value('time'); ?>" />
-	</span>
+		<div class="well well-trans">
 
-	<span id="fieldEvent"><!-- Show/Hide with jQuery depending on event selected! -->
-		<label for="distHeight" style="margin-left:20px;">Dist/Height:</label>
-		<input type="text" name="distHeight" id="distHeight" size="4" value="<?php echo set_value('distHeight'); ?>" />
-	</span>
+			<?php echo form_open('admin/results_con/add_result_ind'); ?>
+
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
+
+				<div class="row">
+					<div class="col-md-4">
+						<?php
+							// Display full list of events drop down menu
+							echo '<div class="form-group-lg">';
+							echo '<label for="eventID">Event: </label>';
+							//echo buildEventsDropdown(); // See global helper
+							echo buildRecordEventsDropdown($value='', $selected='', $label=''); // See global helper
+							echo '</div>';
+						?>
+					</div><!--ENDS col-->
+					<div class="col-md-8">
+						<div class="form-group-lg">
+							<label class="hidden-sm hidden-xs"></label>
+							<h1><strong id="eventDisplay"></strong></h1>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
 
-	<label for="wind" style="margin-left:20px;">Wind:</label>
-	<input type="text" name="wind" id="wind" size="3" value="<?php echo set_value('wind'); ?>" />
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group-lg">
+							<label for="athlete">Athlete:</label>
+							<input type="text" name="athleteID" class="form-control" id="athleteID" />
+							<!--DON'T REMOVE id="athlete" (required for auto-populate!)-->
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
-	<label for="placing" style="margin-left:20px;">Placing:</label>
-	<input type="text" name="placing" id="placing" size="3" value="<?php echo set_value('placing'); ?>" />
 
-	<label for="record" style="margin-left:20px;">Record:</label>
-	<input type="text" name="record" id="record" size="3" value="<?php echo set_value('record'); ?>" />
+				<div class="row">
 
-	<div class="dotted"></div>
-  
-	
+					<div class="col-md-2">
+						<div class="form-group-lg" id="trackEvent"><!-- Show/Hide with jQuery depending on event selected! -->
+							<label for="time">Time:</label>
+							<input type="text" name="time" id="time" class="form-control" value="<?php echo set_value('time'); ?>" />
+						</div>
+					</div><!-- ENDS col -->
 
-	<?php
-		// Display full list of events drop down menu
-		echo '<label for="ageGroup" style="margin-left:20px;">Age Group:</label>';
-		echo buildAgeGroupDropdown(); // See global helper
-	?> 
-  
-	<div class="dotted"></div>
+					<div class="col-md-2">
+						<div class="form-group-lg" id="fieldEvent"><!-- Show/Hide with jQuery depending on event selected! -->
+							<label for="distHeight">Dist/Height:</label>
+							<input type="text" name="distHeight" id="distHeight" class="form-control" value="<?php echo set_value('distHeight'); ?>" />
+						</div>
+					</div><!-- ENDS col -->
 
-	<label for="competition">Competition:</label>
-	<input type="text" name="competition" id="competition" size="40" value="<?php echo set_value('competition'); ?>" />
+					<div class="col-md-2">
+						<div class="form-group-lg">
+							<label for="wind">Wind:</label>
+							<input type="text" name="wind" id="wind" class="form-control" value="<?php echo set_value('wind'); ?>" />
+						</div>
+					</div><!-- ENDS col -->
 
-	<label for="in_out" style="margin-left:20px;">Indoors / Outdoors:</label>
-	<?php echo in_out(set_value('in_out')); ?>
+					<div class="col-md-3">
+						<div class="form-group-lg">
+							<label for="placing">Placing:</label>
+							<input type="text" name="placing" id="placing" class="form-control" value="<?php echo set_value('placing'); ?>" />
+						</div>
+					</div><!-- ENDS col -->
 
-	<div class="dotted"></div>
+					<div class="col-md-3">
+						<div class="form-group-lg">
+							<label for="record">Record:</label>
+							<input type="text" name="record" id="record" class="form-control" value="<?php echo set_value('record'); ?>" />
+						</div>
+					</div><!-- ENDS col -->
 
-	<?php
-		// Display drop down menu for default venues
-		echo get_venues(); // See global helper
-	?>
+				</div><!--ENDS row-->
+				
 
-	<label for="venue_other" style="margin-left:20px;">Venue (Other):</label>
-	<input type="text" name="venue_other" id="venue_other" size="40" value="<?php echo set_value('venue_other'); ?>" />
+				<div class="row">
+					<div class="col-md-6">
 
-	<div class="dotted"></div>
+						<?php
+							// Display full list of events drop down menu
+							echo '<div class="form-group-lg">';
+							echo '<label for="ageGroup">Age Group:</label>';
+							echo buildAgeGroupDropdown(); // See global helper
+							echo '</div>';
+						?> 
 
-	<!-- jQuery UI Date Picker -->
-	<label for="date" style="display:inline;">Date: </label>
-	<input type="text" id="date" name="date" />
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+			  
 
-	<div class="dotted"></div>
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group-lg">	
+							<label for="competition">Competition:</label>
+							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
+						</div>
+					</div><!--ENDS col-->
 
-	<label for="submit"></label>
-	<input type="submit" name="submit" id="submit" value="Add Result" />
-  
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<label for="in_out">Indoors / Outdoors:</label>
+							<?php echo in_out(set_value('in_out')); ?>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
-</div><!--END COLLFULL-->
 
-<?php echo form_close(); ?>
+				<div class="row">
+					<div class="col-md-4">
+						<?php
+							// Display drop down menu for default venues
+							echo '<div class="form-group-lg">';
+							echo get_venues(); // See global helper
+							echo '</div>';
+						?>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<label for="venue_other">Venue (Other):</label>
+							<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<!-- jQuery UI Date Picker -->
+						<div class="form-group-lg">
+							<label for="date">Date: </label>
+							<input type="text" id="date" class="form-control" name="date" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group-lg">
+							
+							<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Result" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+			  
+
+			<?php echo form_close(); ?>
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
+
+
+
+
+
+<script>
+	$('#eventID').on('change', function() {
+		
+		var showEventLabel = $("#eventID :selected").text()
+		$('#eventDisplay').html(showEventLabel);
+	});
+</script>
 
 
 <script>
@@ -132,51 +218,13 @@
 
 
 
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
-
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var resultID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/results_con/delete_results'; ?>',
-		type: 'POST',
-		data: 'resultID=' + resultID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
-
-});
-</script>
-
-
-
-
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
 <script type="text/javascript">
 
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 	var token_admin = $('#token_admin').val();
 	var athleteID = $('#athleteID').val();
@@ -212,33 +260,29 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&venue_other=' + escape(venue_other)
 		+ '&date=' + date,
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
-								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
-								
-								$("#athleteID, #time, #distHeight, #placing, #record").val(''); 
-								
-								//Clears the AthleteID field when onFocus
-								$('#competition, #venue_other').one("focus", function() {
-									$(this).val("");
-								});
-								
-								
-						}
+				$('#loading').fadeOut(500, function() {
+					$(this).remove();
 				});
+				
+				$('#showEntry').html(result);
+				
+				$("#athleteID, #time, #distHeight, #placing, #record").val('');
+				
+				// Clears the AthleteID field when onFocus
+				$('#competition, #venue_other').one("focus", function() {
+					$(this).val("");
+				});
+					
+			}
+
+		});
 		
 		return false;
 		
 	});
-
-
 	
-	});
+});
 
 </script>

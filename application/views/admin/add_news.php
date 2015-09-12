@@ -1,54 +1,95 @@
-<div class="colFull"><!--START COLLFULL-->
-  
-<h3>Add News Article</h3><br />
+<div class="row">
+	<div class="col-sm-12">
+		
+		<h1>Add <small>(News Article)</small></h1>
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
+		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
 
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div id="showDelete"></div><!--Load jQuery DELETE message-->
+		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
 
-<?php echo form_open('admin/news_con/add_news', array('class' => 'results')); ?>
 
-  <!--Adds hidden CSRF unique token
-	This will be verified in the controller against
-	the $this->session->userdata('token') before
-	returning any results data-->
-  <input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
-  
-  <!--What is the article type? News or Info page-->
-  <label for="type" style="display:block;">Article Type:</label>
-	<?php
-	$news = array(
-    'name'        => 'type',
-    'id'          => 'type',
-    'value'       => 'N',
-    'checked'     => TRUE
-    );
-	
-	$info = array(
-    'name'        => 'type',
-    'id'          => 'type',
-    'value'       => 'I'
-    );
-	
-	echo form_radio($news) . 'News Page';
-	echo form_radio($info) . 'Info Page';
-	?>
+		<div class="well well-trans">
 
-	<label for="heading" style="display:block;">Heading</label>
-	<input type="text" name="heading" id="heading" value="<?php echo set_value('heading'); ?>" />
-  
-  <label for="bodyContent" style="display:block;">Article:</label>
-  <textarea name="bodyContent" id="bodyContent" cols="128" rows="20"><?php echo set_value('bodyContent'); ?></textarea>
-  <!--DISPLAY THE CKEDITOR-->
-  <?php echo form_ckeditor(array('id'=>'bodyContent')); ?>
-  
-	<label for="submit"></label>
-	<input type="submit" name="submit" id="submit" value="Add News Article" style="margin-top:10px;" />
+			<?php echo form_open('admin/news_con/add_news', array('class' => 'results')); ?>
 
-<?php echo form_close(); ?>
+			<!--Adds hidden CSRF unique token
+			This will be verified in the controller against
+			the $this->session->userdata('token') before
+			returning any results data-->
+			<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
 
-</div><!--END COLLFULL-->
+
+			<div class="row">
+				<div class="form-group">
+					
+					<div class="col-md-2">
+						<div class="radio">
+							<label>
+								<input type="radio" name="type" id="type" value="N" checked>
+								News Page
+							</label>
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="radio">
+							<label>
+								<input type="radio" name="type" id="type" value="I">
+								Info Page
+							</label>
+						</div>
+					</div><!--ENDS col-->
+				</div>
+
+			</div><!--ENDS row-->
+
+
+
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group-lg">
+						<label for="heading" style="display:block;">Heading</label>
+						<input type="text" name="heading" id="heading" class="form-control" value="<?php echo set_value('heading'); ?>" />
+					</div>
+				</div><!--ENDS col-->
+			</div><!--ENDS row-->
+
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group-lg">
+						<label for="bodyContent" style="display:block;">Article:</label>
+						<textarea name="bodyContent" id="bodyContent" cols="128" rows="20"><?php echo set_value('bodyContent'); ?></textarea>
+						<!--DISPLAY THE CKEDITOR-->
+						<?php echo form_ckeditor(array('id'=>'bodyContent')); ?>
+					</div>
+				</div><!--ENDS col-->
+			</div><!--ENDS row-->
+
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group-lg">
+						<label for="submit"></label>
+						<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Article" />
+					</div>
+				</div><!--ENDS col-->
+			</div><!--ENDS row-->
+			
+
+			<?php echo form_close(); ?>
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
+
+
+
+
 
 
 <!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->

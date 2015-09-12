@@ -365,7 +365,7 @@ function dropDownCentres($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="centreID" id="centreID">';
+	echo '<select name="centreID" id="centreID" class="form-control">';
 
 	if($value)
 	{
@@ -404,7 +404,7 @@ function dropDownClubs($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="clubID" id="clubID">';
+	echo '<select name="clubID" id="clubID" class="form-control">';
 
 	if($value)
 	{
@@ -443,7 +443,7 @@ function buildAgeGroupDropdown($selected='')
 		'W17' 	=> 'Youth Women'
 	);
 
-	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup"');
+	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup" class="form-control"');
 
 }
 	
@@ -532,7 +532,7 @@ function buildAgeGroup_records($selected='')
 		'W16' 	=> 'Women Under 17'
 	);
 
-	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup" class="span3"');
+	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup" class="span3 form-control"');
 
 }
 	
@@ -660,12 +660,12 @@ function recordType($selected='')
 {
 	$options = array(
 		'' 		=> 'Select Record Type',
-		'AC'		=> 'NZ Allcomers',
+		'AC'	=> 'NZ Allcomers',
 		'NN' 	=> 'NZ National',
 		'RR' 	=> 'NZ Resident'
 	);
 
-	echo form_dropdown('recordType', $options,  $selected, 'id="recordType" class="span3"');
+	echo form_dropdown('recordType', $options,  $selected, 'id="recordType" class="span3 form-control"');
 
 }
 	
@@ -682,7 +682,7 @@ function in_out($selected='')
 		'in' 		=> 'Indoors'
 	);
 
-	echo form_dropdown('in_out', $options,  $selected, 'id="in_out" class="span3"');
+	echo form_dropdown('in_out', $options,  $selected, 'id="in_out" class="span3 form-control"');
 
 }
 	
@@ -711,7 +711,7 @@ function buildEventsDropdown($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="eventID" class="span3" id="eventID">';
+	echo '<select name="eventID" class="span3 form-control" id="eventID">';
 
 	if($value)
 	{
@@ -756,7 +756,7 @@ function buildRecordEventsDropdown($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="eventID" class="span3" id="eventID">';
+	echo '<select name="eventID" class="span3 form-control" id="eventID">';
 
 	if($value)
 	{
@@ -799,7 +799,7 @@ function buildIndoorEventsDropdown($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="indoorEventID" id="indoorEventID">';
+	echo '<select name="indoorEventID" id="indoorEventID" class="form-control">';
 
 	if($value)
 	{
@@ -850,7 +850,7 @@ function get_venues($value='')
 	);
 
 	echo '<label for="venue">Venue:</label>';
-	echo '<select name="venue" id="venue">';
+	echo '<select name="venue" id="venue" class="form-control">';
 
 	if($value)
 	{
@@ -974,6 +974,6 @@ function buildYearDOB($name='', $value='', $id='')
 
 	$selected_year = ( isset( $selected_year ) ) ? $selected_year : 0;
 
-	return form_dropdown('year', $years, set_value('year', $selected_year), 'id="year"');
+	return form_dropdown('year', $years, set_value('year', $selected_year), 'id="year", class="form-control"');
 
 }

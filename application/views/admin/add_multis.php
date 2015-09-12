@@ -1,127 +1,256 @@
-<div class="colFull"><!--START COLLFULL-->
+<div class="row">
+	<div class="col-md-12">
   
-<h3>Add Results (Multi Events)</h3><br />
+		<h1>Add New Result <small>(Multi Event)</small></h1>
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
+		<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
 
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div id="showDelete"></div><!--Load jQuery DELETE message-->
+		<div id="showEntry"></div><!--Load jQuery ENTRY message-->
 
-<?php echo form_open('admin/multis_con/add_result_multi', array('class' => 'results')); ?>
+		<div class="well well-trans">
 
-
-	<!--Adds hidden CSRF unique token
-	This will be verified in the controller against
-	the $this->session->userdata('token') before
-	returning any results data-->
-	<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
-
-	<label for="athlete">Athlete:</label>
-	<input type="text" name="athleteID" id="athleteID" size="40" />
-	<!--DON'T REMOVE class="athlete" (required for auto-populate!)-->
-
-	<label for="points" style="margin-left:20px;">Points:</label>
-	<input type="text" name="points" id="points" size="5" value="<?php echo set_value('points'); ?>" />
-
-	<label for="wind" style="margin-left:20px;">Wind:</label>
-	<input type="text" name="wind" id="wind" size="3" value="<?php echo set_value('wind'); ?>" />
-
-	<label for="placing" style="margin-left:20px;">Placing:</label>
-	<input type="text" name="placing" id="placing" size="3" value="<?php echo set_value('placing'); ?>" />
-
-	<label for="record" style="margin-left:20px;">Record:</label>
-	<input type="text" name="record" id="record" size="3" value="<?php echo set_value('record'); ?>" />
-
-	<div class="dotted"></div>
-
-	<label for="e01">Evt 1:</label>
-	<input type="text" name="e01" id="e01" size="3" value="<?php echo set_value('e01'); ?>" />
-
-	<label for="e02" style="margin-left:8px;">Evt 2:</label>
-	<input type="text" name="e02" id="e02" size="3" value="<?php echo set_value('e02'); ?>" />
-
-	<label for="e03" style="margin-left:8px;">Evt 3:</label>
-	<input type="text" name="e03" id="e03" size="3" value="<?php echo set_value('e03'); ?>" />
-
-	<label for="e04" style="margin-left:8px;">Evt 4:</label>
-	<input type="text" name="e04" id="e04" size="3" value="<?php echo set_value('e04'); ?>" />
-
-	<label for="e05" style="margin-left:8px;">Evt 5:</label>
-	<input type="text" name="e05" id="e05" size="3" value="<?php echo set_value('e05'); ?>" />
-
-	<label for="e06" style="margin-left:8px;">Evt 6:</label>
-	<input type="text" name="e06" id="e06" size="3" value="<?php echo set_value('e06'); ?>" />
-
-	<label for="e07" style="margin-left:8px;">Evt 7:</label>
-	<input type="text" name="e07" id="e07" size="3" value="<?php echo set_value('e07'); ?>" />
-
-	<label for="e08" style="margin-left:8px;">Evt 8:</label>
-	<input type="text" name="e08" id="e08" size="3" value="<?php echo set_value('e08'); ?>" />
-
-	<label for="e09" style="margin-left:8px;">Evt 9:</label>
-	<input type="text" name="e09" id="e09" size="3" value="<?php echo set_value('e09'); ?>" />
-
-	<label for="e10" style="margin-left:8px;">Evt 10:</label>
-	<input type="text" name="e10" id="e10" size="3" value="<?php echo set_value('e10'); ?>" />
-
-	<div class="dotted"></div>
-  
-	<?php
-		// Display full list of events drop down menu
-		echo '<label for="eventID" style="display:inline;">Event: </label>';
-		// echo buildEventsDropdown(); // See global helper
-		echo buildRecordEventsDropdown($value='', $selected='', $label=''); // See global helper
-	?>
-
-	<?php
-		// Display full list of events drop down menu
-		echo '<label for="ageGroup" style="margin-left:20px;">Age Group:</label>';
-		echo buildAgeGroupDropdown(); // See global helper
-	?> 
-  
-	<!-- OLD METHOD!  <label for="ageGroup" style="margin-left:20px;">Age Group:</label>
-		<select name="ageGroup" id="ageGroup">
-		<option value="" selected="selected">Age Group</option>
-		<option value="MS">Men Senior</option>
-		<option value="M20">Men 20</option>
-		<option value="M19">Men 19</option>
-		<option value="M17">Men 17</option>
-		<option value="WS">Women Senior</option>
-		<option value="W20">Women 20</option>
-		<option value="W19">Women 19</option>
-		<option value="W17">Women 17</option>
-	</select> -->
-  
-	<div class="dotted"></div>
-
-	<label for="competition">Competition:</label>
-	<input type="text" name="competition" id="competition" size="40" value="<?php echo set_value('competition'); ?>" />
-
-	<div class="dotted"></div>
-
-	<?php
-		// Display drop down menu for default venues
-		echo get_venues(); // See global helper
-	?>
-
-	<label for="venue_other" style="margin-left:20px;">Venue (Other):</label>
-	<input type="text" name="venue_other" id="venue_other" size="40" value="<?php echo set_value('venue_other'); ?>" />
-
-	<div class="dotted"></div>
-
-	<!-- jQuery UI Date Picker -->
-	<label for="date" style="display:inline;">Date: </label>
-	<input type="text" id="date" name="date" />
-
-	<div class="dotted"></div>
-
-	<label for="submit"></label>
-	<input type="submit" name="submit" id="submit" value="Add Result" />
+			<?php echo form_open('admin/multis_con/add_result_multi', array('class' => 'results')); ?>
 
 
-	</div><!--END COLLFULL-->
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
 
-<?php echo form_close(); ?>
+
+				<div class="row">
+					<div class="form-group">
+
+						<div class="col-md-2">
+							<div class="radio">
+								<label>
+									<input type="radio" name="eventID" class="eventID" value="36" checked>
+									Decathlon
+								</label>
+							</div>
+						</div><!--ENDS col-->
+
+						<div class="col-md-2">
+							<div class="radio">
+								<label>
+									<input type="radio" name="eventID" class="eventID" value="35">
+									Heptathlon
+								</label>
+							</div>
+						</div><!--ENDS col-->
+
+						<div class="col-md-2">
+							<div class="radio">
+								<label>
+									<input type="radio" name="eventID" class="eventID" value="34">
+									Octathlon
+								</label>
+							</div>
+						</div><!--ENDS col-->
+
+						<div class="col-md-2">
+							<div class="radio">
+								<label>
+									<input type="radio" name="eventID" class="eventID" value="54">
+									Pentathlon
+								</label>
+							</div>
+						</div><!--ENDS col-->
+
+					</div><!--ENDS form-group-->
+				</div><!--ENDS row-->
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<label for="athlete">Athlete:</label>
+							<input type="text" name="athleteID" id="athleteID" class="form-control" />
+							<!--DON'T REMOVE class="athlete" (required for auto-populate!)-->
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group-lg">
+							<label for="points">Points:</label>
+							<input type="text" name="points" id="points"class="form-control" value="<?php echo set_value('points'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group-lg">
+							<label for="wind">Wind:</label>
+							<input type="text" name="wind" id="wind"class="form-control" value="<?php echo set_value('wind'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group-lg">
+							<label for="placing">Placing:</label>
+							<input type="text" name="placing" id="placing"class="form-control" value="<?php echo set_value('placing'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group-lg">
+							<label for="record">Record:</label>
+							<input type="text" name="record" id="record"class="form-control" value="<?php echo set_value('record'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e01">E1:</label>
+							<input type="text" name="e01" id="e01" class="form-control" value="<?php echo set_value('e01'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e02">E2:</label>
+							<input type="text" name="e02" id="e02" class="form-control" value="<?php echo set_value('e02'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e03">E3:</label>
+							<input type="text" name="e03" id="e03" class="form-control" value="<?php echo set_value('e03'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e04">E4:</label>
+							<input type="text" name="e04" id="e04" class="form-control" value="<?php echo set_value('e04'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e05">E5:</label>
+							<input type="text" name="e05" id="e05" class="form-control" value="<?php echo set_value('e05'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e06">E6:</label>
+							<input type="text" name="e06" id="e06" class="form-control" value="<?php echo set_value('e06'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e07">E7:</label>
+							<input type="text" name="e07" id="e07" class="form-control" value="<?php echo set_value('e07'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e08">E8:</label>
+							<input type="text" name="e08" id="e08" class="form-control" value="<?php echo set_value('e08'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e09">E9:</label>
+							<input type="text" name="e09" id="e09" class="form-control" value="<?php echo set_value('e09'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e10">E10:</label>
+							<input type="text" name="e10" id="e10" class="form-control" value="<?php echo set_value('e10'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group-lg">
+							<?php
+								// Display full list of events drop down menu
+								echo '<label for="ageGroup">Age Group:</label>';
+								echo buildAgeGroupDropdown(); // See global helper
+							?> 
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<label for="competition">Competition:</label>
+							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<?php
+								// Display drop down menu for default venues
+								echo get_venues(); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<label for="venue_other">Venue (Other):</label>
+							<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+				
+			  
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<!-- jQuery UI Date Picker -->
+							<label for="date">Date: </label>
+							<input type="text" id="date" class="form-control" name="date" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group-lg">
+							<input type="submit" name="submit" id="submit" class="btn btn-lg btn-red" value="Add Result" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+			<?php echo form_close(); ?>
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
+
+
+
+<script>
+	$('.eventID').on('change', function() {
+
+		console.log(this.value);
+		
+		// var test = $(".eventID :selected").text()
+		// $('#eventDisplay').html(test);
+	});
+</script>
+
+
 
 
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
@@ -150,12 +279,18 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 	var e09 = $('#e09').val();
 	var e10 = $('#e10').val();
 	
-	var eventID = $('#eventID').val();
+
+
+	var eventID = $('.eventID').val();
+	//var eventID = $('input:radio[name=eventID]:checked').val();
 	var ageGroup = $('#ageGroup').val();
 	var competition = $('#competition').val();
 	var venue = $('#venue').val();
 	var venue_other = $('#venue_other').val();
 	var date = $('#date').val();
+
+
+	console.log(eventID);
 	
 	//var lineBreak = document.getElementById('lineBreak').checked; 
 	//var enabled = document.getElementById('enabled').checked; 
