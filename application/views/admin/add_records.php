@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		
-		<h1>Add <small>(Records)</small></h1>
+		<h1>Add New Record</h1>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -23,7 +23,7 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="nameFirst">Record Type:</label>
 						<?php
 							// Select type of record (i.e., Allcomers, National etc ...)
@@ -33,7 +33,7 @@
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="nameFirst">Age Group:</label>
 						<?php
 							// Select an ageGroup
@@ -43,7 +43,7 @@
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="nameFirst">Indoors/Outdoors:</label>
 						<?php
 							// Indoor / Outdoors
@@ -57,7 +57,7 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="nameFirst">Event:</label>
 						<?php
 							// Select an ageGroup
@@ -73,21 +73,21 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="nameFirst">First Name:</label>
 						<input type="text" name="nameFirst" id="nameFirst" class="form-control" value="<?php echo set_value('nameFirst'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="nameLast">Last Name:</label>
 						<input type="text" name="nameLast" id="nameLast" class="form-control" value="<?php echo set_value('nameLast'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="country">Country:</label>
 						<input type="text" name="country" id="country" class="form-control" value="<?php echo set_value('country'); ?>" />
 					</div>
@@ -98,23 +98,23 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="result">Result:</label>
 						<input type="text" name="result" id="result" class="form-control" value="<?php echo set_value('result'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="venue">Venue of Record:</label>
 						<input type="text" name="venue" id="venue" class="form-control" value="<?php echo set_value('venue'); ?>" />
 					</div>
 				</div><!--ENDS col-->
 
 				<div class="col-md-4">
-					<div class="form-group-md">
+					<div class="form-group">
 						<!-- jQuery UI Date Picker -->
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="date">Date: </label>
 							<input type="text" id="date" class="form-control" name="date" />
 						</div>
@@ -126,7 +126,7 @@
 
 			<div class="row">
 				<div class="col-md-6">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="submit"></label>
 						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Record" />
 					</div>

@@ -24,7 +24,7 @@
 					<div class="col-md-4">
 						<?php
 							// Display full list of events drop down menu
-							echo '<div class="form-group-md">';
+							echo '<div class="form-group">';
 							echo '<label for="eventID">Event: </label>';
 							//echo buildEventsDropdown(); // See global helper
 							echo buildRecordEventsDropdown($value='', $selected='', $label=''); // See global helper
@@ -32,9 +32,8 @@
 						?>
 					</div><!--ENDS col-->
 					<div class="col-md-8">
-						<div class="form-group-md">
-							<label class="hidden-sm hidden-xs"></label>
-							<h1><strong id="eventDisplay"></strong></h1>
+						<div class="form-group">
+							<h1 class="padTop10"><strong id="eventDisplay"></strong></h1>
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
@@ -42,7 +41,7 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="athlete">Athlete:</label>
 							<input type="text" name="athleteID" class="form-control" id="athleteID" />
 							<!--DON'T REMOVE id="athlete" (required for auto-populate!)-->
@@ -54,35 +53,35 @@
 				<div class="row">
 
 					<div class="col-md-2">
-						<div class="form-group-md" id="trackEvent"><!-- Show/Hide with jQuery depending on event selected! -->
+						<div class="form-group" id="trackEvent"><!-- Show/Hide with jQuery depending on event selected! -->
 							<label for="time">Time:</label>
 							<input type="text" name="time" id="time" class="form-control" value="<?php echo set_value('time'); ?>" />
 						</div>
 					</div><!-- ENDS col -->
 
 					<div class="col-md-2">
-						<div class="form-group-md" id="fieldEvent"><!-- Show/Hide with jQuery depending on event selected! -->
+						<div class="form-group" id="fieldEvent"><!-- Show/Hide with jQuery depending on event selected! -->
 							<label for="distHeight">Dist/Height:</label>
 							<input type="text" name="distHeight" id="distHeight" class="form-control" value="<?php echo set_value('distHeight'); ?>" />
 						</div>
 					</div><!-- ENDS col -->
 
 					<div class="col-md-2">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="wind">Wind:</label>
 							<input type="text" name="wind" id="wind" class="form-control" value="<?php echo set_value('wind'); ?>" />
 						</div>
 					</div><!-- ENDS col -->
 
 					<div class="col-md-3">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="placing">Placing:</label>
 							<input type="text" name="placing" id="placing" class="form-control" value="<?php echo set_value('placing'); ?>" />
 						</div>
 					</div><!-- ENDS col -->
 
 					<div class="col-md-3">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="record">Record:</label>
 							<input type="text" name="record" id="record" class="form-control" value="<?php echo set_value('record'); ?>" />
 						</div>
@@ -96,7 +95,7 @@
 
 						<?php
 							// Display full list of events drop down menu
-							echo '<div class="form-group-md">';
+							echo '<div class="form-group">';
 							echo '<label for="ageGroup">Age Group:</label>';
 							echo buildAgeGroupDropdown(); // See global helper
 							echo '</div>';
@@ -108,14 +107,14 @@
 
 				<div class="row">
 					<div class="col-md-8">
-						<div class="form-group-md">	
+						<div class="form-group">	
 							<label for="competition">Competition:</label>
 							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="in_out">Indoors / Outdoors:</label>
 							<?php echo in_out(set_value('in_out')); ?>
 						</div>
@@ -127,14 +126,14 @@
 					<div class="col-md-4">
 						<?php
 							// Display drop down menu for default venues
-							echo '<div class="form-group-md">';
+							echo '<div class="form-group">';
 							echo get_venues(); // See global helper
 							echo '</div>';
 						?>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="venue_other">Venue (Other):</label>
 							<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
 						</div>
@@ -142,7 +141,7 @@
 
 					<div class="col-md-4">
 						<!-- jQuery UI Date Picker -->
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="date">Date: </label>
 							<input type="text" id="date" class="form-control" name="date" />
 						</div>
@@ -152,7 +151,7 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group-md">
+						<div class="form-group">
 							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->

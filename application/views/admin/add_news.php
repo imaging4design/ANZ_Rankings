@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		
-		<h1>Add <small>(News Article)</small></h1>
+		<h1>Add News Article</h1>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -49,7 +49,7 @@
 
 			<div class="row">
 				<div class="col-md-8">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="heading" style="display:block;">Heading</label>
 						<input type="text" name="heading" id="heading" class="form-control" value="<?php echo set_value('heading'); ?>" />
 					</div>
@@ -60,7 +60,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="bodyContent" style="display:block;">Article:</label>
 						<textarea name="bodyContent" id="bodyContent" cols="128" rows="20"><?php echo set_value('bodyContent'); ?></textarea>
 						<!--DISPLAY THE CKEDITOR-->
@@ -73,7 +73,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-group-md">
+					<div class="form-group">
 						<label for="submit"></label>
 						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Article" />
 					</div>

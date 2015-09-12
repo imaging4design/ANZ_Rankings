@@ -26,7 +26,7 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<?php
 								echo '<label for="year">Year:</label>';
 								echo buildYearDropdown('year', set_value('year'), 'id="year", class="form-control"');
@@ -35,7 +35,7 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-8">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="competition">Competition:</label>
 							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
 						</div>
@@ -45,7 +45,7 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<?php
 								// Display full list of events drop down menu
 								echo '<label for="eventID" style="margin-left:10px;">Event: </label>';
@@ -56,14 +56,14 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="performance">Performance:</label>
 							<input type="text" name="performance" id="performance" class="form-control" value="<?php echo set_value('performance'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="position">Postition:</label>
 							<input type="text" name="position" id="position" class="form-control" value="<?php echo set_value('position'); ?>" />
 						</div>
@@ -73,7 +73,7 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group-md">
+						<div class="form-group">
 							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->

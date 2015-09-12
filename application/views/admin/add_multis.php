@@ -65,7 +65,7 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="athlete">Athlete:</label>
 							<input type="text" name="athleteID" id="athleteID" class="form-control" />
 							<!--DON'T REMOVE class="athlete" (required for auto-populate!)-->
@@ -73,28 +73,28 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="points">Points:</label>
 							<input type="text" name="points" id="points"class="form-control" value="<?php echo set_value('points'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="wind">Wind:</label>
 							<input type="text" name="wind" id="wind"class="form-control" value="<?php echo set_value('wind'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="placing">Placing:</label>
 							<input type="text" name="placing" id="placing"class="form-control" value="<?php echo set_value('placing'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-2">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="record">Record:</label>
 							<input type="text" name="record" id="record"class="form-control" value="<?php echo set_value('record'); ?>" />
 						</div>
@@ -171,7 +171,7 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group-md">
+						<div class="form-group">
 							<?php
 								// Display full list of events drop down menu
 								echo '<label for="ageGroup">Age Group:</label>';
@@ -185,14 +185,14 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="competition">Competition:</label>
 							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo set_value('competition'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<?php
 								// Display drop down menu for default venues
 								echo get_venues(); // See global helper
@@ -201,7 +201,7 @@
 					</div><!--ENDS col-->
 
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<label for="venue_other">Venue (Other):</label>
 							<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
 						</div>
@@ -212,7 +212,7 @@
 			  
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<!-- jQuery UI Date Picker -->
 							<label for="date">Date: </label>
 							<input type="text" id="date" class="form-control" name="date" />
@@ -224,7 +224,7 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<div class="form-group-md">
+						<div class="form-group">
 							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->

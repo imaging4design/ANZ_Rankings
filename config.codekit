@@ -470,11 +470,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/application\/libraries\/auth.php": {
+	"\/application\/libraries\/Auth.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/application\/libraries\/auth.php",
+		"inputAbbreviatedPath": "\/application\/libraries\/Auth.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -9827,7 +9827,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Gavin iBook",
+"lastSavedByUser": "Gavin Lovegrove",
 "manualImportLinks": {
 	},
 "projectAttributes": {
