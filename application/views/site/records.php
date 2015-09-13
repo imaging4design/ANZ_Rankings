@@ -204,7 +204,13 @@
 
 							if($admin)
 							{
-								$result = anchor('admin/records_con/populate_records/' . $row->recordID, $row->result);
+								// Append 'in' or 'out' to end of URL so this can be accessed in teh controller 
+								if( $in_out == 'Outdoors' ) {
+									$result = anchor('admin/records_con/populate_records/' . $row->recordID . '/out', $row->result);
+								} else {
+									$result = anchor('admin/records_con/populate_records/' . $row->recordID . '/in', $row->result);
+								}
+								
 							}
 							else
 							{

@@ -1,152 +1,206 @@
-<div class="colFull"><!--START COLLFULL-->
-  
-<h3>Edit Relays</h3><br />
+<div class="row">
+	<div class="col-md-12">
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
+		<h1>Edit Result <small>(Relays)</small></h1>
 
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+				<div id="showDelete"></div><!--Load jQuery DELETE message-->
+			</div>
+		</div>
 
-<?php echo form_open('admin/relays_con/edit_relay', array('class' => 'results')); ?>
+		<div class="well well-trans">
 
-  <!--Adds hidden CSRF unique token
-	This will be verified in the controller against
-	the $this->session->userdata('token') before
-	returning any results data-->
-  <input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
-  
-  <!--Get the resultID-->
-  <input type="hidden" name="resultID" id="resultID" value="<?php echo $this->uri->segment(4); ?>" />
-  
-  <?php
-	// Display full list of events drop down menu
-	echo '<label for="eventID" style="display:inline;">Event: </label>';
-	echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
-	
-	// Display full list of ageGroups drop down menu
-	echo buildAgeGroupDropdown($pop_data->ageGroup);
-  ?>
-   
-  <div class="dotted"></div>
-  
-  <label for="time">Time:</label>
-  <input type="text" name="time" id="time" size="6" value="<?php echo $pop_data->time; ?>" />
-  
-  <label for="placing" style="margin-left:20px;">Placing:</label>
-  <input type="text" name="placing" id="placing" size="3" value="<?php echo $pop_data->placing; ?>" />
-  
-  <label for="record" style="margin-left:20px;">Record:</label>
-  <input type="text" name="record" id="record" size="3" value="<?php echo $pop_data->record; ?>" />
-  
-  <div class="dotted"></div>
-  
-  <label for="athlete01">Athlete 1:</label>
-  <input type="text" name="athlete01" id="athlete01" size="20" value="<?php echo $pop_data->athlete01; ?>" />
-  
-  <label for="athlete02" style="margin-left:20px;">Athlete 2:</label>
-  <input type="text" name="athlete02" id="athlete02" size="20" value="<?php echo $pop_data->athlete02; ?>" />
-  
-  <label for="athlete03" style="margin-left:20px;">Athlete 3:</label>
-  <input type="text" name="athlete03" id="athlete03" size="20" value="<?php echo $pop_data->athlete03; ?>" />
-  
-  <label for="athlete04" style="margin-left:20px;">Athlete 4</label>
-  <input type="text" name="athlete04" id="athlete04" size="20" value="<?php echo $pop_data->athlete04; ?>" />
-  
-  <div class="dotted"></div>
-  
-  <label for="team">Team:</label>
-  <input type="text" name="team" id="team" size="20" value="<?php echo $pop_data->team; ?>" />
-  
-  <label for="competition" style="margin-left:10px;">Competition:</label>
-  <input type="text" name="competition" id="competition" size="30" value="<?php echo $pop_data->competition; ?>" />
-  
-  <?php
-	if($pop_data->in_out == 'out')
-	{
-		$in_out = 'Outdoors';
-	}
-	else
-	{
-		$in_out = 'Indoors';
-	}
-	?>
-  <label for="in_out" style="margin-left:20px;">Indoors / Outdoors:</label>
-  <select name="in_out" id="in_out">
-    <option value="<?php echo $pop_data->in_out; ?>" selected="<?php echo $pop_data->in_out; ?>"><?php echo $in_out; ?></option>
-    <option value="out">Outdoors</option>
-    <option value="in">Indoors</option>
-  </select>
-  
-  <div class="dotted"></div>
-  
-  <?php
-	// Display drop down menu for default venues
-	echo get_venues($pop_data->venue); // See global helper
-	?>
-  
-  <label for="venue_other" style="margin-left:10px;">Venue (Other):</label>
-  <input type="text" name="venue_other" id="venue_other" size="40" value="<?php echo set_value('venue_other'); ?>" />
-  
-  <div class="dotted"></div>
-  
-	<?php
-		// Explode the date into segments (Day, month year)
-		// Use these segments as 'selected' values for the date drop downs
-		$dateArray=explode('-', $pop_data->date);
-	
-		// Display drop down menus for date (day, month, year)
-		echo '<label for="date" style="display:inline;">Date: </label>';
-		echo buildDayDropdown($name='day', $value=$dateArray[2], $id='id="day"'); // See global helper
-		echo buildMonthDropdown($name='month', $value=$dateArray[1], $id='id="month"'); // See global helper
-		echo '<input type="text" name="year" id="year" size="4" value="'.$value=$dateArray[0].'" />';
-		//echo buildYearDropdown($name='year', $value=$dateArray[0], $id='id="year"'); // See global helper
-	?>
-  
-  <div class="dotted"></div>
-  
-    <label for="submit"></label>
-    <input type="submit" name="submit" id="submit" value="Update Relay Result" />
-  
+			<button id="delButton" class="btn btn-red pull-right" class="button">Delete Result</button>
 
-</div><!--END COLLFULL-->
+			<?php echo form_open('admin/relays_con/edit_relay', array('class' => 'results')); ?>
 
-<?php echo form_close(); ?>
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
+
+				<!--Get the resultID-->
+				<input type="hidden" name="resultID" id="resultID" value="<?php echo $this->uri->segment(4); ?>" />
 
 
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
+				<div class="row">
+					<div class="col-md-4">
+						<?php
+							// Display full list of events drop down menu
+							echo '<label for="eventID">Event: </label>';
+							echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
+						?>
+					</div><!--ENDS col-->
 
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var resultID = $('#resultID').val();
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/relays_con/delete_relay'; ?>',
-		type: 'POST',
-		data: 'resultID=' + resultID,
-		
-		success: 	function(result) {
-		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
-		});
-	
-	});
+					<div class="col-md-4">
+						<?php
+							// Display full list of ageGroups drop down menu
+							echo '<label for="ageGroup">Age Group: </label>';
+							echo buildAgeGroupDropdown($pop_data->ageGroup);
+						?>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
-});
-</script>
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="time">Time:</label>
+			  				<input type="text" name="time" id="time" class="form-control" value="<?php echo $pop_data->time; ?>" />
+			  			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="placing">Placing:</label>
+			 				<input type="text" name="placing" id="placing" class="form-control" value="<?php echo $pop_data->placing; ?>" />
+			 			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="record">Record:</label>
+			  				<input type="text" name="record" id="record" class="form-control" value="<?php echo $pop_data->record; ?>" />
+			  			</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="athlete01">Athlete 1:</label>
+			  				<input type="text" name="athlete01" id="athlete01" class="form-control" value="<?php echo $pop_data->athlete01; ?>" />
+			  			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="athlete02">Athlete 2:</label>
+			  				<input type="text" name="athlete02" id="athlete02" class="form-control" value="<?php echo $pop_data->athlete02; ?>" />
+			 			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="athlete03">Athlete 3:</label>
+			  				<input type="text" name="athlete03" id="athlete03" class="form-control" value="<?php echo $pop_data->athlete03; ?>" />
+			  			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="athlete04">Athlete 4</label>
+			  				<input type="text" name="athlete04" id="athlete04" class="form-control" value="<?php echo $pop_data->athlete04; ?>" />
+			  			</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="team">Team:</label>
+			  				<input type="text" name="team" id="team" class="form-control" value="<?php echo $pop_data->team; ?>" />
+			  			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="competition">Competition:</label>
+			  				<input type="text" name="competition" id="competition" class="form-control" value="<?php echo $pop_data->competition; ?>" />
+			 			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<?php $in_out = ($pop_data->in_out == 'out') ? 'Outdoors' : 'Indoors'; ?>
+							<label for="in_out">Indoors / Outdoors:</label>
+							<select name="in_out" id="in_out" class="form-control">
+								<option value="<?php echo $pop_data->in_out; ?>" selected="<?php echo $pop_data->in_out; ?>"><?php echo $in_out; ?></option>
+								<option value="out">Outdoors</option>
+								<option value="in">Indoors</option>
+							</select>
+			  			</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-3">
+						<div class="form-group">
+							<?php
+							// Display drop down menu for default venues
+							echo get_venues($pop_data->venue); // See global helper
+							?>
+			  			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="venue_other">Venue (Other):</label>
+			  				<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
+			 			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<?php
+								// Explode the date into segments (Day, month year)
+								// Use these segments as 'selected' values for the date drop downs
+								$dateArray=explode('-', $pop_data->date);
+
+								// Display drop down menus for date (day, month, year)
+								echo '<label for="date">Date (Day):</label>';
+								echo buildDayDropdown($name='day', $value=$dateArray[2], $id='id="day", class="form-control"'); // See global helper
+							?>
+			 			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<?php
+								echo '<label for="date">Date (Month):</label>';
+								echo buildMonthDropdown($name='month', $value=$dateArray[1], $id='id="month", class="form-control"'); // See global helper
+							?>
+			 			</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<?php
+								echo '<label for="date">Date (Year):</label>';
+								echo '<input type="text" name="year" id="year" class="form-control" value="'.$value=$dateArray[0].'" />';
+							?>
+			 			</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="submit"></label>
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Update Result" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+			<?php echo form_close(); ?>
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
 
 
 
@@ -205,28 +259,66 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&month=' + month
 		+ '&year=' + year,
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
+					$('#loading').fadeOut(500, function() {
+							$(this).remove();
+					});
+					
+					$('#showEntry').html(result);
+					$('#showDelete').empty();
+					$("#delButton").show(300);
+					
+					//$("#time, #placing, #record, #athlete01, #athlete02, #athlete03, #athlete04, #venue_other").val(''); 
 								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
-								
-								$("#time, #placing, #record, #athlete01, #athlete02, #athlete03, #athlete04, #venue_other").val(''); 
-								
-								
-						}
-				});
+				}
+
+			});
 		
 		return false;
 		
 	});
+	
+});
+
+</script>
 
 
+<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
+<script>
+
+$(function() {
+					 
+$('#delButton').click(function(){
+$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+														 
+	var resultID = $('#resultID').val();
+	
+		$.ajax({
+		url: '<?php echo base_url() . 'admin/relays_con/delete_relay'; ?>',
+		type: 'POST',
+		data: 'resultID=' + resultID,
+		
+		success: function(result) {
+		
+					$('#loading').fadeOut(1000, function() {
+						$(this).remove();
+					});
+					
+					$('#showDelete').html(result);
+					$('#showEntry').empty();
+					$("#delButton").show(300);
+	
+					$("#delButton").hide(300);
+
+					$("#eventID, #ageGroup, #time, #placing, #record, #athlete01, #athlete02, #athlete03, #athlete04, #team, #competition, #in_out, #venue, #venue_other").val('');
+					
+				}
+
+		});
 	
 	});
 
+});
 </script>
+

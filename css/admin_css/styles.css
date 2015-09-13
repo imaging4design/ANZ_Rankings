@@ -173,33 +173,58 @@ select:-moz-focusring {
 */
 .btn {
   margin-top: 10px;
-  padding: 10px 16px 7px 16px;
   border: none;
   border-bottom: solid 4px transparent;
   border-radius: 0;
   text-transform: uppercase;
 }
 a.btn:hover {
-  color: #FFF;
+  color: #ffffff;
 }
 .btn-red {
   margin-top: 10px;
-  padding: 10px 16px 7px 16px;
   border: none;
   border-bottom: solid 4px transparent;
   border-radius: 0;
   text-transform: uppercase;
-  color: #FFF;
-  background-color: #F30;
-  border-bottom: solid 4px #333;
+  color: #ffffff;
+  background-color: #ff3300;
+  border-bottom: solid 4px #333333;
 }
 .btn-red:hover {
-  color: #FFF;
-  background-color: #F30;
+  color: #ffffff;
+  background-color: #e62e00;
+}
+.btn-green {
+  margin-top: 10px;
+  border: none;
+  border-bottom: solid 4px transparent;
+  border-radius: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #99cc00;
+  border-bottom: solid 4px #333333;
+}
+.btn-green:hover {
+  color: #ffffff;
+  background-color: #86b300;
+}
+.btn-grey {
+  margin-top: 10px;
+  border: none;
+  border-bottom: solid 4px transparent;
+  border-radius: 0;
+  text-transform: uppercase;
+  color: #333333;
+  background-color: #f0f2f1;
+  border-bottom: solid 4px #333333;
+}
+.btn-grey:hover {
+  color: #ffffff;
+  background-color: #e62e00;
 }
 #delButton {
   margin-bottom: 20px;
-  display: none;
 }
 /*
 |-----------------------------------------------------------------------------------------------------------------

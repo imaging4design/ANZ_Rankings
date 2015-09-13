@@ -88,7 +88,7 @@ class News_con extends CI_Controller
 			echo '<em title="' . $this->db->insert_id() . '"></em>';
 			
 	    	// Show 'Edit' button so admin can edit result if incorrectly input
-			echo anchor('admin/news_con/populate_news/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo anchor('admin/news_con/populate_news/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-green marBot10'));
 			echo '</div>';
 			
 		} 

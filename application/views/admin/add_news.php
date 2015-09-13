@@ -75,7 +75,7 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<label for="submit"></label>
-						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Article" />
+						<input type="submit" name="submit" id="submit" class="btn btn-green" value="Save Article" />
 					</div>
 				</div><!--ENDS col-->
 			</div><!--ENDS row-->

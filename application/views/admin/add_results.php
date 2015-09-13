@@ -152,7 +152,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->

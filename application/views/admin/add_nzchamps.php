@@ -1,95 +1,96 @@
-<div class="colFull"><!--START COLLFULL-->
+<div class="row">
+	<div class="col-md-12">
+
+		<h1>Add NZ Championships Medals</h1>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+			</div>
+		</div>
+
+
+		<div class="well well-trans">
   
-<h3>Add New Zealand Championship Medalists</h3><br />
+			<?php echo form_open('admin/nzchamps_con/add_new_nzchamps', array('class' => 'results')); ?>
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE NZ CHAMPIONSHIP PERFORMANCE</p>
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
 
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+				<!--Tracks the athleteID -->
+				<input type="hidden" name="athleteID" id="athleteID" value="<?php echo $this->uri->segment(4); ?>" />
 
-	<?php echo form_open('admin/nzchamps_con/add_new_nzchamps', array('class' => 'results')); ?>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<?php
+								echo '<label for="year">Year:</label>';
+								echo buildYearDropdown('year', set_value('year'), 'id="year", class="form-control"'); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
 
-		<!--Adds hidden CSRF unique token
-		This will be verified in the controller against
-		the $this->session->userdata('token') before
-		returning any results data-->
-		<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
-
-		<!--Tracks the athleteID -->
-		<input type="hidden" name="athleteID" id="athleteID" value="<?php echo $this->uri->segment(4); ?>" />
-
-		<div class="dotted"></div>
-
-		<?php
-			echo '<label for="year">Year:</label>';
-			echo buildYearDropdown('year', set_value('year'), 'id="year"'); // See global helper
-		?>
-
-		<?php
-			// Display full list of events drop down menu
-			echo '<label for="eventID" style="margin-left:10px;">Event: </label>';
-			// echo buildEventsDropdown(); // See global helper
-			echo buildRecordEventsDropdown($value='', $selected='', $label='');
-		?>
-
-		
-
-		<label for="ageGroup" style="margin-left:10px;">Age Group:</label>
-		<input type="text" name="ageGroup" id="ageGroup" size="10" value="<?php echo set_value('ageGroup'); ?>" />
+					<div class="col-md-6">
+						<div class="form-group">
+							<?php
+								// Display full list of events drop down menu
+								echo '<label for="eventID" style="margin-left:10px;">Event: </label>';
+								// echo buildEventsDropdown(); // See global helper
+								echo buildRecordEventsDropdown($value='', $selected='', $label='');
+							?>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
 
-		<label for="performance" style="margin-left:10px;">Performance:</label>
-		<input type="text" name="performance" id="performance" size="10" value="<?php echo set_value('performance'); ?>" />
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="ageGroup">Age Group:</label>
+							<input type="text" name="ageGroup" id="ageGroup" class="form-control" value="<?php echo set_value('ageGroup'); ?>" />
+						</div>
+					</div><!--ENDS col-->
 
-		<label for="position" style="margin-left:10px;">Postition:</label>
-		<input type="text" name="position" id="position" size="6" value="<?php echo set_value('position'); ?>" />
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="performance">Performance:</label>
+							<input type="text" name="performance" id="performance" class="form-control" value="<?php echo set_value('performance'); ?>" />
+						</div>
+					</div><!--ENDS col-->
 
-		<div class="dotted"></div>
-
-		<label for="submit"></label>
-		<input type="submit" name="submit" id="submit" value="Add NZ Medialist" />
-		<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(4), 'Back to Profile', array('class' => 'button')); ?>
-
-	<?php echo form_close(); ?>
-
-
-</div><!--END COLLFULL-->
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="position">Postition:</label>
+							<input type="text" name="position" id="position" class="form-control"value="<?php echo set_value('position'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
 
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Save Performance" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var repID = $("em").attr("title");
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/nzchamps_con/delete_nzchamps'; ?>',
-		type: 'POST',
-		data: 'repID=' + repID,
-		
-		success: function(result) {
-		
-					$('#loading').fadeOut(1000, function() {
-						$(this).remove();
-					});
-					
-					$('#showDelete').html(result);
-					$('#showEntry').empty();
-					$("#delButton").show(300);
-	
-					$("#delButton").hide(300);
-						
-				}
-		});
-	
-	});
 
-});
-</script>
+				<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(4), 'Back to Profile', array('class' => 'button')); ?>
+				
+
+			<?php echo form_close(); ?>
+
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
+
 
 
 

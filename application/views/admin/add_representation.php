@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 
-		<h3>Add Representation</h3><br />
+		<h1>Add NZ Representations</h1>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -74,14 +74,13 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Result" />
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Save Result" />
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
 
 				<br>
 				
-
 				<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(4), 'Back to Profile', array('class' => 'button')); ?>
 
 			<?php echo form_close(); ?>

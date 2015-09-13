@@ -14,124 +14,124 @@
 
 			<?php echo form_open('admin/records_con/add_new_record', array('class' => 'results')); ?>
 
-			<!--Adds hidden CSRF unique token
-			This will be verified in the controller against
-			the $this->session->userdata('token') before
-			returning any results data-->
-			<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
 
 
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="nameFirst">Record Type:</label>
-						<?php
-							// Select type of record (i.e., Allcomers, National etc ...)
-							echo recordType($selected = ''); 
-						?>
-					</div>
-				</div><!--ENDS col-->
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="nameFirst">Age Group:</label>
-						<?php
-							// Select an ageGroup
-							echo buildAgeGroup_records($selected = set_value('ageGroup'));
-						?>
-					</div>
-				</div><!--ENDS col-->
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="nameFirst">Indoors/Outdoors:</label>
-						<?php
-							// Indoor / Outdoors
-							echo in_out($selected='');
-						?>
-					</div>
-				</div><!--ENDS col-->
-			</div><!--ENDS row-->
-
-
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="nameFirst">Event:</label>
-						<?php
-							// Select an ageGroup
-							// Javascript hides/shows one of these depending if indoor or outdoor selected from dropdown
-							echo buildRecordEventsDropdown($value='', $selected='', $label='');
-							echo buildIndoorEventsDropdown($value='', $selected='', $label='');
-						?>
-					</div>
-				</div><!--ENDS col-->
-			</div><!--ENDS row-->
-
-
-
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="nameFirst">First Name:</label>
-						<input type="text" name="nameFirst" id="nameFirst" class="form-control" value="<?php echo set_value('nameFirst'); ?>" />
-					</div>
-				</div><!--ENDS col-->
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="nameLast">Last Name:</label>
-						<input type="text" name="nameLast" id="nameLast" class="form-control" value="<?php echo set_value('nameLast'); ?>" />
-					</div>
-				</div><!--ENDS col-->
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="country">Country:</label>
-						<input type="text" name="country" id="country" class="form-control" value="<?php echo set_value('country'); ?>" />
-					</div>
-				</div><!--ENDS col-->
-			</div><!--ENDS row-->
-
-
-
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="result">Result:</label>
-						<input type="text" name="result" id="result" class="form-control" value="<?php echo set_value('result'); ?>" />
-					</div>
-				</div><!--ENDS col-->
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label for="venue">Venue of Record:</label>
-						<input type="text" name="venue" id="venue" class="form-control" value="<?php echo set_value('venue'); ?>" />
-					</div>
-				</div><!--ENDS col-->
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<!-- jQuery UI Date Picker -->
+				<div class="row">
+					<div class="col-md-4">
 						<div class="form-group">
-							<label for="date">Date: </label>
-							<input type="text" id="date" class="form-control" name="date" />
+							<label for="nameFirst">Record Type:</label>
+							<?php
+								// Select type of record (i.e., Allcomers, National etc ...)
+								echo recordType($selected = ''); 
+							?>
 						</div>
-					</div>
-				</div><!--ENDS col-->
-			</div><!--ENDS row-->
+					</div><!--ENDS col-->
 
-			
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="nameFirst">Age Group:</label>
+							<?php
+								// Select an ageGroup
+								echo buildAgeGroup_records($selected = set_value('ageGroup'));
+							?>
+						</div>
+					</div><!--ENDS col-->
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="submit"></label>
-						<input type="submit" name="submit" id="submit" class="btn btn-red" value="Save Record" />
-					</div>
-				</div><!--ENDS col-->
-			</div><!--ENDS row-->
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="nameFirst">Indoors/Outdoors:</label>
+							<?php
+								// Indoor / Outdoors
+								echo in_out($selected='');
+							?>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="nameFirst">Event:</label>
+							<?php
+								// Select an ageGroup
+								// Javascript hides/shows one of these depending if indoor or outdoor selected from dropdown
+								echo buildRecordEventsDropdown($value='', $selected='', $label='');
+								echo buildIndoorEventsDropdown($value='', $selected='', $label='');
+							?>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="nameFirst">First Name:</label>
+							<input type="text" name="nameFirst" id="nameFirst" class="form-control" value="<?php echo set_value('nameFirst'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="nameLast">Last Name:</label>
+							<input type="text" name="nameLast" id="nameLast" class="form-control" value="<?php echo set_value('nameLast'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="country">Country:</label>
+							<input type="text" name="country" id="country" class="form-control" value="<?php echo set_value('country'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="result">Result:</label>
+							<input type="text" name="result" id="result" class="form-control" value="<?php echo set_value('result'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="venue">Venue of Record:</label>
+							<input type="text" name="venue" id="venue" class="form-control" value="<?php echo set_value('venue'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<!-- jQuery UI Date Picker -->
+							<div class="form-group">
+								<label for="date">Date: </label>
+								<input type="text" id="date" class="form-control" name="date" />
+							</div>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+				
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="submit"></label>
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Save Record" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 			
 
 
@@ -192,9 +192,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 	var nameLast = $('#nameLast').val();
 	var country = $('#country').val();
 	var venue = $('#venue').val();
-	var day = $('#day').val();
-	var month = $('#month').val();
-	var year = $('#year').val();
+	var date = $('#date').val();
 	
 	//var lineBreak = document.getElementById('lineBreak').checked; 
 	//var enabled = document.getElementById('enabled').checked; 
@@ -213,9 +211,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 		+ '&nameLast=' + escape(nameLast)
 		+ '&country=' + escape(country)
 		+ '&venue=' + escape(venue)
-		+ '&day=' + day
-		+ '&month=' + month
-		+ '&year=' + year,
+		+ '&date=' + date,
 		
 		success: function(result) {
 				

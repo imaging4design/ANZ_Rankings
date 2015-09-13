@@ -42,6 +42,21 @@ class Records_Model extends CI_Model
 		}
 		
 	}
+
+	// Use this for 'indoor records' - because of the two different event dropdowns ...
+	function populate_records_in()
+	{
+		$this->db->select('*');
+		$this->db->where('recordID', $this->uri->segment(4));
+		$this->db->join('events_indoors', 'events_indoors.eventID = records.eventID');
+		$query = $this->db->get('records');
+		
+		if($query->num_rows() >0) 
+		{
+			return $query->row();
+		}
+		
+	}
 	
 	
 	/*************************************************************************************/

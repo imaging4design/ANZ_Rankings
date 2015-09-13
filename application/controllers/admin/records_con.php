@@ -57,12 +57,25 @@ class Records_con extends CI_Controller
 		{
 			$data['events'] = $query;
 		}
-		
-		// Query to retrieve result to populate 'edit' page
-		if($query = $this->records_model->populate_records())
-		{
-			$data['pop_data'] = $query;
+
+		// If this is an 'outdoor' record
+		if( $this->uri->segment(5) == 'out' ) {
+			// Query to retrieve result to populate 'edit' page
+			if($query = $this->records_model->populate_records())
+			{
+				$data['pop_data'] = $query;
+			}
 		}
+		// If this is an 'indoor' record
+		else 
+		{
+			if($query = $this->records_model->populate_records_in())
+			{
+				$data['pop_data'] = $query;
+			}
+		}
+		
+			
 		
 		$data['token_admin'] = $this->auth->token_admin();
 		$data['main_content'] = 'admin/edit_records';
@@ -89,16 +102,17 @@ class Records_con extends CI_Controller
 		$this->form_validation->set_rules('nameLast', 'Last Name', 'trim|required');
 		$this->form_validation->set_rules('country', 'Country', 'trim|required');
 		$this->form_validation->set_rules('venue', 'Venue', 'trim|required');
-		$this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
-		$this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
-		$this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
+		$this->form_validation->set_rules('date', 'Date', 'trim|required');
+		// $this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
+		// $this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
+		// $this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
 		
 		// WHAT IS THE date?
 		// Combine $day, $month and $year into variable '$date'
-		$day 		= $this->input->post('day');
-		$month 	= $this->input->post('month');
-		$year 	= $this->input->post('year');
-		$date 	= $year . '-' . $month . '-' .$day;
+		// $day 		= $this->input->post('day');
+		// $month 	= $this->input->post('month');
+		// $year 	= $this->input->post('year');
+		// $date 	= $year . '-' . $month . '-' .$day;
 		
 		// WHAT IS THE event?
 		// The event is posted as an integer ($this->input->post('eventID'))
@@ -184,8 +198,10 @@ class Records_con extends CI_Controller
 			'nameLast' => $this->input->post('nameLast'),
 			'country' => $this->input->post('country'),
 			'venue' => $this->input->post('venue'),
-			'date' => $date
+			'date' => $this->input->post('date')
 		);
+
+
 		
 		// If form post data validates and CSRF $token == session $token add new results
 		if($this->form_validation->run() == TRUE && $this->input->post('token_admin') == $this->session->userdata('token_admin')) 
@@ -219,7 +235,7 @@ class Records_con extends CI_Controller
 					echo '<td>' . $data['nameFirst'] . ' ' . $data['nameLast'] . '</td>';
 					echo '<td>' . $data['country'] . '</td>';
 					echo '<td>' . $data['venue'] . '</td>';
-					echo '<td>' . $date . '</td>';
+					echo '<td>' . $data['date'] . '</td>';
 				echo '</tr>';
 			echo '</table>';
 			
@@ -231,7 +247,7 @@ class Records_con extends CI_Controller
 			echo '<em title="' . $this->db->insert_id() . '"></em>';
 		
     		// Show 'Edit' button so admin can edit result if incorrectly input
-			echo anchor('admin/records_con/populate_records/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo anchor('admin/records_con/populate_records/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-green marBot10'));
 			echo '</div>'; 
 		} 
 		else 
@@ -336,45 +352,48 @@ class Records_con extends CI_Controller
 			// Insert new results
 			$this->records_model->update_record($data);
 			
-			echo $this->update_text_message = '<span class="message_success">Record updated!</span>';
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> Record Updated!</div>';
 			
 			// Display confirmation of uploaded result to screen
 			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
-      echo '<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:1.1em;">';
-      echo '<tr style="font-weight:700; text-align:right;">';
-        echo '<td><div align="left">Record Type</div></td>';
-        echo '<td>Age Group</td>';
-        echo '<td>Event</td>';
-        echo '<td>Result</td>';
-        echo '<td>Athlete</td>';
-        echo '<td>Country</td>';
-				echo '<td>Venue</td>';
-        echo '<td>Date</td>';
-      echo '</tr>';
-      echo '<tr style="text-align:right;">';
-        echo '<td><div align="left">' . $data['recordType'] . '</div></td>';
-        echo '<td>' . $data['ageGroup'] . '</td>';
-        echo '<td>' . $event . '</td>';
-        echo '<td>' . $data['result'] . '</td>';
-        echo '<td>' . $data['nameFirst'] . ' ' . $data['nameLast'] . '</td>';
-        echo '<td>' . $data['country'] . '</td>';
-        echo '<td>' . $data['venue'] . '</td>';
-        echo '<td>' . $date . '</td>';
-      echo '</tr>';
-    echo '</table>';
-		
-		// Set up an attribute '<em>'
-		// Why?
-		// Because jQuery needs it to identify what the current recordID is
-		// Then if admin wishes to delete the record - jQuery knows which one to delete
-		// See this line in the records form page ( var recordID = $("em").attr("title"); )
-		echo '<em title="' . $this->db->insert_id() . '"></em>';
-		
-    echo '<div class="dotted"></div>';  
+			echo '<table class="table table-condensed table-bordered">';
+				echo '<tr>';
+					echo '<td>Record Type</td>';
+					echo '<td>Age Group</td>';
+					echo '<td>Event</td>';
+					echo '<td>Result</td>';
+					echo '<td>Athlete</td>';
+					echo '<td>Country</td>';
+					echo '<td>Venue</td>';
+					echo '<td>Date</td>';
+				echo '</tr>';
+				echo '<tr>';
+					echo '<td>' . $data['recordType'] . '</td>';
+					echo '<td>' . $data['ageGroup'] . '</td>';
+					echo '<td>' . $event . '</td>';
+					echo '<td>' . $data['result'] . '</td>';
+					echo '<td>' . $data['nameFirst'] . ' ' . $data['nameLast'] . '</td>';
+					echo '<td>' . $data['country'] . '</td>';
+					echo '<td>' . $data['venue'] . '</td>';
+					echo '<td>' . $date . '</td>';
+				echo '</tr>';
+			echo '</table>';
+
+			// Set up an attribute '<em>'
+			// Why?
+			// Because jQuery needs it to identify what the current recordID is
+			// Then if admin wishes to delete the record - jQuery knows which one to delete
+			// See this line in the records form page ( var recordID = $("em").attr("title"); )
+			echo '<em title="' . $this->db->insert_id() . '"></em>';
+
+			echo '</div>';  
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS update_record()
@@ -394,7 +413,10 @@ class Records_con extends CI_Controller
 		if($this->form_validation->run() == TRUE) 
 		{
 			$this->records_model->delete_record($data);
-			echo $this->update_text_message = '<span class="message_success">Record Deleted!</span>';
+
+			echo '<div class="well well-error">';
+			echo $this->update_text_message = '<span class="message_error">Record Deleted!</span>';
+			echo '</div>';
 		
 		}
 	

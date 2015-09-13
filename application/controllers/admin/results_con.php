@@ -240,7 +240,7 @@ class Results_con extends CI_Controller
 			echo '<em title="' . $this->db->insert_id() . '"></em>';
 
 			// Show 'Edit' button so admin can edit result if incorrectly input
-			echo anchor('admin/results_con/populate_results/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo anchor('admin/results_con/populate_results/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-green marBot10'));
 			echo '</div>';
 
 		} 
@@ -395,7 +395,8 @@ class Results_con extends CI_Controller
 			// Insert new results
 			$this->results_model->update_result_ind($data);
 			
-			echo $this->update_text_message = '<span class="message_success">Record Updated!</span>';
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> Record Updated!</div>';
 			
 			// Display confirmation of uploaded result to screen
 			// Example: ADDED - ABBEY, Stevens (AKL / 10 Jul 1998) 505402 | Javelin Throw | MS | 01:31.26 | | 069.69 | | Hamilton Classic | out | Hamilton | 2012-01-6
@@ -437,11 +438,13 @@ class Results_con extends CI_Controller
 			// See this line in the results form page (var resultID = $("em").attr("title");)
 			echo '<em title="' . $data['resultID'] . '"></em>';
 
-			echo '<div class="dotted"></div>';  
+			echo '</div>';  
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS update_result_ind()
@@ -461,7 +464,10 @@ class Results_con extends CI_Controller
 		if($this->form_validation->run() == TRUE) 
 		{
 			$this->results_model->delete_result_ind($data);
-			echo $this->update_text_message = '<span class="message_success">Record Deleted!</span>';
+
+			echo '<div class="well well-error">';
+			echo $this->update_text_message = '<span class="message_error">Record Deleted!</span>';
+			echo '</div>';
 		
 		}
 	

@@ -1,124 +1,252 @@
-<div class="colFull"><!--START COLLFULL-->
+<div class="row">
+	<div class="col-md-12">
   
-<h3>Add Results (Multi Events)</h3><br />
+		<h1>Edit Results <small>(Multi Events)</small></h1>
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE RECORD</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+				<div id="showDelete"></div><!--Load jQuery DELETE message-->
+			</div>
+		</div>
 
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
 
-<?php echo form_open('admin/multis_con/update_result_multi', array('class' => 'results')); ?>
+		<div class="well well-trans">
 
-  <!--Adds hidden CSRF unique token
-	This will be verified in the controller against
-	the $this->session->userdata('token') before
-	returning any results data-->
-  <input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
-  
-  <!--Get the resultID-->
-  <input type="hidden" name="resultID" id="resultID" value="<?php echo $this->uri->segment(4); ?>" />
-  
-  <label for="athlete">Athlete:</label>
-  <input type="text" name="athleteID" id="athleteID" value="<?php echo $pop_data->athleteID; ?>" size="40" />
-  <!--DON'T REMOVE class="athlete" (required for auto-populate!)-->
-    
-  <label for="points" style="margin-left:20px;">Points:</label>
-  <input type="text" name="points" id="points" size="5" value="<?php echo $pop_data->points; ?>" />
-  
-  <label for="wind" style="margin-left:20px;">Wind:</label>
-  <input type="text" name="wind" id="wind" size="3" value="<?php echo $pop_data->wind; ?>" />
-  
-  <label for="placing" style="margin-left:20px;">Placing:</label>
-  <input type="text" name="placing" id="placing" size="3" value="<?php echo $pop_data->placing; ?>" />
-  
-  <label for="record" style="margin-left:20px;">Record:</label>
-  <input type="text" name="record" id="record" size="3" value="<?php echo $pop_data->record; ?>" />
-  
-  <div class="dotted"></div>
-  
-  <label for="e01">Evt 1:</label>
-  <input type="text" name="e01" id="e01" size="3" value="<?php echo $pop_data->e01; ?>" />
-  
-  <label for="e02" style="margin-left:8px;">Evt 2:</label>
-  <input type="text" name="e02" id="e02" size="3" value="<?php echo $pop_data->e02; ?>" />
-  
-  <label for="e03" style="margin-left:8px;">Evt 3:</label>
-  <input type="text" name="e03" id="e03" size="3" value="<?php echo $pop_data->e03; ?>" />
-  
-  <label for="e04" style="margin-left:8px;">Evt 4:</label>
-  <input type="text" name="e04" id="e04" size="3" value="<?php echo $pop_data->e04; ?>" />
-  
-  <label for="e05" style="margin-left:8px;">Evt 5:</label>
-  <input type="text" name="e05" id="e05" size="3" value="<?php echo $pop_data->e05; ?>" />
-  
-  <label for="e06" style="margin-left:8px;">Evt 6:</label>
-  <input type="text" name="e06" id="e06" size="3" value="<?php echo $pop_data->e06; ?>" />
-  
-  <label for="e07" style="margin-left:8px;">Evt 7:</label>
-  <input type="text" name="e07" id="e07" size="3" value="<?php echo $pop_data->e07; ?>" />
-  
-  <label for="e08" style="margin-left:8px;">Evt 8:</label>
-  <input type="text" name="e08" id="e08" size="3" value="<?php echo $pop_data->e08; ?>" />
-  
-  <label for="e09" style="margin-left:8px;">Evt 9:</label>
-  <input type="text" name="e09" id="e09" size="3" value="<?php echo $pop_data->e09; ?>" />
-  
-  <label for="e10" style="margin-left:8px;">Evt 10:</label>
-  <input type="text" name="e10" id="e10" size="3" value="<?php echo $pop_data->e10; ?>" />
-  
-  <div class="dotted"></div>
-  
-	<?php
-		// Display full list of events drop down menu
-		echo '<label for="eventID" style="display:inline;">Event: </label>';
-		// echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
-		echo buildRecordEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
-		
-		// Display full list of ageGroups drop down menu
-		// This will initially show the existing value of the ageGroup column as 'Selected'
-		echo '<label for="ageGroup" style="margin-left:20px;">Age Group:</label>';
-		echo buildAgeGroupDropdown($pop_data->ageGroup);
-  ?>  
+			<button id="delButton" class="btn btn-red pull-right" class="button">Delete Result</button>
 
-  <div class="dotted"></div>
-  
-  <label for="competition">Competition:</label>
-  <input type="text" name="competition" id="competition" size="40" value="<?php echo $pop_data->competition; ?>" />
-  
-  <div class="dotted"></div>
-  
-  <?php
-		// Display drop down menu for default venues
-		// This will initially show the existing value of the venue column as 'Selected'
-		echo get_venues($pop_data->venue); // See global helper
-	?>
-  
-  <label for="venue_other" style="margin-left:20px;">Venue (Other):</label>
-  <input type="text" name="venue_other" id="venue_other" size="40" value="<?php echo set_value('venue_other'); ?>" />
-  
-  <div class="dotted"></div>
-  
-	<?php
-		// Explode the date into segments (Day, month year)
-		// Use these segments as 'selected' values for the date drop downs
-		$dateArray=explode('-', $pop_data->date);
-	
-		// Display drop down menus for date (day, month, year)
-		echo '<label for="date" style="display:inline;">Date: </label>';
-		echo buildDayDropdown($name='day', $value=$dateArray[2], $id='id="day"'); // See global helper
-		echo buildMonthDropdown($name='month', $value=$dateArray[1], $id='id="month"'); // See global helper
-		echo buildYearDropdown($name='year', $value=$dateArray[0], $id='id="year"'); // See global helper
-	?>
-  
-  <div class="dotted"></div>
-  
-    <label for="submit"></label>
-    <input type="submit" name="submit" id="submit" value="Update Result" />
-  
+			<?php echo form_open('admin/multis_con/update_result_multi', array('class' => 'results')); ?>
 
-</div><!--END COLLFULL-->
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
 
-<?php echo form_close(); ?>
+				<!--Get the resultID-->
+				<input type="hidden" name="resultID" id="resultID" value="<?php echo $this->uri->segment(4); ?>" />
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<?php
+								// Display full list of events drop down menu
+								echo '<label for="eventID">Event: </label>';
+								// echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
+								echo buildRecordEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
+							?>  
+						</div><!--ENDS form-group-->
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="athlete">Athlete:</label>
+							<input type="text" name="athleteID" id="athleteID" class="form-control" value="<?php echo $pop_data->athleteID; ?>" />
+							<!--DON'T REMOVE class="athlete" (required for auto-populate!)-->
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<label for="points">Points:</label>
+							<input type="text" name="points" id="points" class="form-control" value="<?php echo $pop_data->points; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<label for="wind">Wind:</label>
+							<input type="text" name="wind" id="wind" class="form-control" value="<?php echo $pop_data->wind; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<label for="placing">Placing:</label>
+							<input type="text" name="placing" id="placing" class="form-control" value="<?php echo $pop_data->placing; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<label for="record">Record:</label>
+							<input type="text" name="record" id="record" class="form-control" value="<?php echo $pop_data->record; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e01">E1:</label>
+							<input type="text" name="e01" id="e01" class="form-control" value="<?php echo $pop_data->e01; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e02">E2:</label>
+							<input type="text" name="e02" id="e02" class="form-control" value="<?php echo $pop_data->e02; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e03">E3:</label>
+							<input type="text" name="e03" id="e03" class="form-control" value="<?php echo $pop_data->e03; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e04">E4:</label>
+							<input type="text" name="e04" id="e04" class="form-control" value="<?php echo $pop_data->e04; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e05">E5:</label>
+							<input type="text" name="e05" id="e05" class="form-control" value="<?php echo $pop_data->e05; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e06">E6:</label>
+							<input type="text" name="e06" id="e06" class="form-control" value="<?php echo $pop_data->e06; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e07">E7:</label>
+							<input type="text" name="e07" id="e07" class="form-control" value="<?php echo $pop_data->e07; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e08">E8:</label>
+							<input type="text" name="e08" id="e08" class="form-control" value="<?php echo $pop_data->e08; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e09">E9:</label>
+							<input type="text" name="e09" id="e09" class="form-control" value="<?php echo $pop_data->e09; ?>" />
+						</div>
+					</div><!--ENDS col-->
+					<div class="col-md-1">
+						<div class="form-group-sm">
+							<label for="e10">E10:</label>
+							<input type="text" name="e10" id="e10" class="form-control" value="<?php echo $pop_data->e10; ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+				
+				
+
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<?php
+								// Display full list of ageGroups drop down menu
+								// This will initially show the existing value of the ageGroup column as 'Selected'
+								echo '<label for="ageGroup">Age Group:</label>';
+								echo buildAgeGroupDropdown($pop_data->ageGroup);
+							?>  
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="competition">Competition:</label>
+							<input type="text" name="competition" id="competition" class="form-control" value="<?php echo $pop_data->competition; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<?php
+								// Display drop down menu for default venues
+								// This will initially show the existing value of the venue column as 'Selected'
+								echo get_venues($pop_data->venue); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="venue_other">Venue (Other):</label>
+							<input type="text" name="venue_other" id="venue_other" class="form-control" value="<?php echo set_value('venue_other'); ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+				<div class="row">
+					<div class="col-md-2">
+						<div class="form-group">
+							<?php
+								// Explode the date into segments (Day, month year)
+								// Use these segments as 'selected' values for the date drop downs
+								$dateArray=explode('-', $pop_data->date);
+
+								// Display drop down menus for date (day, month, year)
+								echo '<label for="date">Date (Day): </label>';
+								echo buildDayDropdown($name='day', $value=$dateArray[2], $id='id="day", class="form-control"'); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<?php
+								// Display drop down menus for date (day, month, year)
+								echo '<label for="date">Date (Month): </label>';
+								echo buildMonthDropdown($name='month', $value=$dateArray[1], $id='id="month", class="form-control"'); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-2">
+						<div class="form-group">
+							<?php
+								// Display drop down menus for date (day, month, year)
+								echo '<label for="date">Date (Year): </label>';
+								echo buildYearDropdown($name='year', $value=$dateArray[0], $id='id="year", class="form-control"'); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+				
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Update Result" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+
+
+
+
+			<?php echo form_close(); ?>
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
 
 
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
@@ -189,34 +317,33 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		+ '&month=' + month
 		+ '&year=' + year,
 		
-		success: 	function(result) {
+		success: function(result) {
 				
-								$('#loading').fadeOut(500, function() {
-										$(this).remove();
-								});
+					$('#loading').fadeOut(500, function() {
+							$(this).remove();
+					});
+					
+					$('#showEntry').html(result);
+					$('#showDelete').empty();
+					$("#delButton").show(300);
+					
+					//$("#athleteID, #points, #placing, #record, #e01, #e02, #e03, #e04, #e05, #e06, #e07, #e08, #e09, #e10").val(''); 
+					
+					//Clears the AthleteID field when onFocus
+					$('#competition, #venue_other').one("focus", function() {
+						$(this).val("");
+					});
 								
-								$('#showEntry').html(result);
-								$('#showDelete').empty();
-								$("#delButton").show(300);
 								
-								$("#athleteID, #points, #placing, #record, #e01, #e02, #e03, #e04, #e05, #e06, #e07, #e08, #e09, #e10").val(''); 
-								
-								//Clears the AthleteID field when onFocus
-								$('#competition, #venue_other').one("focus", function() {
-									$(this).val("");
-								});
-								
-								
-						}
-				});
+				}
+				
+			});
 		
 		return false;
 		
 	});
 
-
-	
-	});
+});
 
 </script>
 
@@ -229,27 +356,30 @@ $(function() {
 					 
 $('#delButton').click(function(){
 $('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var resultID = $("em").attr("title");
+											
+	var resultID = $('#resultID').val();
 	
 		$.ajax({
 		url: '<?php echo base_url() . 'admin/multis_con/delete_results_multi'; ?>',
 		type: 'POST',
 		data: 'resultID=' + resultID,
 		
-		success: 	function(result) {
+		success: function(result) {
 		
-							$('#loading').fadeOut(1000, function() {
-								$(this).remove();
-							});
-							
-							$('#showDelete').html(result);
-							$('#showEntry').empty();
-							$("#delButton").show(300);
-			
-							$("#delButton").hide(300);
-							
-							}
+					$('#loading').fadeOut(1000, function() {
+						$(this).remove();
+					});
+					
+					$('#showDelete').html(result);
+					$('#showEntry').empty();
+					$("#delButton").show(300);
+	
+					$("#delButton").hide(300);
+
+					$("#eventID, #athleteID, #points, #wind, #placing, #record, #e01, #e02, #e03, #e04, #e05, #e06, #e07, #e08, #e09, #e10, #ageGroup, #competition, #venue, #venue_other").val('');
+					
+				}
+
 		});
 	
 	});

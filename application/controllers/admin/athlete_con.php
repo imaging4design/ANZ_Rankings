@@ -213,7 +213,7 @@ class Athlete_con extends CI_Controller
 			echo '<em title="' . $this->session->userdata('athleteID') . '"></em>';
 			
 	    	// Show 'Edit' button so admin can edit result if incorrectly input
-			echo anchor('admin/athlete_con/populate_athlete/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo anchor('admin/athlete_con/populate_athlete/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-green marBot10'));
 			echo '</div>';
 			
 		} 

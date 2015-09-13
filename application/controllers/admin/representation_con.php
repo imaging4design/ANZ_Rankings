@@ -135,7 +135,7 @@ class Representation_con extends CI_Controller
 			echo '<em title="' . $this->db->insert_id() . '"></em>';
 		
     		// Show 'Edit' button so admin can edit result if incorrectly input
-			echo anchor('admin/representation_con/populate_representation/'.$this->db->insert_id().'/'.$data['athleteID'].'', 'Edit Result', array('class'=>'btn btn-md btn-red marBot10'));
+			echo anchor('admin/representation_con/populate_representation/'.$this->db->insert_id().'/'.$data['athleteID'].'', 'Edit Result', array('class'=>'btn btn-md btn-green marBot10'));
 			echo '</div>';  
 
 		} 
