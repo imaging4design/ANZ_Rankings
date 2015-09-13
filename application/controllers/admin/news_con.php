@@ -149,11 +149,16 @@ class News_con extends CI_Controller
 		{
 			// Update news article
 			$this->news_model->update_news($data);
-			echo $this->update_text_message = '<span class="message_success">Article Updated!</span>';
+
+			echo '<div class="well well-success">';
+			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> Article Updated!</div>';
+			echo '</div>';
 		} 
 		else 
 		{
-			echo validation_errors('<div class="message_error">', '</div>') . '<br />';
+			echo '<div class="well well-error">';
+			echo validation_errors('<div class="message_error"><i class="fa fa-times"></i> ', '</div>');
+			echo '</div>';
 		}
 		
 	} //ENDS update_news()
@@ -173,7 +178,10 @@ class News_con extends CI_Controller
 		if($this->form_validation->run() == TRUE) 
 		{
 			$this->news_model->delete_news($data);
-			echo $this->update_text_message = '<span class="message_success">News Article Deleted!</span>';
+
+			echo '<div class="well well-error">';
+			echo $this->update_text_message = '<span class="message_error">Article Deleted!</span>';
+			echo '</div>';
 		}
 	
 	} // ENDS delete_news()

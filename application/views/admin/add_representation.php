@@ -79,7 +79,6 @@
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
 
-				<br>
 				
 				<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(4), 'Back to Profile', array('class' => 'button')); ?>
 

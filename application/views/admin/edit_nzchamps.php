@@ -1,101 +1,101 @@
-<div class="colFull"><!--START COLLFULL-->
+<div class="row">
+	<div class="col-md-12">
+
+		<h1>Edit NZ Championships Medals</h1>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+				<div id="showDelete"></div><!--Load jQuery DELETE message-->
+			</div>
+		</div>
+
+		<div class="well well-trans">
   
-<h3>Edit New Zealand Championship Medalists</h3><br />
+			<button id="delButton" class="btn btn-red pull-right" class="button">Delete Result</button>
 
-<p id="delButton" style="display:none; margin-bottom:10px;" class="button">DELETE NZ CHAMPIONSHIP PERFORMANCE</p>
+			<?php echo form_open('admin/nzchamps_con/update_nzchamps', array('class' => 'results')); ?>
 
-<div id="showDelete"></div><!--Load jQuery DELETE message-->
-<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+				<!--Adds hidden CSRF unique token
+				This will be verified in the controller against
+				the $this->session->userdata('token') before
+				returning any results data-->
+				<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
 
-	<?php echo form_open('admin/nzchamps_con/update_nzchamps', array('class' => 'results')); ?>
+				<!--Tracks the athleteID -->
+				<input type="hidden" name="repID" id="repID" value="<?php echo $pop_data->id; ?>" />
 
-		<!--Adds hidden CSRF unique token
-		This will be verified in the controller against
-		the $this->session->userdata('token') before
-		returning any results data-->
-		<input type="hidden" name="token_admin" id="token_admin" value="<?php echo $token_admin; ?>" />
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<?php
+								echo '<label for="year">Year:</label>';
+								echo buildYearDropdown('year', $pop_data->year, 'id="year", class="form-control"'); // See global helper
+							?>
+						</div>
+					</div><!--ENDS col-->
 
-		<!--Tracks the athleteID -->
-		<input type="hidden" name="repID" id="repID" value="<?php echo $pop_data->id; ?>" />
+					<div class="col-md-4">
+						<div class="form-group">
+							<?php
+								$eventName = convertEventID();
 
-		<div class="dotted"></div>
-
-		<?php
-			echo '<label for="year">Year:</label>';
-			echo buildYearDropdown('year', $pop_data->year, 'id="year"'); // See global helper
-		?>
-
-		<?php
-			$eventName = convertEventID();
-
-			// Display full list of events drop down menu
-			echo '<label for="eventID" style="margin-left:10px;">Event: </label>';
-			//echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $eventName); // See global helper
-			//echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
-			echo buildRecordEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName);
-		?>
-
-
-		<label for="ageGroup" style="margin-left:10px;">Age Group:</label>
-		<input type="text" name="ageGroup" id="ageGroup" size="10" value="<?php echo $pop_data->ageGroup; ?>" />
-
-		<label for="performance" style="margin-left:10px;">Performance:</label>
-		<input type="text" name="performance" id="performance" size="10" value="<?php echo $pop_data->performance; ?>" />
-
-		<label for="position">Postition:</label>
-		<input type="text" name="position" id="position" size="6" value="<?php echo $pop_data->position; ?>" />
-
-		<div class="dotted"></div>
-
-		<label for="submit"></label>
-		<input type="submit" name="submit" id="submit" value="Update NZ Medalist" />
-		<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(5), 'Back to Profile', array('class' => 'button')); ?>
-
-	<?php echo form_close(); ?>
-
-	<?php 
+								// Display full list of events drop down menu
+								echo '<label for="eventID">Event: </label>';
+								//echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $eventName); // See global helper
+								//echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
+								echo buildRecordEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName);
+							?>
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
 
 
-	?>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="ageGroup">Age Group:</label>
+							<input type="text" name="ageGroup" id="ageGroup" class="form-control" value="<?php echo $pop_data->ageGroup; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="performance">Performance:</label>
+							<input type="text" name="performance" id="performance" class="form-control" value="<?php echo $pop_data->performance; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="position">Postition:</label>
+							<input type="text" name="position" id="position" class="form-control" value="<?php echo $pop_data->position; ?>" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
 
 
-</div><!--END COLLFULL-->
 
-<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
-<script>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Update Performance" />
+						</div>
+					</div><!--ENDS col-->
+				</div><!--ENDS row-->
+				
+				
+				<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(5), 'Back to Profile', array('class' => 'button')); ?>
 
-$(function() {
-					 
-$('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
-														 
-	var repID = $('#repID').val();
-	
-		$.ajax({
-		url: '<?php echo base_url() . 'admin/nzchamps_con/delete_nzchamps'; ?>',
-		type: 'POST',
-		data: 'repID=' + repID,
-		
-		success: function(result) {
-		
-					$('#loading').fadeOut(1000, function() {
-						$(this).remove();
-					});
-					
-					$('#showDelete').html(result);
-					$('#showEntry').empty();
-					$("#delButton").show(300);
-	
-					$("#delButton").hide(300);
-					
-				}
-		});
-	
-	});
 
-});
-</script>
+			<?php echo form_close(); ?>
+
+		</div><!-- ENDS well well-trans -->
+
+	</div><!--ENDS col-->
+</div><!--ENDS row-->
+
 
 
 
@@ -140,7 +140,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 					$('#showDelete').empty();
 					$("#delButton").show(300);
 					
-					//$("#result, #nameFirst, #nameLast, #country, #venue").val(''); 
+					//$("#year, #eventID, #ageGroup, #performance, #position").val(''); 
 					
 			}
 		});
@@ -153,3 +153,43 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 });
 
 </script>
+
+
+
+<!--JQUERY AJAX 'DELETE RESULT' SCRIPT-->
+<script>
+
+$(function() {
+					 
+$('#delButton').click(function(){
+$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+														 
+	var repID = $('#repID').val();
+	
+		$.ajax({
+		url: '<?php echo base_url() . 'admin/nzchamps_con/delete_nzchamps'; ?>',
+		type: 'POST',
+		data: 'repID=' + repID,
+		
+		success: function(result) {
+		
+					$('#loading').fadeOut(1000, function() {
+						$(this).remove();
+					});
+					
+					$('#showDelete').html(result);
+					$('#showEntry').empty();
+					$("#delButton").show(300);
+	
+					$("#delButton").hide(300);
+
+					$("#year, #eventID, #ageGroup, #performance, #position").val(''); 
+					
+				}
+		});
+	
+	});
+
+});
+</script>
+

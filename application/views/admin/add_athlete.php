@@ -6,6 +6,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div id="showEntry"></div><!--Load jQuery ENTRY message-->
+				<div id="showDelete"></div><!--Load jQuery DELETE message-->
 			</div>
 		</div>
 
@@ -52,20 +53,20 @@
 			<div class="row">
 				<div class="col-md-8">
 					<div class="form-group">
-						<?php
-							// Display drop down menus for date (day, month, year)
-							echo '<label for="date">Date of Birth: </label>';
-						?>
+					
 						<div class="row">
 							<div class="col-sm-4">
+								<label for="date">Date of Birth (Day): </label>
 								<?php echo buildDayDropdown($name='day', $value='1', $id='id="day", class="form-control"'); // See global helper ?>
 							</div><!--ENDS col-->
 
 							<div class="col-sm-4">
+								<label for="date">Date of Birth (Month): </label>
 								<?php echo buildMonthDropdown($name='month', $value='', $id='id="month", class="form-control"'); // See global helper ?>
 							</div><!--ENDS col-->
 
 							<div class="col-sm-4">
+								<label for="date">Date of Birth (Year): </label>
 								<?php echo buildYearDOB($name='year', $value='', $id='id="year", class="form-control"'); // See global helper ?>
 							</div><!--ENDS col-->
 						</div><!--ENDS row-->
