@@ -218,6 +218,24 @@
 							<input type="text" id="date" class="form-control" name="date" />
 						</div>
 					</div><!--ENDS col-->
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="natRep" id="natRep" value="1">
+									National Representation (include)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="natMedal" id="natMedal" value="1">
+									National Medalist (include)
+								</label>
+							</div>
+						</div>
+					</div><!--ENDS col-->
+
 				</div><!--ENDS row-->
 
 
@@ -259,10 +277,12 @@
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 	var token_admin = $('#token_admin').val();
 	var athleteID = $('#athleteID').val();
+	var natRep = $('#natRep').is(":checked");
+	var natMedal = $('#natMedal').is(":checked");
 	var points = $('#points').val();
 	var wind = $('#wind').val();
 	var placing = $('#placing').val();
@@ -300,6 +320,8 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 		type: 'POST',
 		data: 'token_admin=' + token_admin
 		+ '&athleteID=' + escape(athleteID)
+		+ '&natRep=' + escape(natRep)
+		+ '&natMedal=' + escape(natMedal)
 		+ '&points=' + points
 		+ '&wind=' + wind
 		+ '&placing=' + placing

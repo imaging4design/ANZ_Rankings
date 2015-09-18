@@ -13,6 +13,8 @@ class Results_con extends CI_Controller
 		// Libraries:	auth
 		$this->is_logged_in();
 		$this->load->model('admin/results_model');
+		$this->load->model('admin/representation_model');
+		$this->load->model('admin/nzchamps_model');
 	}
 	
 	
@@ -82,6 +84,8 @@ class Results_con extends CI_Controller
 	{
 		$this->form_validation->set_rules('token_admin', 'Token Admin', 'trim|required');
 		$this->form_validation->set_rules('athleteID', 'Athlete', 'trim|required');
+		$this->form_validation->set_rules('natRep', 'Athlete', 'trim');
+		$this->form_validation->set_rules('natMedal', 'Athlete', 'trim');
 		$this->form_validation->set_rules('eventID', 'Event', 'trim|required');
 		$this->form_validation->set_rules('ageGroup', 'Age Group', 'trim|required');
 		$this->form_validation->set_rules('time', 'Time', 'trim');
@@ -94,6 +98,8 @@ class Results_con extends CI_Controller
 		$this->form_validation->set_rules('venue', 'Venue', 'trim');
 		$this->form_validation->set_rules('venue_other', 'Venue Other', 'trim');
 		$this->form_validation->set_rules('date', 'Date', 'trim|required');
+
+
 		
 		// WHAT IS THE athleteID? 
 		// (the last 6 digits of the '$this->input->post('athleteID')' string)
@@ -185,10 +191,58 @@ class Results_con extends CI_Controller
 			'date' => $this->input->post('date')
 		);
 
+
+		/************************************************************************************************************/
+		// FOR Athlete Profile function only!!! NZ REPRESENTATION
+		/************************************************************************************************************/
+		// Work out if we are receiving a 'time' or 'distHeight'
+		$performance = ( $this->input->post('time') ) ? $this->input->post('time') : $this->input->post('distHeight');
+
+		$dataRep = array(
+			'athleteID' => $athleteID,
+			'year' => date('Y', strtotime($this->input->post('date'))),
+			'competition' => $this->input->post('competition'),
+			'eventID' => $this->input->post('eventID'),
+			'performance' => $performance,
+			'position' => $this->input->post('placing')
+		);
+		/************************************************************************************************************/
+
+
+		/************************************************************************************************************/
+		// FOR Athlete Profile function only!!! NZ CHAMPS MEDAL
+		/************************************************************************************************************/
+		// Work out if we are receiving a 'time' or 'distHeight'
+		// $performance = ( $this->input->post('time') ) ? $this->input->post('time') : $this->input->post('distHeight');
+
+		$dataMedal = array(
+			'athleteID' => $athleteID,
+			'year' => date('Y', strtotime($this->input->post('date'))),
+			'eventID' => $this->input->post('eventID'),
+			'ageGroup' => $this->input->post('ageGroup'),
+			'performance' => $performance,
+			'position' => $this->input->post('placing')
+		);
+		/************************************************************************************************************/
+
 		
 		// If form post data validates and CSRF $token == session $token add new results
 		if($this->form_validation->run() == TRUE && $this->input->post('token_admin') == $this->session->userdata('token_admin')) 
 		{
+			
+			// NEW FUNCTION !
+			// If 'National Rep' checkbox = true - add result details to athlete profile (National Representation)
+			if( $this->input->post('natRep') == 'true' ) {
+				$this->representation_model->add_new_representation($dataRep); // Insert new representation
+			}
+
+			// If 'National Medal' checkbox = true - add result details to athlete profile (National Medal)
+			if( $this->input->post('natMedal') == 'true' ) {
+				$this->nzchamps_model->add_new_nzchamps($dataMedal); // Insert new nz champs medal
+			}
+
+
+
 			// Insert new results
 			$this->results_model->add_result_ind($data);
 			

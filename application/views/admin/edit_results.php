@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 
-		<h1>Edit Result<small>(Individual Event)</small></h1>
+		<h1>Edit Result<small> (Individual Event)</small></h1>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -11,7 +11,7 @@
 		</div>
 
 
-		<div class="well well-trans">
+		<div class="well well-trans" id="well">
   
 			<button id="delButton" class="btn btn-red pull-right" class="button">Delete Result</button>
 
@@ -329,6 +329,9 @@ $('#showDelete').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>"
 
 					// Clear all form field values
 					$("#eventID, #athleteID, #time, #distHeight, #wind, #placing, #record, #ageGroup, #competition, #in_out, #venue, #venue_other").val('');
+
+					// Hide form (wrapped by well) - we don;t want to try and add a result in this place
+					$('#well').hide();
 					
 				}
 

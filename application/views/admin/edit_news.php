@@ -107,7 +107,7 @@
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 
 <!--This will force all CKEDITOR instances in the form to update their respective fields-->
@@ -180,7 +180,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 $(function() {
 					 
 $('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showDelete').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 														 
 var newsID = $('#newsID').val();
 	

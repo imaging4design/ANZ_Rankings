@@ -39,6 +39,7 @@
 				</div><!--ENDS row-->
 
 
+
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
@@ -47,7 +48,25 @@
 							<!--DON'T REMOVE id="athlete" (required for auto-populate!)-->
 						</div>
 					</div><!--ENDS col-->
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="natRep" id="natRep" value="1">
+									National Representation (include)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="natMedal" id="natMedal" value="1">
+									National Medalist (include)
+								</label>
+							</div>
+						</div>
+					</div><!--ENDS col-->
 				</div><!--ENDS row-->
+
 
 
 				<div class="row">
@@ -171,7 +190,6 @@
 
 <script>
 	$('#eventID').on('change', function() {
-		
 		var showEventLabel = $("#eventID :selected").text()
 		$('#eventDisplay').html(showEventLabel);
 	});
@@ -226,6 +244,10 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 
 	var token_admin = $('#token_admin').val();
 	var athleteID = $('#athleteID').val();
+
+	var natRep = $('#natRep').is(":checked");
+	var natMedal = $('#natMedal').is(":checked");
+
 	var time = $('#time').val();
 	var distHeight = $('#distHeight').val();
 	var wind = $('#wind').val();
@@ -245,6 +267,8 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 		type: 'POST',
 		data: 'token_admin=' + token_admin
 		+ '&athleteID=' + escape(athleteID)
+		+ '&natRep=' + escape(natRep)
+		+ '&natMedal=' + escape(natMedal)
 		+ '&time=' + time
 		+ '&distHeight=' + distHeight
 		+ '&wind=' + wind
@@ -267,6 +291,8 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 				$('#showEntry').html(result);
 				
 				$("#athleteID, #time, #distHeight, #placing, #record").val('');
+				$("#natRep").attr('checked', false); 
+				$("#natMedal").attr('checked', false); 
 				
 				// Clears the AthleteID field when onFocus
 				$('#competition, #venue_other').one("focus", function() {

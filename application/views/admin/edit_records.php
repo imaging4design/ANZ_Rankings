@@ -185,7 +185,7 @@
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 	var token_admin = $('#token_admin').val();
 	var recordID = $('#recordID').val();
@@ -252,7 +252,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 $(function() {
 					 
 $('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showDelete').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 														 
 	var recordID = $('#recordID').val();
 	

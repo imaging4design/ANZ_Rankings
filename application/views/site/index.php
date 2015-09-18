@@ -5,17 +5,15 @@
 			<!--DISPLAY ATHLETES NAMES (Alpha) IN THIS DIV-->
   			<div class="athleteArea"></div>
 
-
-  			<!-- USED TO DISPLAY SPECIAL ONE-OFF MESSAGES (with expiry date) -->
   			<?php
-				$date_value = "2015-07-12";
+				$date_value = "2015-09-18";
 				$current_date = date("Y-m-d");
 
 				if(strtotime($current_date) <= strtotime($date_value)) {
 					echo '<div class="milestone center">';
-					echo '<h1>60,000 Ranked Performances!</h1>';
-					echo '<p>Another milestone was achieved over the weekend with the addition of the 60,000th performance onto the rankings website. Each performance is manually entered, but many of these performances are entered due only to the cooperative work of Centres, Clubs, Meeting promoters and a host of individuals who supply me with results. I am eternally grateful for your cooperation. My thanks are also due to my colleague Gavin Lovegrove, who designed and formatted the website. I look forward to entering more results to reach our next milestone. Thanks once again to everybody who has contributed to this latest milestone.</p>';
-					echo '<br>';
+					echo '<h1>Update Notice</h1>';
+					echo '<p>I am currently on a break and during this period will not be able to upload any new performances to the ranking lists. Thank you for your patience and understanding. <br /><em class="text-muted">- Steve Hollings (Statistician)</em></p>';
+					echo '<br />';
 					echo '<div>';
 				}
   			?>
@@ -24,6 +22,8 @@
 
 	</div>
 </div>
+
+
 
 
 <div id="top_index"></div><!-- TARGET - this is where the page will auto scroll to after form is submited -->

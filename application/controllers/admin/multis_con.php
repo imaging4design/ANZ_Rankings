@@ -13,6 +13,8 @@ class Multis_con extends CI_Controller
 		// Libraries:	auth
 		$this->is_logged_in();
 		$this->load->model('admin/multis_model');
+		$this->load->model('admin/representation_model');
+		$this->load->model('admin/nzchamps_model');
 	}
 	
 	
@@ -163,10 +165,55 @@ class Multis_con extends CI_Controller
 			'venue' => $venue,
 			'date' => $this->input->post('date')
 		);
+
+
+
+		/************************************************************************************************************/
+		// FOR Athlete Profile function only!!! NZ REPRESENTATION
+		/************************************************************************************************************/
+		$dataRep = array(
+			'athleteID' => $athleteID,
+			'year' => date('Y', strtotime($this->input->post('date'))),
+			'competition' => $this->input->post('competition'),
+			'eventID' => $this->input->post('eventID'),
+			'performance' => $this->input->post('points'),
+			'position' => $this->input->post('placing')
+		);
+		/************************************************************************************************************/
+
+
+		/************************************************************************************************************/
+		// FOR Athlete Profile function only!!! NZ CHAMPS MEDAL
+		/************************************************************************************************************/
+		$dataMedal = array(
+			'athleteID' => $athleteID,
+			'year' => date('Y', strtotime($this->input->post('date'))),
+			'eventID' => $this->input->post('eventID'),
+			'ageGroup' => $this->input->post('ageGroup'),
+			'performance' => $this->input->post('points'),
+			'position' => $this->input->post('placing')
+		);
+		/************************************************************************************************************/
+
+
 		
 		// If form post data validates and CSRF $token == session $token show lists
 		if($this->form_validation->run() == TRUE && $this->input->post('token_admin') == $this->session->userdata('token_admin')) 
 		{
+			
+			// NEW FUNCTION !
+			// If 'National Rep' checkbox = true - add result details to athlete profile (National Representation)
+			if( $this->input->post('natRep') == 'true' ) {
+				$this->representation_model->add_new_representation($dataRep); // Insert new representation
+			}
+
+			// If 'National Medal' checkbox = true - add result details to athlete profile (National Medal)
+			if( $this->input->post('natMedal') == 'true' ) {
+				$this->nzchamps_model->add_new_nzchamps($dataMedal); // Insert new nz champs medal
+			}
+
+
+
 			$this->multis_model->add_result_multi($data);
 			
 			echo '<div class="well well-success">';

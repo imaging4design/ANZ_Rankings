@@ -11,7 +11,7 @@
 		</div>
 
 
-		<div class="well well-trans">
+		<div class="well well-trans" id="well">
 
 			<button id="delButton" class="btn btn-red pull-right" class="button">Delete Result</button>
 
@@ -255,7 +255,7 @@
 $(function() {
 
 $('#submit').click(function() {
-$('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 
 	var token_admin = $('#token_admin').val();
 	var resultID = $('#resultID').val();
@@ -355,7 +355,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'images/loading.gif' ?
 $(function() {
 					 
 $('#delButton').click(function(){
-$('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+$('#showDelete').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 											
 	var resultID = $('#resultID').val();
 	
@@ -378,6 +378,9 @@ $('#showDelete').append('<img src="<?php echo base_url() . 'images/loading.gif' 
 
 					$("#eventID, #athleteID, #points, #wind, #placing, #record, #e01, #e02, #e03, #e04, #e05, #e06, #e07, #e08, #e09, #e10, #ageGroup, #competition, #venue, #venue_other").val('');
 					
+					// Hide form (wrapped by well) - we don;t want to try and add a result in this place
+					$('#well').hide();
+
 				}
 
 		});

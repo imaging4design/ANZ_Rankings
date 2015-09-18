@@ -11,6 +11,8 @@
 	<!-- Le styles -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,900,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
 	<!-- FOO Responsive Tables -->
 	<link href="<?php echo base_url() . 'foo_table/css/footable-0.1.css'; ?>" rel="stylesheet"><!--FOO TABLE CSS-->
