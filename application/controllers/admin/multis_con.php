@@ -185,11 +185,22 @@ class Multis_con extends CI_Controller
 		/************************************************************************************************************/
 		// FOR Athlete Profile function only!!! NZ CHAMPS MEDAL
 		/************************************************************************************************************/
+
+		if( $this->input->post('ageGroup') == 'MS') {
+			$ageGroup = 'Senior Men';
+		} 
+		elseif( $this->input->post('ageGroup') == 'MS' ) {
+			$ageGroup = 'Senior Women';
+		}
+		else {
+			$ageGroup = $this->input->post('ageGroup');
+		}
+		
 		$dataMedal = array(
 			'athleteID' => $athleteID,
 			'year' => date('Y', strtotime($this->input->post('date'))),
 			'eventID' => $this->input->post('eventID'),
-			'ageGroup' => $this->input->post('ageGroup'),
+			'ageGroup' => $ageGroup,
 			'performance' => $this->input->post('points'),
 			'position' => $this->input->post('placing')
 		);

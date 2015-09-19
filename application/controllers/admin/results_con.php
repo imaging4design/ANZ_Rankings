@@ -215,11 +215,21 @@ class Results_con extends CI_Controller
 		// Work out if we are receiving a 'time' or 'distHeight'
 		// $performance = ( $this->input->post('time') ) ? $this->input->post('time') : $this->input->post('distHeight');
 
+		if( $this->input->post('ageGroup') == 'MS') {
+			$ageGroup = 'Senior Men';
+		} 
+		elseif( $this->input->post('ageGroup') == 'MS' ) {
+			$ageGroup = 'Senior Women';
+		}
+		else {
+			$ageGroup = $this->input->post('ageGroup');
+		}
+
 		$dataMedal = array(
 			'athleteID' => $athleteID,
 			'year' => date('Y', strtotime($this->input->post('date'))),
 			'eventID' => $this->input->post('eventID'),
-			'ageGroup' => $this->input->post('ageGroup'),
+			'ageGroup' => $ageGroup,
 			'performance' => $performance,
 			'position' => $this->input->post('placing')
 		);
