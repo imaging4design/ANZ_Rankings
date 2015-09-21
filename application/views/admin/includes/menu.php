@@ -1,3 +1,8 @@
+<?php
+	// Do NOT display the menu nav bar unless admin is logged in ...
+	if( $this->session->userdata('is_logged_in') == 1 && $this->session->userdata('admin') == 1) {
+?>
+
 <!--START HORIZONTAL MENU-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -8,7 +13,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<?php echo anchor('admin/admin_con','MENU', array('class'=>'navbar-brand')); ?>
+			<span class="navbar-brand">ATHLETICS NZ</span>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
@@ -37,3 +42,5 @@
 		</div><!--/.nav-collapse -->
 	</div>
 </nav>
+
+<?php } ?>

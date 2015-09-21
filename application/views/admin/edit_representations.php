@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 
-		<h1>Edit NZ Representations</h1>
+		<h1 class="title">Edit NZ Representations</h1>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -78,14 +78,15 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<div class="form-group">
+						<div class="btn-group">
 							<input type="submit" name="submit" id="submit" class="btn btn-green" value="Update Representation" />
+							<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(5), 'Back to Profile', array('class' => 'btn btn-grey')); ?>
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
 
 
-				<?php echo anchor( base_url() . 'site/profiles_con/athlete/' . $this->uri->segment(5), 'Back to Profile', array('class' => 'button')); ?>
+				
 				
 				
 

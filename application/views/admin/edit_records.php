@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-12">
 
-		<h1>Edit Record</h1>
+		<h1 class="title">Edit Record</h1>
 
 		<div class="row">
 			<div class="col-md-12">

@@ -30,6 +30,17 @@ h1 {
   font-size: 36px;
   font-weight: normal;
 }
+h1.title {
+  font-size: 26px;
+  color: #ffffff;
+  background: #3498db;
+  margin-bottom: -10px;
+  padding: 10px 20px 18px 20px;
+  border-radius: 4px;
+}
+h1.title small {
+  color: #ffffff;
+}
 h2 {
   font-size: 30px;
 }
@@ -145,13 +156,13 @@ select:-moz-focusring {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #99cc00;
+  color: #3498db;
 }
 .message_error {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #ff3300;
+  color: #e74c3c;
 }
 /*
 |-----------------------------------------------------------------------------------------------------------------
@@ -188,12 +199,12 @@ a.btn:hover {
   border-radius: 0;
   text-transform: uppercase;
   color: #ffffff;
-  background-color: #ff3300;
-  border-bottom: solid 4px #333333;
+  background-color: #e74c3c;
+  border-bottom: solid 4px #d62c1a;
 }
 .btn-red:hover {
   color: #ffffff;
-  background-color: #e62e00;
+  background-color: #e43725;
 }
 .btn-green {
   margin-top: 10px;
@@ -202,12 +213,12 @@ a.btn:hover {
   border-radius: 0;
   text-transform: uppercase;
   color: #ffffff;
-  background-color: #99cc00;
-  border-bottom: solid 4px #333333;
+  background-color: #3498db;
+  border-bottom: solid 4px #217dbb;
 }
 .btn-green:hover {
   color: #ffffff;
-  background-color: #86b300;
+  background-color: #258cd1;
 }
 .btn-grey {
   margin-top: 10px;
@@ -215,13 +226,13 @@ a.btn:hover {
   border-bottom: solid 4px transparent;
   border-radius: 0;
   text-transform: uppercase;
-  color: #333333;
-  background-color: #f0f2f1;
-  border-bottom: solid 4px #333333;
+  color: #ffffff;
+  background-color: #333333;
+  border-bottom: solid 4px #1a1a1a;
 }
 .btn-grey:hover {
   color: #ffffff;
-  background-color: #e62e00;
+  background-color: #e43725;
 }
 #delButton {
   margin-bottom: 20px;
@@ -320,8 +331,8 @@ a.btn:hover {
   padding: 20px 30px 30px 30px;
   margin-bottom: 20px;
   padding: 20px 30px 10px 30px;
-  border-top: solid 4px #99cc00;
-  border-bottom: solid 4px #99cc00;
+  border-top: solid 4px #3498db;
+  border-bottom: solid 4px #3498db;
 }
 .well-error {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -330,8 +341,8 @@ a.btn:hover {
   padding: 20px 30px 30px 30px;
   margin-bottom: 20px;
   padding: 20px 30px 10px 30px;
-  border-top: solid 4px #ff3300;
-  border-bottom: solid 4px #ff3300;
+  border-top: solid 4px #e74c3c;
+  border-bottom: solid 4px #e74c3c;
 }
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

@@ -4,8 +4,8 @@
 |-----------------------------------------------------------------------------------------------------------------
 */
 @colWhite: #FFF;
-@colRed: #F30;
-@colGreen: #99CC00;
+@colRed: #E74C3C;
+@colBlue: #3498DB;
 @colGreyLight: #F0F2F1;
 @colGreyDark: #333333;
 
@@ -37,6 +37,17 @@ body {
 h1 {
 	font-size: 36px;
 	font-weight: normal;
+}
+h1.title {
+	font-size: 26px;
+	color: @colWhite;
+	background: @colBlue;
+	margin-bottom: -10px;
+	padding: 10px 20px 18px 20px;
+	border-radius: 4px;
+	small {
+		color: @colWhite;
+	}
 }
 h2 {
 	font-size: 30px;
@@ -163,7 +174,7 @@ select:-moz-focusring {
 }
 .message_success {
 	.message;
-	color: @colGreen;
+	color: @colBlue;
 }
 .message_error {
 	.message;
@@ -204,7 +215,7 @@ a.btn:hover {
 	.btn;
 	color: @colWhite;
 	background-color: @colRed;
-	border-bottom: solid 4px @colGreyDark;
+	border-bottom: solid 4px darken(@colRed, 10%);
 }
 .btn-red:hover {
 	color: @colWhite;
@@ -213,18 +224,18 @@ a.btn:hover {
 .btn-green {
 	.btn;
 	color: @colWhite;
-	background-color: @colGreen;
-	border-bottom: solid 4px @colGreyDark;
+	background-color: @colBlue;
+	border-bottom: solid 4px darken(@colBlue, 10%);
 }
 .btn-green:hover {
 	color: @colWhite;
-	background-color: darken(@colGreen, 5%);
+	background-color: darken(@colBlue, 5%);
 }
 .btn-grey {
 	.btn;
-	color: @colGreyDark;
-	background-color: @colGreyLight;
-	border-bottom: solid 4px @colGreyDark;
+	color: @colWhite;
+	background-color: @colGreyDark;
+	border-bottom: solid 4px darken(@colGreyDark, 10%);
 }
 .btn-grey:hover {
 	color: @colWhite;
@@ -295,8 +306,8 @@ a.btn:hover {
 .well-success {
 	.well;
 	padding: 20px 30px 10px 30px;
-	border-top: solid 4px @colGreen;
-	border-bottom: solid 4px @colGreen;
+	border-top: solid 4px @colBlue;
+	border-bottom: solid 4px @colBlue;
 }
 .well-error {
 	.well;

@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 		
-		<h1>Add New Athlete</h1>
+		<h1 class="title">Add New Athlete</h1>
 
 		<div class="row">
 			<div class="col-md-12">

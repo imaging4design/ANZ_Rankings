@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 
-		<h1>Edit Athlete</h1>
+		<h1 class="title">Edit Athlete</h1>
 
 		<div class="row">
 			<div class="col-md-12">

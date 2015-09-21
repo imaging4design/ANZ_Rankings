@@ -14,6 +14,7 @@ class Login_con extends CI_Controller
 		$this->load->model('admin/login_model');
 	}
 	
+	
 	/*************************************************************************************/
 	// Displays the default admin login page
 	/*************************************************************************************/
@@ -45,8 +46,8 @@ class Login_con extends CI_Controller
 			$this->session->unset_userdata('login_attempt');
 			
 			$this->session->set_userdata($data);
-			// Redirect('admin/admin_con/');
-			redirect('admin/admin_con');
+			// redirect('admin/admin_con/');
+			redirect('admin/results_con/add_results');
 		}
 		else // Incorrect username or password
 		{
@@ -92,6 +93,34 @@ class Login_con extends CI_Controller
 		redirect('');
 		
 	} //ENDS logout()
+
+
+
+	/*************************************************************************************/
+	// FUNCTION get_auto_athletes()
+	// Used to operate the 'auto complete' drop down athlete menu
+	// Each page accesses this through a AJAX call from the footer.php file
+	/*************************************************************************************/
+	public function get_auto_athletes()
+	{
+		// If query returns TRUE
+		if($query = $this->global_model->get_auto_athletes())
+		{
+			// Initiate $nameLast array()
+			$nameLast = array();
+			
+			// Loop through results and create an array
+			foreach($query as $row)
+				
+				// Pushes the passed variables onto the end of array ($nameLast)
+				array_push($nameLast, strtoupper($row->nameLast) . ', ' . $row->nameFirst . ' (' . $row->DOB . ') ' . $row->centreID . ' ' . $row->athleteID);
+			
+			// Return data (json_encode)
+			echo json_encode($nameLast);
+		}
+		
+		
+	} // ENDS get_auto_athletes()
 	
 
 

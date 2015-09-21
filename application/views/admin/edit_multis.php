@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
   
-		<h1>Edit Results <small>(Multi Events)</small></h1>
+		<h1 class="title">Edit Results <small>(Multi Events)</small></h1>
 
 		<div class="row">
 			<div class="col-md-12">
