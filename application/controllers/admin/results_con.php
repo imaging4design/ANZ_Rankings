@@ -310,6 +310,8 @@ class Results_con extends CI_Controller
 
 			// Show 'Edit' button so admin can edit result if incorrectly input
 			echo anchor('admin/results_con/populate_results/'.$this->db->insert_id().'', 'Edit Result', array('class'=>'btn btn-md btn-green marBot10'));
+			// Show button to allow adim to return to 'athlete' profile page
+			echo anchor('site/profiles_con/athlete/' . $athleteID, 'Athlete Profile', array('class'=>'btn btn-grey', 'target'=>'_blank'));
 			echo '</div>';
 
 		} 
