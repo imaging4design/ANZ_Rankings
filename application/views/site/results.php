@@ -8,7 +8,8 @@
 		}
 		else
 		{
-			return $athleteName = anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast));
+			// Returns the dynamic clickable Athlete Name / Profile / Mini Profile link
+			return $athleteName = anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast)) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'miniProfile', 'data-id'=>$athleteID));
 		}
 
 	}
@@ -205,7 +206,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . ' ' . $row->record . '</span> ' . $in_out . '</td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'testme', 'data-id'=>$row->athleteID)) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ). '</td>
 						<td>' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing ) . '</td>
@@ -272,7 +273,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . '' . $row->record . ' ' . $in_out . '</span></td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'testme', 'data-id'=>$row->athleteID)) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing )  . '</td>
@@ -414,7 +415,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . '' . $row->record . '</span></td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'testme', 'data-id'=>$row->athleteID)) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing ) . '</td>
@@ -579,7 +580,7 @@
 
 $(function() {
 
-$('.testme').click(function() {
+$('.miniProfile').click(function() {
 	
 	$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
 

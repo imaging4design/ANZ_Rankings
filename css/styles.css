@@ -390,8 +390,11 @@ button.closed {
   width: 320px;
   height: 100%;
   background: #222;
-  transform: translateX(-390px);
-  transition: transform 0.3s cubic-bezier(0.42, 0, 1, 1);
+  -webkit-transform: translateX(-390px);
+      -ms-transform: translateX(-390px);
+          transform: translateX(-390px);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 1, 1);
+          transition: transform 0.3s cubic-bezier(0.42, 0, 1, 1);
   color: #FFF !important;
   overflow: hidden;
 }
@@ -406,7 +409,9 @@ button.closed {
   overflow: auto;
 }
 .flyout.open {
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 .flyout-btn {
   position: absolute;
@@ -418,8 +423,11 @@ button.closed {
   background: #F30;
   padding: 10px 15px;
   cursor: pointer;
-  transform: translateX(-360px);
-  transition: transform 0.6s cubic-bezier(0.42, 0, 1, 1);
+  -webkit-transform: translateX(-360px);
+      -ms-transform: translateX(-360px);
+          transform: translateX(-360px);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.42, 0, 1, 1);
+          transition: transform 0.6s cubic-bezier(0.42, 0, 1, 1);
 }
 .flyout-btn:hover {
   color: #FFF;
@@ -439,7 +447,9 @@ button.closed {
   background: #cc2900;
 }
 .flyout-btn.open {
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 .flyout-styles h3 {
   padding: 5px 20px;

@@ -98,16 +98,16 @@ class Records_con extends CI_Controller
 	{
 		$this->form_validation->set_rules('token_admin', 'Token Admin', 'trim|required');
 		$this->form_validation->set_rules('recordType', 'Record Type', 'trim|required');
-		$this->form_validation->set_rules('ageGroup', 'Age Group', 'trim|required');
-		$this->form_validation->set_rules('in_out', 'Indoors / Outdoors', 'trim|required');
-		$this->form_validation->set_rules('eventID', 'Event', 'trim');
-		$this->form_validation->set_rules('indoorEventID', 'Event', 'trim');
-		$this->form_validation->set_rules('result', 'Result', 'trim|required');
-		$this->form_validation->set_rules('nameFirst', 'First Name', 'trim|required');
-		$this->form_validation->set_rules('nameLast', 'Last Name', 'trim|required');
-		$this->form_validation->set_rules('country', 'Country', 'trim|required');
-		$this->form_validation->set_rules('venue', 'Venue', 'trim|required');
-		$this->form_validation->set_rules('date', 'Date', 'trim|required');
+		//$this->form_validation->set_rules('ageGroup', 'Age Group', 'trim|required');
+		//$this->form_validation->set_rules('in_out', 'Indoors / Outdoors', 'trim|required');
+		//$this->form_validation->set_rules('eventID', 'Event', 'trim');
+		//$this->form_validation->set_rules('indoorEventID', 'Event', 'trim');
+		//$this->form_validation->set_rules('result', 'Result', 'trim|required');
+		//$this->form_validation->set_rules('nameFirst', 'First Name', 'trim|required');
+		//$this->form_validation->set_rules('nameLast', 'Last Name', 'trim|required');
+		//$this->form_validation->set_rules('country', 'Country', 'trim|required');
+		//$this->form_validation->set_rules('venue', 'Venue', 'trim|required');
+		//$this->form_validation->set_rules('date', 'Date', 'trim|required');
 		// $this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
 		// $this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
 		// $this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
@@ -275,16 +275,16 @@ class Records_con extends CI_Controller
 		$this->form_validation->set_rules('token_admin', 'Token Admin', 'trim|required');
 		$this->form_validation->set_rules('recordID', 'Record ID', 'trim|required');
 		$this->form_validation->set_rules('recordType', 'Record Type', 'trim|required');
-		$this->form_validation->set_rules('ageGroup', 'Age Group', 'trim|required');
-		$this->form_validation->set_rules('eventID', 'Event', 'trim|required');
-		$this->form_validation->set_rules('result', 'Result', 'trim|required');
-		$this->form_validation->set_rules('nameFirst', 'First Name', 'trim|required');
-		$this->form_validation->set_rules('nameLast', 'Last Name', 'trim|required');
-		$this->form_validation->set_rules('country', 'Country', 'trim|required');
-		$this->form_validation->set_rules('venue', 'Venue', 'trim|required');
-		$this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
-		$this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
-		$this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
+		// $this->form_validation->set_rules('ageGroup', 'Age Group', 'trim|required');
+		// $this->form_validation->set_rules('eventID', 'Event', 'trim|required');
+		// $this->form_validation->set_rules('result', 'Result', 'trim|required');
+		// $this->form_validation->set_rules('nameFirst', 'First Name', 'trim|required');
+		// $this->form_validation->set_rules('nameLast', 'Last Name', 'trim|required');
+		// $this->form_validation->set_rules('country', 'Country', 'trim|required');
+		// $this->form_validation->set_rules('venue', 'Venue', 'trim|required');
+		// $this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
+		// $this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
+		// $this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
 		
 		
 		// WHAT IS THE date?

@@ -6,13 +6,13 @@
   			<div class="athleteArea"></div>
 
   			<?php
-				$date_value = "2015-09-18";
+				$date_value = "2015-09-30";
 				$current_date = date("Y-m-d");
 
 				if(strtotime($current_date) <= strtotime($date_value)) {
 					echo '<div class="milestone center">';
-					echo '<h1>Update Notice</h1>';
-					echo '<p>I am currently on a break and during this period will not be able to upload any new performances to the ranking lists. Thank you for your patience and understanding. <br /><em class="text-muted">- Steve Hollings (Statistician)</em></p>';
+					echo '<h1>New Feature!</h1>';
+					echo '<p>When viewing yearly ranking lists you can now access a mini/summary profile of each athlete without leaving the page. <br />Click on the <span class="textRed"><i class="fa fa-search"></i></span> icon beside athlete name. Full athlete profiles remain as they were.</p>';
 					echo '<br />';
 					echo '<div>';
 				}
