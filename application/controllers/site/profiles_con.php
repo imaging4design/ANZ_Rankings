@@ -55,6 +55,99 @@ class Profiles_con extends CI_Controller {
 
 
 	/*************************************************************************************/
+	// FUNCTION athleteFly()
+	// Gets information about the athlete to display on the 'Quick View' flyout panel
+	// i.e., Name, club, centre etc
+	/*************************************************************************************/
+
+	public function athleteFlyout() {
+
+		echo '<div class="flyout-styles">';
+
+			// Display athlete personal details ...
+			$data['athlete'] = athlete(); // see profiles_helper
+
+			$gender = ( $data['athlete']->gender == 'M') ? 'Male' : 'Female'; // format gender
+
+			echo '<h3>' . $data['athlete']->nameFirst . ' ' . $data['athlete']->nameLast . ' (' . age_from_dob($data['athlete']->birthDate) . ')</h3>';
+
+			echo '<ul>';
+				echo '<li>Gender: ' . $gender . '</li>';
+				echo '<li>DOB: ' . $data['athlete']->birthDate . '</li>';
+				echo '<li>' . age_from_dob($data['athlete']->birthDate) . ' Years / ' . daysLeftForBirthday($data['athlete']->DOB) . ' Days</li>';
+				echo '<li>Centre: ' . $data['athlete']->centreID . '</li>';
+				echo '<li>Club: ' . $data['athlete']->clubName . '</li>';
+				echo '<li>Coach: ' . $data['athlete']->coach . '</li>';
+				echo '<li>Former Coach(s): ' . $data['athlete']->coach_former . '</li>';
+			echo '</ul>';
+
+
+
+			// Display athlete personal bests ...
+			if($query = $this->profiles_model->personal_bests())
+			{
+				$data['personal_bests'] = $query;
+			}
+
+			echo '<h4>Personal Bests:</h4>';
+
+			echo '<ul>';
+
+				foreach ($data['personal_bests'] as $row) {
+
+					$implement = ( $row->implement ) ? '('.ltrim($row->implement, 0).')' : ''; // format implement
+					$performance = ( $row->time ) ? ltrim($row->time, 0) : ltrim($row->distHeight, 0); // format performance
+
+					echo '<li>' . $row->eventName . ' '. $implement . ' ' . $performance . '</li>';
+				}
+
+			echo '</ul>';
+
+
+
+			// Display athlete (Multis) personal bests ...
+			if($query = $this->profiles_model->personal_bests_multis())
+			{
+				$data['personal_bests_multis'] = $query;
+			}
+
+			echo '<ul>';
+
+				foreach ($data['personal_bests_multis'] as $row) {
+
+					echo '<li>' . $row->eventName . ' - '. $row->points . '</li>';
+				}
+
+			echo '</ul>';
+
+
+
+			// New Zealand Representation ...
+			$rep = get_representations($this->input->post('athleteID'));
+			if( $rep ) {
+				echo '<h4>NZ Representation:</h4>';
+			}
+
+			echo '<ul>';
+
+				foreach ($rep as $row) {
+					//echo '<li>' . $row->year . ' ' . $row->competition . '</br>' . $row->eventName . ' ' . $row->position . '</li>';
+					echo '<li>' . $row->year . ' ' . $row->competition . ' - ' . $row->eventName . '</li>';
+				}
+
+			echo '</ul>';
+
+			//echo anchor('#', 'Full Profile', array('class'=>'btn btn-red center-block'));
+			echo anchor('site/profiles_con/athlete/' . $this->input->post('athleteID'), 'View Full Profile', array('class'=>'flyout-btn-full'));
+
+		echo '</div>';
+		
+	}
+
+
+
+
+	/*************************************************************************************/
 	// FUNCTION athlete()
 	// Gets information about the athlete
 	// i.e., Name, club, centre etc

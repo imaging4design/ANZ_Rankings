@@ -205,7 +205,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . ' ' . $row->record . '</span> ' . $in_out . '</td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'testme', 'data-id'=>$row->athleteID)) . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing ) . '</td>
@@ -272,7 +272,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . '' . $row->record . ' ' . $in_out . '</span></td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'testme', 'data-id'=>$row->athleteID)) . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing )  . '</td>
@@ -414,7 +414,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . '' . $row->record . '</span></td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . ' ' . anchor('', '<i class="fa fa-search"></i>', array('class'=>'testme', 'data-id'=>$row->athleteID)) . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing ) . '</td>
@@ -532,6 +532,16 @@
 
 
 
+<!-- This displays the athlete 'mini profile' that slides in from the left -->
+<div class="flyout-btn" id="flyout-btn"><i class="fa fa-close"></i></div>
+<div class="flyout">
+	<div class="flyout-content" id="showEntry"></div>
+</div>
+
+
+
+
+
 <script>
 	// This (on page load) scolls to the top of the list being viewed
 	$(document).ready(function (){
@@ -550,6 +560,60 @@
 			}, 500);
 		});
 	});
+
+	// Dynamically adjust 'flyout-btn' height (keep it on screen at top)
+	function flyoutBtnTop(){
+		var position = window.pageYOffset;
+		$('.flyout-btn').css('top', position);
+	}
 	
+
+	window.addEventListener('scroll', flyoutBtnTop, false);
+
+
+</script>
+
+
+<!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
+<script type="text/javascript">
+
+$(function() {
+
+$('.testme').click(function() {
+	
+	$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+
+	var athleteID = $(this).data("id");
+	
+	$.ajax({
+		url: '<?php echo base_url() . 'site/profiles_con/athleteFlyout'; ?>',
+		type: 'POST',
+		data: '&athleteID=' + escape(athleteID),
+		
+		success: function(result) {
+				
+				$('#loading').fadeOut(500, function() {
+					$(this).remove();
+				});
+
+				$('#showEntry').html(result);
+
+				$('.flyout-btn').on('click', function(){
+					$('.flyout').removeClass('open');
+					$('.flyout-btn').removeClass('open');
+				});
+				
+				$('.flyout').addClass('open');
+				$('.flyout-btn').addClass('open');
+					
+			}
+
+		});
+		
+		return false;
+		
+	});
+	
+});
 
 </script>

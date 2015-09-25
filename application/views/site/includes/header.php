@@ -20,11 +20,6 @@
 
 	<link href="<?php echo base_url() . 'css/bootstrap.css'; ?>" rel="stylesheet" /><!--RESPONSIVE CSS-->
 
-	<style type="text/css">
-		body {
-			padding-bottom: 40px;
-		}
-	</style>
 	<!--<link href="<?php //echo base_url() . 'css/bootstrap-responsive.css'; ?>" rel="stylesheet" />RESPONSIVE CSS-->
 	<link href="<?php echo base_url() . 'css/styles.css'; ?>" rel="stylesheet"><!--MAIN STYLES CSS-->
 

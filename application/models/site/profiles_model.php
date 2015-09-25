@@ -15,15 +15,20 @@ class Profiles_Model extends CI_Model
 		// This will be the athlete(ID)
 
 		// OR it might be the '$this->uri->segment(4)' if clicking the athletes 'name link' in the lists
+		// OR it might be teh user clicking on the 'Quick Profile' icon on the main lists
 
 		// Get and configure $athleteID
 		if( $this->input->post('athleteID') && $this->input->post('auto_complete')) 
 		{
 			$this->athleteID = substr($this->input->post('athleteID'), -6);
 		}
-		else
+		elseif($this->uri->segment(4))
 		{
 			$this->athleteID = $this->uri->segment(4);
+		}
+		else
+		{
+			$this->athleteID = $this->input->post('athleteID');
 		}
 
 		

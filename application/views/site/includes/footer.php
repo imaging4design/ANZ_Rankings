@@ -13,6 +13,10 @@
 	</div>
 	</footer>
 
+
+
+
+
 	<!-- Le javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -137,6 +141,7 @@
 	<script src="js/bootstrap-carousel.js"></script>
 	<script src="js/bootstrap-typeahead.js"></script>
 	-->
+
 
 </body>
 </html>

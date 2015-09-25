@@ -381,6 +381,84 @@ button.closed {
   border-bottom: dashed 1px #DDDDDD;
 }
 /************************************************************************/
+/* FLYOUT - Quick Profile */
+/************************************************************************/
+.flyout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  background: #222;
+  transform: translateX(-390px);
+  transition: transform 0.3s cubic-bezier(0.42, 0, 1, 1);
+  color: #FFF !important;
+  overflow: hidden;
+}
+.flyout-content {
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -15px;
+  /* Decrease this value for cross-browser compatibility */
+  overflow: auto;
+}
+.flyout.open {
+  transform: translateX(0);
+}
+.flyout-btn {
+  position: absolute;
+  top: 0;
+  left: 276px;
+  font-size: 18px;
+  color: #FFF;
+  z-index: 1000;
+  background: #F30;
+  padding: 10px 15px;
+  cursor: pointer;
+  transform: translateX(-360px);
+  transition: transform 0.6s cubic-bezier(0.42, 0, 1, 1);
+}
+.flyout-btn:hover {
+  color: #FFF;
+  text-decoration: none;
+  background: #cc2900;
+}
+.flyout-btn-full {
+  color: #FFF;
+  background: #F30;
+  padding: 5px 20px;
+  margin: 20px 0 30px 20px;
+  display: inline-block;
+}
+.flyout-btn-full:hover {
+  color: #FFF;
+  text-decoration: none;
+  background: #cc2900;
+}
+.flyout-btn.open {
+  transform: translateX(0);
+}
+.flyout-styles h3 {
+  padding: 5px 20px;
+}
+.flyout-styles h4 {
+  margin-top: 20px;
+  padding: 5px 20px;
+}
+.flyout-styles ul {
+  margin: 0;
+  padding: 0;
+}
+.flyout-styles li {
+  background: #333;
+  margin-bottom: 3px;
+  padding: 5px 20px;
+  list-style: none;
+}
+/************************************************************************/
 /* TABLES */
 /************************************************************************/
 .footable > thead > tr > th {
