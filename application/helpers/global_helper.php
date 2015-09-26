@@ -62,6 +62,25 @@ function fresh_records($data)
 
 }
 
+
+/********************************************************************/
+// FUNCTION ratified_record()
+// Displays a NEW ratified record on the home page - as item of interest!
+/********************************************************************/
+function ratified_record()
+{
+	$CI = &get_instance();
+	//$CI->load->model('global_model');
+	$var = $CI->global_model->ratified_record();
+
+	//return the data $query
+	if($query = $var) 
+	{
+		return $query;
+	}
+
+}
+
  
 /********************************************************************/
 // FUNCTION totalResults()
@@ -230,11 +249,11 @@ function getEvents()
 // FUNCTION convertEventID()
 // Converts the eventID into the human readable 'event name'
 /********************************************************************/
-function convertEventID()
+function convertEventID($data)
 {
 	$CI = &get_instance();
 	//$CI->load->model('global_model');
-	$var = $CI->global_model->convertEventID();
+	$var = $CI->global_model->convertEventID($data);
 
 	//return the data $query
 	if($query = $var) 

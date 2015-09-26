@@ -42,21 +42,25 @@ body {
   top: 0;
   left: 0;
 }
+.latest-news {
+  margin-bottom: 15px;
+  padding: 10px 30px 20px 0;
+  text-align: left;
+}
+.latest-news h2,
+.latest-news h3 {
+  color: #F30021;
+  margin-bottom: 1px;
+}
+.latest-news a {
+  color: #333;
+  font-weight: bold;
+}
+.latest-news .fa {
+  color: #333;
+}
 .hide {
   display: none;
-}
-.milestone {
-  background: #FFF;
-  margin: 10px -15px 20px -15px;
-  padding: 15px 20px 0 20px;
-  border-top: dashed 1px #EBEBEB;
-  border-bottom: dashed 1px #EBEBEB;
-}
-.milestone h1 {
-  color: #F30021;
-}
-.milestone p {
-  font-size: 16px;
 }
 /************************************************************************/
 /* TYPOGRAPHY */

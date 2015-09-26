@@ -8,6 +8,28 @@ class Global_Model extends CI_Model
 		parent::__construct();
 	
 	} // ENDS __construct()
+
+
+	/*************************************************************************************/
+	// FUNCTION ratified_record()
+	// Displays a NEW ratified record on the home page - as item of interest!
+	/*************************************************************************************/
+	function ratified_record()
+	{
+		$query = $this->db->query("
+			SELECT *, DATE_FORMAT(date,'%d %b %Y') as newdate
+			FROM records 
+			WHERE date BETWEEN DATE_SUB(NOW(), INTERVAL 1 MONTH) 
+			AND NOW() 
+			ORDER BY date DESC
+		");
+
+		if($query->num_rows() >0) 
+		{
+			return $query->result();
+		}
+
+	}
 	
 	
 	
@@ -118,11 +140,12 @@ class Global_Model extends CI_Model
 	// Converts the eventID into an eventName
 	// Used in the global_helper.php file!
 	/********************************************************************/
-	function convertEventID()
+	function convertEventID($data)
 	{
 		$this->db->select('eventName');
 		$this->db->where('eventID', $this->session->userdata('eventID'));
 		$this->db->or_where('eventID', $this->input->post('eventID'));
+		$this->db->or_where('eventID', $data);
 		$query = $this->db->get('events');
 		
 		if($query->num_rows() >0) 

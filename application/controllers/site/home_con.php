@@ -61,6 +61,7 @@ class Home_con extends CI_Controller {
 
 		$data['show_news'] = show_news(); // from global_helper
 		
+		$data['ratified_record'] = ratified_record(); // from global_helper
 		$data['total_results'] = totalResults(); // from global_helper
 		$data['top_performers'] = topPerformers(); // from global_helper
 		$data['topPerformers_Multis'] = topPerformers_Multis(); // from global_helper

@@ -1,27 +1,56 @@
 <div class="container">
 	<div class="row">
 
-		<div class="span12">
+		<div class="span12 latest-news">
 			<!--DISPLAY ATHLETES NAMES (Alpha) IN THIS DIV-->
-  			<div class="athleteArea"></div>
-
+  			
   			<?php
-				$date_value = "2015-09-30";
-				$current_date = date("Y-m-d");
+  			// Display a special mesage on the home page!
+			$date_expires = "2015-09-30";
+			$current_date = date("Y-m-d");
 
-				if(strtotime($current_date) <= strtotime($date_value)) {
-					echo '<div class="milestone center">';
-					echo '<h1>New Feature!</h1>';
-					echo '<p>When viewing yearly ranking lists you can now access a mini/summary profile of each athlete without leaving the page. <br />Click on the <span class="textRed"><i class="fa fa-search"></i></span> icon beside athlete name. Full athlete profiles remain as they were.</p>';
-					echo '<br />';
-					echo '<div>';
-				}
+			if(strtotime($current_date) <= strtotime($date_expires)) {
+				echo '<h2>New Feature!</h2>';
+				echo '<p>When viewing yearly ranking lists you can now access a mini/summary profile of each athlete without leaving the page. <br />Click on the <span class="textRed"><i class="fa fa-search"></i></span> icon beside athlete name. Full athlete profiles remain as they were.</p>';
+			}
+  			
+
+  			// Display a New NZ ratified record(s) on the home page!
+  			if( $ratified_record ) {
+
+  				echo '<h3>NZ Records ratified in the past month</h3>';
+
+				foreach($ratified_record as $row) {
+
+					// Work out which type of record
+					switch ($row->recordType){
+
+						case 'NN':
+						$recType = 'NZ National';
+						break;
+
+						case "NR":
+						$recType = 'NZ Resident';
+						break;
+
+						case "AC":
+						$recType = 'NZ All Commers';
+						break;	
+					}
+
+					echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> | ' . $recType . ' | ' . convertEventID($row->eventID)->eventName . ' | ' . ageGroupLabels($row->ageGroup) . ' | ' . $row->result . ' | ' . $row->newdate . '<br>';
+  				}
+
+  			} // ENDS $ratified_record
+
+
   			?>
 
-		</div>
+		</div><!-- ENDS span12 -->
 
-	</div>
-</div>
+	</div><!-- ENDS row -->
+
+</div><!-- ENDS container -->
 
 
 

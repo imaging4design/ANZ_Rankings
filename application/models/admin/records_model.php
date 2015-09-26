@@ -2,7 +2,7 @@
 
 class Records_Model extends CI_Model
 {
-    
+
 	/*************************************************************************************/
 	// FUNCTION add_new_record($data)
 	// Adds a new record to the database
