@@ -11,7 +11,7 @@
 
 			if(strtotime($current_date) <= strtotime($date_expires)) {
 				echo '<h2>New Feature!</h2>';
-				echo '<p>When viewing yearly ranking lists you can now access a mini/summary profile of each athlete without leaving the page. <br />Click on the <span class="textRed"><i class="fa fa-search"></i></span> icon beside athlete name. Full athlete profiles remain as they were.</p>';
+				echo '<p>When viewing the Annual/All Time ranking lists you can now access a mini/summary profile of each athlete without leaving the page. <br />Click on the <span class="textRed"><i class="fa fa-search"></i></span> icon beside athlete name. Full athlete profiles remain as they were.</p>';
 			}
   			
 
