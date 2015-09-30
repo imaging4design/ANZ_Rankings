@@ -60,7 +60,7 @@ class Home_con extends CI_Controller {
 		$data['token'] = $this->auth->token();
 
 		$data['show_news'] = show_news(); // from global_helper
-		
+		$data['show_flash_news'] = show_flash_news(); // from global_helper
 		$data['ratified_record'] = ratified_record(); // from global_helper
 		$data['total_results'] = totalResults(); // from global_helper
 		$data['top_performers'] = topPerformers(); // from global_helper

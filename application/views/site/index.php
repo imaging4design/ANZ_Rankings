@@ -1,48 +1,61 @@
 <div class="container">
 	<div class="row">
-
 		<div class="span12 latest-news">
-			<!--DISPLAY ATHLETES NAMES (Alpha) IN THIS DIV-->
-  			
-  			<?php
-  			// Display a special mesage on the home page!
-			$date_expires = "2015-09-30";
-			$current_date = date("Y-m-d");
 
-			if(strtotime($current_date) <= strtotime($date_expires)) {
-				echo '<h2>New Feature!</h2>';
-				echo '<p>When viewing the Annual/All Time ranking lists you can now access a mini/summary profile of each athlete without leaving the page. <br />Click on the <span class="textRed"><i class="fa fa-search"></i></span> icon beside athlete name. Full athlete profiles remain as they were.</p>';
-			}
-  			
+			<?php
 
-  			// Display a New NZ ratified record(s) on the home page!
-  			if( $ratified_record ) {
+				// If admin logged in allow editing privilages ...
+				$admin = ( $this->session->userdata('is_logged_in') ) ? TRUE : FALSE;
 
-  				echo '<h3>NZ Records ratified in the past month</h3>';
 
-				foreach($ratified_record as $row) {
+				// Display a special 'Flash' message on the home page!
+				if(isset($show_flash_news)) {
 
-					// Work out which type of record
-					switch ($row->recordType){
+					$date_expires = $show_flash_news->expires;
+					$current_date = date("Y-m-d");
 
-						case 'NN':
-						$recType = 'NZ National';
-						break;
+					if(strtotime($current_date) <= strtotime($date_expires)) { // Display message for a valid time period only!
 
-						case "NR":
-						$recType = 'NZ Resident';
-						break;
+						echo '<h3>' . $show_flash_news->heading . '</h3>';
+						echo $show_flash_news->bodyContent;
 
-						case "AC":
-						$recType = 'NZ All Commers';
-						break;	
+						if( $admin )
+						{
+							echo anchor('admin/news_con/populate_news/' . $show_flash_news->newsID, 'Edit News Flash', array('class'=>'btn btn-default'));
+						}
+
 					}
+				}
+				
 
-					echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> | ' . $recType . ' | ' . convertEventID($row->eventID)->eventName . ' | ' . ageGroupLabels($row->ageGroup) . ' | ' . $row->result . ' | ' . $row->newdate . '<br>';
-  				}
 
-  			} // ENDS $ratified_record
+	  			// Display a New NZ ratified record(s) on the home page!
+	  			if( $ratified_record ) {
 
+	  				echo '<h3>NZ Records ratified in the past month</h3>';
+
+					foreach($ratified_record as $row) {
+
+						// Work out which type of record
+						switch ($row->recordType){
+
+							case 'NN':
+							$recType = 'NZ National';
+							break;
+
+							case "NR":
+							$recType = 'NZ Resident';
+							break;
+
+							case "AC":
+							$recType = 'NZ All Commers';
+							break;	
+						}
+
+						echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> | ' . $recType . ' | ' . convertEventID($row->eventID)->eventName . ' | ' . ageGroupLabels($row->ageGroup) . ' | ' . $row->result . ' | ' . $row->newdate . '<br>';
+	  				}
+
+	  			} // ENDS $ratified_record
 
   			?>
 

@@ -32,6 +32,25 @@ function show_news()
 
 
 /********************************************************************/
+// FUNCTION show_flash_news()
+// Shows the latest 'Flash' news item for homepage
+/********************************************************************/
+function show_flash_news()
+{
+	$CI = &get_instance();
+	$CI->load->model('site/news_model');
+	$var = $CI->news_model->show_flash_news();
+
+	//return the data $query
+	if($query = $var) 
+	{
+		return $query;
+	}
+
+}
+
+
+/********************************************************************/
 // FUNCTION fresh_results()
 // Used to hightlight the latest rankings added - (less than a week old!)
 /********************************************************************/

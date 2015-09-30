@@ -14,6 +14,7 @@ class Results_con extends CI_Controller {
 		$this->load->model('site/results_model');
 		$this->load->model('site/multis_model');
 		$this->load->model('site/relays_model');
+		$this->load->model('site/records_model');
 
 	}
 
@@ -87,6 +88,12 @@ class Results_con extends CI_Controller {
 				{
 					$data['illegal_wind'] = $query;
 				}
+
+				// Get the current NZ Record of this event
+				if($query = $this->records_model->current_nz_record())
+				{
+					$data['current_nz_record'] = $query;
+				}
 				
 				// Select ALL hand-timed track events
 				// if($query = $this->results_model->results_hand_timed())
@@ -112,6 +119,12 @@ class Results_con extends CI_Controller {
 				if($query = $this->results_model->results())
 				{
 					$data['results'] = $query;
+				}
+
+				// Get the current NZ Record of this event
+				if($query = $this->records_model->current_nz_record())
+				{
+					$data['current_nz_record'] = $query;
 				}
 				
 				// Select ALL hand-timed track events
@@ -144,6 +157,12 @@ class Results_con extends CI_Controller {
 				{
 					$data['illegal_wind'] = $query;
 				}
+
+				// Get the current NZ Record of this event
+				if($query = $this->records_model->current_nz_record())
+				{
+					$data['current_nz_record'] = $query;
+				}
 				
 			} // ENDS OUTPUT LIST FIELD ONE
 			
@@ -163,6 +182,12 @@ class Results_con extends CI_Controller {
 				{
 					$data['results'] = $query;
 				}
+
+				// Get the current NZ Record of this event
+				if($query = $this->records_model->current_nz_record())
+				{
+					$data['current_nz_record'] = $query;
+				}
 	
 				
 			} // ENDS OUTPUT LIST FIELD TWO
@@ -180,6 +205,12 @@ class Results_con extends CI_Controller {
 				if($query = $this->multis_model->multis())
 				{
 					$data['multis'] = $query;
+				}
+
+				// Get the current NZ Record of this event
+				if($query = $this->records_model->current_nz_record())
+				{
+					$data['current_nz_record'] = $query;
 				}
 	
 				

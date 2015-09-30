@@ -34,6 +34,30 @@ class News_Model extends CI_Model
 		
 		
 	} //ENDS show_news()
+
+
+
+	/*************************************************************************************/
+	// FUNCTION show_flash_news()
+	// Retrieves latest 'Flash' News articles to display on home page
+	/*************************************************************************************/
+	public function show_flash_news()
+	{
+		$this->db->select('*');
+		$this->db->select("DATE_FORMAT(date, '%d %b %Y') AS date", FALSE);
+		$this->db->where('type', 'F'); // Is this a 'news' or 'info' item? 
+		$this->db->order_by('newsID', 'DESC');
+		$this->db->order_by('date', 'DESC');
+		$this->db->limit(1);
+		$query = $this->db->get('news_info');
+		
+		if($query->num_rows() >0) 
+		{
+			return $query->row();
+		}
+		
+		
+	} //ENDS show_flash_news()
 	
 	
 	

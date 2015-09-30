@@ -60,12 +60,14 @@ class News_con extends CI_Controller
 	{
 		$this->form_validation->set_rules('token_admin', 'Token Admin', 'trim|required');
 		$this->form_validation->set_rules('type', 'Article Type', 'trim|required');
+		$this->form_validation->set_rules('expires', 'Expires Days', 'trim');
 		$this->form_validation->set_rules('heading', 'Heading', 'trim|required');
 		$this->form_validation->set_rules('bodyContent', 'Body', 'trim|required');
 		
 		//Create results $data array()
 		$data = array(
 			'type' => $this->input->post('type'),
+			'expires' => $this->input->post('expires'),
 			'heading' => $this->input->post('heading'),
 			'bodyContent' => auto_link($this->input->post('bodyContent'), 'both', TRUE),
 			'date' => date('Y-m-d')
@@ -80,10 +82,11 @@ class News_con extends CI_Controller
 			echo '<div class="well well-success">';
 			echo $this->update_text_message = '<div class="message_success"><i class="fa fa-check"></i> New record added!<br /></div>';
 			
-			echo '<p>' . $data['date'] . '</p>';
-			echo '<p>' . $data['type'] . '</p>';
-			echo '<p>' . $data['heading'] . '</p>';
-			echo '<p>' . $data['bodyContent'] . '</p>';
+			echo '<p>Date: ' . $data['date'] . '</p>';
+			echo '<p>News Type: ' . $data['type'] . '</p>';
+			echo '<p>Expires in: ' . $data['expires'] . ' days</p>';
+			echo '<p>Heading: ' . $data['heading'] . '</p>';
+			echo $data['bodyContent'];
 			
 			// Set up an attribute '<em>'
 			// Why?
@@ -138,13 +141,20 @@ class News_con extends CI_Controller
 		$this->form_validation->set_rules('token_admin', 'Token Admin', 'trim|required');
 		$this->form_validation->set_rules('newsID', 'News ID', 'trim|required');
 		$this->form_validation->set_rules('type', 'Article Type', 'trim|required');
+		$this->form_validation->set_rules('expires', 'Expires Days', 'trim');
 		$this->form_validation->set_rules('heading', 'Heading', 'trim|required');
 		$this->form_validation->set_rules('bodyContent', 'Body', 'trim|required');
+
+		
+		// Initialise Var
+		$expires = NULL;
+		$expires = ( $this->input->post('type') == 'F' ) ? $this->input->post('expires') : ''; 
 		
 		//Create results $data array()
 		$data = array(
 			'newsID' => $this->input->post('newsID'),
 			'type' => $this->input->post('type'),
+			'expires' => $expires,
 			'heading' => $this->input->post('heading'),
 			'bodyContent' => auto_link($this->input->post('bodyContent'), 'both', TRUE)
 		);

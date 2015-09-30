@@ -32,7 +32,7 @@
 						<div class="col-md-2">
 							<div class="radio">
 								<label>
-								<input type="radio" name="type" id="type" value="N" <?php if($pop_news->type == 'N') { echo 'checked="checked"'; } ?> /> 
+								<input type="radio" name="type" class="newsType" id="type" value="N" <?php if($pop_news->type == 'N') { echo "checked='checked'"; } ?> /> 
 								News page
 								</label>
 							</div>
@@ -41,11 +41,20 @@
 						<div class="col-md-2">
 							<div class="radio">
 								<label>
-								<input type="radio" name="type" id="type" value="I" <?php if($pop_news->type == 'I') { echo 'checked="checked"'; } ?> /> 
+								<input type="radio" name="type" class="newsType" id="type" value="I" <?php if($pop_news->type == 'I') { echo "checked='checked'"; } ?> /> 
 								Info page
 								</label>
 							</div>
 						</div><!--ENDS col-->
+
+						<div class="col-md-2">
+						<div class="radio">
+							<label>
+								<input type="radio" name="type" class="newsType" id="flash" value="F" <?php if($pop_news->type == 'F') { echo "checked='checked'"; } ?>>
+								News Flash
+							</label>
+						</div>
+					</div><!--ENDS col-->
 
 					</div>
 
@@ -58,6 +67,13 @@
 						<div class="form-group">
 							<label for="heading">Heading</label>
 							<input type="text" name="heading" id="heading" class="form-control" value="<?php echo $pop_news->heading; ?>" />
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-4" id="show-expired">
+						<div class="form-group">
+							<label for="expires">Expires on:</label>
+							<input type="text" name="expires" id="date" class="form-control" value="<?php echo $pop_news->expires; ?>" />
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
@@ -99,8 +115,6 @@
 
 
 
-
-
 <!--JQUERY AJAX 'ADD RESULTS' SCRIPT-->
 <script type="text/javascript">
 
@@ -137,6 +151,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 	var newsID = $('#newsID').val();
 	var type = $('input:radio[name=type]:checked').val();
 	var heading = $('#heading').val();
+	var expires = $('#date').val();
 	var bodyContent = $('#bodyContent').val();
 	
 	//var lineBreak = document.getElementById('lineBreak').checked; 
@@ -148,6 +163,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 		data: 'token_admin=' + token_admin
 		+ '&newsID=' + newsID
 		+ '&type=' + type
+		+ '&expires=' + expires
 		+ '&heading=' + heading
 		+ '&bodyContent=' + escape(bodyContent),
 		
