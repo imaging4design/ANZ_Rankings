@@ -106,19 +106,19 @@
 				echo '<div class="slab reversed textLarge">' . $event_name . '</div><div class="slab textLarge '.$highlight.' ">' . $ageGroup . ' ' . $year . '</div>';
 
 				
+				/**************************************************************************************************/
 				// Display the current NZ Record for this event and age group ...
+				/**************************************************************************************************/
 				if($current_nz_record)
 				{
 					foreach( $current_nz_record as $row ):
+
 						$nz_record = $row->result;
 						$nz_athlete = $row->nameFirst . ' ' . $row->nameLast;
-						$nz_ageGroup = $row->ageGroup;
+						$nz_ageGroup = ageGroupRecordConvert($row->ageGroup);
 						$nz_date = $row->date;
-
-						// Show agegroup label if NOT Senior Men or Senior Women!
-						$nz_ageGroup = ( $nz_ageGroup == 'MS' || $nz_ageGroup == 'WS') ? '' : '('.$nz_ageGroup.')';
-
 						echo '<div class="slab reversed textSmall">NZ Record ' . $nz_ageGroup . '</div><div class="slab textSmall">' . $nz_record . ' / ' . $nz_athlete . '<span class="hidden-phone"> / ' . $nz_date . '</span></div>';
+					
 					endforeach;
 				}
 				else 

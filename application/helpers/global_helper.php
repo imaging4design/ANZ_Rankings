@@ -495,7 +495,7 @@ function buildAgeGroupDropdown($selected='')
 function buildAgeGroupRadio()
 {
 	$options = array(
-		'MS'		=> 'Open Men',
+		'MS'	=> 'Open Men',
 		'M19' 	=> 'Junior Men',
 		'M17' 	=> 'Youth Men',
 		'WS'  	=> 'Open Women',
@@ -558,7 +558,7 @@ function buildAgeGroup_records($selected='')
 {
 	$options = array(
 		'' 		=> 'Select Age Group',
-		'MS'		=> 'Men',
+		'MS'	=> 'Men',
 		'M19' 	=> 'Men Under 20',
 		'M18' 	=> 'Men Under 19',
 		'M17' 	=> 'Men Under 18',
@@ -646,6 +646,55 @@ function ageGroupLabels($data)
 
 
 /********************************************************************/
+// FUNCTION ageGroupRecordConvert($data)
+// Converts and returns the 'ageGroup' for records on the results page
+// i.e., M19 = 'U20', M17 = U18 etc 
+/********************************************************************/
+function ageGroupRecordConvert($data)
+{
+	switch ( $data ) {
+
+		case 'M19':
+			$ageGroup = 'U20';
+		break;
+
+		case 'M18':
+			$ageGroup = 'U19';
+		break;
+
+		case 'M17':
+			$ageGroup = 'U18';
+		break;
+
+		case 'M16':
+			$ageGroup = 'U17';
+		break;
+
+		case 'W19':
+			$ageGroup = 'U20';
+		break;
+
+		case 'W18':
+			$ageGroup = 'U19';
+		break;
+
+		case 'W17':
+			$ageGroup = 'U18';
+		break;
+
+		case 'W16':
+			$ageGroup = 'U17';
+		break;
+		
+	}
+
+	return $ageGroup;
+
+}
+
+
+
+/********************************************************************/
 // FUNCTION ageGroupLabelsAT($data)
 // Converts and returns the 'ageGroup' human readable labels (All Time Lists) only!
 /********************************************************************/
@@ -680,7 +729,7 @@ function buildAgeGroupSmall($selected='')
 {
 	$options = array(
 		'' 		=> 'Select Age Group',
-		'MS'		=> 'Men Open',
+		'MS'	=> 'Men Open',
 		'WS'  	=> 'Women Open'
 	);
 
@@ -717,7 +766,7 @@ function in_out($selected='')
 {
 	$options = array(
 		'out'	=> 'Outdoors',
-		'in' 		=> 'Indoors'
+		'in' 	=> 'Indoors'
 	);
 
 	echo form_dropdown('in_out', $options,  $selected, 'id="in_out" class="span3 form-control"');

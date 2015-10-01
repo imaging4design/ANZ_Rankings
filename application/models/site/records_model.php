@@ -85,7 +85,6 @@ class Records_Model extends CI_Model
 			return $query->result();
 		}
 		
-		
 	} //ENDS get_default()
 	
 	

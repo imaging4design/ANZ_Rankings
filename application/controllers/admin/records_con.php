@@ -108,9 +108,9 @@ class Records_con extends CI_Controller
 		//$this->form_validation->set_rules('country', 'Country', 'trim|required');
 		//$this->form_validation->set_rules('venue', 'Venue', 'trim|required');
 		//$this->form_validation->set_rules('date', 'Date', 'trim|required');
-		// $this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
-		// $this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
-		// $this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
+		//$this->form_validation->set_rules('day', 'Date (Day)', 'trim|required');
+		//$this->form_validation->set_rules('month', 'Date (Month)', 'trim|required');
+		//$this->form_validation->set_rules('year', 'Date (Year)', 'trim|required');
 		
 		// WHAT IS THE date?
 		// Combine $day, $month and $year into variable '$date'
@@ -316,6 +316,7 @@ class Records_con extends CI_Controller
 		// Run the posted $eventID through the convertEventID() function to return the 'event name'
 		$events = convertEventID(); // From global helper
 		$config_item = str_replace(' ','_', $events->eventName);
+		
 
 		// WHAT IS THE implement?
 		// Find out if the eventID is an implement affected event
