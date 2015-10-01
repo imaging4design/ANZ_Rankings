@@ -121,6 +121,7 @@
 						// This displays the actual age of the record in Years/Months/Days ...
 						$nz_ageOfRecord = recordAge($row->date, date('Y-m-d')); // See global_helper.php
 						
+						
 						echo '<div class="record-wrapper">';
 							echo '<div class="slab reversed textSmall">NZ Record ' . $nz_ageGroup . '</div><div class="slab textSmall">' . $nz_record . ' / ' . $nz_athlete . '<span class="hidden-phone"> / ' . $nz_date . '</span></div><div class="slab textSmall red hidden-phone hover-record">' .$nz_ageOfRecord . ' old</div>';
 						echo '</div>';
