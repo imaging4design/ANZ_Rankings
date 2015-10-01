@@ -20,18 +20,44 @@ class Records_Model extends CI_Model
 	/*************************************************************************************/
 	public function current_nz_record()
 	{
+
+		// Need this to grab both records from M19/M18 for juniors / youths etc
+		switch ($this->input->post('ageGroup')){
+			case 'MS':
+				$this->ageGroup = 'MS';
+			break;
+			case 'M19':
+				$this->ageGroup = array('M19', 'M18');
+			break;
+			case 'M17':
+				$this->ageGroup = array('M17', 'M16');
+			break;
+			case 'WS':
+				$this->ageGroup = 'WS';
+			break;
+			case 'W19':
+				$this->ageGroup = array('W19', 'W18');
+			break;
+			case 'W17':
+				$this->ageGroup = array('W17', 'W16');
+			break;
+		}
+
+
 		$this->db->select('*');
 		$this->db->select("DATE_FORMAT(records.date, '%d %b %Y') AS date", FALSE);
 		$this->db->where('recordType', 'NN');
 		$this->db->where('in_out', 'out');
-		$this->db->where('ageGroup', $this->input->post('ageGroup'));
+		$this->db->where_in('ageGroup', $this->ageGroup);
 		$this->db->where('records.eventID', $this->input->post('eventID'));
 		$this->db->join('events', 'events.eventID = records.eventID');
+		$this->db->order_by('ageGroup', 'DESC');
+		$this->db->order_by('date', 'DESC');
 		$query = $this->db->get('records');
 		
 		if($query->num_rows() > 0) 
 		{
-			return $query->row();
+			return $query->result();
 		}
 		
 		
