@@ -90,6 +90,15 @@ h4 {
 .slab a:hover {
   color: #FFF;
 }
+.record-wrapper {
+  cursor: pointer;
+}
+.hover-record {
+  display: none;
+}
+.hover-record-show {
+  display: block;
+}
 a.to_top {
   font-family: 'Lato', sans-serif;
   font-weight: 400;

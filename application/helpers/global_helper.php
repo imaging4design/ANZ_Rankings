@@ -12,6 +12,17 @@ function show_my_404(){
     redirect('nz_error404');  
 }
 
+function recordAge($dateOne, $dateTwo) {
+
+	$date1 = new DateTime($dateOne);
+	$date2 = new DateTime($dateTwo);
+	$interval = $date1->diff($date2);
+
+	return $interval->y . " year(s), " . $interval->m." month(s), ".$interval->d." day(s) ";
+	//return "difference " . $interval->days . " days ";
+}
+
+
 /********************************************************************/
 // FUNCTION show_news()
 // Shows the latest news
