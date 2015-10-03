@@ -41,6 +41,9 @@ body {
   clear: both;
   overflow: hidden;
 }
+.news_background img {
+  display: none;
+}
 .latest-news {
   border: solid 1px #DDD;
   border-top: none;
