@@ -47,7 +47,7 @@
 				</li>
 
 
-				<li class="<?php echo $teams ?>"><?php echo anchor('site/standards_con', 'Standards'); ?></li>
+				<!-- <li class="<?php //echo $teams ?>"><?php //echo anchor('site/standards_con', 'Standards'); ?></li> -->
 
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Archives | News | Info<b class="caret"></b></a>

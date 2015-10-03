@@ -12,6 +12,11 @@ function show_my_404(){
     redirect('nz_error404');  
 }
 
+
+/********************************************************************/
+// FUNCTION recordAge()
+// Shows the age of a NZ Record in Years / Months / days
+/********************************************************************/
 function recordAge($dateOne, $dateTwo) {
 
 	$date1 = new DateTime($dateOne);
@@ -20,6 +25,59 @@ function recordAge($dateOne, $dateTwo) {
 
 	return $interval->y . " year(s), " . $interval->m." month(s), ".$interval->d." day(s) ";
 	//return "difference " . $interval->days . " days ";
+}
+
+
+/********************************************************************/
+// FUNCTION recordAgeHistory()
+// Shows the age of a NZ Record in Years / Months / days
+/********************************************************************/
+function recordAgeHistory($dateOne, $dateTwo) {
+
+	$date1 = new DateTime($dateOne);
+	$date2 = new DateTime($dateTwo);
+	$interval = $date1->diff($date2);
+
+	return $interval->y . " year(s) ago ";
+	//return "difference " . $interval->years . " days ";
+}
+
+
+/********************************************************************/
+// FUNCTION born_this_day()
+// Shows Athletes born this day on home page
+/********************************************************************/
+function born_this_day()
+{
+	$CI = &get_instance();
+	$CI->load->model('site/profiles_model');
+	$var = $CI->profiles_model->born_this_day();
+
+	//return the data $query
+	if($query = $var) 
+	{
+		return $query;
+	}
+
+}
+
+
+/********************************************************************/
+// FUNCTION records_this_day()
+// Shows Records Set this day in history on home page
+/********************************************************************/
+function records_this_day()
+{
+	$CI = &get_instance();
+	$CI->load->model('site/records_model');
+	$var = $CI->records_model->records_this_day();
+
+	//return the data $query
+	if($query = $var) 
+	{
+		return $query;
+	}
+
 }
 
 
@@ -665,6 +723,10 @@ function ageGroupRecordConvert($data)
 {
 	switch ( $data ) {
 
+		case 'MS':
+			$ageGroup = 'Mens';
+		break;
+
 		case 'M19':
 			$ageGroup = 'U20';
 		break;
@@ -681,6 +743,10 @@ function ageGroupRecordConvert($data)
 			$ageGroup = 'U17';
 		break;
 
+		case 'WS':
+			$ageGroup = 'Womens';
+		break;
+
 		case 'W19':
 			$ageGroup = 'U20';
 		break;
@@ -695,6 +761,62 @@ function ageGroupRecordConvert($data)
 
 		case 'W16':
 			$ageGroup = 'U17';
+		break;
+		
+	}
+
+	return $ageGroup;
+
+}
+
+
+/********************************************************************/
+// FUNCTION ageGroupRecordHistoryConvert($data)
+// Converts and returns the 'ageGroup' for today in history records on the home page
+// i.e., M19 = 'U20', M17 = U18 etc 
+/********************************************************************/
+function ageGroupRecordHistoryConvert($data)
+{
+	switch ( $data ) {
+
+		case 'MS':
+			$ageGroup = 'Mens';
+		break;
+
+		case 'M19':
+			$ageGroup = 'Mens U20';
+		break;
+
+		case 'M18':
+			$ageGroup = 'Mens U19';
+		break;
+
+		case 'M17':
+			$ageGroup = 'Mens U18';
+		break;
+
+		case 'M16':
+			$ageGroup = 'Mens U17';
+		break;
+
+		case 'WS':
+			$ageGroup = 'Womens';
+		break;
+
+		case 'W19':
+			$ageGroup = 'Womens U20';
+		break;
+
+		case 'W18':
+			$ageGroup = 'Womens U19';
+		break;
+
+		case 'W17':
+			$ageGroup = 'Womens U18';
+		break;
+
+		case 'W16':
+			$ageGroup = 'Womens U17';
 		break;
 		
 	}

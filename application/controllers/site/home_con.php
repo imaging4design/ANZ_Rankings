@@ -14,7 +14,6 @@ class Home_con extends CI_Controller {
 		$this->load->model('site/profiles_model');
 		$this->load->model('site/news_model');
 		$this->load->model('site/toplist_model');
-
 	}
 
 
@@ -59,6 +58,8 @@ class Home_con extends CI_Controller {
 		
 		$data['token'] = $this->auth->token();
 
+		$data['born_this_day'] = born_this_day(); // from global_helper
+		$data['records_this_day'] = records_this_day(); // from global_helper
 		$data['show_news'] = show_news(); // from global_helper
 		$data['show_flash_news'] = show_flash_news(); // from global_helper
 		$data['ratified_record'] = ratified_record(); // from global_helper

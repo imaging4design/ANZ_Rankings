@@ -122,6 +122,31 @@ class Profiles_Model extends CI_Model
 		
 		
 	// } //ENDS show_athletes()
+
+
+	
+	/*************************************************************************************/
+	// FUNCTION born_this_day()
+	// Shows Athletes born this day on home page
+	/*************************************************************************************/
+	public function born_this_day()
+	{
+		$this->db->select('*');
+		$this->db->select("DATE_FORMAT(athletes.DOB, '%d %b %Y') AS birthDate", FALSE);
+		$this->db->where('MONTH(athletes.DOB)', date('m'));
+		$this->db->where('DAY(athletes.DOB)', date('d'));
+		$this->db->join('club', 'club.clubID = athletes.clubID');
+		$this->db->join('centre', 'centre.centreID = athletes.centreID');
+		$this->db->order_by('athletes.nameLast', 'ASC');
+		$query = $this->db->get('athletes');
+		
+		if($query->num_rows() >0) 
+		{
+			return $query->result();
+		}
+		
+	} // ENDS born_this_day()
+
 	
 	
 	/*************************************************************************************/

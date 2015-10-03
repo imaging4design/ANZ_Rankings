@@ -62,6 +62,29 @@ class Records_Model extends CI_Model
 		
 		
 	} //ENDS current_nz_record()
+
+
+
+	/*************************************************************************************/
+	// FUNCTION records_this_day()
+	// Shows Records Set this day in history on home page
+	/*************************************************************************************/
+	public function records_this_day()
+	{
+		$this->db->select('*');
+		$this->db->select("DATE_FORMAT(records.date, '%Y') AS recordDate", FALSE);
+		$this->db->where('MONTH(records.date)', date('m'));
+		$this->db->where('DAY(records.date)', date('d'));
+		$this->db->join('events', 'events.eventID = records.eventID');
+		$this->db->order_by('records.nameLast', 'ASC');
+		$query = $this->db->get('records');
+		
+		if($query->num_rows() >0) 
+		{
+			return $query->result();
+		}
+		
+	} // ENDS records_this_day()
 	
 	
 	
