@@ -58,7 +58,7 @@ body {
 .latest-news h2,
 .latest-news h3,
 .latest-news h4 {
-  color: #F30021 !important;
+  color: #444 !important;
   margin-bottom: 5px;
   font-weight: 400;
 }
