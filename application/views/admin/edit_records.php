@@ -78,6 +78,13 @@
 							?>
 						</div>
 					</div><!--ENDS col-->
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="implement">Implement:</label>
+							<input type="text" name="implement" id="implement" class="form-control" value="<?php echo $pop_data->implement; ?>" />
+						</div>
+					</div><!--ENDS col-->
 				</div><!--ENDS row-->
 
 
@@ -192,6 +199,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 	var recordType = $('#recordType').val();
 	var ageGroup = $('#ageGroup').val();
 	var eventID = $('#eventID').val();
+	var implement = $('#implement').val();
 	var result = $('#result').val();
 	var nameFirst = $('#nameFirst').val();
 	var nameLast = $('#nameLast').val();
@@ -212,6 +220,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 		+ '&recordType=' + recordType
 		+ '&ageGroup=' + ageGroup
 		+ '&eventID=' + eventID
+		+ '&implement=' + implement
 		+ '&result=' + result
 		+ '&nameFirst=' + escape(nameFirst)
 		+ '&nameLast=' + escape(nameLast)

@@ -331,15 +331,20 @@ class Records_con extends CI_Controller
 		
 		if( in_array( $this->input->post('eventID'), $this->config->item('seperate_performances') ) )
 		{
+			if( $this->input->post('implement') !='' ) {
+				$implement = $this->input->post('implement');
+			}
+			else 
+			{
+				foreach($this->config->item( $config_item ) as $key => $value): // Get $config_item from above
+				
+					if($this->input->post( 'ageGroup' ) == $key)
+					{
+						$implement = $value;
+					}
 
-			foreach($this->config->item( $config_item ) as $key => $value): // Get $config_item from above
-			
-				if($this->input->post( 'ageGroup' ) == $key)
-				{
-					$implement = $value;
-				}
-
-			endforeach;
+				endforeach;
+			}
 		}
 
 		
