@@ -97,19 +97,6 @@
 	</script>
 
 
-	<!-- Record Application forms -->
-	<script>
-		(function(){
-			$('a.appForms').hover(function() {
-					$(this).append('<span> - Download</span>');
-				}, function() {
-					$(this).find('span:last').remove();
-				}
-			);
-		})();
-	</script>
-
-
 	<!-- Some Analytics -->
 	<script type="text/javascript">
 		var _gaq = _gaq || [];

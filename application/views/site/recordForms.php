@@ -11,11 +11,11 @@
 
 	</div><!--END row-->
 
-	<div class="row">
-		<div class="span3"><h4><?php echo anchor($this->recordApp_path_url . 'TRACK_RecordApp_2015.pdf', 'TRACK Record App', array( 'class' => 'appForms' ) ) ?></h4></div>
-		<div class="span3"><h4><?php echo anchor($this->recordApp_path_url . 'FIELD_RecordApp_2015.pdf', 'FIELD Record App', array( 'class' => 'appForms' ) ) ?></h4></div>
-		<div class="span3"><h4><?php echo anchor($this->recordApp_path_url . 'COMBINED_RecordApp_2015.pdf', 'COMBINED Record App', array( 'class' => 'appForms' ) ) ?></h4></div>
-		<div class="span3"><h4><?php echo anchor($this->recordApp_path_url . 'ROAD_RecordApp_2015.pdf', 'ROAD Record App', array( 'class' => 'appForms' ) ) ?></h4></div>
+	<div class="row appForms-wrapper">
+		<div class="span3"><?php echo anchor($this->recordApp_path_url . 'TRACK_RecordApp_2015.pdf', '<i class="fa fa-cloud-download"></i> TRACK Form', array( 'class' => 'appForms' ) ) ?></div>
+		<div class="span3"><?php echo anchor($this->recordApp_path_url . 'FIELD_RecordApp_2015.pdf', '<i class="fa fa-cloud-download"></i> FIELD Form', array( 'class' => 'appForms' ) ) ?></div>
+		<div class="span3"><?php echo anchor($this->recordApp_path_url . 'COMBINED_RecordApp_2015.pdf', '<i class="fa fa-cloud-download"></i> COMBINED Form', array( 'class' => 'appForms' ) ) ?></div>
+		<div class="span3"><?php echo anchor($this->recordApp_path_url . 'ROAD_RecordApp_2015.pdf', '<i class="fa fa-cloud-download"></i> ROAD Form', array( 'class' => 'appForms' ) ) ?></div>
 	</div>
 
 </div><!--END container-->

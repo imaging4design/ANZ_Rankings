@@ -76,7 +76,6 @@
 						<li class="nav-header">International</li>
 						<li><a href="http://www.iaaf.org" target="_blank">IAAF</a></li>
 						<li><a href="http://www.tilastopaja.org" target="_blank">Tilastopaja Rankings</a></li>
-						<li><a href="http://www.trackandfieldstats.com/site/home_con/commonwealth" target="_blank">Commonwealth Rankings</a></li>
 					</ul>
 				</li>
 

@@ -10,8 +10,6 @@ body {
   color: #FFF;
   padding-bottom: 15px;
   background: url(../img/trans.jpg) no-repeat center left #000000;
-  /*background: url(../img/stadium_large.jpg) no-repeat bottom center #000;*/
-  /*background-color: #000;*/
 }
 .masthead hr {
   margin: 10px 0;
@@ -19,7 +17,7 @@ body {
   border-top: dotted 1px #999;
 }
 .searchBand {
-  color: #333;
+  color: #333333;
   background-color: #F5F5F5;
 }
 .newsflashBand {
@@ -29,7 +27,7 @@ body {
   padding-top: 15px;
 }
 .abbrevBand {
-  color: #333;
+  color: #333333;
   background-color: #F5F5F5;
 }
 #abbrev {
@@ -63,11 +61,11 @@ body {
   font-weight: 400;
 }
 .latest-news a {
-  color: #333;
+  color: #333333;
   font-weight: bold;
 }
 .latest-news .fa {
-  color: #333;
+  color: #333333;
 }
 .latest-news table {
   font-size: 14px;
@@ -86,6 +84,22 @@ body {
 }
 .hide {
   display: none;
+}
+.appForms-wrapper {
+  margin-top: 15px;
+}
+.appForms {
+  font-weight: 400;
+  color: #FFF;
+  background: #333333;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  display: block;
+}
+.appForms:hover {
+  color: #FFF;
+  background: #f30021;
+  text-decoration: none;
 }
 /************************************************************************/
 /* TYPOGRAPHY */
@@ -130,8 +144,7 @@ a.to_top {
   line-height: 3;
   margin: 20px 0 20px 0;
   padding: 5px 10px;
-  background-color: #F30021;
-  /* RED */
+  background-color: #f30021;
   clear: both;
 }
 a.to_top:hover {
@@ -149,61 +162,55 @@ a.to_top:hover {
   font-size: 30px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0E67B6;
-  /* BLUE */
+  background-color: #0e67b6;
 }
 .textMed {
   font-size: 18px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0E67B6;
-  /* BLUE */
+  background-color: #0e67b6;
 }
 .textSmall {
   font-size: 16px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0E67B6;
-  /* BLUE */
+  background-color: #0e67b6;
 }
 .textTiny {
   font-size: 13px;
   font-weight: 400;
   color: #FFF;
-  background-color: #F30021;
-  /* RED */
+  background-color: #f30021;
 }
 .reversed {
   color: #FFF;
   font-weight: 400;
   clear: left;
-  background-color: #333;
+  background-color: #333333;
 }
 a#allTime .textMed {
   background-color: #DDD;
 }
 a#allTime:hover .textMed {
-  background-color: #F30021;
-  /* RED */
+  background-color: #f30021;
 }
 a#annual .textMed {
   background-color: #DDD;
 }
 a#annual:hover .textMed {
-  background-color: #0E67B6;
+  background-color: #0e67b6;
 }
 .numRanks {
   font-size: 16px;
   font-weight: 900;
   clear: left;
-  color: #0E67B6;
+  color: #0e67b6;
   background-color: #FFF;
 }
 .fresh_results {
   color: #FFF;
   font-weight: 700;
-  background-color: #F30021;
-  /* RED */
+  background-color: #f30021;
   padding: 0 3px;
   border-radius: 50%;
   padding: 2px 6px;
@@ -232,8 +239,7 @@ a#annual:hover .textMed {
   font-size: 14px;
   font-weight: 700;
   color: #FFF;
-  background-color: #0E67B6;
-  /* BLUE */
+  background-color: #0e67b6;
   overflow: hidden;
 }
 .newsflashBand .nav {
@@ -277,20 +283,20 @@ a:focus {
 .masthead a {
   font-size: 15px;
   color: #FFF;
-  background-color: #0E67B6;
+  background-color: #0e67b6;
   padding: 0 4px;
 }
 .masthead a:hover,
 .masthead a:active,
 .masthead a:focus {
-  color: #0E67B6;
+  color: #0e67b6;
   background-color: #FFF;
   text-decoration: none;
 }
 a.news_link {
   font-size: 18px;
   font-weight: normal;
-  color: #0E67B6;
+  color: #0e67b6;
 }
 /************************************************************************/
 /* FORMS */
@@ -322,30 +328,24 @@ label {
 /* HEADERS AND TITLES */
 /************************************************************************/
 .eventTitle {
-  color: #0E67B6;
-  /* BLUE */
+  color: #0e67b6;
   padding: 10px 0;
-  border-bottom: solid 1px #0E67B6;
-  /* BLUE */
+  border-bottom: solid 1px #0e67b6;
 }
 /************************************************************************/
 /* COLOURS */
 /************************************************************************/
 .lead_perfs {
-  background-color: #F30021;
-  /* BLUE */
+  background-color: #f30021;
 }
 .records {
-  background-color: #F30021;
-  /* BLUE */
+  background-color: #f30021;
 }
 .textRed {
-  color: #0E67B6;
-  /* BLUE */
+  color: #0e67b6;
 }
 .textREDD {
-  color: #F30021;
-  /* BLUE */
+  color: #f30021;
 }
 .textGrey {
   color: #777;
@@ -354,16 +354,13 @@ label {
   color: #ff9900;
 }
 .blue {
-  background-color: #0E67B6;
-  /* BLUE */
+  background-color: #0e67b6;
 }
 .red {
-  background-color: #F30021;
-  /* RED */
+  background-color: #f30021;
 }
 .black {
   margin-top: 20px;
-  /*background-color:rgba(0, 0, 0, 0.65);*/
 }
 .black h2 {
   padding-left: 20px;
@@ -403,8 +400,7 @@ button.letter {
   text-align: center;
 }
 button.letter:hover {
-  background-color: #0E67B6;
-  /* BLUE */
+  background-color: #0e67b6;
 }
 button.closed {
   width: 106px;
@@ -533,7 +529,7 @@ button.closed {
   padding: 0;
 }
 .flyout-styles li {
-  background: #333;
+  background: #333333;
   margin-bottom: 3px;
   padding: 5px 20px;
   list-style: none;
@@ -546,7 +542,6 @@ button.closed {
 }
 .footable > tbody > tr > td,
 .footable > thead > tr > th {
-  /*border-left: 1px solid #ccc;*/
   border-top: 1px solid #ccc;
   padding: 10px 5px;
 }
@@ -663,7 +658,6 @@ td.w25 {
     padding-bottom: 0;
   }
   .masthead {
-    /*background: url(../img/stadium_mob.jpg) no-repeat bottom center #000;*/
     background: url(../img/trans.jpg) no-repeat top left #000000;
     margin-left: -20px;
     margin-right: -20px;
@@ -738,7 +732,6 @@ td.w25 {
   /************************************************************************/
   .footable > tbody > tr > td,
   .footable > thead > tr > th {
-    /*border-left: 1px solid #ccc;*/
     border-top: 1px solid #ccc;
     padding: 10px 5px;
   }
