@@ -24,7 +24,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="nameFirst">Record Type:</label>
+							<label for="recordType">Record Type:</label>
 							<?php
 								// Select type of record (i.e., Allcomers, National etc ...)
 								echo recordType($selected = ''); 
@@ -34,7 +34,7 @@
 
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="nameFirst">Age Group:</label>
+							<label for="ageGroup">Age Group:</label>
 							<?php
 								// Select an ageGroup
 								echo buildAgeGroup_records($selected = set_value('ageGroup'));
@@ -44,7 +44,7 @@
 
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="nameFirst">Indoors/Outdoors:</label>
+							<label for="in_out">Indoors/Outdoors:</label>
 							<?php
 								// Indoor / Outdoors
 								echo in_out($selected='');
@@ -58,13 +58,20 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<label for="nameFirst">Event:</label>
+							<label for="event">Event:</label>
 							<?php
 								// Select an ageGroup
 								// Javascript hides/shows one of these depending if indoor or outdoor selected from dropdown
 								echo buildRecordEventsDropdown($value='', $selected='', $label='');
 								echo buildIndoorEventsDropdown($value='', $selected='', $label='');
 							?>
+						</div>
+					</div><!--ENDS col-->
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="implement">Implement: (leave empty for default)</label>
+							<input type="text" name="implement" id="implement" class="form-control" value="<?php echo set_value('implement'); ?>" />
 						</div>
 					</div><!--ENDS col-->
 				</div><!--ENDS row-->
@@ -186,6 +193,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 	var ageGroup = $('#ageGroup').val();
 	var in_out = $('#in_out').val();
 	var eventID = $('#eventID').val();
+	var implement = $('#implement').val();
 	var indoorEventID = $('#indoorEventID').val();
 	var result = $('#result').val();
 	var nameFirst = $('#nameFirst').val();
@@ -205,6 +213,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 		+ '&in_out=' + in_out
 		+ '&ageGroup=' + ageGroup
 		+ '&eventID=' + eventID
+		+ '&implement=' + implement
 		+ '&indoorEventID=' + indoorEventID
 		+ '&result=' + result
 		+ '&nameFirst=' + escape(nameFirst)
@@ -221,7 +230,7 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 					
 					$('#showEntry').html(result);
 					
-					$("#result, #nameFirst, #nameLast, #country, #venue").val(''); 
+					$("#result, #nameFirst, #nameLast, #implement, #country, #venue").val(''); 
 								
 				}
 		});

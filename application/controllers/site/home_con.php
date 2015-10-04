@@ -14,6 +14,8 @@ class Home_con extends CI_Controller {
 		$this->load->model('site/profiles_model');
 		$this->load->model('site/news_model');
 		$this->load->model('site/toplist_model');
+
+		date_default_timezone_set('Pacific/Auckland'); // Set defaut timezone .... otherwise 1 day out on localhost!
 	}
 
 

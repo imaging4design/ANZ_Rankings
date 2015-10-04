@@ -140,6 +140,7 @@
 							<h3>On this day in history ...</h3>
 
 							<?php
+
 								// Shows records set athletes on this day in history ...
 								if( isset( $records_this_day ) ) {
 									foreach ($records_this_day as $row) {
