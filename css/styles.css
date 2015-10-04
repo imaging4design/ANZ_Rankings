@@ -38,6 +38,7 @@ body {
 }
 .news_background {
   position: relative;
+  padding: 0;
   clear: both;
   overflow: hidden;
 }
@@ -45,11 +46,11 @@ body {
   display: none;
 }
 .latest-news {
-  border: solid 1px #DDD;
+  border: none;
   border-top: none;
   color: #777;
   margin: -22px 0 15px 0;
-  padding: 30px 30px 20px 30px;
+  padding: 30px 0 20px 0;
   text-align: left;
   font-size: 16px;
   line-height: 1.4;
@@ -238,6 +239,14 @@ a#annual:hover .textMed {
 .newsflashBand .nav {
   margin-bottom: 0;
 }
+.newsflashBand .nav-tabs {
+  /*border-bottom: 0;*/
+}
+.newsflashBand .nav-tabs > li {
+  float: none;
+  margin-bottom: -1px;
+  display: block;
+}
 .newsflashBand .nav-tabs > li,
 .newsflashBand .nav-pills > li {
   font-size: 16px;
@@ -252,6 +261,11 @@ a#annual:hover .textMed {
   line-height: 20px;
   border-width: none;
   border-radius: 0;
+}
+.newsflashBand .nav-tabs > .active > a,
+.newsflashBand .nav-tabs > .active > a:hover,
+.newsflashBand .nav-tabs > .active > a:focus {
+  border: 0;
 }
 /************************************************************************/
 /* LINKS */
@@ -564,6 +578,47 @@ td.w25 {
 /* MEDIA QUERIES */
 /************************************************************************************************************************************************/
 /* Large desktop */
+/* ALL EXCEPT MOBILE */
+@media (min-width: 768px) {
+  .latest-news {
+    border: solid 1px #DDD;
+    padding: 30px 30px 20px 30px;
+  }
+  .news_background {
+    padding: 40px 0 0 0;
+  }
+  .newsflashBand .nav {
+    margin-bottom: 0;
+  }
+  .newsflashBand .nav-tabs > li,
+  .newsflashBand .nav-pills > li {
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: none;
+    float: left;
+    display: static;
+  }
+  .newsflashBand .nav-tabs > li > a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 20px;
+    border-width: none;
+    border-radius: 0;
+  }
+  .newsflashBand .nav-tabs > .active > a,
+  .newsflashBand .nav-tabs > .active > a:hover,
+  .newsflashBand .nav-tabs > .active > a:focus {
+    background-color: #ffffff;
+    border-color: #ddd #ddd transparent;
+    -webkit-border-image: none;
+         -o-border-image: none;
+            border-image: none;
+    border-style: solid;
+    border-width: 1px;
+  }
+}
 /* Large desktop */
 @media (min-width: 980px) and (max-width: 1199px) {
   .textGiant {
@@ -693,9 +748,6 @@ td.w25 {
   }
   .news img {
     display: none;
-  }
-  .news_background {
-    padding: 40px 0 0 0;
   }
   th.e,
   td.e {
