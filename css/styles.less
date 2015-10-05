@@ -48,6 +48,9 @@ body {
 		display: none;
 	}
 }
+.tab-content {
+	background: #FFF;
+}
 .latest-news {
 	border: none;
 	border-top: none;
@@ -74,9 +77,6 @@ body {
 		margin-bottom: 0;
 		td {
 			padding: 3px 0;
-		}
-		td:first-child {
-			padding-left: 8px;
 		}
 	}
 	hr {
@@ -274,16 +274,26 @@ a#annual:hover .textMed {
 		border-radius: none;
 	}
 	.nav-tabs > li > a {
+		color: #999;
 		padding-top: 8px;
 		padding-bottom: 8px;
 		line-height: 20px;
 		border-width: none;
 		border-radius: 0;
+		&:hover {
+			color: #FFF;
+			background: @colRed;
+		}
 	}
 	.nav-tabs > .active > a, 
 	.nav-tabs > .active > a:hover, 
 	.nav-tabs > .active > a:focus {
+		color: @colDarkGrey;
 		border:0;
+		&:hover {
+			color: #FFF;
+			background: @colRed;
+		}
 	}
 
 }
@@ -595,6 +605,7 @@ th.w25, td.w25 {
 	.latest-news {
 		border: solid 1px #DDD;
 		padding: 30px 30px 20px 30px;
+		margin-bottom: 0;
 	}
 
 	.news_background {
@@ -603,6 +614,10 @@ th.w25, td.w25 {
 
 	.newsflashBand {
 
+		.tab-content {
+			background: #FAFAFA;
+			margin-bottom: 15px;
+		}
 		.nav {
 			margin-bottom: 0;
 		}
@@ -617,20 +632,30 @@ th.w25, td.w25 {
 			display: static;
 		}
 		.nav-tabs > li > a {
+			color: #999;
 			padding-top: 8px;
 			padding-bottom: 8px;
 			line-height: 20px;
 			border-width: none;
 			border-radius: 0;
+			&:hover {
+				color: #FFF;
+				background: @colRed;
+			}
 		}
 		.nav-tabs > .active > a, 
 		.nav-tabs > .active > a:hover, 
 		.nav-tabs > .active > a:focus {
-			background-color: #ffffff;
+			color: @colDarkGrey;
+			background-color: #FAFAFA;
 			border-color: #ddd #ddd transparent;
 			border-image: none;
 			border-style: solid;
 			border-width: 1px;
+			&:hover {
+				color: #FFF;
+				background: @colRed;
+			}
 		}
 
 	}

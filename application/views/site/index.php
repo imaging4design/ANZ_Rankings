@@ -5,11 +5,13 @@
 		<div class="row">
 			<div class="span12">
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="#home" data-toggle="tab">Announcements</a></li>
-					<li><a href="#news" data-toggle="tab">Latest News</a></li>
-					<li><a href="#records" data-toggle="tab">Recent NZ Records</a></li>
-					<li><a href="#history" data-toggle="tab">Today in History</a></li>
-					<li><a href="#birthdays" data-toggle="tab">Athlete Birthdays</a></li>
+					<li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-comment-o"></i>&nbsp; Announcements</a></li>
+					<li><a href="#news" data-toggle="tab"><i class="fa fa-map-o"></i>&nbsp; Latest News</a></li>
+					<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li>
+					<?php if( isset( $records_this_day ) ) { ?>
+						<li><a href="#history" data-toggle="tab"><i class="fa fa-calendar-o"></i>&nbsp; Today in History</a></li>
+					<?php } ?>
+					<li><a href="#birthdays" data-toggle="tab"><i class="fa fa-calendar"></i>&nbsp; Athlete Birthdays</a></li>
 				</ul>
 
 				<!-- ========================================================================================== -->
@@ -58,7 +60,7 @@
 								// Is admin logged in?
 								$admin = ($this->session->userdata('is_logged_in')) ? TRUE : FALSE;
 							
-								echo '<h3>Latest News </h3>';
+								echo '<h3>Latest News ...</h3>';
 
 								if(isset($show_news))
 								{
@@ -126,7 +128,7 @@
 
 					  			} // ENDS $ratified_record
 					  			else {
-									echo '<p>Nothing to display ...</p>';
+									echo '<p>No results found ...</p>';
 								}
 							?>
 
@@ -160,11 +162,11 @@
 										// This displays the actual age of the record in Years/Months/Days ...
 										$nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
 
-										echo date('jS F', strtotime(date('Y-m-d'))) . ' ' .$row->recordDate . ', '.$nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' .$row->nameLast . '</strong> (' . strtoupper($row->country) . ') sets a ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
+										echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' .$row->nameLast . '</strong> (' . strtoupper($row->country) . ') set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
 									}
 								}
 								else {
-									echo '<p>Nothing to display ...</p>';
+									echo '<p>No results found ...</p>';
 								}
 
 							?>
@@ -184,9 +186,9 @@
 
 									echo '<table class="table table-striped">';
 										echo '<tr>';
-											echo '<td><strong>Name</strong></td>';
-											echo '<td class="hidden-phone"><strong>Club</strong></td>';
-											echo '<td><strong>Centre</strong></td>';
+											echo '<td><strong>NAME</strong></td>';
+											echo '<td class="hidden-phone"><strong>CLUB</strong></td>';
+											echo '<td><strong>CENTRE</strong></td>';
 										echo '</tr>';
 
 										foreach ($born_this_day as $row):
@@ -199,7 +201,7 @@
 									echo '</table>';
 								}
 								else {
-									echo '<p>Nothing to display ...</p>';
+									echo '<p>No results found ...</p>';
 								}
 							?>
 						</div><!-- ENDS latest-news -->

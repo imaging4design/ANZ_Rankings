@@ -43,6 +43,9 @@ body {
 .news_background img {
   display: none;
 }
+.tab-content {
+  background: #FFF;
+}
 .latest-news {
   border: none;
   border-top: none;
@@ -73,9 +76,6 @@ body {
 }
 .latest-news table td {
   padding: 3px 0;
-}
-.latest-news table td:first-child {
-  padding-left: 8px;
 }
 .latest-news hr {
   border: 0;
@@ -262,16 +262,28 @@ a#annual:hover .textMed {
   border-radius: none;
 }
 .newsflashBand .nav-tabs > li > a {
+  color: #999;
   padding-top: 8px;
   padding-bottom: 8px;
   line-height: 20px;
   border-width: none;
   border-radius: 0;
 }
+.newsflashBand .nav-tabs > li > a:hover {
+  color: #FFF;
+  background: #f30021;
+}
 .newsflashBand .nav-tabs > .active > a,
 .newsflashBand .nav-tabs > .active > a:hover,
 .newsflashBand .nav-tabs > .active > a:focus {
+  color: #333333;
   border: 0;
+}
+.newsflashBand .nav-tabs > .active > a:hover,
+.newsflashBand .nav-tabs > .active > a:hover:hover,
+.newsflashBand .nav-tabs > .active > a:focus:hover {
+  color: #FFF;
+  background: #f30021;
 }
 /************************************************************************/
 /* LINKS */
@@ -578,9 +590,14 @@ td.w25 {
   .latest-news {
     border: solid 1px #DDD;
     padding: 30px 30px 20px 30px;
+    margin-bottom: 0;
   }
   .news_background {
     padding: 0;
+  }
+  .newsflashBand .tab-content {
+    background: #FAFAFA;
+    margin-bottom: 15px;
   }
   .newsflashBand .nav {
     margin-bottom: 0;
@@ -596,22 +613,34 @@ td.w25 {
     display: static;
   }
   .newsflashBand .nav-tabs > li > a {
+    color: #999;
     padding-top: 8px;
     padding-bottom: 8px;
     line-height: 20px;
     border-width: none;
     border-radius: 0;
   }
+  .newsflashBand .nav-tabs > li > a:hover {
+    color: #FFF;
+    background: #f30021;
+  }
   .newsflashBand .nav-tabs > .active > a,
   .newsflashBand .nav-tabs > .active > a:hover,
   .newsflashBand .nav-tabs > .active > a:focus {
-    background-color: #ffffff;
+    color: #333333;
+    background-color: #FAFAFA;
     border-color: #ddd #ddd transparent;
     -webkit-border-image: none;
          -o-border-image: none;
             border-image: none;
     border-style: solid;
     border-width: 1px;
+  }
+  .newsflashBand .nav-tabs > .active > a:hover,
+  .newsflashBand .nav-tabs > .active > a:hover:hover,
+  .newsflashBand .nav-tabs > .active > a:focus:hover {
+    color: #FFF;
+    background: #f30021;
   }
 }
 /* Large desktop */

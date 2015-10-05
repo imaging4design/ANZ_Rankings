@@ -75,6 +75,7 @@ class Records_Model extends CI_Model
 		$this->db->select("DATE_FORMAT(records.date, '%Y') AS recordDate", FALSE);
 		$this->db->where('MONTH(records.date)', date('m'));
 		$this->db->where('DAY(records.date)', date('d'));
+		$this->db->where('in_out', 'out');
 		$this->db->join('events', 'events.eventID = records.eventID');
 		$this->db->order_by('records.nameLast', 'ASC');
 		$query = $this->db->get('records');
