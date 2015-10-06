@@ -486,6 +486,22 @@ button.closed {
   /* Decrease this value for cross-browser compatibility */
   overflow: auto;
 }
+.flyout-dark {
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -15px;
+  /* Decrease this value for cross-browser compatibility */
+  overflow: auto;
+  background: #000;
+  opacity: 0.8;
+}
+.flyout-dark .fa {
+  font-size: 150px;
+  margin: 80px 0 0 80px;
+}
 .flyout.open {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);

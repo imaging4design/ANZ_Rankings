@@ -561,12 +561,15 @@
 
 
 
-
 <!-- This displays the athlete 'mini profile' that slides in from the left -->
 <div class="flyout-btn" id="flyout-btn"><i class="fa fa-close"></i></div>
 <div class="flyout">
 	<div class="flyout-content" id="showEntry"></div>
+	<div id="showSpinner"></div>
 </div>
+
+
+
 
 
 <script>
@@ -619,7 +622,7 @@ $(function() {
 
 $('.miniProfile').click(function() {
 	
-	$('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" alt="Currently Loading" id="loading" />');
+	$('#showSpinner').append('<div class="flyout-dark"><h1><i class="fa fa-circle-o-notch fa-spin"></i></h1></div>');
 
 	var athleteID = $(this).data("id");
 	
@@ -629,10 +632,8 @@ $('.miniProfile').click(function() {
 		data: '&athleteID=' + escape(athleteID),
 		
 		success: function(result) {
-				
-				$('#loading').fadeOut(500, function() {
-					$(this).remove();
-				});
+
+				$('#showSpinner').empty();
 
 				$('#showEntry').html(result);
 
