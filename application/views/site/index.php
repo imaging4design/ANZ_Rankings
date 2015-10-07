@@ -6,11 +6,17 @@
 			<div class="span12">
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-comment-o"></i>&nbsp; Announcements</a></li>
+
 					<li><a href="#news" data-toggle="tab"><i class="fa fa-map-o"></i>&nbsp; Latest News</a></li>
-					<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li>
-					<?php if( isset( $records_this_day ) ) { ?>
+
+					<?php if( isset( $ratified_record ) ) { // Only display is data is present ?>
+						<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li>
+					<?php } ?>
+
+					<?php if( isset( $records_this_day ) ) { // Only display is data is present ?>
 						<li><a href="#history" data-toggle="tab"><i class="fa fa-calendar-o"></i>&nbsp; Today in History</a></li>
 					<?php } ?>
+
 					<li><a href="#birthdays" data-toggle="tab"><i class="fa fa-calendar"></i>&nbsp; Athlete Birthdays</a></li>
 				</ul>
 
