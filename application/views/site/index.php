@@ -5,9 +5,17 @@
 		<div class="row">
 			<div class="span12">
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-comment-o"></i>&nbsp; Announcements</a></li>
+					<?php if( isset( $show_flash_news ) ) { // Only display is data is present 
+						$flash_active = ( isset( $show_flash_news )) ? 'active' : '';
+					?>
+						<li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-comment-o"></i>&nbsp; Announcements</a></li>
+					<?php } ?>
 
-					<li><a href="#news" data-toggle="tab"><i class="fa fa-map-o"></i>&nbsp; Latest News</a></li>
+					<?php if( isset( $show_news ) ) { // Only display is data is present 
+						$news_active = ( ! isset( $show_flash_news )) ? 'active' : '';
+					?>
+						<li class="<?php echo $news_active; ?>" ><a href="#news" data-toggle="tab"><i class="fa fa-map-o"></i>&nbsp; Latest News</a></li>
+					<?php } ?>
 
 					<?php if( isset( $ratified_record ) ) { // Only display is data is present ?>
 						<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li>
@@ -17,14 +25,16 @@
 						<li><a href="#history" data-toggle="tab"><i class="fa fa-calendar-o"></i>&nbsp; Today in History</a></li>
 					<?php } ?>
 
-					<li><a href="#birthdays" data-toggle="tab"><i class="fa fa-calendar"></i>&nbsp; Athlete Birthdays</a></li>
+					<?php if( isset( $born_this_day ) ) { // Only display is data is present ?>
+						<li><a href="#birthdays" data-toggle="tab"><i class="fa fa-calendar"></i>&nbsp; Athlete Birthdays</a></li>
+					<?php } ?>
 				</ul>
 
 				<!-- ========================================================================================== -->
 
 				<div class="tab-content">
 
-					<div class="tab-pane active" id="home"><!-- STARTS News Flash -->
+					<div class="tab-pane <?php echo $flash_active; ?>" id="home"><!-- STARTS News Flash -->
 						<div class="latest-news">
 							<?php
 
@@ -58,7 +68,7 @@
 
 					<!-- ========================================================================================== -->
 
-					<div class="tab-pane" id="news"><!-- STARTS News -->
+					<div class="tab-pane <?php echo $news_active; ?>" id="news"><!-- STARTS News -->
 						<div class="latest-news">
 
 							<?php

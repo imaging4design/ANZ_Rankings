@@ -46,6 +46,7 @@ class News_Model extends CI_Model
 		$this->db->select('*');
 		$this->db->select("DATE_FORMAT(date, '%d %b %Y') AS date", FALSE);
 		$this->db->where('type', 'F'); // Is this a 'news' or 'info' item? 
+		$this->db->where('expires >=', date('Y-m-d'));	
 		$this->db->order_by('newsID', 'DESC');
 		$this->db->order_by('date', 'DESC');
 		$this->db->limit(1);
@@ -56,8 +57,9 @@ class News_Model extends CI_Model
 			return $query->row();
 		}
 		
-		
 	} //ENDS show_flash_news()
+
+
 	
 	
 	
