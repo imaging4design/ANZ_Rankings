@@ -140,6 +140,8 @@
 
 										echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> - ' . convertEventID($row->eventID)->eventName . ', <strong>' . $row->result . '</strong>, ' . $recType . ' ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' record, ' . $row->newdate . '<br>';
 
+										echo '<hr>';
+
 					  				endforeach;
 
 					  			} // ENDS $ratified_record
@@ -179,6 +181,9 @@
 										$nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
 
 										echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' .$row->nameLast . '</strong> (' . strtoupper($row->country) . ') set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
+									
+										echo '<hr>';
+										
 									}
 								}
 								else {

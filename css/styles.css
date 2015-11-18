@@ -9,7 +9,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: #FFF;
   padding-bottom: 15px;
-  background: url(../img/trans.jpg) no-repeat center left #000000;
+  background: url(../img/trans.jpg) no-repeat center left #000;
 }
 .masthead hr {
   margin: 10px 0;
@@ -17,7 +17,7 @@ body {
   border-top: dotted 1px #999;
 }
 .searchBand {
-  color: #333333;
+  color: #333;
   background-color: #F5F5F5;
 }
 .newsflashBand {
@@ -27,7 +27,7 @@ body {
   padding-top: 15px;
 }
 .abbrevBand {
-  color: #333333;
+  color: #333;
   background-color: #F5F5F5;
 }
 #abbrev {
@@ -42,6 +42,10 @@ body {
 }
 .news_background img {
   display: none;
+}
+.news_background h5 {
+  color: #F30021;
+  margin-bottom: -10px;
 }
 .tab-content {
   background: #FFF;
@@ -64,11 +68,11 @@ body {
   font-weight: 400;
 }
 .latest-news a {
-  color: #333333;
+  color: #333;
   font-weight: bold;
 }
 .latest-news .fa {
-  color: #333333;
+  color: #333;
 }
 .latest-news table {
   font-size: 14px;
@@ -79,8 +83,8 @@ body {
 }
 .latest-news hr {
   border: 0;
-  border-top: dashed 1px #DDD;
-  margin: 10px 0;
+  border-top: dotted 1px #DDD;
+  margin: 3px;
 }
 .hide {
   display: none;
@@ -91,14 +95,14 @@ body {
 .appForms {
   font-weight: 400;
   color: #FFF;
-  background: #333333;
+  background: #333;
   padding: 5px 15px;
   margin-bottom: 5px;
   display: block;
 }
 .appForms:hover {
   color: #FFF;
-  background: #f30021;
+  background: #F30021;
   text-decoration: none;
 }
 /************************************************************************/
@@ -144,7 +148,7 @@ a.to_top {
   line-height: 3;
   margin: 20px 0 20px 0;
   padding: 5px 10px;
-  background-color: #f30021;
+  background-color: #F30021;
   clear: both;
 }
 a.to_top:hover {
@@ -162,55 +166,55 @@ a.to_top:hover {
   font-size: 30px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0e67b6;
+  background-color: #0E67B6;
 }
 .textMed {
   font-size: 18px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0e67b6;
+  background-color: #0E67B6;
 }
 .textSmall {
   font-size: 16px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0e67b6;
+  background-color: #0E67B6;
 }
 .textTiny {
   font-size: 13px;
   font-weight: 400;
   color: #FFF;
-  background-color: #f30021;
+  background-color: #F30021;
 }
 .reversed {
   color: #FFF;
   font-weight: 400;
   clear: left;
-  background-color: #333333;
+  background-color: #333;
 }
 a#allTime .textMed {
   background-color: #DDD;
 }
 a#allTime:hover .textMed {
-  background-color: #f30021;
+  background-color: #F30021;
 }
 a#annual .textMed {
   background-color: #DDD;
 }
 a#annual:hover .textMed {
-  background-color: #0e67b6;
+  background-color: #0E67B6;
 }
 .numRanks {
   font-size: 16px;
   font-weight: 900;
   clear: left;
-  color: #0e67b6;
+  color: #0E67B6;
   background-color: #FFF;
 }
 .fresh_results {
   color: #FFF;
   font-weight: 700;
-  background-color: #f30021;
+  background-color: #F30021;
   padding: 0 3px;
   border-radius: 50%;
   padding: 2px 6px;
@@ -239,7 +243,7 @@ a#annual:hover .textMed {
   font-size: 14px;
   font-weight: 700;
   color: #FFF;
-  background-color: #0e67b6;
+  background-color: #0E67B6;
   overflow: hidden;
 }
 .newsflashBand .nav {
@@ -271,19 +275,19 @@ a#annual:hover .textMed {
 }
 .newsflashBand .nav-tabs > li > a:hover {
   color: #FFF;
-  background: #f30021;
+  background: #F30021;
 }
 .newsflashBand .nav-tabs > .active > a,
 .newsflashBand .nav-tabs > .active > a:hover,
 .newsflashBand .nav-tabs > .active > a:focus {
-  color: #333333;
+  color: #333;
   border: 0;
 }
 .newsflashBand .nav-tabs > .active > a:hover,
 .newsflashBand .nav-tabs > .active > a:hover:hover,
 .newsflashBand .nav-tabs > .active > a:focus:hover {
   color: #FFF;
-  background: #f30021;
+  background: #F30021;
 }
 /************************************************************************/
 /* LINKS */
@@ -295,20 +299,20 @@ a:focus {
 .masthead a {
   font-size: 15px;
   color: #FFF;
-  background-color: #0e67b6;
+  background-color: #0E67B6;
   padding: 0 4px;
 }
 .masthead a:hover,
 .masthead a:active,
 .masthead a:focus {
-  color: #0e67b6;
+  color: #0E67B6;
   background-color: #FFF;
   text-decoration: none;
 }
 a.news_link {
   font-size: 18px;
   font-weight: normal;
-  color: #0e67b6;
+  color: #0E67B6;
 }
 /************************************************************************/
 /* FORMS */
@@ -340,36 +344,36 @@ label {
 /* HEADERS AND TITLES */
 /************************************************************************/
 .eventTitle {
-  color: #0e67b6;
+  color: #0E67B6;
   padding: 10px 0;
-  border-bottom: solid 1px #0e67b6;
+  border-bottom: solid 1px #0E67B6;
 }
 /************************************************************************/
 /* COLOURS */
 /************************************************************************/
 .lead_perfs {
-  background-color: #f30021;
+  background-color: #F30021;
 }
 .records {
-  background-color: #f30021;
+  background-color: #F30021;
 }
 .textRed {
-  color: #0e67b6;
+  color: #0E67B6;
 }
 .textREDD {
-  color: #f30021;
+  color: #F30021;
 }
 .textGrey {
   color: #777;
 }
 .textPink {
-  color: #ff9900;
+  color: #FF9900;
 }
 .blue {
-  background-color: #0e67b6;
+  background-color: #0E67B6;
 }
 .red {
-  background-color: #f30021;
+  background-color: #F30021;
 }
 .black {
   margin-top: 20px;
@@ -412,7 +416,7 @@ button.letter {
   text-align: center;
 }
 button.letter:hover {
-  background-color: #0e67b6;
+  background-color: #0E67B6;
 }
 button.closed {
   width: 106px;
@@ -557,7 +561,7 @@ button.closed {
   padding: 0;
 }
 .flyout-styles li {
-  background: #333333;
+  background: #333;
   margin-bottom: 3px;
   padding: 5px 20px;
   list-style: none;
@@ -638,12 +642,12 @@ td.w25 {
   }
   .newsflashBand .nav-tabs > li > a:hover {
     color: #FFF;
-    background: #f30021;
+    background: #F30021;
   }
   .newsflashBand .nav-tabs > .active > a,
   .newsflashBand .nav-tabs > .active > a:hover,
   .newsflashBand .nav-tabs > .active > a:focus {
-    color: #333333;
+    color: #333;
     background-color: #FAFAFA;
     border-color: #ddd #ddd transparent;
     -webkit-border-image: none;
@@ -656,7 +660,7 @@ td.w25 {
   .newsflashBand .nav-tabs > .active > a:hover:hover,
   .newsflashBand .nav-tabs > .active > a:focus:hover {
     color: #FFF;
-    background: #f30021;
+    background: #F30021;
   }
 }
 /* Large desktop */
@@ -703,7 +707,7 @@ td.w25 {
     padding-bottom: 0;
   }
   .masthead {
-    background: url(../img/trans.jpg) no-repeat top left #000000;
+    background: url(../img/trans.jpg) no-repeat top left #000;
     margin-left: -20px;
     margin-right: -20px;
     padding: 0 20px 20px 20px;
