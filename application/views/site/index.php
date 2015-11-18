@@ -18,7 +18,7 @@
 					<?php } ?>
 
 					<?php if( isset( $ratified_record ) ) { // Only display is data is present ?>
-						<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li>
+						<!-- <li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li> -->
 					<?php } ?>
 
 					<?php if( isset( $records_this_day ) ) { // Only display is data is present ?>
@@ -118,33 +118,33 @@
 								// Display a New NZ ratified record(s) on the home page!
 					  			if( $ratified_record ) {
 
-					  				echo '<h3>NZ Records ratified in the past month</h3>';
+					  				//echo '<h3>NZ Records ratified in the past month</h3>';
 
-									foreach($ratified_record as $row):
+									// foreach($ratified_record as $row):
 
-										// Work out which type of record
-										switch ($row->recordType){
+									// 	// Work out which type of record
+									// 	switch ($row->recordType){
 
-											case 'NN':
-											$recType = 'NZ National';
-											break;
+									// 		case 'NN':
+									// 		$recType = 'NZ National';
+									// 		break;
 
-											case "NR":
-											$recType = 'NZ Resident';
-											break;
+									// 		case "NR":
+									// 		$recType = 'NZ Resident';
+									// 		break;
 
-											case "AC":
-											$recType = 'NZ All Commers';
-											break;	
-										}
+									// 		case "AC":
+									// 		$recType = 'NZ All Commers';
+									// 		break;	
+									// 	}
 
-										echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> | ' . $recType . ' | ' . convertEventID($row->eventID)->eventName . ' | ' . ageGroupLabels($row->ageGroup) . ' | ' . $row->result . ' | ' . $row->newdate . '<br>';
+									// 	echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> | ' . $recType . ' | ' . convertEventID($row->eventID)->eventName . ' | ' . ageGroupLabels($row->ageGroup) . ' | ' . $row->result . ' | ' . $row->newdate . '<br>';
 
-					  				endforeach;
+					  		// 		endforeach;
 
 					  			} // ENDS $ratified_record
 					  			else {
-									echo '<p>No results found ...</p>';
+									//echo '<p>No results found ...</p>';
 								}
 							?>
 
