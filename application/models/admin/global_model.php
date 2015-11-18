@@ -21,7 +21,7 @@ class Global_Model extends CI_Model
 			FROM records 
 			WHERE date BETWEEN DATE_SUB(NOW(), INTERVAL 1 MONTH) 
 			AND NOW() 
-			ORDER BY date DESC
+			ORDER BY date DESC, ageGroup DESC
 		");
 
 		if($query->num_rows() >0) 
