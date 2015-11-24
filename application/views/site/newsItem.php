@@ -36,8 +36,10 @@
 
 				echo '<div class="news_background">';
 				echo '<div class="newsHolder"><div class="slab reversed textMed">DATE: </div><div class="slab textMed">' . $news_item->date . ' &raquo;</div>';
-				echo '</div><h2><span class="news_item news_item_img">' . $news_item->bodyContent . '</span></div>';
-				echo '<hr>';
+				echo '</div>';
+
+				echo '<div class="clearfix"></div>';
+				echo '<h2><span class="news_item news_item_img">' . $news_item->bodyContent . '</span>';
 
 					
 			}

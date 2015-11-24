@@ -46,8 +46,10 @@
 							echo $edit; // Admin 'Edit Article' button
 
 							echo '<div class="news_background">';
-							echo '<div class="newsHolder"><div class="slab reversed textMed">DATE: </div><div class="slab textMed red">' . $row->date . ' &raquo;</div>';
-							echo '</div>' . character_limiter($row->bodyContent, 300, '') . ' &nbsp; ' . anchor('site/news_con/news_item/' .$row->newsID, '...&nbsp;view&nbsp;article ', array('class' => 'news_link')) . '</div>';
+								echo '<div class="newsHolder"><div class="slab reversed textMed">DATE: </div><div class="slab textMed red">' . $row->date . ' &raquo;</div>';
+								echo '<div class="clearfix"></div>';
+								echo '</div>' . character_limiter($row->bodyContent, 300, '') . ' &nbsp; ' . anchor('site/news_con/news_item/' .$row->newsID, '...&nbsp;view&nbsp;article ', array('class' => 'news_link'));
+							echo '</div>';
 							echo '<hr>';
 
 						echo '</div>';
