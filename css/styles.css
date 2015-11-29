@@ -63,13 +63,18 @@ body {
 .latest-news h2,
 .latest-news h3,
 .latest-news h4 {
-  color: #444 !important;
+  color: #666 !important;
   margin-bottom: 5px;
   font-weight: 400;
 }
 .latest-news a {
-  color: #333;
   font-weight: bold;
+  color: #777;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.latest-news a:hover {
+  color: #F30021;
 }
 .latest-news .fa {
   color: #333;
@@ -166,19 +171,19 @@ a.to_top:hover {
   font-size: 30px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0E67B6;
+  background-color: #0095DA;
 }
 .textMed {
   font-size: 18px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0E67B6;
+  background-color: #0095DA;
 }
 .textSmall {
   font-size: 16px;
   font-weight: 400;
   color: #FFF;
-  background-color: #0E67B6;
+  background-color: #0095DA;
 }
 .textTiny {
   font-size: 13px;
@@ -202,13 +207,13 @@ a#annual .textMed {
   background-color: #DDD;
 }
 a#annual:hover .textMed {
-  background-color: #0E67B6;
+  background-color: #0095DA;
 }
 .numRanks {
   font-size: 16px;
   font-weight: 900;
   clear: left;
-  color: #0E67B6;
+  color: #0095DA;
   background-color: #FFF;
 }
 .fresh_results {
@@ -243,7 +248,7 @@ a#annual:hover .textMed {
   font-size: 14px;
   font-weight: 700;
   color: #FFF;
-  background-color: #0E67B6;
+  background-color: #0095DA;
   overflow: hidden;
 }
 .newsflashBand .nav {
@@ -292,6 +297,10 @@ a#annual:hover .textMed {
 /************************************************************************/
 /* LINKS */
 /************************************************************************/
+a {
+  color: #0095DA;
+  text-decoration: none;
+}
 a:active,
 a:focus {
   outline: none;
@@ -299,20 +308,26 @@ a:focus {
 .masthead a {
   font-size: 15px;
   color: #FFF;
-  background-color: #0E67B6;
+  background-color: #0095DA;
   padding: 0 4px;
 }
 .masthead a:hover,
 .masthead a:active,
 .masthead a:focus {
-  color: #0E67B6;
+  color: #0095DA;
   background-color: #FFF;
   text-decoration: none;
 }
 a.news_link {
   font-size: 18px;
   font-weight: normal;
-  color: #0E67B6;
+  color: #0095DA;
+}
+.tooltip-inner {
+  background-color: #0095DA;
+}
+.tooltip.right .tooltip-arrow {
+  border-right-color: #0095DA;
 }
 /************************************************************************/
 /* FORMS */
@@ -344,9 +359,9 @@ label {
 /* HEADERS AND TITLES */
 /************************************************************************/
 .eventTitle {
-  color: #0E67B6;
+  color: #0095DA;
   padding: 10px 0;
-  border-bottom: solid 1px #0E67B6;
+  border-bottom: solid 1px #0095DA;
 }
 /************************************************************************/
 /* COLOURS */
@@ -358,7 +373,7 @@ label {
   background-color: #F30021;
 }
 .textRed {
-  color: #0E67B6;
+  color: #0095DA;
 }
 .textREDD {
   color: #F30021;
@@ -370,7 +385,7 @@ label {
   color: #FF9900;
 }
 .blue {
-  background-color: #0E67B6;
+  background-color: #0095DA;
 }
 .red {
   background-color: #F30021;
@@ -416,7 +431,7 @@ button.letter {
   text-align: center;
 }
 button.letter:hover {
-  background-color: #0E67B6;
+  background-color: #0095DA;
 }
 button.closed {
   width: 106px;
@@ -476,7 +491,9 @@ button.closed {
       -ms-transform: translateX(-390px);
           transform: translateX(-390px);
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 1, 1);
-          transition: transform 0.3s cubic-bezier(0.42, 0, 1, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 1, 1);
+  transition: transform 0.3s cubic-bezier(0.42, 0, 1, 1);
+  transition: transform 0.3s cubic-bezier(0.42, 0, 1, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 1, 1);
   color: #FFF !important;
   overflow: hidden;
 }
@@ -525,7 +542,9 @@ button.closed {
       -ms-transform: translateX(-360px);
           transform: translateX(-360px);
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.42, 0, 1, 1);
-          transition: transform 0.6s cubic-bezier(0.42, 0, 1, 1);
+  transition: -webkit-transform 0.6s cubic-bezier(0.42, 0, 1, 1);
+  transition: transform 0.6s cubic-bezier(0.42, 0, 1, 1);
+  transition: transform 0.6s cubic-bezier(0.42, 0, 1, 1), -webkit-transform 0.6s cubic-bezier(0.42, 0, 1, 1);
 }
 .flyout-btn:hover {
   color: #FFF;

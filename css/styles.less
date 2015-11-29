@@ -1,7 +1,7 @@
 /* CSS Styles */
 
 @colRed: #F30021;
-@colBlue: #0E67B6;
+@colBlue: #0095DA;
 @colDarkGrey: #333;
 
 /************************************************************************/
@@ -65,13 +65,18 @@ body {
 	font-size: 16px;
 	line-height: 1.4;
 	h2, h3, h4 {
-		color: #444 !important;
+		color: #666 !important;
 		margin-bottom: 5px;
 		font-weight: 400;
 	}
 	a {
-		color: @colDarkGrey;
 		font-weight: bold;
+		color: #777;
+		text-transform: uppercase;
+		text-decoration: underline;
+		&:hover {
+			color: @colRed;
+		}
 	}
 	.fa {
 		color: @colDarkGrey;
@@ -306,6 +311,10 @@ a#annual:hover .textMed {
 /************************************************************************/
 /* LINKS */
 /************************************************************************/
+a {
+	color: #0095DA;
+	text-decoration: none;
+}
 a:active,
 a:focus {
 	outline: none;
@@ -328,6 +337,12 @@ a.news_link {
 	font-size: 18px;
 	font-weight: normal;
 	color: @colBlue;
+}
+.tooltip-inner {
+	background-color: @colBlue;
+}
+.tooltip.right .tooltip-arrow {
+	border-right-color: @colBlue;
 }
 /************************************************************************/
 /* FORMS */
