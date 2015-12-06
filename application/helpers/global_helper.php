@@ -565,11 +565,11 @@ function buildAgeGroupRadio()
 {
 	$options = array(
 		'MS'	=> 'Open Men',
-		'M19' 	=> 'Junior Men',
-		'M17' 	=> 'Youth Men',
+		'M19' 	=> 'U20/Junior Men',
+		'M17' 	=> 'U18/Youth Men',
 		'WS'  	=> 'Open Women',
-		'W19' 	=> 'Junior Women',
-		'W17' 	=> 'Youth Women'
+		'W19' 	=> 'U20/Junior Women',
+		'W17' 	=> 'U18/Youth Women'
 	);
 
 	$check = 'MS';
@@ -684,11 +684,11 @@ function ageGroupLabels($data)
 		break;
 
 		case 'M19':
-			$ageGroup = 'Junior Men';
+			$ageGroup = 'U20/Junior Men';
 		break;
 
 		case 'M17':
-			$ageGroup = 'Youth Men';
+			$ageGroup = 'U18/Youth Men';
 		break;
 
 		case 'WS':
@@ -696,11 +696,11 @@ function ageGroupLabels($data)
 		break;
 
 		case 'W19':
-			$ageGroup = 'Junior Women';
+			$ageGroup = 'U20/Junior Women';
 		break;
 
 		case 'W17':
-			$ageGroup = 'Youth Women';
+			$ageGroup = 'U18/Youth Women';
 		break;
 
 		default:
