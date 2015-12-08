@@ -91,6 +91,15 @@ body {
   border-top: dotted 1px #DDD;
   margin: 3px;
 }
+.index-profile a {
+  font-weight: normal;
+  color: #0095DA !important;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.index-profile a:hover {
+  color: #F30021 !important;
+}
 .hide {
   display: none;
 }

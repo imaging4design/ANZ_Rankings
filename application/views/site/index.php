@@ -180,7 +180,7 @@
 										// This displays the actual age of the record in Years/Months/Days ...
 										$nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
 
-										echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' .$row->nameLast . '</strong> (' . strtoupper($row->country) . ') set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
+										echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
 									
 										echo '<hr>';
 										
@@ -198,7 +198,7 @@
 					<!-- ========================================================================================== -->
 
 					<div class="tab-pane" id="birthdays"><!-- STARTS Birthdays -->
-						<div class="latest-news">
+						<div class="latest-news index-profile">
 							<?php
 								// Shows Athletes born this day on home page
 								if( isset( $born_this_day ) ) {
@@ -214,7 +214,7 @@
 
 										foreach ($born_this_day as $row):
 											echo '<tr>';
-												echo '<td>' . $row->nameFirst . ' ' . strtoupper($row->nameLast) . '</td>';
+												echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => $row->nameFirst . '\'s profile ')) . ' </td>';
 												echo '<td class="hidden-phone">' . $row->clubName . '</td>';
 												echo '<td>' . $row->centreID . ' </td>';
 											echo '</tr>';
