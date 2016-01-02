@@ -543,11 +543,11 @@ function buildAgeGroupDropdown($selected='')
 	$options = array(
 		'' 		=> 'Select Age Group',
 		'MS'	=> 'Open Men',
-		'M19' 	=> 'Junior Men',
-		'M17' 	=> 'Youth Men',
+		'M19' 	=> 'U20/Junior Men',
+		'M17' 	=> 'U18/Youth Men',
 		'WS'  	=> 'Open Women',
-		'W19' 	=> 'Junior Women',
-		'W17' 	=> 'Youth Women'
+		'W19' 	=> 'U20/Junior Women',
+		'W17' 	=> 'U18/Youth Women'
 	);
 
 	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup" class="form-control"');
@@ -658,11 +658,11 @@ function buildAgeGroup_topLists($selected='')
 	$options = array(
 		'' 		=> 'Select Age Group',
 		'MS'	=> 'Senior Men',
-		'M19' 	=> 'Junior Men',
-		'M17' 	=> 'Youth Men',
+		'M19' 	=> 'U20/Junior Men',
+		'M17' 	=> 'U18/Youth Men',
 		'WS'  	=> 'Senior Women',
-		'W19' 	=> 'Junior Women',
-		'W17' 	=> 'Youth Women'
+		'W19' 	=> 'U20/Junior Women',
+		'W17' 	=> 'U18/Youth Women'
 	);
 
 	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroupTopPerf"');
