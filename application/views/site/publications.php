@@ -76,7 +76,9 @@
 			<p class="center"><a href="<?php echo base_url(); ?>userfiles/file/ANZ_Annual_Report_2013.pdf"><button class="btn btn-small btn-warning">Download</button></a></p>
 		</div>
 		<div class="span3">
-			<p>&nbsp;</p>
+			<a href="<?php echo base_url(); ?>userfiles/file/ANZ_Annual_Report_2014.pdf"><img src="<?php echo base_url(); ?>userfiles/image/Annual_Report/ANZ_Annual_Report_2014.png" class="img-polaroid mar_bot20"></a>
+			<p class="center">Athletics New Zealand Annual Report 2014/15</p>
+			<p class="center"><a href="<?php echo base_url(); ?>userfiles/file/ANZ_Annual_Report_2014.pdf"><button class="btn btn-small btn-warning">Download</button></a></p>
 		</div>
 		<div class="span3">
 			<p>&nbsp;</p>
