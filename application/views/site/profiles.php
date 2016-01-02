@@ -84,7 +84,11 @@
 					echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red"><img src="../../../css/css_images/icons/cross.png"></div>';
 				}
 				else {
-					echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red">' . age_from_dob($athlete->DOB) . ' years ' . daysLeftForBirthday($athlete->DOB) . ' days</div>';
+					// echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red">' . age_from_dob($athlete->DOB) . ' years ' . daysLeftForBirthday($athlete->DOB) . ' days</div>';
+
+					// This displays the actual age of the record in Years/Months/Days ...
+					$nz_ageOfRecord = recordAge($athlete->DOB, date('Y-m-d')); // See global_helper.php
+					echo '<div class="slab reversed textSmall">Age </div><div class="slab textSmall red">' . $nz_ageOfRecord . '</div>';
 				}
 
 				echo '<div style="clear:both;"></div>';

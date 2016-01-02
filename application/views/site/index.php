@@ -214,7 +214,7 @@
 
 										foreach ($born_this_day as $row):
 											echo '<tr>';
-												echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => $row->nameFirst . '\'s profile ')) . ' </td>';
+												echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => 'View profile ')) . ' </td>';
 												echo '<td class="hidden-phone">' . $row->clubName . '</td>';
 												echo '<td>' . $row->centreID . ' </td>';
 											echo '</tr>';
