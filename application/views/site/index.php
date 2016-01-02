@@ -207,7 +207,7 @@
 
 									echo '<table class="table table-striped">';
 										echo '<tr>';
-											echo '<td><strong>NAME</strong></td>';
+											echo '<td><strong>NAME (AGE)</strong></td>';
 											echo '<td class="hidden-phone"><strong>CLUB</strong></td>';
 											echo '<td><strong>CENTRE</strong></td>';
 										echo '</tr>';
