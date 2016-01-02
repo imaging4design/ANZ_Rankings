@@ -15,7 +15,7 @@ function show_my_404(){
 
 /********************************************************************/
 // FUNCTION recordAge()
-// Shows the age of a NZ Record in Years / Months / days
+// Shows the age of a NZ Record/Athlete in Years / Months / days
 /********************************************************************/
 function recordAge($dateOne, $dateTwo) {
 
@@ -24,6 +24,21 @@ function recordAge($dateOne, $dateTwo) {
 	$interval = $date1->diff($date2);
 
 	return $interval->y . " year(s), " . $interval->m." month(s), ".$interval->d." day(s) ";
+	//return "difference " . $interval->days . " days ";
+}
+
+
+/********************************************************************/
+// FUNCTION recordAgeYears()
+// Shows the age of a NZ Record/Athlete in Years only
+/********************************************************************/
+function recordAgeYears($dateOne, $dateTwo) {
+
+	$date1 = new DateTime($dateOne);
+	$date2 = new DateTime($dateTwo);
+	$interval = $date1->diff($date2);
+
+	return $interval->y;
 	//return "difference " . $interval->days . " days ";
 }
 

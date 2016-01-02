@@ -213,8 +213,12 @@
 										echo '</tr>';
 
 										foreach ($born_this_day as $row):
+
+											// This displays the actual age of the athlete in Years/Months/Days ...
+											$athlete_age = recordAgeYears($row->DOB, date('Y-m-d')); // See global_helper.php
+
 											echo '<tr>';
-												echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => 'View profile ')) . ' </td>';
+												echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast) . ' (' . $athlete_age . ')', array( 'class' => 'example', 'rel' => 'tooltip', 'title' => 'View profile ')) . ' </td>';
 												echo '<td class="hidden-phone">' . $row->clubName . '</td>';
 												echo '<td>' . $row->centreID . ' </td>';
 											echo '</tr>';
