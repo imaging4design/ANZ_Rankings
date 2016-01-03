@@ -67,7 +67,7 @@
 
 			<div class="span6 black">
 
-				<h2 class="throb" style="margin-left:-20px;">Latest News ...</h2>
+				<h2 class="throb" style="margin-left:-20px;">Latest News - <?php echo date('d/M/Y'); ?></h2>
 
 				<?php
 					// Only show the latest '4' News items
@@ -83,7 +83,6 @@
 						endforeach;
 					}
 
-					
 
 				?>
 

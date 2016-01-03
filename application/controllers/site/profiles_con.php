@@ -74,7 +74,8 @@ class Profiles_con extends CI_Controller {
 			echo '<ul>';
 				echo '<li>Gender: ' . $gender . '</li>';
 				echo '<li>DOB: ' . $data['athlete']->birthDate . '</li>';
-				echo '<li>Age: ' . age_from_dob($data['athlete']->birthDate) . ' Years / ' . daysLeftForBirthday($data['athlete']->DOB) . ' Days</li>';
+				//echo '<li>Age: ' . age_from_dob($data['athlete']->birthDate) . ' Years / ' . daysLeftForBirthday($data['athlete']->DOB) . ' Days</li>';
+				echo '<li>Age: ' . recordAge($data['athlete']->birthDate, date('Y-m-d')) . '</li>';
 				echo '<li>Centre: ' . $data['athlete']->centreID . '</li>';
 				echo '<li>Club: ' . $data['athlete']->clubName . '</li>';
 				echo '<li>Coach: ' . $data['athlete']->coach . '</li>';
