@@ -461,11 +461,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/application\/libraries\/Auth.php": {
+	"\/application\/libraries\/auth.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/application\/libraries\/Auth.php",
+		"inputAbbreviatedPath": "\/application\/libraries\/auth.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -9503,6 +9503,17 @@
 		"initialSize": 381622,
 		"inputAbbreviatedPath": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2013.png",
 		"outputAbbreviatedPath": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2013.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2014.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 407474,
+		"inputAbbreviatedPath": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2014.png",
+		"outputAbbreviatedPath": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2014.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

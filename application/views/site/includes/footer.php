@@ -25,7 +25,7 @@
 	<script src="<?php echo base_url() . 'foo_table/js/footable-0.1.js'; ?>" type="text/javascript"></script><!--FOO TABLE JS-->
 	<script type="text/javascript">
 		$(function() {
-			$('table').footable();
+			$('table.footable').footable();
 		});
 	</script>
 

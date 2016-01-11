@@ -84,7 +84,7 @@ body {
   margin-bottom: 0;
 }
 .latest-news table td {
-  padding: 3px 0;
+  /*padding: 3px 0;*/
 }
 .latest-news hr {
   border: 0;
