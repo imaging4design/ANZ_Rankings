@@ -44,7 +44,7 @@
 
 				// ANZ Logo
 				$anz_logo = array(
-					'src' => base_url() . 'img/anz_logo_small.png',
+					'src' => base_url() . 'img/anz_logo_small.svg',
 					'alt' => 'Athletics New Zealand',
 					'class' => 'post_images',
 					'style' => 'float:left;',

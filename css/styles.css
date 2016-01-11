@@ -41,7 +41,7 @@ body {
   overflow: hidden;
 }
 .news_background img {
-  display: none;
+  /*display: none;*/
 }
 .news_background h5 {
   color: #F30021;
