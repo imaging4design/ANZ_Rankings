@@ -301,8 +301,8 @@ $('#showEntry').append('<img src="<?php echo base_url() . 'img/loading.gif' ?>" 
 	
 
 
-	var eventID = $('#eventID').val();
-	//var eventID = $('input:radio[name=eventID]:checked').val();
+	//var eventID = $('.eventID').val();
+	var eventID = $('input:radio[name=eventID]:checked').val();
 	var ageGroup = $('#ageGroup').val();
 	var competition = $('#competition').val();
 	var venue = $('#venue').val();
