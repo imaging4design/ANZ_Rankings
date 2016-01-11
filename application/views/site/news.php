@@ -48,7 +48,8 @@
 							echo '<div class="news_background">';
 								echo '<div class="newsHolder"><div class="slab reversed textMed">DATE: </div><div class="slab textMed red">' . $row->date . ' &raquo;</div>';
 								echo '<div class="clearfix"></div>';
-								echo '</div>' . character_limiter($row->bodyContent, 300, '') . ' &nbsp; ' . anchor('site/news_con/news_item/' .$row->newsID, '...&nbsp;view&nbsp;article ', array('class' => 'news_link'));
+								//echo '</div>' . character_limiter($row->bodyContent, 20, '') . ' &nbsp; ' . anchor('site/news_con/news_item/' .$row->newsID, '...&nbsp;view&nbsp;article ', array('class' => 'news_link'));
+								echo '</div><h3>' . $row->heading . '</h3> <p>' . anchor('site/news_con/news_item/' .$row->newsID, '...&nbsp;view&nbsp;article ', array('class' => 'news_link')) . '</p>';
 							echo '</div>';
 							echo '<hr>';
 

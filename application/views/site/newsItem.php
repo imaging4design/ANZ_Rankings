@@ -39,7 +39,7 @@
 				echo '</div>';
 
 				echo '<div class="clearfix"></div>';
-				echo '<h2><span class="news_item news_item_img">' . $news_item->bodyContent . '</span>';
+				echo '<span class="news_item news_item_img">' . $news_item->bodyContent . '</span>';
 
 					
 			}
