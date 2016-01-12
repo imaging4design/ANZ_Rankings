@@ -184,6 +184,44 @@ function ratified_record()
 
 }
 
+
+						/********************************************************************/
+						// FUNCTION rankings_added_month()
+						// Retrieves the total number of results for the current month!
+						/********************************************************************/
+						function rankings_added_month()
+						{
+							$CI = &get_instance();
+							//$CI->load->model('global_model');
+							$var = $CI->global_model->rankings_added_month();
+
+							//return the data $query
+							if($query = $var) 
+							{
+								return $query;
+							}
+
+						}
+
+
+						/********************************************************************/
+						// FUNCTION rankings_seven_days()
+						// Retrieves the total number of results for the past 7 days!
+						/********************************************************************/
+						function rankings_seven_days()
+						{
+							$CI = &get_instance();
+							//$CI->load->model('global_model');
+							$var = $CI->global_model->rankings_seven_days();
+
+							//return the data $query
+							if($query = $var) 
+							{
+								return $query;
+							}
+
+						}
+
  
 /********************************************************************/
 // FUNCTION totalResults()

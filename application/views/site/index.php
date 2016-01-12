@@ -1,3 +1,187 @@
+<div id="top_index"></div><!-- TARGET - this is where the page will auto scroll to after form is submited -->
+
+<?php
+	// From index() home_con
+	if( isset( $show_target ) )
+	{
+		echo $show_target; // TARGET - move page down to Top Performers table (for phones)
+	}
+?>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="span12" style="margin-top:30px;">
+
+			<div class="slab reversed textLarge">Leading Performances</div><div class="slab textLarge lead_perfs blue"> <?php echo date('Y'); ?></div>
+	  		<div style="clear:both;"></div>
+
+			<?php
+				// Form to choose which ageGroup to show top 'Year' lists
+				echo form_open('site/home_con', array( 'id' => 'topPerformers' ));
+
+				echo '<label></label>';
+				echo buildAgeGroup_topLists( set_value('ageGroup') ); // from global_helper
+
+				echo '<label></label>';
+				echo '<button type="submit"  id="top_performers" class="btn">VIEW</button>';
+
+				echo form_close();
+
+			?>
+
+			<?php
+				/*************************************************************/
+				// CREATE A LABEL HEADING FOR WHICH AGE GROUP IS BEING DISPLAYED
+				/*************************************************************/
+
+				// NEW! .. This give the new correct 'Age Group' Labels
+				if( $this->input->post('ageGroup') ) {
+
+					echo '<div class="slab reversed textMed ">' . ageGroupLabels( $this->input->post('ageGroup') ) . '</div><div class="slab textMed lead_perfs">' . date('Y') . '</div>'; // see global_helper
+
+				}
+				else
+				{
+					echo '<div class="slab reversed textMed">Senior Men</div><div class="slab textMed lead_perfs">' . date('Y') . '</div>';
+				}
+
+			?>
+
+			  
+			<table class="footable table-striped">
+				<thead>
+					<tr>
+						<th data-class="expand">EVENT</th>
+						<th>PEFR</th>
+						<th data-hide="phone">WIND</th>
+						<th>ATHLETE</th>
+						<th data-hide="phone,tablet">Centre</th>
+						<th data-hide="phone,tablet">DOB</th>
+						<th data-hide="phone,tablet">COMPETITION</th>
+						<th data-hide="phone">VENUE</th>
+						<th data-hide="phone">DATE</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+			  
+			<?php
+				/***************************************************************************************************/
+				// Display individual events for the homepage 'Toplists'
+				/***************************************************************************************************/
+				if( isset( $top_performers ) )
+				{
+					foreach( $top_performers as $row ):
+
+						// This adds a highlight class to those rankings less than a week old!
+						$dateClass = fresh_results($row->date); // from global_helper.php
+
+						$coach = ( $row->coach ) ? 'COACH: ' . $row->coach : '';
+
+						$years = age_from_dob($row->DOB) . ' years';
+						$days = daysLeftForBirthday($row->DOB) . ' days';
+
+						$age = 'AGE: ' . $years . ', ' . $days. '<br>' . $coach;
+
+						$in_out = ($row->in_out == 'in') ? '(i)' : ''; 
+
+						echo '<tr>
+								<td>' . $row->eventName . '</td>
+								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '' . ltrim($row->distHeight, 0) . '</span>&nbsp;'. $in_out .'</td>
+								<td>' . $row->wind . '</td>
+								<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' =>$age )) . '</td>
+								<td>' . $row->centreID . '</td>
+								<td>' . $row->format_DOB . '</td>
+								<td>' . $row->competition . '</td>
+								<td>' . $row->venue . '</td>
+								<td>' . $row->date . '</td>
+							</tr>';
+
+					endforeach;
+				}
+			?>
+			  
+			  
+			<?php
+				/***************************************************************************************************/
+				// Display multi events for the homepage 'Toplists'
+				/***************************************************************************************************/
+				if(isset($topPerformers_Multis))
+				{
+
+				// This adds a highlight class to those rankings less than a week old!
+				$dateClass = fresh_results($topPerformers_Multis->date); // from global_helper.php
+
+				$coach = ( $row->coach ) ? 'COACH: ' . $topPerformers_Multis->coach : '';
+
+				$years = age_from_dob($topPerformers_Multis->DOB) . ' years';
+				$days = daysLeftForBirthday($topPerformers_Multis->DOB) . ' days';
+
+				$age = 'AGE: ' . $years . ', ' . $days. '<br>' . $coach;
+
+				echo '<tr>
+						<td>' . $topPerformers_Multis->eventName . '</td>
+						<td><span class="'.$dateClass.'">' . $topPerformers_Multis->points . '</span></td>
+						<td>&nbsp;</td>
+						<td>' . anchor('site/profiles_con/athlete/' . $topPerformers_Multis->athleteID, $topPerformers_Multis->nameFirst . ' ' . strtoupper($topPerformers_Multis->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => $age )) . '</td>
+						<td>' . $topPerformers_Multis->centreID . '</td>
+						<td>' . $topPerformers_Multis->format_DOB . '</td>
+						<td>' . $topPerformers_Multis->competition . '</td>
+						<td>' . $topPerformers_Multis->venue . '</td>
+						<td>' . $topPerformers_Multis->date . '</td>
+					</tr>';
+
+				}
+			?>
+			  
+			  
+			<?php
+				/***************************************************************************************************/
+				// Display relay events for the homepage 'Toplists'
+				/***************************************************************************************************/
+				if(isset($topPerformers_Relays))
+				{
+					foreach($topPerformers_Relays as $row):
+
+					// This adds a highlight class to those rankings less than a week old!
+					$dateClass = fresh_results($row->date); // from global_helper.php
+					
+					// Combine athletes (relay team members)
+					$athletes = $row->athlete01 . ',<br>' . $row->athlete02 . ',<br>' . $row->athlete03 . ',<br>' . $row->athlete04;
+					
+						echo '<tr>
+								<td>' . $row->eventName . '</td>
+								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '</span></td>
+								<td>&nbsp;</td>
+								<td>' . $athletes . '</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>' . $row->competition . '</td>
+								<td>' . $row->venue . '</td>
+								<td>' . $row->date . '</td>
+							</tr>';
+
+					endforeach;
+				}
+
+			?>
+
+			</tbody>
+			</table>
+
+
+		</div><!-- ENDS span12 -->
+
+	</div><!-- ENDS row -->
+
+</div><!-- ENDS container -->
+
+
+<br><br>
+
+
 <div class="newsflashBand">
 
 
@@ -236,6 +420,10 @@
 
 				</div>
 			</div><!--ENDS col-->
+
+			<div class="center"><a href="" class="to_top textSmall" id="bottom_index">Back To Top</a></div>
+
+
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
 
@@ -244,187 +432,7 @@
 
 
 
-<div id="top_index"></div><!-- TARGET - this is where the page will auto scroll to after form is submited -->
 
-<?php
-	// From index() home_con
-	if( isset( $show_target ) )
-	{
-		echo $show_target; // TARGET - move page down to Top Performers table (for phones)
-	}
-?>
-
-<div class="container">
-
-	<div class="row">
-
-		<div class="span12">
-
-			<div class="slab reversed textLarge">Leading Performances</div><div class="slab textLarge lead_perfs blue"> <?php echo date('Y'); ?></div>
-	  		<div style="clear:both;"></div>
-
-			<?php
-				// Form to choose which ageGroup to show top 'Year' lists
-				echo form_open('site/home_con', array( 'id' => 'topPerformers' ));
-
-				echo '<label></label>';
-				echo buildAgeGroup_topLists( set_value('ageGroup') ); // from global_helper
-
-				echo '<label></label>';
-				echo '<button type="submit"  id="top_performers" class="btn">VIEW</button>';
-
-				echo form_close();
-
-			?>
-
-			<?php
-				/*************************************************************/
-				// CREATE A LABEL HEADING FOR WHICH AGE GROUP IS BEING DISPLAYED
-				/*************************************************************/
-
-				// NEW! .. This give the new correct 'Age Group' Labels
-				if( $this->input->post('ageGroup') ) {
-
-					echo '<div class="slab reversed textMed ">' . ageGroupLabels( $this->input->post('ageGroup') ) . '</div><div class="slab textMed lead_perfs">' . date('Y') . '</div>'; // see global_helper
-
-				}
-				else
-				{
-					echo '<div class="slab reversed textMed">Senior Men</div><div class="slab textMed lead_perfs">' . date('Y') . '</div>';
-				}
-
-			?>
-
-			  
-			<table class="footable table-striped">
-				<thead>
-					<tr>
-						<th data-class="expand">EVENT</th>
-						<th>PEFR</th>
-						<th data-hide="phone">WIND</th>
-						<th>ATHLETE</th>
-						<th data-hide="phone,tablet">Centre</th>
-						<th data-hide="phone,tablet">DOB</th>
-						<th data-hide="phone,tablet">COMPETITION</th>
-						<th data-hide="phone">VENUE</th>
-						<th data-hide="phone">DATE</th>
-					</tr>
-				</thead>
-				<tbody>
-				
-			  
-			<?php
-				/***************************************************************************************************/
-				// Display individual events for the homepage 'Toplists'
-				/***************************************************************************************************/
-				if( isset( $top_performers ) )
-				{
-					foreach( $top_performers as $row ):
-
-						// This adds a highlight class to those rankings less than a week old!
-						$dateClass = fresh_results($row->date); // from global_helper.php
-
-						$coach = ( $row->coach ) ? 'COACH: ' . $row->coach : '';
-
-						$years = age_from_dob($row->DOB) . ' years';
-						$days = daysLeftForBirthday($row->DOB) . ' days';
-
-						$age = 'AGE: ' . $years . ', ' . $days. '<br>' . $coach;
-
-						$in_out = ($row->in_out == 'in') ? '(i)' : ''; 
-
-						echo '<tr>
-								<td>' . $row->eventName . '</td>
-								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '' . ltrim($row->distHeight, 0) . '</span>&nbsp;'. $in_out .'</td>
-								<td>' . $row->wind . '</td>
-								<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' =>$age )) . '</td>
-								<td>' . $row->centreID . '</td>
-								<td>' . $row->format_DOB . '</td>
-								<td>' . $row->competition . '</td>
-								<td>' . $row->venue . '</td>
-								<td>' . $row->date . '</td>
-							</tr>';
-
-					endforeach;
-				}
-			?>
-			  
-			  
-			<?php
-				/***************************************************************************************************/
-				// Display multi events for the homepage 'Toplists'
-				/***************************************************************************************************/
-				if(isset($topPerformers_Multis))
-				{
-
-				// This adds a highlight class to those rankings less than a week old!
-				$dateClass = fresh_results($topPerformers_Multis->date); // from global_helper.php
-
-				$coach = ( $row->coach ) ? 'COACH: ' . $topPerformers_Multis->coach : '';
-
-				$years = age_from_dob($topPerformers_Multis->DOB) . ' years';
-				$days = daysLeftForBirthday($topPerformers_Multis->DOB) . ' days';
-
-				$age = 'AGE: ' . $years . ', ' . $days. '<br>' . $coach;
-
-				echo '<tr>
-						<td>' . $topPerformers_Multis->eventName . '</td>
-						<td><span class="'.$dateClass.'">' . $topPerformers_Multis->points . '</span></td>
-						<td>&nbsp;</td>
-						<td>' . anchor('site/profiles_con/athlete/' . $topPerformers_Multis->athleteID, $topPerformers_Multis->nameFirst . ' ' . strtoupper($topPerformers_Multis->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => $age )) . '</td>
-						<td>' . $topPerformers_Multis->centreID . '</td>
-						<td>' . $topPerformers_Multis->format_DOB . '</td>
-						<td>' . $topPerformers_Multis->competition . '</td>
-						<td>' . $topPerformers_Multis->venue . '</td>
-						<td>' . $topPerformers_Multis->date . '</td>
-					</tr>';
-
-				}
-			?>
-			  
-			  
-			<?php
-				/***************************************************************************************************/
-				// Display relay events for the homepage 'Toplists'
-				/***************************************************************************************************/
-				if(isset($topPerformers_Relays))
-				{
-					foreach($topPerformers_Relays as $row):
-
-					// This adds a highlight class to those rankings less than a week old!
-					$dateClass = fresh_results($row->date); // from global_helper.php
-					
-					// Combine athletes (relay team members)
-					$athletes = $row->athlete01 . ',<br>' . $row->athlete02 . ',<br>' . $row->athlete03 . ',<br>' . $row->athlete04;
-					
-						echo '<tr>
-								<td>' . $row->eventName . '</td>
-								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '</span></td>
-								<td>&nbsp;</td>
-								<td>' . $athletes . '</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>' . $row->competition . '</td>
-								<td>' . $row->venue . '</td>
-								<td>' . $row->date . '</td>
-							</tr>';
-
-					endforeach;
-				}
-
-			?>
-
-			</tbody>
-			</table>
-
-
-		</div><!-- ENDS span12 -->
-
-		<div class="center"><a href="" class="to_top textSmall" id="bottom_index">Back To Top</a></div>
-
-	</div><!-- ENDS row -->
-
-</div><!-- ENDS container -->
 
 
 

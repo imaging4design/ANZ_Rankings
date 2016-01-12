@@ -30,6 +30,56 @@ class Global_Model extends CI_Model
 		}
 
 	}
+
+
+
+				/********************************************************************/
+				// FUNCTION rankings_added_month()
+				// Retrieves the total number of results for the current month!
+				// Get ALL results for this MONTH of this YEAR!
+				/********************************************************************/
+				function rankings_added_month()
+				{
+					$this->db->where('MONTH(results.date)', date('m'));
+					$this->db->where('YEAR(results.date)', date('Y'));
+					$this->db->from('results');
+					return $this->db->count_all_results(); 
+				
+				} // ENDS rankings_added_month()
+
+
+
+				/********************************************************************/
+				// FUNCTION rankings_seven_days()
+				// Retrieves the total number of results for the past 7 days!
+				// Get ALL results for for the past 7 DAYS!
+				/********************************************************************/
+				function rankings_seven_days()
+				{	
+
+					// $date1 = date('d');
+					// $date2 = date('d') - 7;
+					// echo '<pre>';
+					// print_r($date2);
+					// echo '</pre>';
+					// die();
+
+					//$this->db->where( 'DAY(results.date)', date('d') .' + INTERVAL 7 DAYS' );
+					$this->db->where('DAY(results.date)', $date1, - $date2);
+
+					// SELECT *, DATE_FORMAT(date,'%d %b %Y') as newdate
+					// FROM records 
+					// WHERE date BETWEEN DATE_SUB(NOW(), INTERVAL 1 MONTH) 
+					// AND NOW() 
+
+
+					$this->db->where('MONTH(results.date)', date('m'));
+					$this->db->where('YEAR(results.date)', date('Y'));
+					$this->db->from('results');
+					return $this->db->count_all_results();
+
+
+				} // ENDS rankings_seven_days()
 	
 	
 	
