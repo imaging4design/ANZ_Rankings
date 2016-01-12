@@ -87,12 +87,13 @@
 
 
 				<?php
-
+					// Some statistics displaying No. of ranked performances added this month
 					if( isset($rankings_added_month) )
 					{
 						$total_rankings_added_month = $rankings_added_month;
 					}
 
+					// Some statistics displaying No. of ranked performances added this week
 					if( isset($rankings_seven_days) )
 					{
 						$total_rankings_seven_days = $rankings_seven_days;
@@ -101,7 +102,7 @@
 				?>
 
 
-				<!-- Show number of performances added to database in the last 7 days! -->
+				<!-- Show number of performances added to database in the past month / and 7 days! -->
 				<div class="recent-activity">
 					<div class="slab numRanks">No. Rankings added <?php echo date('F'); ?> - <?php echo $total_rankings_added_month; ?></div><div class="slab textSmall stats">Past 7 days - <?php echo $total_rankings_seven_days; ?></div>
 				</div>
