@@ -82,7 +82,7 @@
 
 				<!-- Show number of performances added to database in the past month / and 7 days! -->
 				<div class="recent-activity">
-					<div class="slab numRanks"><?php echo $total_rankings_added_month; ?> performances in <?php echo date('F'); ?> </div><div class="slab textSmall stats"><?php echo $total_rankings_seven_days; ?> past 7 days</div>
+					<div class="slab numRanks"><?php echo $total_rankings_added_month; ?> new rankings in <?php echo date('F'); ?> </div><div class="slab textSmall stats"><?php echo $total_rankings_seven_days; ?> (past 7 days)</div>
 				</div>
 
 
