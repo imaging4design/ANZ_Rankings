@@ -24,7 +24,7 @@ class News_Model extends CI_Model
 		$this->db->where('type', 'N'); // Is this a 'news' or 'info' item? 
 		$this->db->order_by('newsID', 'DESC');
 		$this->db->order_by('date', 'DESC');
-		$this->db->limit(3);
+		$this->db->limit(4);
 		$query = $this->db->get('news_info');
 		
 		if($query->num_rows() >0) 
