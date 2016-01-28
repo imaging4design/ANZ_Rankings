@@ -98,8 +98,10 @@ class Profiles_Model extends CI_Model
 			
 		
 	} // ENDS __construct()
-	
-	
+
+
+
+
 	/*************************************************************************************/
 	// FUNCTION show_athletes()
 	// Display 'data grid' of ALL athletes who's lastname starts with 'A', 'B', 'C' etc ..

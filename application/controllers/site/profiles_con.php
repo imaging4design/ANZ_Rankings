@@ -90,7 +90,7 @@ class Profiles_con extends CI_Controller {
 				$data['personal_bests'] = $query;
 			}
 
-			echo '<h4>Personal Bests:</h4>';
+			echo '<h4>Personal Bests: </h4>';
 
 			echo '<ul>';
 

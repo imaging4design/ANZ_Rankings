@@ -3,6 +3,39 @@
 class Results_Model extends CI_Model
 {
     
+	
+
+	/*************************************************************************************/
+	// FUNCTION is_pb()
+	// Determinds if the result is a 'Personal Best' for that athlete 
+	/*************************************************************************************/
+	public function is_pb($data)
+	{
+		
+		if(in_array($data['eventID'], $this->config->item('seperate_performances'))) { // These are event affected by implements / hurdles
+			$this->db->select_max('distHeight');
+			$this->db->select_min('time');
+			$this->db->where('athleteID', $data['athleteID']);
+			$this->db->where('eventID', $data['eventID']);
+			$this->db->where('ageGroup', $data['ageGroup']);
+			$query = $this->db->get('results');
+		} else {
+			$this->db->select_max('distHeight');
+			$this->db->select_min('time');
+			$this->db->where('athleteID', $data['athleteID']);
+			$this->db->where('eventID', $data['eventID']);
+			$query = $this->db->get('results');
+		}
+
+		if($query->num_rows() > 0)
+		{
+			return $query->row();
+		}
+		
+		
+	} // ENDS is_pb()
+
+
 	/*************************************************************************************/
 	// FUNCTION add_job_details($data)
 	// Adds a new individual event result to database

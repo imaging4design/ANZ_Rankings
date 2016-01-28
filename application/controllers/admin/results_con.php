@@ -104,11 +104,11 @@ class Results_con extends CI_Controller
 		$this->form_validation->set_rules('venue_other', 'Venue Other', 'trim');
 		$this->form_validation->set_rules('date', 'Date', 'trim|required');
 
-
 		
 		// WHAT IS THE athleteID? 
 		// (the last 6 digits of the '$this->input->post('athleteID')' string)
 		$athleteID = substr($this->input->post('athleteID'), -6);
+
 		
 		// WHAT IS THE event?
 		// The event is posted as an integer ($this->input->post('eventID'))
@@ -187,7 +187,7 @@ class Results_con extends CI_Controller
 			'wind' => $this->input->post('wind'),
 			'distHeight' => $distHeight,
 			'implement' => $implement,
-			'record' => $this->input->post('record'),
+			//'record' => $this->input->post('record'), // Leave commented out
 			'centreID' => $centreID,
 			'placing' => $this->input->post('placing'),
 			'competition' => $this->input->post('competition'),
@@ -195,6 +195,25 @@ class Results_con extends CI_Controller
 			'venue' => $venue,
 			'date' => $this->input->post('date')
 		);
+
+
+
+		/************************************************************************************************************/
+		// IS THIS RESULT A 'PB' FOR THE ATHLETE?
+		/************************************************************************************************************/
+		// Call the athlete_pb() function ... see global helper
+		// athlete_pb($data['athleteID'], $data['eventID'], $data['time'], $data['distHeight']);
+		// athlete_pb($data);
+
+		// $test = $this->results_model->is_pb(); // comment here
+
+		// if( $test ) {
+		// 	foreach( $test as $row ):
+		// 		echo $row->eventID;
+		// 	endforeach;
+		// }
+
+		
 
 
 		/************************************************************************************************************/
@@ -245,6 +264,25 @@ class Results_con extends CI_Controller
 		if($this->form_validation->run() == TRUE && $this->input->post('token_admin') == $this->session->userdata('token_admin')) 
 		{
 			
+			// NEW FUNCTION !
+			// Test to see if this result is a 'Personal Best' for this athlete
+			// See results_model is_pb($data)
+			$current_best = $this->results_model->is_pb($data);
+
+			if( $current_best && $time != '' ) {
+				$record = ( $time < $current_best->time ) ? 'PB' : $this->input->post('record');
+			}
+
+			if( $current_best && $distHeight != '' ) {
+				$record = ( $distHeight > $current_best->distHeight ) ? 'PB' : $this->input->post('record');
+			}
+
+			$data_pb = array('record' => $record);
+			$data = array_merge($data, $data_pb);
+
+
+
+
 			// NEW FUNCTION !
 			// If 'National Rep' checkbox = true - add result details to athlete profile (National Representation)
 			if( $this->input->post('natRep') == 'true' ) {
@@ -462,7 +500,7 @@ class Results_con extends CI_Controller
 		
 		// If form post data validates and CSRF $token == session $token update result
 		if($this->form_validation->run() == TRUE && $this->input->post('token_admin') == $this->session->userdata('token_admin')) 
-		{
+		{	
 			// Insert new results
 			$this->results_model->update_result_ind($data);
 			
