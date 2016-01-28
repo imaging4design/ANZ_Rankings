@@ -89,7 +89,7 @@
 
 						echo '<tr>
 								<td>' . $row->eventName . '</td>
-								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '' . ltrim($row->distHeight, 0) . '</span>&nbsp;'. $in_out .'</td>
+								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '' . ltrim($row->distHeight, 0) . '</span>&nbsp;'. $in_out . ' <span class="hidden-phone textREDD">' . $row->record . '</span></td>
 								<td>' . $row->wind . '</td>
 								<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' =>$age )) . '</td>
 								<td>' . $row->centreID . '</td>

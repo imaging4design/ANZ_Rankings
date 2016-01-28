@@ -74,9 +74,9 @@
 				echo '<tr>
 						<td>' . $event . '</td>
 						<td>' . $imp . '</td>
-						<td>' . $performance . ' ' . $in_out . '</td>
+						<td>' . $performance . ' ' . $in_out . ' <span class="textREDD">' . $row->record . '</span></td>
 						<td>' . $row->wind . '</td>
-						<td>' . $row->record . '</td>
+						<td> &nbsp; </td>
 						<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst.' '.strtoupper($row->nameLast)) . '</td>
 						
 						<td>' . $row->DOB . '</td>

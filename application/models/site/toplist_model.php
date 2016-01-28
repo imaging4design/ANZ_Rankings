@@ -39,7 +39,7 @@ class Toplist_Model extends CI_Model
 		
 		$query = $this->db->query("
 		
-			SELECT events.eventID, events.eventName, results.ageGroup, results.competition, results.wind, in_out, results.venue, results.athleteID, MIN(results.time) AS time, MAX(results.distHeight) as distHeight, DATE_FORMAT(results.date, '%d %b %Y') as date, athletes.nameFirst, athletes.nameLast, athletes.coach, athletes.DOB, athletes.centreID, DATE_FORMAT(athletes.DOB, '%d %b %Y') as format_DOB
+			SELECT events.eventID, events.eventName, results.ageGroup, results.competition, results.wind, in_out, results.record, results.venue, results.athleteID, MIN(results.time) AS time, MAX(results.distHeight) as distHeight, DATE_FORMAT(results.date, '%d %b %Y') as date, athletes.nameFirst, athletes.nameLast, athletes.coach, athletes.DOB, athletes.centreID, DATE_FORMAT(athletes.DOB, '%d %b %Y') as format_DOB
 			FROM (
 					SELECT * FROM results 
 					WHERE results.ageGroup = '" . $this->ageGroup . "' AND YEAR(results.date) = '" . date('Y') . "' AND results.wind < 2.1 AND results.wind != 'nwr' AND results.record != 'ht'

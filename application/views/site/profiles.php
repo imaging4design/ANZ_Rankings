@@ -419,7 +419,7 @@
 					echo '<tr>
 							<td class="w10">' . $row->eventName . '</td>
 							<td class="w10"><span class="muted">' . ltrim($row->implement,0) . '</span></td>
-							<td class="w10"><span class="'.$dateClass.'">' . $performance . '</span> ' . $row->record . '</td>
+							<td class="w10"><span class="'.$dateClass.'">' . $performance . '</span></td>
 							<td class="w5">' . $row->wind . '</td>
 							<td class="w5">' . $row->placing . '</td>
 							<td>' . $row->competition . '</td>
