@@ -347,11 +347,15 @@
 
 								// Shows records set athletes on this day in history ...
 								if( isset( $records_this_day ) ) {
-									foreach ($records_this_day as $row) {
+
+									$result = NULL;
+
+
+									foreach ($records_this_day as $row):
 
 										switch ($row->recordType){
 											case 'AC':
-												$recType = 'Allcomers';
+												$recType = 'NZ Allcomers';
 											break;
 											case 'NN':
 												$recType = 'NZ National';
@@ -363,12 +367,67 @@
 
 										// This displays the actual age of the record in Years/Months/Days ...
 										$nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
-
-										echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
-									
-										echo '<hr>';
 										
+
+											if( $result == $row->result && $date == $row->date ) {
+
+												// This will not run on the first time around
+												// On the second or subsequent rounds - if the result and date match, that will indicate the record has more than one record type (i.e., All commers, national, resident)
+												// Therefore, we need to combine these on one line instead of rendering them out on three separate lines
+												// So, we remove (array_pop($records)) the previous record, but remember its recType and continue on 
+												// When we have looped through the same record (max possible 3) we keep popping the previous off until we hit the last
+												// Then we add in the saved 'recTypes' as an extra field over and above $recType
+
+												array_pop($records);
+
+												$AllRecType = $rememberRecType; // e.g. NZ Allcomers
+												
+												$records[] = $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $AllRecType . '' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . strtoupper($row->venue) . '<hr>';
+
+												$rememberRecType .= $recType.', '; // e.g. NZ Allcomers
+												
+
+											} else {
+
+												// This will run first and populate the '$records' array with the first record
+												$rememberRecType = NULL;
+
+												$records[] = $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . strtoupper($row->venue) . '<hr>';
+
+												$rememberRecType .= $recType.', '; // e.g. NZ Allcomers
+
+											}
+
+
+										$result = $row->result; // 88.20
+										$date = $row->date;
+
+										
+										/*
+										|-----------------------------------------------------------------------------------------------------------------
+										| NOTE!!
+										| If the above proves not to work - then delete all directly after the 'switch' statement
+										| Then uncomment the lines below ..
+										|-----------------------------------------------------------------------------------------------------------------
+										*/
+
+										// This displays the actual age of the record in Years/Months/Days ...
+										// $nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
+
+										//echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
+									
+										
+										
+									endforeach;
+
+									foreach ($records as $key => $value) {
+										echo $value;
 									}
+									
+									
+									
+
+
 								}
 								else {
 									echo '<p>No results found ...</p>';

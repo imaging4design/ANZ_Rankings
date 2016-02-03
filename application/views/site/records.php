@@ -224,7 +224,7 @@
 							$dateClass = fresh_records($row->date); // from global_helper.php
 
 							echo '<tr>
-									<td>'.  $row->eventName.' <span class="muted">' . $implement . '</span></td>
+									<td>'. $row->recordID . ' ' . $row->eventName.' <span class="muted">' . $implement . '</span></td>
 									<td><span class="'.$dateClass.'">'. $result .'</span></td>
 									<td>'. $row->nameFirst . ' ' . strtoupper($row->nameLast) . '</td>
 									<td>'. strtoupper($row->country) .'</td>

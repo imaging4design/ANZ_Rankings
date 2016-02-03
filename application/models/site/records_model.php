@@ -77,7 +77,8 @@ class Records_Model extends CI_Model
 		$this->db->where('DAY(records.date)', date('d'));
 		$this->db->where('in_out', 'out');
 		$this->db->join('events', 'events.eventID = records.eventID');
-		$this->db->order_by('records.nameLast', 'ASC');
+		$this->db->order_by('records.date', 'ASC');
+		$this->db->order_by('records.recordType', 'ASC');
 		$query = $this->db->get('records');
 		
 		if($query->num_rows() >0) 
