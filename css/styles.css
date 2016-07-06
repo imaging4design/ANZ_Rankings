@@ -389,6 +389,7 @@ label {
 }
 .textREDD {
   color: #F30021;
+  font-size: 12px;
 }
 .textGrey {
   color: #777;
@@ -500,7 +501,6 @@ button.closed {
   height: 100%;
   background: #222;
   -webkit-transform: translateX(-390px);
-      -ms-transform: translateX(-390px);
           transform: translateX(-390px);
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 1, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 1, 1);
@@ -537,7 +537,6 @@ button.closed {
 }
 .flyout.open {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 .flyout-btn {
@@ -551,7 +550,6 @@ button.closed {
   padding: 10px 15px;
   cursor: pointer;
   -webkit-transform: translateX(-360px);
-      -ms-transform: translateX(-360px);
           transform: translateX(-360px);
   -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.42, 0, 1, 1);
   transition: -webkit-transform 0.6s cubic-bezier(0.42, 0, 1, 1);
@@ -577,7 +575,6 @@ button.closed {
 }
 .flyout-btn.open {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 .flyout-styles h3 {
@@ -681,9 +678,8 @@ td.w25 {
     color: #333;
     background-color: #FAFAFA;
     border-color: #ddd #ddd transparent;
-    -webkit-border-image: none;
-         -o-border-image: none;
-            border-image: none;
+    -o-border-image: none;
+       border-image: none;
     border-style: solid;
     border-width: 1px;
   }
