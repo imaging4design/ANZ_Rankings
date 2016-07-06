@@ -297,7 +297,6 @@
 					
 					echo '<select name="time_frame" class="span2">';
 						echo '<option value="3" '. set_select('time_frame', '3', TRUE) . ' >Past 3 Days</option>';
-						echo '<option value="4" '. set_select('time_frame', '4') . ' >Past 4 Days</option>';
 						echo '<option value="5" '. set_select('time_frame', '5') . ' >Past 5 Days</option>';
 						echo '<option value="10" '. set_select('time_frame', '10') . ' >Past 10 Days</option>';
 						echo '<option value="15" '. set_select('time_frame', '15') . ' >Past 15 Days</option>';
