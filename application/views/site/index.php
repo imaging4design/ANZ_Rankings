@@ -361,7 +361,7 @@
 				<thead>
 					<tr>
 						<th data-class="expand">EVENT</th>
-						<th>PEFR</th>
+						<th>PERF</th>
 						<th data-hide="phone">WIND</th>
 						<th>ATHLETE</th>
 						<th data-hide="phone,tablet">Centre</th>
