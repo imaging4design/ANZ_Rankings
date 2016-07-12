@@ -24,7 +24,7 @@
 					<?php } ?>
 
 					<?php if( isset( $records_this_day ) ) { // Only display is data is present ?>
-						<li><a href="#history" data-toggle="tab"><i class="fa fa-calendar-o"></i>&nbsp; Today in History</a></li>
+						<li><a href="#history" data-toggle="tab"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; Today in History</a></li>
 					<?php } ?>
 
 					<?php if( isset( $born_this_day ) ) { // Only display is data is present ?>

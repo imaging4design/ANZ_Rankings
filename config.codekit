@@ -1469,13 +1469,35 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/foo_table\/css\/img\/minus.png": {
+	"\/foo_table\/css\/img\/minus 2.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 284,
+		"inputAbbreviatedPath": "\/foo_table\/css\/img\/minus 2.png",
+		"outputAbbreviatedPath": "\/foo_table\/css\/img\/minus 2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/foo_table\/css\/img\/minus.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49326,
 		"inputAbbreviatedPath": "\/foo_table\/css\/img\/minus.png",
 		"outputAbbreviatedPath": "\/foo_table\/css\/img\/minus.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/foo_table\/css\/img\/plus 2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 563,
+		"inputAbbreviatedPath": "\/foo_table\/css\/img\/plus 2.png",
+		"outputAbbreviatedPath": "\/foo_table\/css\/img\/plus 2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1484,7 +1506,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 563,
+		"initialSize": 48624,
 		"inputAbbreviatedPath": "\/foo_table\/css\/img\/plus.png",
 		"outputAbbreviatedPath": "\/foo_table\/css\/img\/plus.png",
 		"outputPathIsOutsideProject": 0,
@@ -10013,7 +10035,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/localhost",
 	"externalServerPreviewPathAddition": "ANZ_Rankings\/",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
