@@ -1,11 +1,13 @@
-<div class="container">
+<div class="container container-class">
 
 	<div class="row">
 
-		<div class="span12">
+		<?php include('includes/menu.php'); ?>
 
-			<div class="slab reversed textLarge">Contact</div><div class="slab textLarge blue">Us</div>
-	  		<div style="clear:both;"></div><br>
+		<div class="col-sm-12">
+
+			<br>
+			<h2 class="h2-one">Contact <strong>Us</strong></h2>
 
 			<h4>If you have any questions regarding the records and rankings listed on this site please email Steve Hollings (Statistician):</h4>
 			<p><span class="strong">Please include:</span><br />
@@ -13,9 +15,9 @@
 			Athlete Name<br />
 			Details of performance in question
 			</p>
-			<p><?php echo safe_mailto('hollings@athletic.co.nz?subject=Rankings Enquiry', 'Click Here to Contact Admin', array( 'class' => 'btn' ) ); ?></p>
+			<p><?php echo safe_mailto('hollings@athletic.co.nz?subject=Rankings Enquiry', 'Click Here to Contact Admin', array( 'class' => 'btn btn-search' ) ); ?></p>
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
 
 	</div><!--END row-->
 

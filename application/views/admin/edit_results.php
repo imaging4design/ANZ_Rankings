@@ -35,7 +35,6 @@
 								// Display full list of events drop down menu
 								// This will initially show the existing value of the eventID column as 'Selected'
 								echo '<label for="eventID">Event: </label>';
-								// echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
 								echo buildRecordEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
 							?>
 						</div>

@@ -42,8 +42,6 @@
 
 								// Display full list of events drop down menu
 								echo '<label for="eventID">Event: </label>';
-								//echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $eventName); // See global helper
-								//echo buildEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName); // See global helper
 								echo buildRecordEventsDropdown($pop_data->eventID, $pop_data->eventID, $pop_data->eventName);
 							?>
 						</div>

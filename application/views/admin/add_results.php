@@ -26,8 +26,7 @@
 							// Display full list of events drop down menu
 							echo '<div class="form-group">';
 							echo '<label for="eventID">Event: </label>';
-							//echo buildEventsDropdown(); // See global helper
-							echo buildRecordEventsDropdown($value='', $selected='', $label=''); // See global helper
+							echo buildEventsDropdown('records_dropdown'); // See global helper
 							echo '</div>';
 						?>
 					</div><!--ENDS col-->

@@ -29,6 +29,7 @@
 				<li><?php echo anchor('admin/records_con/add_records','RECORDS'); ?></li>
 				<li><?php echo anchor('admin/athlete_con','NEW ATHLETE'); ?></li>
 				<li><?php echo anchor('admin/news_con','ADD NEWS'); ?></li>
+				<li><?php echo anchor('admin/upload','ADVERTS'); ?></li>
 				<li>
 					<?php
 						//Show log out button only if a user is logged in

@@ -2,7 +2,7 @@
 
 	<div class="row">
 
-		<div class="span12 news">
+		<div class="col-sm-12 news">
 
 			<?php
 			$admin = FALSE;
@@ -45,7 +45,7 @@
 			}
 			?>
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
 
 	</div><!--END row-->
 

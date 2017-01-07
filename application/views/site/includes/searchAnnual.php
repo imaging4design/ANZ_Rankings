@@ -1,120 +1,199 @@
-				<?php
-				/**********************************************************************************************************************************************************************/
-				// ANNUAL LISTS FORM
-				/**********************************************************************************************************************************************************************/
-				echo '<div class="annual">';
+<div class="col-sm-8 category">
 
-					echo form_open('site/results_con', array('class' => 'hack'));
+	<?php echo form_open('site/results_con'); 
 
-						echo '<fieldset>';
-						echo '<legend>Search Annual Lists</legend>';
+		echo form_hidden('searchType', 'annual'); // Track searchType to make the search form tabs 'sticky'!
 
-						// Adds hidden CSRF unique token
-						// This will be verified in the controller against
-						// the $this->session->userdata('token') before
-						// returning any results data
-						echo '<div class="row">';
+		echo form_hidden('token', $token);
 
-						echo '<div class="span3">';
+	?>
 
-							echo '<div class="clearfix"><div class="slab reversed textMed blue">Annual Lists</div><a href="#" id="allTime"><div class="slab textMed">All Time Lists &raquo;</div></a></div>';
+	<fieldset>
+		<!-- <legend>ANNUAL LISTS</legend> -->
 
-							echo form_hidden('searchType', 'annual'); // Track if the user is searching 'Annual' or 'All Time' lists and make the search form 'sticky'!
+		<div class="row">
+			<div class="col-sm-6 mar_bot20">
+				<?php 
+					// See global_helper
+					// Pass in events $this->config->item($value))
+					echo buildEventsDropdown('rankings_dropdown'); 
+				?>
+			</div><!-- ENDS col -->
 
-							echo form_hidden('token', $token);
+			<div class="col-sm-6">
+				<?php echo ranking_years(); ?>
+			</div><!-- ENDS col -->
+		</div><!-- ENDS row -->
 
-							// Drop down menu - List of events
-							// See global helper
-							echo buildEventsDropdown(); 
+		<br>
 
-							// Drop down menu - List of years
-							// See profile helper
-							echo ranking_years();
+		<div class="row">
 
+			<div class="col-sm-6">
 
+				<div class="row no-gutter">
 
-							// Submit button
-							echo form_submit('submit', 'View', 'class="btn"', 'id="submit"');
+					<div class="col-xs-6">
 
-							echo '<div class="separator visible-phone"></div>';
+						<!-- AGE GROUPS MEN -->
+						<label class="radio-inline static-one">MEN</label>
 
-							/****************************************************************************************************************/
-							// DISPLAY 'PDF' PRINT OUTPUT BUTTON
-							/****************************************************************************************************************/
-							// Display 'PRINT PDF' button .. only if 'event' and ageGroup have been selected
-							if($this->input->post('eventID') && $this->input->post('ageGroup'))
-							{
-								// Don't display PDF print button for 'Relay' events
-								if(!in_array($this->input->post('eventID'), $this->config->item('relay_events')))
-								{
-									echo anchor('pdf/pdf_con/results_PDF','Download PDF', array('class' => 'btn hidden-phone', 'style' => 'margin-left:10px;'));
-								}
+						<?php
+							$options_men = array(
+								'MS'	=> 'Open',
+								'M19' 	=> 'U20/Junior',
+								'M17' 	=> 'U18/Youth'
+							);
+
+							foreach($options_men as $agekey => $value)	{
+
+								$default = ( ! $this->input->post( 'ageGroup' ) ) ? 'MS' : $this->input->post( 'ageGroup' );
+								$checked = ( $default == $agekey ) ? ' checked="checked" ' : '';
+
+								echo '<label class="radio-inline">';
+									echo '<input type="radio" class="catRadio" name="ageGroup" value="'. $agekey .'" ' . $checked . '> '. $value .' ';
+									echo '<i class="fa fa-check fa-symbol"></i>';
+								echo '</label>';
 
 							}
 
-							echo '<p style="margin-top:15px;"><span class="fresh_results">XXXX</span> = Performances in last 14 days</p>';
+						?>
 
-						echo '</div>';
+					</div><!-- ENDS col -->
+
+					<div class="col-xs-6">
+
+						<!-- AGE GROUPS WOMEN -->
+						<label class="radio-inline static-one">WOMEN</label>
+
+						<?php
+							$options_women = array(
+								'WS'  	=> 'Open',
+								'W19' 	=> 'U20/Junior',
+								'W17' 	=> 'U18/Youth'
+							);
+
+							foreach($options_women as $agekey => $value)	{
+
+								echo '<label class="radio-inline">';
+									echo '<input type="radio" class="catRadio" name="ageGroup" value="'. $agekey .'" '. set_radio('ageGroup', "$agekey", $check) . '>	'. $value .' ';
+									echo '<i class="fa fa-check fa-symbol"></i>';
+								echo '</label>';
+
+							}
+
+						?>
+
+					</div><!-- ENDS col -->
+
+				</div><!-- ENDS row -->
+
+			</div><!-- ENDS col -->
+
+			
+
+			<div class="col-sm-6">
+
+				<div class="row no-gutter">
+
+					<div class="col-xs-6">
+
+						<!-- LIST DEPTH -->
+						<label class="radio-inline static-one">LIST DEPTH</label>
+
+						<?php
+							$options_depth = array(
+								'10'  	=> 'Top 10',
+								'50' 	=> 'Top 50',
+								'250' 	=> 'Full List'
+							);
+
+							foreach($options_depth as $key => $value)	{
+
+								$default = ( ! $this->input->post( 'list_depth' ) ) ? '50' : $this->input->post( 'list_depth' );
+								$checked = ( $default == $key ) ? ' checked="checked" ' : '';
+
+								echo '<label class="radio-inline">';
+									echo '<input type="radio" class="catRadio" name="list_depth" value="'. $key .'" ' . $checked . '> '. $value .' ';
+									echo '<i class="fa fa-check fa-symbol"></i>';
+								echo '</label>';
+
+							}
+
+						?>
+
+					</div><!-- ENDS col -->
+
+					<div class="col-xs-6">
+
+						<!-- LIST TYPE -->
+						<label class="radio-inline static-one">LIST BY</label>
+
+						<?php
+							$options_type = array(
+								'0'  	=> 'Athlete',
+								'1' 	=> 'Performances'
+							);
+
+							foreach($options_type as $key => $value)	{
+
+								$default = ( ! $this->input->post( 'list_type' ) ) ? '0' : $this->input->post( 'list_type' );
+								$checked = ( $default == $key ) ? ' checked="checked" ' : '';
+
+								echo '<label class="radio-inline">';
+									echo '<input type="radio" class="catRadio" name="list_type" value="'. $key .'" ' . $checked . '> '. $value .' ';
+									echo '<i class="fa fa-check fa-symbol"></i>';
+								echo '</label>';
+
+							}
 
 
-						echo '<div class="span2">';
-						// Radio Button list of age groups
-						echo '<label class="bold">AGE GROUP</label>';
-
-						echo buildAgeGroupRadio(); // see global_helper.php
-
-						echo '<div class="separator visible-phone"></div>';
-						echo '</div>';
+						?>
 
 
-						echo '<div class="span2">';
-						// Drop down menu - List Depth
-						$options = array(
-							'10'  => 'Top 10',
-							'50'  => 'Top 50',
-							'250' => 'Deep List (250)'
-						);
+					</div><!-- ENDS col -->
 
-						echo '<label class="bold">LIST DEPTH</label>';
-						$check = '50';
-						foreach($options as $key => $value)
+				</div><!-- ENDS row -->
+
+			</div><!-- ENDS col -->
+
+		</div><!-- ENDS row -->
+
+		<br>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<input type="submit" id="submit" class="btn btn-block btn-blue" value="Show Annual List">
+			</div><!-- ENDS col -->
+
+			<div class="col-sm-6">
+				<?php
+					/****************************************************************************************************************/
+					// DISPLAY 'PDF' PRINT OUTPUT BUTTON
+					/****************************************************************************************************************/
+					// Display 'PRINT PDF' button .. only if 'event' and ageGroup have been selected
+					if($this->input->post('eventID') && $this->input->post('ageGroup') && $this->input->post('searchType') == 'annual')
+					{
+						// Don't display PDF print button for 'Relay' events
+						if(!in_array($this->input->post('eventID'), $this->config->item('relay_events')))
 						{
-							if( $key == $check ) { $checked = 'checked'; } else { $checked = ''; }
-
-							echo '<label class="radio">';
-							echo '<input type="radio" name="list_depth" value="'. $key .'" '.$checked.'>	'. $value .'';
-							echo '</label>';
-						}
-						echo '<div class="separator visible-phone"></div>';
-
-						// Drop down menu - List Type
-						$options = array(
-							'0'  => 'Athletes',
-							'1'   => 'Performances'
-						);
-
-						echo '<label class="bold">LIST BY:</label>';
-						$check = '0';
-						foreach($options as $key => $value)
-						{
-							if( $key == $check ) { $checked = 'checked'; } else { $checked = ''; }
-
-							echo '<label class="radio">';
-							echo '<input type="radio" name="list_type" value="'. $key .'" '.$checked.'>	'. $value .'';
-							echo '</label>';
+							echo anchor('pdf/pdf_con/results_PDF','Download PDF <i class="fa fa-download" aria-hidden="true"></i>', array('class' => 'btn btn-block btn-dark hidden-xs', 'target' => '_blank'));
 						}
 
+					}
+				
+					// Show error message
+					if( isset( $this->error_message ) )
+					{
+						echo $this->error_message;
+					} 
 
-						echo '<div class="separator visible-phone"></div>';
+				?>
+			</div>
+		</div><!-- ENDS col -->
 
-						echo '</div>';
+	</fieldset>
 
+	<?php echo form_close(); ?>
 
-						echo '</div>';
-
-						echo '</fieldset>';
-
-					// Close form
-					echo form_close();
-
-				echo '</div>';
+</div><!-- ENDS col -->

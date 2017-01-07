@@ -21,7 +21,7 @@ class Results_Model extends CI_Model
 		// $this->ageGroup will represent the value of the posted 'ageGroup'
 		// $this->eventID will represent the value of the posted 'eventID'
 		
-		$this->ageGroup 	= $this->input->post('ageGroup');
+		$this->ageGroup = $this->input->post('ageGroup');
 		$this->eventID 	= $this->input->post('eventID');
 		
 		

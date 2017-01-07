@@ -47,7 +47,7 @@ function find_qual_marks( $data )
 
 
 /********************************************************************/
-// FUNCTION buildEventsDropdown()
+// FUNCTION champsDropdown()
 // Creates drop down menu for ALL events
 // Function accepts three arguements
 // 1) $value - if specified, this will be the posted 'value'
@@ -67,7 +67,7 @@ function champsDropdown($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="champID" class="span3" id="champID">';
+	echo '<select name="champID" class="col-sm-3 form-control" id="champID">';
 
 	if($value)
 	{
@@ -75,7 +75,7 @@ function champsDropdown($value='', $selected='', $label='')
 	}
 	else
 	{
-		echo '<option value="" selected="selected">Select Championship</option>';
+		echo '<option value="" class="form-control" selected="selected">Select Championship</option>';
 	}
 
 	foreach($data as $row):

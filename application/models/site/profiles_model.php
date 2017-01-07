@@ -418,6 +418,7 @@ class Profiles_Model extends CI_Model
 		$this->db->join('resMulti', 'resMulti.athleteID = athletes.athleteID');
 		$this->db->join('events', 'events.eventID = resMulti.eventID');
 		$this->db->group_by('resultID');
+		$this->db->order_by('ageGroup', 'DESC');
 		$this->db->order_by($this->order_by);
 		
 		$query = $this->db->get('athletes');
@@ -490,6 +491,7 @@ class Profiles_Model extends CI_Model
 		$this->db->join('athletes', 'athletes.athleteID = representations.athleteID');
 		$this->db->join('events', 'events.eventID = representations.eventID');
 		$this->db->order_by('representations.year', 'ASC');
+		$this->db->order_by('representations.id', 'ASC');
 		$this->db->order_by('representations.competition', 'ASC');
 		$query = $this->db->get('representations');
 

@@ -87,7 +87,7 @@ $config['passed'] = array(
 /*****************************************************/
 // Creates $key => $value pairs of ageGroup abbreviations
 $config['ageGroups'] = array(
-	'MS'	=> 'Men Open',
+	'MS'  => 'Men Open',
 	'M19' => 'Men Under 20',
 	'M17' => 'Men Under 18',
 	'WS'  => 'Women Open',
@@ -99,7 +99,7 @@ $config['ageGroups'] = array(
 // Use this version for Home Page 'Top Lists'
 // We need Senior Men and Senior Women - NOT Men Open / Women Open!
 $config['ageGroups2'] = array(
-	'MS'	=> 'Men Senior',
+	'MS'  => 'Men Senior',
 	'M19' => 'Men Under 20',
 	'M17' => 'Men Under 18',
 	'WS'  => 'Women Senior',
@@ -117,9 +117,13 @@ $config['ageGroups2'] = array(
 // $config['rankings_dropdown'] = Only display these 'Events' (eventsID's) in the front end Rankings Lists drop down menu
 $config['rankings_dropdown'] = array('1', '2', '3', '4', '5', '6', '7', '9', 
 	'10', '11', '12', '13', '16', '18', '19', '20', '21', '22', '23', '24', '25', 
-	'26', '27', '28', '29', '30', '31', '32', '33', '35', '36', '37', '38', 
+	'26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', 
 	'39', '40', '41', '42', '43', '47');
 
+// $config['alltime_dropdown'] = Only display these 'Events' (eventsID's) in the front end All-Time drop down menu
+$config['alltime_dropdown'] = array(
+	'1', '2', '3', '4', '6', '7', '9', '10', '11', '19', '21', '22', '23', '25', 
+	'26', '27', '28', '29', '30', '31', '32', '33', '35', '36', '38', '39', '40');
 
 // $config['records_dropdown'] = Display these 'Events' (eventID's) in the Records section drop down menu
 $config['records_dropdown'] = array(
@@ -129,9 +133,11 @@ $config['records_dropdown'] = array(
 	'41', '42', '43', '44', '45', '46', '47', '50', '51', '52', '53', '54', '55', 
 	'56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67');
 
+// $config['relays_dropdown'] = Only display these 'Events' (eventsID's) in the front end Rankings Lists drop down menu
+$config['relays_dropdown'] = array('41', '42', '43', '44', '45', '46');
 
 // $config['seperate_performances'] = all events that need special attention because of implement weights / hurdle heights
-$config['seperate_performances'] = array('20', '21', '22', '23', '24', '25', '30', '31', '32', '33');
+$config['seperate_performances'] = array('20', '21', '22', '23', '24', '25', '30', '31', '32', '33', '36');
 
 $config['2000m_Steeplechase'] = array(
 	'MS' => '0914mm',

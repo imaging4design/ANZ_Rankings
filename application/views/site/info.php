@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container container-class">
 
 	<div class="row">
 
-		<div class="span12">
+		<?php include('includes/menu.php'); ?>
+
+		<div class="col-sm-12">
 
 			<?php
 			$admin = FALSE;
@@ -12,8 +14,8 @@
 			}
 			?>
 
-			<div class="slab reversed textLarge">General</div><div class="slab textLarge blue">Information</div>
-	  		<div style="clear:both;"></div><br>
+			<br>
+	  		<h2 class="h2-one">General <strong>Information</strong></h2>
 
 			<?php
 			if(isset($info))
@@ -39,7 +41,7 @@
 			}
 			?>
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
 
 	</div><!--END row-->
 

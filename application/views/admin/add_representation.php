@@ -49,8 +49,7 @@
 							<?php
 								// Display full list of events drop down menu
 								echo '<label for="eventID" style="margin-left:10px;">Event: </label>';
-								// echo buildEventsDropdown(); // See global helper
-								echo buildRecordEventsDropdown($value='', $selected='', $label=''); // See global helper
+								echo buildEventsDropdown('records_dropdown'); // See global helper
 							?> 
 						</div>
 					</div><!--ENDS col-->

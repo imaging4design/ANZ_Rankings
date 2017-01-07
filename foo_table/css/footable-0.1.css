@@ -27,9 +27,9 @@
   background: #eee;
 }
 
-.footable > tbody > tr:hover {
+/*.footable > tbody > tr:hover {
   background: #F5F5F5;
-}
+}*/
 
 .footable.breakpoint > tbody > tr:hover:not(.footable-row-detail) {
   cursor: pointer;

@@ -66,10 +66,10 @@ class Home_con extends CI_Controller {
 		$data['show_flash_news'] = show_flash_news(); // from global_helper
 		$data['ratified_record'] = ratified_record(); // from global_helper
 
-		$data['rankings_added_month'] = rankings_added_month(); // from global_helper
-		$data['rankings_seven_days'] = rankings_seven_days(); // from global_helper
-
-		$data['total_results'] = totalResults(); // from global_helper
+		//$data['rankings_added_month'] = rankings_added_month(); // from global_helper
+		//$data['rankings_seven_days'] = rankings_seven_days(); // from global_helper
+		//$data['total_results'] = totalResults(); // from global_helper
+		
 		$data['top_performers'] = topPerformers(); // from global_helper
 		$data['topPerformers_Multis'] = topPerformers_Multis(); // from global_helper
 		$data['topPerformers_Relays'] = topPerformers_Relays(); // from global_helper
@@ -145,78 +145,25 @@ class Home_con extends CI_Controller {
 
 		if($this->form_validation->run() == TRUE ) 
 		{
-
 			$data['token'] = $this->auth->token();
 
 			$data['most_recent'] = mostRecent(); // from global_helper
 			$data['most_recent_multis'] = most_recent_multis(); // from global_helper
 
-		}
+			$data['main_content'] = 'site/mostRecent';
+			$this->load->view('site/includes/template', $data);
 		
-		$data['main_content'] = 'site/mostRecent';
-		$this->load->view('site/includes/template', $data);
+		} else {
+
+			$this->error_message = validation_errors('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>', '</div>');
+			
+			$data['token'] = $this->auth->token();
+			$data['main_content'] = 'site/mostRecent';
+			$this->load->view('site/includes/template', $data);
+		}
 
 	
 	} // ENDS contact()
-
-
-
-
-	/*************************************************************************************/
-	// FUNCTION find_athlete_names()
-	// Used to retrieve athlete names to populate the 'Search Athletes' panel
-	// Finds athletes depending on the first letter of their 'Last Name'
-	/*************************************************************************************/
-	// public function find_athlete_names()
-	// {
-	// 	$this->form_validation->set_rules('alpha', 'Alpha Letter', 'trim|required');
-		
-	// 	if($this->form_validation->run() == TRUE) 
-	// 	{
-	// 		// Get data from model
-	// 		if($query = $this->profiles_model->show_athletes())
-	// 		{
-	// 			$athlete_names = $query;
-	// 		}
-			
-	// 		if(isset($athlete_names))
-	// 		{
-			
-	// 		echo '<div class="d960 drow">';
-	
-	// 		$results = count($athlete_names);
-	// 		$per_column = ceil($results/5);
-			
-	// 		$i = 0;
-	// 		echo '<table cellspacing="0" cellpadding="0" border="0" width="100%" >';
-	// 		echo '<tr valign="top">';
-	// 		echo '<td width=20%>';
-			
-	// 		foreach($athlete_names as $row) {
-			
-	// 			 if($i == $per_column)
-	// 			 {
-	// 					echo '</td><td width=20%>';
-	// 					$i = 0;
-	// 			 }
-				 
-	// 					echo '<h6>'.anchor('site/profiles_con/athlete/' . $row->athleteID, strtoupper($row->nameLast). ' ' . $row->nameFirst) . ' (' . $row->centreID . ')</h6>';
-				 
-	// 			 $i++;
-				 
-	// 		}
-			
-	// 		echo '</td>';
-	// 		echo '</tr>';
-	// 		echo '</table>';
-			
-	// 		echo '</div>';
-			
-	// 		}
-		
-	// 	}
-		
-	// } // ENDS find_athlete_names()
 	
 	
 	

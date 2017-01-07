@@ -144,10 +144,11 @@ class Global_Model extends CI_Model
 	// Retrieves the full list of events (for Rankings Lists) only!!!
 	// Used in the global_helper.php file!
 	/********************************************************************/
-	function getEvents()
+	function getEvents($value)
 	{
 		$this->db->select('*');
-		$this->db->where_in('eventID', $this->config->item('rankings_dropdown'));
+		$this->db->where_in('eventID', $this->config->item($value));
+		//$this->db->where_in('eventID', $this->config->item('rankings_dropdown'));
 		$this->db->order_by('eventOrder', 'ASC');
 		$query = $this->db->get('events');
 

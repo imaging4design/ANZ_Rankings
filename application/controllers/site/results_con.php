@@ -236,7 +236,7 @@ class Results_con extends CI_Controller {
 			
 			
 			$data['token'] = $this->auth->token();
-			$data['event_info'] = getEvents(); // global_helper
+			$data['event_info'] = getEvents('rankings_dropdown'); // global_helper
 			$data['main_content'] = 'site/results';
 			$this->load->view('site/includes/template', $data);
 			
@@ -244,7 +244,7 @@ class Results_con extends CI_Controller {
 		else 
 		{
 			//$this->error_message = validation_errors('<div class="message_error">', '</div>') . '<br />';
-			$this->error_message = validation_errors('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>', '</div>');
+			$this->error_message = validation_errors('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>', '</div>');
 			
 			$data['token'] = $this->auth->token();
 			$data['main_content'] = 'site/results';

@@ -304,7 +304,7 @@ function pro_listEvents($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="eventID" class="span3" id="eventID">';
+	echo '<select name="eventID" class="selectpicker show-tick" data-width="100%"" id="eventID">';
 
 	if($value)
 	{
@@ -340,7 +340,7 @@ function pro_year($name='', $value='', $id='')
 		$years++;
 	}
 
-	return form_dropdown($name, $year, set_value($name), $id);
+	return form_dropdown($name, $year, set_value($name), $id, 'class="form-control"');
 }
 
 
@@ -352,47 +352,23 @@ function pro_year($name='', $value='', $id='')
 /********************************************************************/
 function ranking_years()
 {
-	//$years = array(0 => 'ALL (from 2012)'); ---- UNCOMMENT THIS FROM 2013 onwards ... YES!!!!!!
 	$years = NULL;
-
-	//$i = 1900; 				// These two lines add the ALL TIME option to the rankings years dropdown
-	//$years[$i] = 'All Time'; // These two lines add the ALL TIME option to the rankings years dropdown
 
 	for ($i = 2013; $i <= date('Y'); $i++)
 	{
 		$years[$i] = $i; 
 	}
 
+	// Reverse the years so latest (i.e., current) year appears at top of select list
+	// This is also required for 'selectpicker' bug fix!
+	$years = array_reverse($years, true);
+	
 	$selected_year = ( isset( $selected_year ) ) ? $selected_year : date('Y');
 
-	return form_dropdown('year', $years, set_value('year', $selected_year), 'class="span3 block"', 'id="idname"');
+	return form_dropdown('year', $years, set_value('year', $selected_year), 'data-width="100%" class="selectpicker show-tick"');
 
 }
 
-
-/********************************************************************/
-// FUNCTION ranking_years()
-// Creates drop down menu for the year(s) - Starting current year
-// Going back 5 years
-/********************************************************************/
-// function ranking_allTime()
-// {
-// 	//$years = array(0 => 'ALL (from 2012)'); ---- UNCOMMENT THIS FROM 2013 onwards ... YES!!!!!!
-// 	$years = NULL;
-
-// 	$i = 1900; 				// These two lines add the ALL TIME option to the rankings years dropdown
-// 	$years[$i] = 'All Time'; // These two lines add the ALL TIME option to the rankings years dropdown
-
-// 	for ($i = 2013; $i <= date('Y'); $i++)
-// 	{
-// 		$years[$i] = $i; 
-// 	}
-
-// 	$selected_year = ( isset( $selected_year ) ) ? $selected_year : date('Y');
-
-// 	return form_dropdown('year', $years, set_value('year', $selected_year), 'class="span3 block"', 'id="idname"');
-
-// }
 
 
 /********************************************************************/
@@ -402,17 +378,21 @@ function ranking_years()
 /********************************************************************/
 function profile_years()
 {
-	$years = array(0 => 'ALL (from 2008)');
 
 	for ($i = 2008; $i <= date('Y'); $i++)
 	{
 		$years[$i] = $i; 
-		//echo "<pre>"; print_r($years); echo "</pre>";//remove this
 	}
+
+	// Reverse the years so latest (i.e., current) year appears at top of select list
+	// This is also required for 'selectpicker' bug fix!
+	$years = array_reverse($years, true);
+
+	// Then make 'ALL YEARS' sit at the top
+	$years = array(0 => 'ALL YEARS') + $years;
 
 	$selected_year = (isset($selected_year)) ? $selected_year : 0;
 
-	return form_dropdown('year', $years, set_value('year', $selected_year), 'class="span3"');
-	//return form_dropdown('year', $years, set_value('year', $selected_year), array( 'id' => 'idname', 'class' => 'span3' ));
+	return form_dropdown('year', $years, set_value('year', $selected_year), 'class="selectpicker show-tick" data-width="100%""');
 
 }

@@ -1,0 +1,421 @@
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| MAIN MENU
+|-----------------------------------------------------------------------------------------------------------------
+*/
+@colWhite: #FFF;
+@colOffWhite: rgba(236,240,241 ,1);
+@colMenu: #1E272B;
+@colSearch: #EBEBEB;
+
+@colBlue: rgba(0, 149, 218, 1);
+@colRed: #ef4130;
+@colOrange: #FF9900;
+@colPurple: rgba(124, 37, 130, 1);
+@colYellow: rgba(246, 178, 33, 1);
+@colGreen: #33C4B3;
+
+@colDarkGrey: #888;
+
+
+
+ul.dropdown-menu {
+	
+	border: none;
+	padding: 0;
+	border-radius: 0;
+	li a {
+		font-weight: 600;
+		text-transform: uppercase;
+		padding: 10px 20px;
+		&:hover {
+			color: @colWhite;
+			background: @colMenu;
+		}
+	}
+}
+
+.navbar {
+	border: none;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+.navbar-default {
+	background-color: @colMenu;
+	opacity: 0.95;
+	border-bottom: none;
+	z-index: 5;
+	/*border-color: @colDarkGrey;*/
+	/*-webkit-box-shadow: 0 0px 3px 3px rgba(0,0,0,0.1);*/
+	/*box-shadow: 0 0px 3px 3px rgba(0,0,0,0.1);*/
+}
+.navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+.navbar-fixed-top {
+	position: fixed;
+	top: 0px;
+	border-width: 0px 0px 1px;
+	z-index: 20;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: @colWhite;
+	background-color: @colMenu;
+}
+
+.navbar-default .navbar-nav > li > a:focus, 
+.navbar-default .navbar-nav > li > a:hover {
+	color: @colWhite;
+	background-color: darken(@colMenu, 10%);
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover {
+	color: @colWhite;
+	background-color: darken(@colMenu, 10%);
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+	color: @colWhite;
+    background-color: darken(@colMenu, 10%);
+}
+.navbar-nav > li > a {
+	font-size: 1.5em;
+	font-weight: 500;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.navbar-nav > li > a.translate {
+	transition: 0.15s;
+}
+.navbar > .container .navbar-brand, 
+.navbar > .container-fluid .navbar-brand {
+	 margin-left: 0; 
+}
+.navbar-header {
+	width: 100%;
+}
+.navbar-brand {
+	color: @colWhite !important;
+	/*float: left;*/
+	height: 70px;
+	width: 100%;
+	/*padding: 9px 0 6px 0;*/
+	font-size: 1.5em;
+	font-weight: 400;
+	/*background: green;*/
+	padding-top: 25px;
+	/*background: url(../img/anz_logo_small.svg) no-repeat center center @colMenu;
+	background-size: 120px;*/
+	text-align: center;
+	&:hover {
+		background-color: @colMenu !important;
+	}
+	opacity: 1 !important;
+}
+.navbar-brand.translate {
+	.transition;
+}
+.navbar .nav > li > a {
+	padding-left: 25px;
+	padding-right: 20px;
+	border-right: solid 1px darken(@colMenu, 20%);
+}
+/*.navbar .nav > li:first-child  {
+	border-left: solid 1px darken(@colMenu, 20%);
+}
+*/.navbar-right {
+	margin-right: 0;
+}
+.nav.navbar-right > li > a {
+	border-left: solid 1px darken(@colMenu, 20%);
+}
+
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {
+	background-color: green;
+	border-color: darken(@colMenu, 20%);
+}
+
+.dropdown-menu > .active > a, 
+.dropdown-menu > .active > a:hover, 
+.dropdown-menu > .active > a:focus {
+    color: @colWhite;
+    background-color: darken(@colMenu, 10%);
+}
+
+
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| MOBILE MENU (OFF-CANVAS)
+|-----------------------------------------------------------------------------------------------------------------
+*/
+nav#mobile {
+	position: fixed;
+	width: 44px;
+	height: 44px;
+	top: 0;
+	right: 0;
+	z-index: 12;
+	background: @colMenu;
+	transition: all .2s linear;
+	&:hover {
+		background: @colMenu;
+	}
+}
+
+nav#mobile:hover #menuToggle span {
+	background: #FFF;
+}
+
+#menuToggle {
+	display: block;
+	position: fixed;
+	top: 15px;
+	right: 12px;
+	z-index: 11;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#menuToggle input {
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -22px;
+	right: -15px;
+	cursor: pointer;
+	opacity: 0; /* hide this */
+	z-index: 12; /* and place it over the hamburger */
+}
+
+/* Just a quick hamburger */
+#menuToggle span {
+	display: block;
+	width: 21px;
+	height: 3px;
+	margin-bottom: 3px;
+	position: relative;
+	background: #FFF;
+	border-radius: 3px;
+	z-index: 11;
+	transform-origin: 4px 0px;
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),  background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),  opacity 0.55s ease;
+}
+
+#menuToggle span:first-child { 
+	transform-origin: 0% 0%; 
+}
+
+#menuToggle span:nth-last-child(2) { 
+	transform-origin: 0% 100%; 
+}
+
+/* Transform all the slices of hamburger into a crossmark */
+#menuToggle input:checked ~ span {
+	opacity: 1;
+	transform: rotate(45deg) translate(4px, -2px);
+	background: #FFF;
+}
+
+/* But let's hide the middle one */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/* Ohyeah and the last one should go the other direction */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+	opacity: 1;
+	transform: rotate(-45deg) translate(3px, 4px);
+}
+
+/* Make this absolute positioned at the top left of the screen */
+ul#menu {
+	position: fixed;
+	top:45px;
+	left:0;
+	width: 100%;
+	padding: 0 0;
+	background: #222;
+	list-style-type: none;
+	transform-origin: 0% 0%;
+	transform: translate(100%, 0);
+	.transition-slow;
+}
+
+ul#menu li a  {
+	font-size: 14px;
+	display: block;
+	padding: 10px 45px;
+	text-transform: uppercase;
+}
+
+ul.submenu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.submenu li a  {
+	font-size: 14px !important;
+	display: block;
+	padding: 10px 35px !important;
+	text-transform: uppercase;
+	list-style-type: none;
+}
+
+ul#menu li {
+	border-top: solid 1px #333;
+	border-bottom: solid 1px #000;
+}
+
+ul#menu li:first-child {
+	border-top: none;
+}
+
+ul#menu li:last-child {
+	border-bottom: none;
+}
+
+ul#menu li a {
+	color: #FFF;
+	&:hover {
+		background: @colMenu;
+		transition: background .2s linear;
+	}
+}
+
+ul#menu li a:hover i.fa {
+	color: #FFF;
+}
+
+ul#menu li a i.fa {
+	font-size: 16px;
+	color: @colMenu;
+	padding-right: 4px;
+}
+
+
+
+
+/* And let's fade it in from the left */
+#menuToggle input:checked ~ ul {
+	transform: scale(1.0, 1.0);
+	opacity: 1;
+}
+
+.logo-large {
+	position: absolute;
+	font-size: 20px;
+	background: @colMenu;
+	padding:8px 12px;
+	display: block;
+	height: 44px;
+	top: 0px;
+	left: 0px;
+	/*border-right: solid 1px #FFF;*/
+	a {
+		color: #FFF;
+		&:hover {
+			color: @colMenu;
+			transition: color 0.5s linear;
+		}
+	}
+}
+.band-nav-mobile {
+	font-size: 20px;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 45px;
+	padding: 8px 0 8px 60px;
+	background: #FFF;
+	border-bottom: solid 2px @colMenu;
+	-webkit-box-shadow: 0 0px 3px 3px rgba(0,0,0,0.1);
+	box-shadow: 0 0px 3px 3px rgba(0,0,0,0.1);
+	z-index: 11;
+	p {
+		color: #000;
+		font-weight: 400;
+		letter-spacing: -0.05em;
+		text-transform: uppercase;
+	}
+}
+
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| SIDE MENU (VERTICAL)
+|-----------------------------------------------------------------------------------------------------------------
+*/
+
+.nav-side {
+	color: #999;
+	background: @colMenu;
+	p {
+		text-align: center;
+	}
+	h3 {
+		font-size:20px;
+		font-weight: 700;
+		text-transform: uppercase;
+		background: @colMenu;
+		padding-left: 15px;
+		margin: 0 -15px 1px -15px;
+		padding: 10px 20px;
+	}
+	h3:first-of-type {
+		border-left: solid 5px @colMenu;
+	}
+	h3:last-of-type {
+		border-left: solid 5px @colMenu;
+	}
+	.user-name {
+		font-size: 14px;
+		margin: 0 auto 40px auto;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	img {
+		width: 100px;
+		height: auto;
+		margin: 30px auto 10px auto;
+	}
+	ul {
+		margin: 0 -15px 1px -55px;
+		list-style: none;
+		li a {
+			color: @colOffWhite;
+			width:100%;
+			padding: 10px 25px;
+			text-transform: uppercase;
+			display: block;
+		}
+		li a:hover {
+			color: @colWhite;
+			background: darken(@colMenu, 3%);
+			padding-left: 20px;
+			border-left: solid 5px @colMenu;
+			text-decoration: none;
+		}
+	}
+	
+}
+
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| RIGHT SIDE COLUMN
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.right-side {
+	background: @colMenu;
+}
+

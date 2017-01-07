@@ -1,26 +1,29 @@
 <div id="top_index"></div><!-- TARGET - this is where the page will auto scroll to after form is submited -->
 
 
-<div class="newsflashBand">
-
-	<div class="container">
+	<div class="container container-class">
 		<div class="row">
-			<div class="span12">
-				<ul class="nav nav-tabs">
+			<div id="latest">
+
+				<!-- <div class="slab reversed textLarge">Latest</div><div class="slab textLarge lead_perfs blue"> News</div>
+	  			<div style="clear:both;"></div> -->
+
+	  			<!-- <h2 class="h2-one"><strong>Latest</strong> News</h2> -->
+
+	  			<ul class="nav nav-pills nav-stacked nav-justified">
+				<!-- <ul class="nav nav-pills"> -->
 					<?php if( isset( $show_flash_news ) ) { // Only display is data is present 
 						$flash_active = ( isset( $show_flash_news )) ? 'active' : '';
 					?>
 						<li class="active"><a href="#home" data-toggle="tab"><i class="fa fa-comment-o"></i>&nbsp; Announcements</a></li>
 					<?php } ?>
 
-					<?php if( isset( $show_news ) ) { // Only display is data is present 
-						$news_active = ( ! isset( $show_flash_news )) ? 'active' : '';
-					?>
-						<li class="<?php echo $news_active; ?>" ><a href="#news" data-toggle="tab"><i class="fa fa-map-o"></i>&nbsp; Latest News</a></li>
+					<?php if( isset( $show_news ) ) { // Only display is data is present ?>
+						<li><a href="#news" data-toggle="tab"><i class="fa fa-map-o"></i>&nbsp; Latest News</a></li>
 					<?php } ?>
 
 					<?php if( isset( $ratified_record ) ) { // Only display is data is present ?>
-						<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent NZ Records</a></li>
+						<li><a href="#records" data-toggle="tab"><i class="fa fa-flag-o"></i>&nbsp; Recent Records</a></li>
 					<?php } ?>
 
 					<?php if( isset( $records_this_day ) ) { // Only display is data is present ?>
@@ -52,8 +55,11 @@
 
 									if(strtotime($current_date) <= strtotime($date_expires)) { // Display message for a valid time period only!
 
-										echo '<h3>' . $show_flash_news->heading . '</h3>';
-										echo $show_flash_news->bodyContent;
+										echo '<div class="news">';
+											echo '<h5 class="news-date">DATE: '. $show_flash_news->date .'</h5>';
+											echo '<h3>' . $show_flash_news->heading . '</h3>';
+											echo $show_flash_news->bodyContent;
+										echo '</div>';
 
 										if( $admin )
 										{
@@ -70,7 +76,7 @@
 
 					<!-- ========================================================================================== -->
 
-					<div class="tab-pane <?php echo $news_active; ?>" id="news"><!-- STARTS News -->
+					<div class="tab-pane" id="news"><!-- STARTS News -->
 						<div class="latest-news">
 
 							<?php
@@ -78,8 +84,6 @@
 								// Is admin logged in?
 								$admin = ($this->session->userdata('is_logged_in')) ? TRUE : FALSE;
 							
-								echo '<h3>Latest News ...</h3>';
-
 								if(isset($show_news))
 								{
 
@@ -95,10 +99,8 @@
 											$edit = '';
 										}
 										
-										echo '<hr>';
-
-										echo '<div class="news_background">';
-											echo '<h5>DATE: '. $row->date .'</h5>';
+										echo '<div class="news">';
+											echo '<h5 class="news-date">DATE: '. $row->date .'</h5>';
 											echo $row->bodyContent;
 										echo '</div>';
 										
@@ -122,29 +124,76 @@
 
 					  				echo '<h3>NZ Records ratified in the past month</h3>';
 
-									foreach($ratified_record as $row):
+					  				echo '<table class="table table-striped" data-toggle-column="last">';
+										
+										echo '<thead>';
+											echo '<tr>';
+												echo '<th data-type="html">';
+													echo '<strong>ATHLETE</strong>';
+												echo '</th>';
+												echo '<th>';
+													echo '<strong>EVENT</strong>';
+												echo '</th>';
+												echo '<th>';
+													echo '<strong>PERFORMANCE</strong>';
+												echo '</th>';
+												echo '<th data-breakpoints="md sm xs">';
+													echo '<strong>TYPE</strong>';
+												echo '</th>';
+												echo '<th data-breakpoints="md sm xs">';
+													echo '<strong>AGE GROUP</strong>';
+												echo '</th>';
+												echo '<th data-breakpoints="sm xs">';
+													echo '<strong>DATE</strong>';
+												echo '</th>';
+											echo '</tr>';
+										echo '</thead>';
 
-										// Work out which type of record
-										switch ($row->recordType){
+										echo '<tbody>';
+											foreach($ratified_record as $row):
 
-											case 'NN':
-											$recType = 'NZ National';
-											break;
+												// Work out which type of record
+												switch ($row->recordType){
 
-											case "RR":
-											$recType = 'NZ Resident';
-											break;
+													case 'NN':
+													$recType = 'NZ National';
+													break;
 
-											case "AC":
-											$recType = 'NZ All Commers';
-											break;	
-										}
+													case "RR":
+													$recType = 'NZ Resident';
+													break;
 
-										echo '<strong>' . $row->nameFirst . ' ' . $row->nameLast . '</strong> - ' . convertEventID($row->eventID)->eventName . ', <strong>' . $row->result . '</strong>, ' . $recType . ' ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' record, ' . $row->newdate . '<br>';
+													case "AC":
+													$recType = 'NZ All Commers';
+													break;	
+												}
 
-										echo '<hr>';
+												
+												echo '<tr>';
+													echo '<td>';
+														echo $row->nameFirst . ' ' . strtoupper($row->nameLast);
+													echo '</td>';
+													echo '<td>';
+														echo convertEventID($row->eventID)->eventName;
+													echo '</td>';
+													echo '<td>';
+														echo $row->result;
+													echo '</td>';
+													echo '<td>';
+														echo $recType;
+													echo '</td>';
+													echo '<td>';
+														echo ageGroupRecordHistoryConvert($row->ageGroup);
+													echo '</td>';
+													echo '<td>';
+														echo $row->newdate;
+													echo '</td>';
+												echo '</tr>';
+													
+							  				endforeach;
 
-					  				endforeach;
+							  			echo '</tbody>';
+									echo '</table>';
 
 					  			} // ENDS $ratified_record
 					  			else {
@@ -161,97 +210,120 @@
 						<div class="latest-news">
 							<h3>On this day in history ...</h3>
 
-							<?php
+							<table class="table table-striped" data-toggle-column="last">
+								<thead>
+									<tr>
+										<th><strong>WHEN</strong></th>
+										<th><strong>ATHLETE</strong></th>
+										<th data-breakpoints="sm xs"><strong>AGE GROUP</strong></th>
+										<th data-breakpoints="sm xs"><strong>REC TYPE</strong></th>
+										<th><strong>PERF</strong></th>
+										<th data-breakpoints="xs"><strong>EVENT</strong></th>
+										<th data-breakpoints="sm xs"><strong>VENUE</strong></th>
 
-								// Shows records set athletes on this day in history ...
-								if( isset( $records_this_day ) ) {
+									</tr>
+								</thead>
 
-									$result = NULL;
+								<tbody>
+
+								<?php
+
+									// Shows records set athletes on this day in history ...
+									if( isset( $records_this_day ) ) {
+
+										$result = NULL;
 
 
-									foreach ($records_this_day as $row):
+										foreach ($records_this_day as $row):
 
-										switch ($row->recordType){
-											case 'AC':
-												$recType = 'NZ Allcomers';
-											break;
-											case 'NN':
-												$recType = 'NZ National';
-											break;	
-											case 'RR':
-												$recType = 'NZ Resident';
-											break;	
-										}
-
-										// This displays the actual age of the record in Years/Months/Days ...
-										$nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
-										
-
-											if( $result == $row->result && $date == $row->date ) {
-
-												// This will not run on the first time around
-												// On the second or subsequent rounds - if the result and date match, that will indicate the record has more than one record type (i.e., All commers, national, resident)
-												// Therefore, we need to combine these on one line instead of rendering them out on three separate lines
-												// So, we remove (array_pop($records)) the previous record, but remember its recType and continue on 
-												// When we have looped through the same record (max possible 3) we keep popping the previous off until we hit the last
-												// Then we add in the saved 'recTypes' as an extra field over and above $recType
-
-												array_pop($records);
-
-												$AllRecType = $rememberRecType; // e.g. NZ Allcomers
-												
-												$records[] = $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $AllRecType . '' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . strtoupper($row->venue) . '<hr>';
-
-												$rememberRecType .= $recType.', '; // e.g. NZ Allcomers
-												
-
-											} else {
-
-												// This will run first and populate the '$records' array with the first record
-												$rememberRecType = NULL;
-
-												$records[] = $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . strtoupper($row->venue) . '<hr>';
-
-												$rememberRecType .= $recType.', '; // e.g. NZ Allcomers
-
+											switch ($row->recordType){
+												case 'AC':
+													$recType = 'NZ Allcomers';
+												break;
+												case 'NN':
+													$recType = 'NZ National';
+												break;	
+												case 'RR':
+													$recType = 'NZ Resident';
+												break;	
 											}
 
+											// This displays the actual age of the record in Years/Months/Days ...
+											$nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
+											
 
-										$result = $row->result; // 88.20
-										$date = $row->date;
+												if( $result == $row->result && $date == $row->date ) {
 
+													// This will not run on the first time around
+													// On the second or subsequent rounds - if the result and date match, that will indicate the record has more than one record type (i.e., All commers, national, resident)
+													// Therefore, we need to combine these on one line instead of rendering them out on three separate lines
+													// So, we remove (array_pop($records)) the previous record, but remember its recType and continue on 
+													// When we have looped through the same record (max possible 3) we keep popping the previous off until we hit the last
+													// Then we add in the saved 'recTypes' as an extra field over and above $recType
+
+													array_pop($records);
+
+													$AllRecType = $rememberRecType; // e.g. NZ Allcomers
+													
+													$records[] = 
+
+													'<tr><td>' . $nz_ageOfRecord.'</td><td>' . $row->nameFirst . ' ' . $row->nameLast. '</td><td> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . '</td><td>' . $AllRecType . ' Record</td><td>' . $recType . ' ' . $row->result . '</td><td>' . $row->eventName . '</td><td>' . strtoupper($row->venue) . '</td></tr>';
+
+													$rememberRecType .= $recType.', '; // e.g. NZ Allcomers
+													
+
+												} else {
+
+													// This will run first and populate the '$records' array with the first record
+													$rememberRecType = NULL;
+
+													$records[] = 
+
+													'<tr><td>' . $nz_ageOfRecord.'</td><td>' . $row->nameFirst . ' ' . $row->nameLast. '</td><td> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . '</td><td>' . $recType . ' Record</td><td> ' . $row->result . '</td><td>' . $row->eventName . '</td><td>' . strtoupper($row->venue) . '</td></tr>';
+
+													$rememberRecType .= $recType.', '; // e.g. NZ Allcomers
+
+												}
+
+
+											$result = $row->result; // 88.20
+											$date = $row->date;
+
+											
+											/*
+											|-----------------------------------------------------------------------------------------------------------------
+											| NOTE!!
+											| If the above proves not to work - then delete all directly after the 'switch' statement
+											| Then uncomment the lines below ..
+											|-----------------------------------------------------------------------------------------------------------------
+											*/
+
+											// This displays the actual age of the record in Years/Months/Days ...
+											// $nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
+
+											//echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
 										
-										/*
-										|-----------------------------------------------------------------------------------------------------------------
-										| NOTE!!
-										| If the above proves not to work - then delete all directly after the 'switch' statement
-										| Then uncomment the lines below ..
-										|-----------------------------------------------------------------------------------------------------------------
-										*/
+											
+											
+										endforeach;
 
-										// This displays the actual age of the record in Years/Months/Days ...
-										// $nz_ageOfRecord = recordAgeHistory($row->date, date('Y')); // See global_helper.php
-
-										//echo $nz_ageOfRecord.' - <strong>' . $row->nameFirst . ' ' . $row->nameLast. '</strong> set the ' . ageGroupRecordHistoryConvert($row->ageGroup) . ' ' . $recType . ' Record of <strong>' . $row->result . '</strong> for the ' . $row->eventName . ', ' . $row->venue . '<br />';
-									
+										foreach ($records as $key => $value) {
+											echo $value;
+										}
 										
 										
-									endforeach;
+										
 
-									foreach ($records as $key => $value) {
-										echo $value;
+
 									}
-									
-									
-									
+									else {
+										echo 'No results found';
+									}
 
+								?>
 
-								}
-								else {
-									echo '<p>No results found ...</p>';
-								}
-
-							?>
+								</tbody>
+							</table>
 
 						</div><!-- ENDS latest-news -->
 					</div><!-- ENDS Day History -->
@@ -266,24 +338,35 @@
 
 									echo '<h3>NZ Athletes with birthdays today (' . date('jS F', strtotime(date('Y-m-d'))) . ')</h3>';
 
-									echo '<table class="table table-striped">';
-										echo '<tr>';
-											echo '<td><strong>NAME (AGE)</strong></td>';
-											echo '<td class="hidden-phone"><strong>CLUB</strong></td>';
-											echo '<td><strong>CENTRE</strong></td>';
-										echo '</tr>';
-
-										foreach ($born_this_day as $row):
-
-											// This displays the actual age of the athlete in Years/Months/Days ...
-											$athlete_age = recordAgeYears($row->DOB, date('Y-m-d')); // See global_helper.php
-
+									echo '<table class="table table-striped" data-toggle-column="last">';
+										echo '<thead>';
 											echo '<tr>';
-												echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast) . ' (' . $athlete_age . ')', array( 'class' => 'example', 'rel' => 'tooltip', 'title' => 'View profile ')) . ' </td>';
-												echo '<td class="hidden-phone">' . $row->clubName . '</td>';
-												echo '<td>' . $row->centreID . ' </td>';
+												echo '<th data-type="html"><strong>NAME</strong></th>';
+												echo '<th><strong>AGE</strong></th>';
+												echo '<th data-breakpoints="xs"><strong>CLUB</strong></th>';
+												echo '<th  data-type="html" data-breakpoints="xs"><strong>CENTRE</strong></th>';
 											echo '</tr>';
-										endforeach;
+										echo '</thead>';
+
+										echo '<tbody>';
+
+											foreach ($born_this_day as $row):
+
+												// This displays the actual age of the athlete in Years/Months/Days ...
+												$athlete_age = recordAgeYears($row->DOB, date('Y-m-d')); // See global_helper.php
+
+												// Dynamically assign a centre flag to the centreID column
+												// This is powered by 'includes/regional_flags.php' (an include)
+												$centre_flag = get_centre_flag( $row->centreID );
+
+												echo '<tr>';
+													echo '<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast)) . '</td>';
+													echo '<td>' . $athlete_age . '</td>';
+													echo '<td>' . $row->clubName . '</td>';
+													echo '<td>' . $centre_flag. ' ' . $row->centreID . ' </td>';
+												echo '</tr>';
+											endforeach;
+										echo '</tbody>';
 									echo '</table>';
 								}
 								else {
@@ -298,11 +381,18 @@
 				</div>
 			</div><!--ENDS col-->
 
+			<!-- <div class="col-sm-6">
+				<h2 class="h2-one" style="margin-bottom:14px;"><strong>Latest</strong> Videos</h2>
+				<p>Woemns 400 metre reals</p>
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/9XwoaaUa_cY" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div> -->
+
 
 		</div><!--ENDS row-->
 	</div><!--ENDS container-->
 
-</div><!-- ENDS newsflash-band -->
 
 
 
@@ -315,63 +405,78 @@
 	}
 ?>
 
-<div class="container">
+<div class="container" style="background:white; padding-bottom:20px;">
 
 	<div class="row">
 
-		<div class="span12" style="margin-top:0px;">
+		<?php
+			/*************************************************************/
+			// CREATE A LABEL HEADING FOR WHICH AGE GROUP IS BEING DISPLAYED
+			/*************************************************************/
 
-			<div class="slab reversed textLarge">Leading Performances</div><div class="slab textLarge lead_perfs blue"> <?php echo date('Y'); ?></div>
-	  		<div style="clear:both;"></div>
+			// NEW! .. This give the new correct 'Age Group' Labels
+			if( $this->input->post('ageGroup') ) {
 
+				$age = '<strong>' . ageGroupLabels( $this->input->post('ageGroup') ) . '</strong>'; // see global_helper
+
+			}
+			else
+			{
+				$age = '<strong>Senior Men </strong>';
+			}
+
+		?>
+
+
+
+		<div class="col-sm-4">
+			<h3 class="leading lead-marks">LEADING MARKS <?php echo date('Y'); ?></h3>
+			<h2 class="h2-one"><?php echo $age; ?></h2>
+		</div>
+
+		<div class="col-sm-4">
 			<?php
 				// Form to choose which ageGroup to show top 'Year' lists
 				echo form_open('site/home_con', array( 'id' => 'topPerformers' ));
 
-				echo '<label></label>';
-				echo buildAgeGroup_topLists( set_value('ageGroup') ); // from global_helper
+					echo '<div class="lead-head">';
 
-				echo '<label></label>';
-				echo '<button type="submit"  id="top_performers" class="btn">VIEW</button>';
+						echo buildAgeGroup_topLists( set_value('ageGroup') ); // from global_helper
+						//echo '<button type="submit"  id="top_performers" class="btn">VIEW</button>';
+
+					echo '</div>';
 
 				echo form_close();
 
 			?>
+		</div>
+		
+		<div class="col-sm-4">
+			<p class="pull-right hidden-xs" style="margin-top: 15px;"><span class="fresh_results">1234</span> = Performances in last 14 days</p>
+		</div>
 
-			<?php
-				/*************************************************************/
-				// CREATE A LABEL HEADING FOR WHICH AGE GROUP IS BEING DISPLAYED
-				/*************************************************************/
 
-				// NEW! .. This give the new correct 'Age Group' Labels
-				if( $this->input->post('ageGroup') ) {
 
-					echo '<div class="slab reversed textMed ">' . ageGroupLabels( $this->input->post('ageGroup') ) . '</div><div class="slab textMed lead_perfs">' . date('Y') . '</div>'; // see global_helper
-
-				}
-				else
-				{
-					echo '<div class="slab reversed textMed">Senior Men</div><div class="slab textMed lead_perfs">' . date('Y') . '</div>';
-				}
-
-			?>
-
+		<div class="col-sm-12" style="margin-top:0px;">
 			  
-			<table class="footable table-striped">
+			<table class="table table-striped" data-toggle-column="last">
 				<thead>
 					<tr>
-						<th data-class="expand">EVENT</th>
-						<th>PERF</th>
-						<th data-hide="phone">WIND</th>
-						<th>ATHLETE</th>
-						<th data-hide="phone,tablet">Centre</th>
-						<th data-hide="phone,tablet">DOB</th>
-						<th data-hide="phone,tablet">COMPETITION</th>
-						<th data-hide="phone">VENUE</th>
-						<th data-hide="phone">DATE</th>
+						<th>EVENT</th>
+						<th data-type="html">PERF</th>
+						<th data-breakpoints="sm xs">WIND</th>
+						<th data-type="html">ATHLETE</th>
+						<th data-breakpoints="sm xs" data-type="html">Centre</th>
+						<th data-breakpoints="sm xs">DOB</th>
+						<th data-breakpoints="sm xs">COMPETITION</th>
+						<th data-breakpoints="xs">VENUE</th>
+						<th data-breakpoints="xs">DATE</th>
 					</tr>
 				</thead>
 				<tbody>
+
+
+			<?php include('includes/regional_flags.php'); // include regional_flags.php to display centre flags ?>
 				
 			  
 			<?php
@@ -384,6 +489,10 @@
 
 						// This adds a highlight class to those rankings less than a week old!
 						$dateClass = fresh_results($row->date); // from global_helper.php
+
+						// Dynamically assign a centre flag to the centreID column
+						// This is powered by 'includes/regional_flags.php' (an include)
+						$centre_flag = get_centre_flag( $row->centreID );
 
 						$coach = ( $row->coach ) ? 'COACH: ' . $row->coach : '';
 
@@ -398,8 +507,8 @@
 								<td>' . $row->eventName . '</td>
 								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '' . ltrim($row->distHeight, 0) . '</span>&nbsp;'. $in_out . ' <span class="hidden-phone textREDD">' . $row->record . '</span></td>
 								<td>' . $row->wind . '</td>
-								<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' =>$age )) . '</td>
-								<td>' . $row->centreID . '</td>
+								<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast)) . '</td>
+								<td>' . $centre_flag . ' ' . $row->centreID . '</td>
 								<td>' . $row->format_DOB . '</td>
 								<td>' . $row->competition . '</td>
 								<td>' . $row->venue . '</td>
@@ -421,6 +530,10 @@
 				// This adds a highlight class to those rankings less than a week old!
 				$dateClass = fresh_results($topPerformers_Multis->date); // from global_helper.php
 
+				// Dynamically assign a centre flag to the centreID column
+				// This is powered by 'includes/regional_flags.php' (an include)
+				$centre_flag = get_centre_flag( $topPerformers_Multis->centreID );
+
 				$coach = ( $row->coach ) ? 'COACH: ' . $topPerformers_Multis->coach : '';
 
 				$years = age_from_dob($topPerformers_Multis->DOB) . ' years';
@@ -432,8 +545,8 @@
 						<td>' . $topPerformers_Multis->eventName . '</td>
 						<td><span class="'.$dateClass.'">' . $topPerformers_Multis->points . '</span></td>
 						<td>&nbsp;</td>
-						<td>' . anchor('site/profiles_con/athlete/' . $topPerformers_Multis->athleteID, $topPerformers_Multis->nameFirst . ' ' . strtoupper($topPerformers_Multis->nameLast), array( 'class' => 'example', 'rel' => 'tooltip', 'title' => $age )) . '</td>
-						<td>' . $topPerformers_Multis->centreID . '</td>
+						<td>' . anchor('site/profiles_con/athlete/' . $topPerformers_Multis->athleteID, $topPerformers_Multis->nameFirst . ' ' . strtoupper($topPerformers_Multis->nameLast)) . '</td>
+						<td>' . $centre_flag . ' ' . $topPerformers_Multis->centreID . '</td>
 						<td>' . $topPerformers_Multis->format_DOB . '</td>
 						<td>' . $topPerformers_Multis->competition . '</td>
 						<td>' . $topPerformers_Multis->venue . '</td>
@@ -479,10 +592,9 @@
 			</table>
 
 
-			<div class="center"><a href="" class="to_top textSmall" id="bottom_index">Back To Top</a></div>
+			<div class="center"><a href="#" class="btn btn-search" id="bottom_index">New Search &nbsp; <i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
 
-
-		</div><!-- ENDS span12 -->
+		</div><!-- ENDS col-sm-12 -->
 
 	</div><!-- ENDS row -->
 
@@ -491,18 +603,26 @@
 
 
 
-<?php
-if( isset( $show_target ) ) // Load the <script> only when form submitted !!!
-{
-?>
+
+<?php if( isset( $show_target ) ) { // Load the <script> only when form submitted !!! ?>
 
 	<script>
 
-		// Scroll Top Performers list to top of page
-		$(document).ready(function (){
-			$('html, body').animate({
-			scrollTop: $(".top_home").offset().top
-			}, 500);
+		// ON LOAD (of results) - scroll to top of list
+		// ************************************************************************
+		$(window).load(function() {
+
+			var winWidth = $( window ).width();
+			var offSetDist = false;
+
+			if( winWidth <= 752 ) {
+				offSetDist = -55;
+			} else {
+				offSetDist = -10;
+			}
+
+			var resultsLoaded = $('.lead-marks').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+
 		});
 
 	</script>
@@ -510,32 +630,5 @@ if( isset( $show_target ) ) // Load the <script> only when form submitted !!!
 <?php } ?>
 
 
-<script>
 
-	// This (on click of #bottom_index link) scolls to the top of search criteria form
-	$(document).ready(function (){
 
-		$('#top_performers').hide();
-		
-		$("#bottom_index").click(function (e){
-			e.preventDefault();
-			$('html, body').animate({
-				scrollTop: $("#top_index").offset().top
-			}, 500);
-		});
-	});
-
-</script>
-
-<script>
-	// Displays tooltip of athletes age
-	$(document).ready(function () {
-		if ($("[rel=tooltip]").length) {
-			$("[rel=tooltip]").tooltip({
-				placement: 'right',
-				html: true
-			});
-		}
-	});
-	
-</script>

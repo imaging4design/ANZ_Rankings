@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container container-class" style="padding-top: 20px;">
+
 	<div class="row">
-		<div class="span12">
+		<div class="col-sm-12">
 
 			<a id="top"></a>
 			
@@ -25,26 +26,30 @@
 				$period = $this->input->post( 'time_frame');
 				$gender = ( $this->input->post( 'gender' ) === 'men' ) ? 'Men' : 'Women';
 
-				echo '<div class="slab reversed textLarge">' . $gender . '</div><div class="slab textLarge blue">Past ' . $period . ' Days</div></br>';
-				echo '<div class="slab reversed textSmall">Ordered by: </div><div class="slab textSmall red"> Event / Best Result</div>';
-				echo '<div class="clearfix"></div>'; //Stop the table wrapping up around the title block!
+
+				//echo '<div class="slab reversed textLarge">' . $gender . '</div><div class="slab textLarge blue">Past ' . $period . ' Days</div></br>';
+				//echo '<div class="slab reversed textSmall">Ordered by: </div><div class="slab textSmall red"> Event / Best Result</div>';
+				//echo '<div class="clearfix"></div>'; //Stop the table wrapping up around the title block!
+
+				echo '<h2 class="h2-two"><strong>' . $gender . '</strong> Past ' . $period . ' Days</h2>';
+				echo '<p>Ordered by: Event / Best Result</p>';
 
 			?>
 
-			<table class="footable">
+			<table class="table table-striped" data-toggle-column="last">
 				<thead>
 					<tr>
-						<th data-class="expand">Event</th>
-						<th data-hide="phone,tablet">Imp</th>
+						<th>Event</th>
+						<th data-breakpoints="sm xs">Imp</th>
 						<th>Result</th>
-						<th data-hide="phone">Wind</th>
+						<th data-breakpoints="xs">Wind</th>
 						<th>&nbsp;</th>
-						<th>Name</th>
-						<th data-hide="phone,tablet">DOB</th>
-						<th data-hide="phone,tablet">Place</th>
-						<th data-hide="phone,tablet">Competition</th>
-						<th data-hide="phone">Venue</th>
-						<th data-hide="phone">Date</th>
+						<th data-type="html">Name</th>
+						<th data-breakpoints="sm xs">DOB</th>
+						<th data-breakpoints="sm xs">Place</th>
+						<th data-breakpoints="sm xs">Competition</th>
+						<th data-breakpoints="xs">Venue</th>
+						<th data-breakpoints="xs">Date</th>
 					</tr>
 				</thead>
 
@@ -72,7 +77,7 @@
 				$event = ( $event_current == $row->eventName ) ? '' : $row->eventName;
 
 				echo '<tr>
-						<td>' . $event . '</td>
+						<td style="font-weight:900;">' . $event . '</td>
 						<td>' . $imp . '</td>
 						<td>' . $performance . ' ' . $in_out . ' <span class="textREDD">' . $row->record . '</span></td>
 						<td>' . $row->wind . '</td>
@@ -138,7 +143,7 @@
 			}
 			else
 			{
-				echo '<h4>No results found for this period.</h4>';
+				echo '<h3 class="h3-two">No results found</h3>';
 			}
 			
 			?>
@@ -146,7 +151,7 @@
 
 		</div>
 
-		<div class="center"><a href="" class="to_top textSmall" id="bottom_index">Back To Top</a></div>
+		<div class="center"><a href="#" class="btn btn-search" id="bottom_recent">New Search &nbsp; <i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
 
 	</div><!-- ENDS row -->
 
@@ -160,11 +165,21 @@ if( isset( $show_target ) ) // Load the <script> only when form submitted !!!
 
 	<script>
 
-		// Scroll Top Performers list to top of page
-		$(document).ready(function (){
-			$('html, body').animate({
-			scrollTop: $(".top_home").offset().top
-			}, 500);
+		// ON LOAD (of results) - scroll to top of list
+		// ************************************************************************
+		$(window).load(function() {
+
+			var winWidth = $( window ).width();
+			var offSetDist = false;
+
+			if( winWidth <= 752 ) {
+				offSetDist = -60;
+			} else {
+				offSetDist = 0;
+			}
+
+			var resultsLoaded = $('h2').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+			
 		});
 
 	</script>
@@ -175,17 +190,24 @@ if( isset( $show_target ) ) // Load the <script> only when form submitted !!!
 
 <script>
 
-	// This (on click of #bottom_index link) scolls to the top of search criteria form
-	$(document).ready(function (){
+	// BACK TO TOP (of search form)
+	// ************************************************************************
+	$(document).ready(function(){
 
-		$('#top_performers').hide();
-		
-		$("#bottom_index").click(function (e){
-			e.preventDefault();
-			$('html, body').animate({
-				scrollTop: $(".searchBand").offset().top
-			}, 500);
+		var winWidth = $( window ).width();
+		var offSetDist = false;
+
+		if( winWidth <= 752 ) {
+			offSetDist = -45;
+		} else {
+			offSetDist = 0;
+		}
+
+		$("#bottom_recent").on('click', function (){
+			$('.search-form').velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+			return false;
 		});
+
 	});
 
 </script>

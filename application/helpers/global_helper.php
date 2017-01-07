@@ -97,6 +97,25 @@ function records_this_day()
 
 
 /********************************************************************/
+// FUNCTION show_advert()
+// Displays the advert on the page
+/********************************************************************/
+function show_advert()
+{
+	$CI = &get_instance();
+	$CI->load->model('admin/advert_model');
+	$var = $CI->advert_model->show_advert();
+
+	//return the data $query
+	if($query = $var) 
+	{
+		return $query;
+	}
+
+}
+
+
+/********************************************************************/
 // FUNCTION show_news()
 // Shows the latest news
 /********************************************************************/
@@ -370,11 +389,11 @@ function topPerformers_Relays()
 // FUNCTION getEvents()
 // Retrieves ALL events
 /********************************************************************/
-function getEvents()
+function getEvents($value)
 {
 	$CI = &get_instance();
 	//$CI->load->model('global_model');
-	$var = $CI->global_model->getEvents();
+	$var = $CI->global_model->getEvents($value);
 
 	//return the data $query
 	if($query = $var) 
@@ -627,16 +646,25 @@ function buildAgeGroupRadio()
 
 	$check = 'MS';
 
+	echo '<div class="btn-group" data-toggle="buttons">';
+
 	foreach($options as $key => $value)
 	{
 		//if( $key == $check ) { $checked = 'checked'; } else { $checked = ''; }
 		if( $key == 'MS' ) { $check = TRUE; } else { $check = NULL; }
 		
-		echo '<label class="radio">';
-			//echo '<input type="radio" name="ageGroup" value="'. $key .'" '.$checked.'>	'. $value .'';
-		echo '<input type="radio" name="ageGroup" value="'. $key .'" '. set_radio('ageGroup', "$key", $check) . '>	'. $value .'';
+		// echo '<div class="radio">';
+		// 	echo '<label>';
+		// 		echo '<input type="radio" name="ageGroup" value="'. $key .'" '. set_radio('ageGroup', "$key", $check) . '>	'. $value .'';
+		// 	echo '</label>';
+		// echo '</div>';
+
+		echo '<label class="btn btn-primary">';
+			echo '<input type="radio" name="ageGroup" value="'. $key .'" '. set_radio('ageGroup', "$key", $check) . '>	'. $value .'';
 		echo '</label>';
 	}
+
+	echo '</div>';
 
 }
 
@@ -661,10 +689,11 @@ function buildAgeGroupRadioAT()
 		//if( $key == $check ) { $checked = 'checked'; } else { $checked = ''; }
 		if( $key == 'MS' ) { $check = TRUE; } else { $check = NULL; }
 		
-		echo '<label class="radio">';
-			//echo '<input type="radio" name="ageGroup" value="'. $key .'" '.$checked.'>	'. $value .'';
-			echo '<input type="radio" name="ageGroup" value="'. $key .'" '. set_radio('ageGroup', "$key", $check) . '>	'. $value .'';
-		echo '</label>';
+		echo '<div class="radio">';
+			echo '<label class="radio">';
+				echo '<input type="radio" name="ageGroup" value="'. $key .'" '. set_radio('ageGroup', "$key", $check) . '>	'. $value .'';
+			echo '</label>';
+		echo '</div>';
 	}
 
 }
@@ -692,7 +721,7 @@ function buildAgeGroup_records($selected='')
 		'W16' 	=> 'Women Under 17'
 	);
 
-	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup" class="span3 form-control"');
+	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroup" class="form-control selectpicker show-tick" data-width="100%"');
 
 }
 	
@@ -718,7 +747,7 @@ function buildAgeGroup_topLists($selected='')
 		'W17' 	=> 'U18/Youth Women'
 	);
 
-	echo form_dropdown('ageGroup', $options,  $selected, 'id="ageGroupTopPerf"');
+	echo form_dropdown('ageGroup', $options,  $selected, 'class="selectpicker show-tick" data-width="100%" ', 'id="ageGroupTopPerf"');
 
 }
 
@@ -938,7 +967,7 @@ function recordType($selected='')
 		'RR' 	=> 'NZ Resident'
 	);
 
-	echo form_dropdown('recordType', $options,  $selected, 'id="recordType" class="span3 form-control"');
+	echo form_dropdown('recordType', $options,  $selected, 'id="recordType" class="form-control selectpicker show-tick" data-width="100%"');
 
 }
 	
@@ -955,7 +984,7 @@ function in_out($selected='')
 		'in' 	=> 'Indoors'
 	);
 
-	echo form_dropdown('in_out', $options,  $selected, 'id="in_out" class="span3 form-control"');
+	echo form_dropdown('in_out', $options,  $selected, 'id="in_out" class="form-control selectpicker show-tick" data-width="100%"');
 
 }
 	
@@ -965,17 +994,15 @@ function in_out($selected='')
 // FUNCTION buildEventsDropdown()
 // Creates drop down menu for ALL events
 // Function accepts three arguements
-// 1) $value - if specified, this will be the posted 'value'
-// 2) $selected - if specified, this will be the 'option' selected
-// 3) $label - if specified, this will be the 'option name' selected
+// 1) $value - the type od dropdown event - evaluated via $this->config->item($value))
 //
 // NOTE: This differs from below: shows ranking events only!!!
 /********************************************************************/
-function buildEventsDropdown($value='', $selected='', $label='')
+function buildEventsDropdown($value)
 {
 	$CI = &get_instance();
 	$CI->load->model('global_model');
-	$var = $CI->global_model->getEvents();
+	$var = $CI->global_model->getEvents($value);
 
 	$data = array();
 	//gets the list of categorys to display in left column
@@ -984,16 +1011,16 @@ function buildEventsDropdown($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="eventID" class="span3 form-control" id="eventID">';
+	echo '<select name="eventID" id="eventID" class="form-control selectpicker show-tick" data-width="100%">';
 
-	if($value)
-	{
-		echo '<option value="'.$value.'"'.set_select('eventID', $selected).'>'.$label.'</option>';
-	}
-	else
-	{
-		echo '<option value="" selected="selected">Select Event</option>';
-	}
+	// if($value)
+	// {
+	// 	echo '<option value="'.$value.'"'.set_select('eventID', $selected).'>'.$label.'</option>';
+	// }
+	// else
+	// {
+	// 	echo '<option value="" selected="selected">Select Event</option>';
+	// }
 
 	foreach($data as $row):
 		echo '<option value="'.$row->eventID.'"'.set_select('eventID', $row->eventID).'>'.$row->eventName.'</option>';
@@ -1029,7 +1056,7 @@ function buildRecordEventsDropdown($value='', $selected='', $label='')
 		$data = $query;
 	}
 
-	echo '<select name="eventID" class="span3 form-control" id="eventID">';
+	echo '<select name="eventID" class="col-sm-3 form-control" id="eventID">';
 
 	if($value)
 	{
@@ -1248,5 +1275,67 @@ function buildYearDOB($name='', $value='', $id='')
 	$selected_year = ( isset( $selected_year ) ) ? $selected_year : 0;
 
 	return form_dropdown('year', $years, set_value('year', $selected_year), 'id="year", class="form-control"');
+
+}
+
+
+
+/********************************************************************/
+// FUNCTION get_centre_flag( $centre )
+// Create function that will accept the $centreID and work out which flag CSS to display
+/********************************************************************/
+function get_centre_flag( $centre ) {
+
+	switch ( $centre ) {
+		case 'NTH':
+			$flag = '<span class="flag NTH"></span>';
+		break;
+
+		case 'AKL':
+			$flag = '<span class="flag AKL"></span>';
+		break;
+
+		case 'WBP':
+			$flag = '<span class="flag WBP"></span>';
+		break;
+
+		case 'HBG':
+			$flag = '<span class="flag HBG"></span>';
+		break;
+
+		case 'TAR':
+			$flag = '<span class="flag TAR"></span>';
+		break;
+
+		case 'MWA':
+			$flag = '<span class="flag MWA"></span>';
+		break;
+
+		case 'WEL':
+			$flag = '<span class="flag WEL"></span>';
+		break;
+
+		case 'TAS':
+			$flag = '<span class="flag TAS"></span>';
+		break;
+
+		case 'CAN':
+			$flag = '<span class="flag CAN"></span>';
+		break;
+
+		case 'OTG':
+			$flag = '<span class="flag OTG"></span>';
+		break;
+
+		case 'STH':
+			$flag = '<span class="flag STH"></span>';
+		break;
+		
+		default:
+			$flag = '<span class="flag ANZ"></span>';
+		break;
+	}
+
+	return $flag;
 
 }

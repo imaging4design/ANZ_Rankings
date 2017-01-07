@@ -1,8 +1,10 @@
-<div class="container"><!--START COL FULL-->
+<div class="container container-class"><!--START COL FULL-->
 
 	<div class="row">
 
-		<div class="span12 news">
+		<?php include('includes/menu.php'); ?>
+
+		<div class="col-sm-12 news">
 
 			<?php
 			$admin = FALSE;
@@ -13,8 +15,8 @@
 			}
 			?>
 
-			<div class="slab reversed textLarge">Archived</div><div class="slab textLarge blue">News</div>
-  			<div style="clear:both;"></div><br>
+  			<br>
+			<h2 class="h2-one">Archived <strong>News</strong></h2>
 
 			<?php
 			if( isset( $archive_news ) )
@@ -41,7 +43,7 @@
 
 					if( $count % 4 == 0 ) { echo '<div class="row">'; }	 // Modulus equation: If $count == 0 add class 'row'
 					
-						echo '<div class="span3">';
+						echo '<div class="col-sm-3">';
 
 							echo $edit; // Admin 'Edit Article' button
 
@@ -81,7 +83,7 @@
 			}
 			?>
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
 
 	</div><!--END row-->
 

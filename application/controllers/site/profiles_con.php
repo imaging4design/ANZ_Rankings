@@ -12,6 +12,8 @@ class Profiles_con extends CI_Controller {
 		// Config: 		anz_settings
 		// Libraries:	auth
 		$this->load->model('site/profiles_model');
+
+		//$this->session->set_userdata('searchType', 'profiles' );
 	}
 
 	
@@ -48,7 +50,7 @@ class Profiles_con extends CI_Controller {
 		else {
 			show_my_404();
 			echo 'we know an athlete by the name of <strong>' . $this->input->post('athleteID') . '</strong> but we didn\'t get their athlete ID<br>';
-			echo 'Click here and try entering their name again ... slowly big guy';
+			echo 'Click here and try entering their name again ...';
 		}
 		
 	}
@@ -67,19 +69,23 @@ class Profiles_con extends CI_Controller {
 			// Display athlete personal details ...
 			$data['athlete'] = athlete(); // see profiles_helper
 
+			// Dynamically assign a centre flag to the centreID column
+			// See global_helper.php
+			$centre_flag = get_centre_flag( $data['athlete']->centreID );
+
 			$gender = ( $data['athlete']->gender == 'M') ? 'Male' : 'Female'; // format gender
 
-			echo '<h3>' . $data['athlete']->nameFirst . ' ' . $data['athlete']->nameLast . ' (' . age_from_dob($data['athlete']->birthDate) . ')</h3>';
+			echo '<h3><strong>' . $data['athlete']->nameFirst . ' ' . $data['athlete']->nameLast . '</strong> (' . age_from_dob($data['athlete']->birthDate) . ')</h3>';
 
 			echo '<ul>';
-				echo '<li>Gender: ' . $gender . '</li>';
-				echo '<li>DOB: ' . $data['athlete']->birthDate . '</li>';
+				echo '<li><strong>Gender: </strong>' . $gender . '</li>';
+				echo '<li><strong>DOB: </strong>' . $data['athlete']->birthDate . '</li>';
 				//echo '<li>Age: ' . age_from_dob($data['athlete']->birthDate) . ' Years / ' . daysLeftForBirthday($data['athlete']->DOB) . ' Days</li>';
-				echo '<li>Age: ' . recordAge($data['athlete']->birthDate, date('Y-m-d')) . '</li>';
-				echo '<li>Centre: ' . $data['athlete']->centreID . '</li>';
-				echo '<li>Club: ' . $data['athlete']->clubName . '</li>';
-				echo '<li>Coach: ' . $data['athlete']->coach . '</li>';
-				echo '<li>Former Coach(s): ' . $data['athlete']->coach_former . '</li>';
+				echo '<li><strong>Age: </strong>' . recordAge($data['athlete']->birthDate, date('Y-m-d')) . '</li>';
+				echo '<li><strong>Centre: </strong>' . $centre_flag . ' ' . $data['athlete']->centreID . '</li>';
+				echo '<li><strong>Club: </strong>' . $data['athlete']->clubName . '</li>';
+				echo '<li><strong>Coach: </strong>' . $data['athlete']->coach . '</li>';
+				echo '<li><strong>Former Coach(s): </strong>' . $data['athlete']->coach_former . '</li>';
 			echo '</ul>';
 
 
@@ -90,7 +96,7 @@ class Profiles_con extends CI_Controller {
 				$data['personal_bests'] = $query;
 			}
 
-			echo '<h4>Personal Bests: </h4>';
+			echo '<h4><strong>Personal Bests: </strong></h4>';
 
 			echo '<ul>';
 
@@ -99,7 +105,7 @@ class Profiles_con extends CI_Controller {
 					$implement = ( $row->implement ) ? '('.ltrim($row->implement, 0).')' : ''; // format implement
 					$performance = ( $row->time ) ? ltrim($row->time, 0) : ltrim($row->distHeight, 0); // format performance
 
-					echo '<li>' . $row->eventName . ' '. $implement . ' ' . $performance . '</li>';
+					echo '<li><strong>' . $row->eventName . '</strong> '. $implement . ' ' . $performance . '</li>';
 				}
 
 			echo '</ul>';
@@ -116,7 +122,7 @@ class Profiles_con extends CI_Controller {
 
 				foreach ($data['personal_bests_multis'] as $row) {
 
-					echo '<li>' . $row->eventName . ' - '. $row->points . '</li>';
+					echo '<li><strong>' . $row->eventName . '</strong> - '. $row->points . '</li>';
 				}
 
 			echo '</ul>';
@@ -126,7 +132,7 @@ class Profiles_con extends CI_Controller {
 			// New Zealand Representation ...
 			$rep = get_representations($this->input->post('athleteID'));
 			if( $rep ) {
-				echo '<h4>NZ Representation:</h4>';
+				echo '<h4><strong>NZ Representation:</strong></h4>';
 			}
 
 			echo '<ul>';
@@ -139,7 +145,7 @@ class Profiles_con extends CI_Controller {
 			echo '</ul>';
 
 			//echo anchor('#', 'Full Profile', array('class'=>'btn btn-red center-block'));
-			echo anchor('site/profiles_con/athlete/' . $this->input->post('athleteID'), 'View Full Profile', array('class'=>'flyout-btn-full'));
+			echo anchor('site/profiles_con/athlete/' . $this->input->post('athleteID'), 'View Full Profile', array('class'=>'btn btn-default'));
 
 		echo '</div>';
 		
@@ -204,7 +210,7 @@ class Profiles_con extends CI_Controller {
 	{
 		$this->form_validation->set_rules('token', 'Token', 'trim|required');
 		$this->form_validation->set_rules('athleteID', 'Athlete ID', 'trim|required');
-		$this->form_validation->set_rules('eventID', 'Select Event', 'trim|required');
+		$this->form_validation->set_rules('eventID', 'Event', 'trim|required');
 		$this->form_validation->set_rules('year', 'Year', 'trim|required');
 		$this->form_validation->set_rules('order_by', 'Order By', 'trim|required');
 		
@@ -227,12 +233,12 @@ class Profiles_con extends CI_Controller {
 			if(in_array($this->input->post('eventID'), $this->config->item('multi_events')))
 			{
 				$data['athlete_multi_data'] = athlete_multi_data(); // see profiles_helper
-				$data['event_info'] = getEvents();  // see global_helper
+				$data['event_info'] = getEvents('records_dropdown');  // see global_helper
 			}
 			else
 			{
 				$data['athlete_data'] = athlete_data(); // see profiles_helper
-				$data['event_info'] = getEvents(); // see global_helper
+				$data['event_info'] = getEvents('records_dropdown'); // see global_helper
 			}
 			
 			$data['token'] = $this->auth->token();
@@ -241,7 +247,7 @@ class Profiles_con extends CI_Controller {
 		}
 		else
 		{
-			$this->error_message = validation_errors('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>', '</div>');
+			$this->error_message = validation_errors('<div class="alert alert-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>', '</div>');
 			
 			
 			$data['athlete'] = athlete(); // see profiles_helper

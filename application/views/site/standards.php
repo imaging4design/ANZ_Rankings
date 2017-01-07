@@ -4,7 +4,7 @@
 
 		<div class="row">
 
-			<div class="span12">
+			<div class="col-sm-12">
 
 
 				<?php
@@ -49,7 +49,7 @@
 
   		<div class="row">
 
-  			<div class="span7">
+  			<div class="col-sm-7">
 
 				<?php
 				/*
@@ -57,7 +57,7 @@
 				| Open form
 				|-----------------------------------------------------------------------------------------------------------------
 				*/
-				echo form_open('site/standards_con/find_qualified', array( 'class' => 'form-search hack' ));
+				echo form_open('site/standards_con/find_qualified', array( 'class' => 'form-search' ));
 
 				echo '<fieldset>';
 				echo '<legend>Athletes who have achieved performance standards for:</legend>';
@@ -94,7 +94,7 @@
 
 			</div>
 
-			<div class="span5">
+			<div class="col-sm-5">
 				<h3>Performance Standards - Disclaimer</h3>
 				<p><span class="textBlue"><strong>Please note: </strong></span>These lists display athletes who have met or exceeded performance standards within the respective qualification period for upcoming championships. <br>  The lists are shown as a guide only and are in no way definitive, nor do they guarantee nomination or selection for any athlete.  Athletes must comply with all nomination criteria in order to be considered for selection - please refer to the relevant selection policy for further details.  No responsibility is accepted for any errors.</p>
 			</div>
@@ -113,7 +113,7 @@
 
 	<div class="row">
 
-		<div class="span12">
+		<div class="col-sm-12">
 
 
   			<?php
@@ -165,7 +165,7 @@
 
 	  			}
 
-  				echo '<table class="footable  table-striped">
+  				echo '<table class="footable">
 						<thead>
 							<tr>
 								<th>Event</th>
@@ -299,7 +299,7 @@
   			{
   				echo '<div class="slab reversed textMed">Performance</div><div class="slab textMed blue">Standards</div>';
 
-  				echo '<table class="footable  table-striped">
+  				echo '<table class="footable">
 					<thead>
 						<tr>
 							<th>Men A</th>
@@ -340,7 +340,7 @@
 
 
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
 
 	</div><!--END row-->
 
@@ -365,7 +365,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="span12">
+		<div class="col-sm-12">
 			<h3>Upcoming Championships ...</h3>
 		</div>
 	</div>	
@@ -373,10 +373,10 @@
 	<div class="row">
 
 		<?php
-			echo '<div class="span4">' . anchor( 'http://www.iaaf.org/competitions/iaaf-world-championships', img($beijing), array( 'target' => '_blank') ) . '<h4><span id="beijing"></span> To Go!</h4></div>';
+			echo '<div class="col-sm-4">' . anchor( 'http://www.iaaf.org/competitions/iaaf-world-championships', img($beijing), array( 'target' => '_blank') ) . '<h4><span id="beijing"></span> To Go!</h4></div>';
 		?>
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
 	</div><!--END row-->
 </div><!--END container-->
 

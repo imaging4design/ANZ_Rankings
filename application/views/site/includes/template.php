@@ -8,27 +8,30 @@ $this->recordApp_path_url = base_url().'files/record_apps/'; //Archived lists pa
 /************************************************************/
 $this->load->view('site/includes/header'); // Header and meta info
 
-$this->load->view('site/includes/menu'); // Top Nav Menu
+//$this->load->view('site/includes/menu'); // Top Nav Menu
 	
 	// Only show masthead on opening 'index.php' page
 	if( ! $this->uri->segment(1) )
 	{
 		$data['show_news'] = show_news(); // Inject ($show_news) data into all pages via 'masthead' via global_helper
-		$this->load->view('site/includes/masthead', $data); // Masthead
+		//$this->load->view('site/includes/masthead', $data); // Masthead
 	}
+
+
+	// Diplay on ALL pages!
+	$this->load->view('site/includes/masthead', $data); // Masthead
 	
 
 
 	/*****************************************************************************************************************************/
 	// DO NOT SHOW 'Search Bar' in these uri's !!!
 	
-	$hide_search = array('news_con', 'archive_lists', 'publications', 'records_con', 'standards_con', 'info_con', 'contact'); 
+	$hide_search = array('news_con', 'archive_lists', 'publications', 'records_con', 'standards_con', 'info_con', 'abbrev_con', 'compare_con', 'contact'); 
 
 	if( ! in_array( $this->uri->segment(2), $hide_search ) && ! in_array( $this->uri->segment(3), $hide_search ) )
 	{
-		$this->load->view('site/includes/abbreviations'); // Abbreviations
-
-		$this->load->view('site/includes/search'); // 'Search Bar'
+		$this->load->view('site/includes/searchProfile'); // 'Search Bar for Athlete Profiles'
+		//$this->load->view('site/includes/abbreviations'); // Abbreviations
 		
 	}
 	/*****************************************************************************************************************************/

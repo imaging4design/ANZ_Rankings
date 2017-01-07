@@ -1,69 +1,67 @@
-<div class="blackBand">
+<div class="container container-class search-form" id="record-form" style="padding-bottom: 30px;">
 
-	<div class="container">
+	<div class="row">
 
-		<div class="row">
+		<?php include('includes/menu.php'); ?>
 
-			<div id="top_records"></div><!-- TARGET - this is where the page will auto scroll to after form is submited -->
+		<div id="top_records"></div><!-- TARGET - this is where the page will auto scroll to after form is submited -->
 
-			<div class="span12">
-				<div class="slab reversed textLarge">New Zealand</div><div class="slab textLarge blue">Records</div>
-	  			<div style="clear:both;"></div>
+		<div class="col-sm-12 category annual">
 
-				<legend>Search Records</legend>
-			</div>
+			<fieldset>
 
-		<?php
-
-			// Open form
-			echo form_open('site/records_con/get_records');
-
-			// Adds hidden CSRF unique token
-			// This will be verified in the controller against
-			// the $this->session->userdata('token') before
-			// returning any results data
-			echo form_hidden('token', $token);
-
-			echo '<div class="span3">';
-				// Drop down menu - List of record types
-				// See global helper
-				echo '<label>Record Type</label>';
-				echo recordType(set_value('recordType', 'NN'));
-			echo '</div>';
-
-			echo '<div class="span3">';
-				// Drop down menu - Indoors / Outdoors
-				echo '<label>Indoors/Outdoors</label>';
-				echo in_out(set_value('in_out'));
-			echo '</div>';
-
-			echo '<div class="span3">';
-				// Drop down menu - List of age groups
-				// See global helper
-				echo '<label>Age Group</label>';
-				echo buildAgeGroup_records(set_value('ageGroup', 'MS'));
-			echo '</div>';
-
-			echo '<div class="span3">';
-				// Submit button
-				echo '<label>&nbsp;</label>';
-				echo form_submit('submit', 'View Records', 'id="submit" class="btn"');
-			echo '</div>';
-
-			echo '<div class="clearfix"></div>';
-
-			echo form_close();
-
-		?>
-
+				<legend>SEARCH RECORDS</legend>
 		
+				<?php
+
+					// Open form
+					echo form_open('site/records_con/get_records');
+
+					// Adds hidden CSRF unique token
+					// This will be verified in the controller against
+					// the $this->session->userdata('token') before
+					// returning any results data
+					echo form_hidden('token', $token);
+
+				?>
+
+				<div class="row">
+
+					<div class="col-sm-3 lead-head mar_bot20">
+						<!-- <label>Record Type</label> -->
+						<?php echo recordType(set_value('recordType', 'NN')); // See global helper ?>
+					</div>
+
+					<div class="col-sm-3 lead-head mar_bot20">
+						<!-- <label>Indoors/Outdoors</label> -->
+						<?php echo in_out(set_value('in_out')); ?>
+					</div>
+
+					<div class="col-sm-3 lead-head mar_bot20">						
+						<!-- <label>Age Group</label> -->
+						<?php echo buildAgeGroup_records(set_value('ageGroup', 'MS')); // See global helper ?>
+					</div>
+
+					<div class="col-sm-3 lead-head mar_bot20">
+						<!-- <label>&nbsp;</label> -->
+						<?php echo form_submit('submit', 'View Records', 'id="submit" class="btn btn-block btn-blue"'); ?>
+					</div>
+
+				</div><!-- ENDS row -->
+
+
+				<?php echo form_close(); ?>
+
+			</fieldset>
+
+		</div><!-- ENDS col -->
+
 	</div><!--END row-->
 
-	  </div>
-  </div>
+</div><!-- ENDS container -->
 
 
-  <div class="container">
+<div class="container container-class" style="padding-top: 20px;">
 
 		<?php
 			// IF ADMIN IS LOGGED IN -> ALLOW ADMIN TO SELECT A RESULT TO EDIT
@@ -80,7 +78,8 @@
 
 
 	<div class="row">
-		<div class="span12">
+
+		<div class="col-sm-12">
 
 			<?php
 				// Display the (Human readable) record type label
@@ -172,20 +171,21 @@
 			?>
 
 			<!-- START Label of Record Type and AgeGroup -->
-			<div class="slab reversed textMed"><?php echo $recordType; ?></div><div class="slab textMed blue"><?php echo $ageGroup . ' (' . $in_out . ')'; ?></div>
+			<h2 class="h2-one"><strong>New Zealand</strong> Records</h2>
+			<h3><?php echo $recordType; ?> <?php echo $ageGroup . ' <small>(' . $in_out . ')</small>'; ?></h3>
 
 			<br>
 
 		  
-			<table class="footable">
+			<table class="table table-striped" data-toggle-column="last">
 				<thead>
 					<tr>
-						<th data-class="expand">Event</th>
-						<th>Result</th>
+						<th>Event</th>
+						<th data-type="html">Result</th>
 						<th>Athlete</th>
-						<th data-hide="phone,tablet">Centre / Country</th>
-						<th data-hide="phone">Venue</th>
-						<th data-hide="phone">Date</th>
+						<th data-breakpoints="sm xs">Centre / Country</th>
+						<th data-breakpoints="xs">Venue</th>
+						<th data-breakpoints="xs">Date</th>
 					</tr>
 				</thead>
 
@@ -224,7 +224,7 @@
 							$dateClass = fresh_records($row->date); // from global_helper.php
 
 							echo '<tr>
-									<td>'. $row->recordID . ' ' . $row->eventName.' <span class="muted">' . $implement . '</span></td>
+									<td>'. $row->eventName.' <span class="muted">' . $implement . '</span></td>
 									<td><span class="'.$dateClass.'">'. $result .'</span></td>
 									<td>'. $row->nameFirst . ' ' . strtoupper($row->nameLast) . '</td>
 									<td>'. strtoupper($row->country) .'</td>
@@ -241,22 +241,66 @@
 
 			</table>
 
-			<div class="center"><a href="" class="to_top textSmall" id="bottom_records">Back To Top</a></div>
+			<div class="center"><a href="" class="btn btn-search" id="bottom_records">New Search &nbsp; <i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
 
-		</div><!--END span12-->
+		</div><!--END col-sm-12-->
+	
 	</div><!--END row-->
+
+
 </div><!--END container-->
+
+
+
+
+
+<?php if( $this->input->post('token') ) { ?>
+
+	<script>
+
+		// ON LOAD (of results) - scroll to top of list
+		// ************************************************************************
+		$(window).load(function() {
+
+			var winWidth = $( window ).width();
+			var offSetDist = false;
+
+			if( winWidth <= 752 ) {
+				offSetDist = -50;
+			} else {
+				offSetDist = 0;
+			}
+
+			var resultsLoaded = $('h2').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+			
+		});
+
+	</script>	
+
+<?php } ?>
+
+
 
 <script>
 	
-	// This (on click of #to_top link) scolls to the top of search criteria form
-	$(document).ready(function (){
-		$("#bottom_records").click(function (e){
-			e.preventDefault();
-			$('html, body').animate({
-				scrollTop: $("#top_records").offset().top
-			}, 500);
+	// BACK TO TOP (of search form)
+	// ************************************************************************
+	$(document).ready(function(){
+
+		var winWidth = $( window ).width();
+		var offSetDist = false;
+
+		if( winWidth <= 752 ) {
+			offSetDist = -45;
+		} else {
+			offSetDist = 0;
+		}
+
+		$("#bottom_records").on('click', function (){
+			$('#record-form').velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+			return false;
 		});
+
 	});
 
 </script>
