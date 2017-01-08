@@ -64,7 +64,7 @@ class Compare_con extends CI_Controller {
 		if($this->form_validation->run() == TRUE /* && $this->input->post('token') == $this->session->userdata('token') */) 
 		{
 
-			// Athlete A
+			// ATHLETE A
 			if($query = $this->compare_model->athlete_rep_a())
 			{
 				$data['athlete_rep_a'] = $query;
@@ -83,8 +83,7 @@ class Compare_con extends CI_Controller {
 				$data['athlete_perfs_a'] = $query;
 			}
 
-			// Athlete B
-
+			// ATHLETE B
 			if($query = $this->compare_model->athlete_rep_b())
 			{
 				$data['athlete_rep_b'] = $query;

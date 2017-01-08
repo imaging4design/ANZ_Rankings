@@ -112,8 +112,18 @@
 	margin-top: 18px;
 }
 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+	.compare .btn-dark {
+		margin-top: 0;
+	}
+
+}
+
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media (min-width: 200px) and (max-width: 767px) {
+	
 	.compare .big-text {
 		font-size: 14px;
 		font-weight: 600;
