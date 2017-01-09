@@ -1,6 +1,6 @@
 <?php
 	// Remove 'Profile Links' from historic athletes (i.e., any athlete with an athleteID less than 500000) !
-	function athleteName( $athleteID, $nameFirst, $nameLast)
+	function athleteName( $athleteID, $nameFirst, $nameLast, $eventID, $eventType)
 	{
 		if( $athleteID <= 499999 )
 		{
@@ -12,10 +12,12 @@
 			// Not visible on mobile
 
 			// return $athleteName = anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast)) . '</a>';
+			if( in_array($eventID, $eventType) ) {
+				return $athleteName = anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast)) . ' <span class="hidden-xs"><a href="#;" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$athleteID.'"><i class="fa fa-search"></i></a></span>';
+			} else {
+				return $athleteName = '<input type="checkbox" name="athlete[]" value="'.strtoupper($nameLast).' ' . $nameFirst .', '.$athleteID.'"> ' . anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast));
+			}
 			
-			//return $athleteName = anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast)) . ' <span class="hidden-xs"><a href="#;" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$athleteID.'"><i class="fa fa-search"></i></a></span>';
-			
-			return $athleteName = '<input type="checkbox" name="athlete[]" value="'.strtoupper($nameLast).' ' . $nameFirst .', '.$athleteID.'"> ' . anchor('site/profiles_con/athlete/' . $athleteID, $nameFirst.' '.strtoupper($nameLast));
 		}
 
 	}

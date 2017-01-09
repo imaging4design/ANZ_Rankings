@@ -50,10 +50,10 @@ $config['passed'] = array(
 34 	Octathlon
 35 	Heptathlon
 36 	Decathlon
-37 	3000m Race Walk
-38 	10km Race Walk
-39 	20km Race Walk
-40 	50km Race Walk
+37 	3000m Race Walk (Track)
+38 	10km Race Walk (Road)
+39 	20km Race Walk (Road)
+40 	50km Race Walk (Road)
 41 	4x100m Relay
 42 	4x200m Relay
 43 	4x400m Relay

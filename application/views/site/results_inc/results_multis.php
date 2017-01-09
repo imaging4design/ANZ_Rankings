@@ -68,7 +68,7 @@
 						<td><span class="'.$dateClass.'">' . $performance . '</span> ' . $row->record . '</td>
 						<td>' . $row->wind . '</td>
 						<td>&nbsp;</td>
-						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast ) . '</td>
+						<td>' . athleteName( $row->athleteID, $row->nameFirst, $row->nameLast, $this->input->post('eventID'), $this->config->item('multi_events') ). '</td>
 						<td>' . $centre_flag . ' ' . showHide( $this->input->post('year'), $row->centreID ) . '</td>
 						<td>' . $row->DOB . '</td>
 						<td>' . showHide( $this->input->post('year'), $row->placing ) . '</td>

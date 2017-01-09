@@ -12,7 +12,7 @@
 	/***************************************************/
 	$sprints = array('1', '2', '3', '22', '23', '25'); // Sprints Track
 	$middleTrack = array('4', '5', '6', '7', '8', '9', '10', '11', '20', '21'); // Middle DIstance Track
-	$longTrack = array('16', '19'); // Long DIstance Track
+	$longTrack = array('12', '13', '16', '18', '19', '37', '38', '39', '40', '47'); // Long DIstance Track
 	$field = array('26', '27', '28', '29', '30', '31', '32', '33'); // Field Events
 	$multis = array('35', '36'); // Multi Events
 
