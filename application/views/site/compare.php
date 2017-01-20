@@ -607,7 +607,7 @@
 	</div><!-- END row -->
 
 
-	<div class="center"><a href="#" class="btn btn-red" id="show_all">ALL PERFORMANCES &nbsp;<i class="fa fa-search" aria-hidden="true"></i></a></div>
+	<div class="center"><a href="#" class="btn btn-red" id="show_all">SHOW ALL PERFORMANCES &nbsp;<i class="fa fa-search" aria-hidden="true"></i></a></div>
 	<br>
 	<div class="center"><a href="#" class="btn btn-search" id="bottom_results">Back to Top &nbsp;<i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
 
@@ -692,7 +692,8 @@
 	    	$(this).find('tr:nth-child(10n+0)').each(function(){
 	    		$(this).css({
 	    			'background': '#334249',
-	    			'color': '#FFF'
+	    			'color': '#FFF',
+	    			'fontWeight': 'bold'
 	    		});
 	    	});
 	    });

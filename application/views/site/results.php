@@ -47,8 +47,8 @@
 		<div class="col-sm-12">
 
 			<div class="new-compare-feature">
-				<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> New Feature - Athletes Head to Head<br>
-				<small>Check the box next to two selected athlete (names) for a head-to-head comparison.</small>
+				<div class="large"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> <strong>New Feature:</strong> <br class="visible-xs">Athletes - Head to Head</div>
+				<p>Check the box next to two selected athlete (names) for a head-to-head comparison.</p>
 			</div>
 
 		</div>
