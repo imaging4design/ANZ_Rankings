@@ -24,7 +24,20 @@ function recordAge($dateOne, $dateTwo) {
 	$interval = $date1->diff($date2);
 
 	return $interval->y . " year(s), " . $interval->m." month(s), ".$interval->d." day(s) ";
-	//return "difference " . $interval->days . " days ";
+}
+
+
+/********************************************************************/
+// FUNCTION recordAgeY()
+// Shows the age of a NZ Record/Athlete (Year ONLY)!
+/********************************************************************/
+function recordAgeY($dateOne, $dateTwo) {
+
+	$date1 = new DateTime($dateOne);
+	$date2 = new DateTime($dateTwo);
+	$interval = $date1->diff($date2);
+
+	return $interval->y . " years old ";
 }
 
 

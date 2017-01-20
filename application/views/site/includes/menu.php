@@ -67,7 +67,6 @@
 								<!-- <li class="<?php //echo $news ?>"><?php //echo anchor('site/news_con', 'Archived News'); ?></li> -->
 								<li class="<?php echo $publications ?>"><?php echo anchor('site/home_con/publications', 'Publications'); ?></li>
 								<li class="<?php echo $gen_info ?>"><?php echo anchor('site/info_con', 'General Information'); ?></li>
-								<li class="<?php echo $compare_athletes ?>"><?php echo anchor('site/compare_con', 'Compare Athletes'); ?></li>
 							</ul>
             			</li><!-- ENDS dropdown -->
 

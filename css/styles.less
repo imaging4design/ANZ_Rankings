@@ -32,6 +32,18 @@
 /************************************************************************/
 /* COMPARE ATHLETES */
 /************************************************************************/
+.new-compare-feature {
+	font-size: 24px;
+	color: @colWhite;
+	line-height: .8;
+	margin: -20px -1px 10px -1px;
+	padding: 10px 0;
+	background: @colRed;
+	text-align: center;
+	i {
+		font-size: 20px;
+	}
+}
 .compare {
 	background: #F5F5F5;
 	padding-bottom: 20px;
@@ -62,27 +74,39 @@
 	font-weight: 600;
 }
 
+.compare .med-text {
+	font-size: 18px;
+	font-weight: 600;
+	color: @colWhite;
+	background: #334249;
+	text-transform: uppercase;
+}
+
 .compare .athlete-a {
 	color: #FFF;
-	background: @colBlue;
+	background: @colRed;
 	text-transform: uppercase;
 }
 .compare .athlete-b {
 	color: #FFF;
-	background: @colYellow;
+	background: @colBlue;
 	text-transform: uppercase;
 }
 
 .compare .blue {
 	color: @colBlue;
 }
-.compare .yellow {
-	color: @colYellow;
-}
 .compare .red {
 	color: @colRed;
 }
 
+.compare .ath-age {
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-top: 0;
+    display: inherit;
+}
 
 .compare .modal-content {
 	padding: 15px 15px 10px 15px;
@@ -132,6 +156,16 @@
 		font-size: 14px;
 		font-weight: 600;
 		line-height: 1.2;
+	}
+
+	.compare .med-text {
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	.compare .ath-age {
+		font-size: 13px;
 	}
 
 	.compare .btn-dark {

@@ -110,7 +110,7 @@
 
 
 					echo '<tr>
-							<td>' . $multiEvent . '</td>
+							<td style="font-weight:900;">' . $multiEvent . '</td>
 							<td>&nbsp;</td>
 							<td>' . $row->points . ' ' . $row->record . '</td>
 							<td>' . $row->wind . '</td>

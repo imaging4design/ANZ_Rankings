@@ -83,6 +83,11 @@ class Compare_con extends CI_Controller {
 				$data['athlete_perfs_a'] = $query;
 			}
 
+			if($query = $this->compare_model->athlete_progressions_a())
+			{
+				$data['athlete_progressions_a'] = $query;
+			}
+
 			// ATHLETE B
 			if($query = $this->compare_model->athlete_rep_b())
 			{
@@ -100,6 +105,11 @@ class Compare_con extends CI_Controller {
 			if($query = $this->compare_model->athlete_perfs_b())
 			{
 				$data['athlete_perfs_b'] = $query;
+			}
+
+			if($query = $this->compare_model->athlete_progressions_b())
+			{
+				$data['athlete_progressions_b'] = $query;
 			}
 
 			$data['eventName'] = convertEventID( $this->input->post('eventID') );

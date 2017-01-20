@@ -42,6 +42,19 @@
 
 <div class="container container-class" style="padding-top: 20px;">
 
+	<div class="row no-gutter">
+
+		<div class="col-sm-12">
+
+			<div class="new-compare-feature">
+				<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> New Feature - Athletes Head to Head<br>
+				<small>Check the box next to two selected athlete (names) for a head-to-head comparison.</small>
+			</div>
+
+		</div>
+
+	</div>
+
 	<div class="row">
 
 		<div class="col-sm-12">
@@ -259,7 +272,7 @@
 			offSetDist = 0;
 		}
 
-		$('h2').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+		$('.new-compare-feature').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
 		
 	});
 	

@@ -11,29 +11,29 @@
 		if( $personal_best_a >= $personal_best_b ) {
 			$best_diff = ($personal_best_a - $personal_best_b);
 			$best_diff = '-' . sprintf("%0.2f", $best_diff);
-			$class = 'yellow';
+			$class = 'blue';
 		} else {
 			$best_diff = ($personal_best_b - $personal_best_a);
 			$best_diff = '-' . sprintf("%0.2f", $best_diff);
-			$class = 'blue';
+			$class = 'red';
 		}
 
 
 		if( $total_a_10 >= $total_b_10 ) {
 			$raw_diff_10 = $total_a_10 - $total_b_10;
-			$class_10 = 'yellow';
+			$class_10 = 'blue';
 		} else {
 			$raw_diff_10 = $total_b_10 - $total_a_10;
-			$class_10 = 'blue';
+			$class_10 = 'red';
 		}
 
 
 		if( $total_a_20 >= $total_b_20 ) {
 			$raw_diff_20 = $total_a_20 - $total_b_20;
-			$class_20 = 'yellow';
+			$class_20 = 'blue';
 		} else {
 			$raw_diff_20 = $total_b_20 - $total_a_20;
-			$class_20 = 'blue';
+			$class_20 = 'red';
 		}
 
 		$diff_10 = '-' . sprintf("%0.2f", $raw_diff_10 / 10);
@@ -66,10 +66,10 @@
 		// Work out the 'middle column' time differences for 'Athlete A' vs 'Athlete B'
 		if( $personal_best_a >= $personal_best_b ) {
 			$best_diff = middleDistTime( $personal_best_a ) - middleDistTime( $personal_best_b );
-			$class = 'yellow';
+			$class = 'blue';
 		} else {
 			$best_diff = middleDistTime( $personal_best_b ) - middleDistTime( $personal_best_a);
-			$class = 'blue';
+			$class = 'red';
 		}
 
 		// Variable to display the above function
@@ -87,18 +87,18 @@
 
 		if( $total_a_10 >= $total_b_10 ) {
 			$raw_diff_10 = middleDistTime($average_a_10) - middleDistTime($average_b_10);
-			$class_10 = 'yellow';
+			$class_10 = 'blue';
 		} else {
 			$raw_diff_10 = middleDistTime($average_b_10) - middleDistTime($average_a_10);
-			$class_10 = 'blue';
+			$class_10 = 'red';
 		}
 
 		if( $total_a_20 >= $total_b_20 ) {
 			$raw_diff_20 = middleDistTime($average_a_20) - middleDistTime($average_b_20);
-			$class_20 = 'yellow';
+			$class_20 = 'blue';
 		} else {
 			$raw_diff_20 = middleDistTime($average_b_20) - middleDistTime($average_a_20);
-			$class_20 = 'blue';
+			$class_20 = 'red';
 		}
 
 		// Variable to display the above function
@@ -128,10 +128,10 @@
 		// Work out the 'middle column' time differences for 'Athlete A' vs 'Athlete B'
 		if( $personal_best_a >= $personal_best_b ) {
 			$best_diff = longDistTime( $personal_best_a ) - longDistTime( $personal_best_b );
-			$class = 'yellow';
+			$class = 'blue';
 		} else {
 			$best_diff = longDistTime( $personal_best_b ) - longDistTime( $personal_best_a);
-			$class = 'blue';
+			$class = 'red';
 		}
 
 		// Variable to display the above function
@@ -149,18 +149,18 @@
 
 		if( $total_a_10 >= $total_b_10 ) {
 			$raw_diff_10 = longDistTime($average_a_10) - longDistTime($average_b_10);
-			$class_10 = 'yellow';
+			$class_10 = 'blue';
 		} else {
 			$raw_diff_10 = longDistTime($average_b_10) - longDistTime($average_a_10);
-			$class_10 = 'blue';
+			$class_10 = 'red';
 		}
 
 		if( $total_a_20 >= $total_b_20 ) {
 			$raw_diff_20 = longDistTime($average_a_20) - longDistTime($average_b_20);
-			$class_20 = 'yellow';
+			$class_20 = 'blue';
 		} else {
 			$raw_diff_20 = longDistTime($average_b_20) - longDistTime($average_a_20);
-			$class_20 = 'blue';
+			$class_20 = 'red';
 		}
 
 		// Variable to display the above function
@@ -187,28 +187,28 @@
 		if( $personal_best_a >= $personal_best_b ) {
 			$best_diff = ($personal_best_a - $personal_best_b);
 			$best_diff = '+' . sprintf("%0.2f", $best_diff);
-			$class = 'blue';
+			$class = 'red';
 		} else {
 			$best_diff = ($personal_best_b - $personal_best_a);
 			$best_diff = '+' . sprintf("%0.2f", $best_diff);
-			$class = 'yellow';
+			$class = 'blue';
 		}
 
 
 		if( $total_a_10 >= $total_b_10 ) {
 			$raw_diff_10 = $total_a_10 - $total_b_10;
-			$class_10 = 'blue';
+			$class_10 = 'red';
 		} else {
 			$raw_diff_10 = $total_b_10 - $total_a_10;
-			$class_10 = 'yellow';
+			$class_10 = 'blue';
 		}
 
 		if( $total_a_20 >= $total_b_20 ) {
 			$raw_diff_20 = $total_a_20 - $total_b_20;
-			$class_20 = 'blue';
+			$class_20 = 'red';
 		} else {
 			$raw_diff_20 = $total_b_20 - $total_a_20;
-			$class_20 = 'yellow';
+			$class_20 = 'blue';
 		}
 
 		$diff_10 = '+' . round($raw_diff_10 / 10, 2);

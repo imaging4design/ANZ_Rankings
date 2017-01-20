@@ -427,6 +427,94 @@ class Compare_Model extends CI_Model
 		
 		
 	} //ENDS athlete_medals_b()
+
+
+
+	/*************************************************************************************/
+	// FUNCTION athlete_progressions_a()
+	// Displays the Personal Best Performances of an athletes individual events 
+	/*************************************************************************************/
+	public function athlete_progressions_a()
+	{
+		$query = $this->db->query("
+															
+			SELECT *, MIN(r.time) AS MIN_time, MAX(r.distHeight) AS MAX_distHeight, DATE_FORMAT(r.date, '%Y') AS year
+			FROM
+						
+			(SELECT *
+				FROM results
+				WHERE athleteID = ".$this->athleteID."
+				# AND ageGroup IN (" . $this->ageGroup . ")
+				AND eventID = ".$this->eventID."
+				AND record != 'ht'
+				GROUP BY eventID, implement, resultID
+				ORDER BY time ASC, distHeight DESC
+			) AS rr
+						
+			JOIN results AS r
+				ON r.time = rr.time
+				AND r.distHeight = rr.distHeight
+				AND r.resultID = rr.resultID
+			
+			INNER JOIN events AS e ON e.eventID = r.eventID
+			INNER JOIN athletes AS a ON a.athleteID = r.athleteID
+					
+			GROUP BY YEAR(r.date), r.athleteID, r.eventID, r.implement
+			ORDER BY YEAR(r.date), e.eventID ASC, r.implement ASC
+					
+		");
+		
+		if($query->num_rows() >0) 
+		{
+			return $query->result();
+		}
+		
+		
+	} // ENDS athlete_progressions_a($eventID)
+
+
+
+	/*************************************************************************************/
+	// FUNCTION athlete_progressions_b()
+	// Displays the Personal Best Performances of an athletes individual events 
+	/*************************************************************************************/
+	public function athlete_progressions_b($eventID)
+	{
+		$query = $this->db->query("
+															
+			SELECT *, MIN(r.time) AS MIN_time, MAX(r.distHeight) AS MAX_distHeight, DATE_FORMAT(r.date, '%Y') AS year
+			FROM
+						
+			(SELECT *
+				FROM results
+				WHERE athleteID = ".$this->athleteID2."
+				# AND ageGroup IN (" . $this->ageGroup . ")
+				AND eventID = ".$this->eventID."
+				AND record != 'ht'
+				GROUP BY eventID, implement, resultID
+				ORDER BY time ASC, distHeight DESC
+			) AS rr
+						
+			JOIN results AS r
+				ON r.time = rr.time
+				AND r.distHeight = rr.distHeight
+				AND r.resultID = rr.resultID
+			
+			INNER JOIN events AS e ON e.eventID = r.eventID
+			INNER JOIN athletes AS a ON a.athleteID = r.athleteID
+					
+			GROUP BY YEAR(r.date), r.athleteID, r.eventID, r.implement
+			ORDER BY YEAR(r.date), e.eventID ASC, r.implement ASC
+					
+		");
+		
+		if($query->num_rows() >0) 
+		{
+			return $query->result();
+		}
+		
+		
+	} // ENDS athlete_progressions_b($eventID)
 	
 		
 	
