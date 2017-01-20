@@ -334,7 +334,7 @@
 			echo '<div class="box big-text">';
 				//echo '<span style="font-size:24px;"><i class="fa fa-sliders"></i></span>';
 				//echo '<input type="text" id="date" style="width:100%; text-align:center;" placeholder=" ' . date('d-M-Y') . ' ">';
-			echo date('d M Y');
+			echo '<i class="fa fa-calendar"></i><span class="ath-age">' . date('d M Y') . '</span>';
 			echo '</div>';
 
 			echo '<div class="box">';
