@@ -6,6 +6,7 @@
 // We do not wish to display these athletes Age in Years / Days on their profile
 $config['passed'] = array(
 	'516570',
+	'524915'
 );
 
 /*****************************************************/

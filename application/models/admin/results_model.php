@@ -87,9 +87,60 @@ class Results_Model extends CI_Model
 		$this->db->where('resultID', $data);
 		$this->db->delete('results' /*tablename*/);
 	}
-	
-	
+
+
+	/*************************************************************************************/
+	// FUNCTION statistics($data)
+	// Returns the statistics (i.e., number of results in the database of each month of each year)
+	/*************************************************************************************/
+	function statistics($data)
+	{
+
+		$postYear = $data['year'];
+
+		$startDate = strtotime($postYear.'-01-01');
+		$endDate = strtotime($postYear.'-12-01');
+
+		while ($startDate <= $endDate) {
+		   
+		   $month = date('m', $startDate);
+		   $year = date('Y', $startDate);
+
+			$results = $this->db->query("
+				SELECT resultID
+				FROM results
+				WHERE MONTH(results.date) = $month
+				AND YEAR(results.date) = $year
+			");
+
+			$resMulti = $this->db->query("
+				SELECT resultID
+				FROM resMulti
+				WHERE MONTH(resMulti.date) = $month
+				AND YEAR(resMulti.date) = $year
+			");
+
+			$resRelays = $this->db->query("
+				SELECT resultID
+				FROM resRelays
+				WHERE MONTH(resRelays.date) = $month
+				AND YEAR(resRelays.date) = $year
+			");
+
+			//echo date('M-Y', $startDate) . ': ';
+			//echo $results->num_rows() + $resMulti->num_rows() + $resRelays->num_rows() . '<br>';
+
+			$myResult[] = array(date('M Y', $startDate), $results->num_rows() + $resMulti->num_rows() + $resRelays->num_rows());
+
+			$startDate = strtotime('+1 month', $startDate);
+        	
+
+		}
+
+		return $myResult;
 		
+	}
+	
 		
 } // ENDS class Results_Model
 

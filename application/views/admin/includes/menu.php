@@ -24,6 +24,7 @@
 						<li><?php echo anchor('admin/results_con/add_results','Individual'); ?></li>
 						<li><?php echo anchor('admin/multis_con/add_multis','Multi Events'); ?></li>
 						<li><?php echo anchor('admin/relays_con/add_relays','Relays'); ?></li>
+						<li><?php echo anchor('admin/results_con/statistics','Statistics'); ?></li>
 					</ul>
 				</li>
 				<li><?php echo anchor('admin/records_con/add_records','RECORDS'); ?></li>

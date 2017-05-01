@@ -42,18 +42,18 @@
 
 <div class="container container-class" style="padding-top: 20px;">
 
-	<div class="row no-gutter">
+	<!-- <div class="row no-gutter">
 
 		<div class="col-sm-12">
 
 			<div class="new-compare-feature">
-				<div class="large"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> <strong>New Feature:</strong> <br class="visible-xs">Athletes - Head to Head</div>
-				<p>Check the box next to two selected athlete (names) for a head-to-head comparison.</p>
+				<div class="large"><strong>New Feature:</strong> <br class="visible-xs">Athletes - Head to Head</div>
+				<p>Check the box next to two athlete (names) for a head-to-head comparison.</p>
 			</div>
 
 		</div>
 
-	</div>
+	</div> -->
 
 	<div class="row">
 
@@ -272,7 +272,7 @@
 			offSetDist = 0;
 		}
 
-		$('.new-compare-feature').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
+		$('#top_results').delay(10).velocity('scroll', { offset: offSetDist, duration: 500, easing: [ 0.17, 0.67, 0.83, 0.67 ]});
 		
 	});
 	

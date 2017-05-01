@@ -171,17 +171,17 @@
 	    <div class="modal-content">
 	    	<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h3 class="h3-one"><strong>Compare Athletes</strong></h3>
+				<h3 class="h3-one"><strong>Head to Head</strong></h3>
 			</div>
 
 				<p>
-					The athlete comparison pages show the performance achievements of two selected athletes (in the same event), displaying:
+					The athlete Head-to-Head pages show the performance achievements of two selected athletes (in the same event), displaying:
 				</p>
 				<ol>
 					<li>Each athletes number of ranked performances</li>
 					<li>Each athletes personal best &amp; differencial</li>
 					<li>The average of each athletes 'top 10' and 'top 20' performances and differencial <em>(if one or either athlete does not have enough performances to display averages - no data will be displayed).</em></li>
-					<li>Each athletes annual progressions</li>
+					<li>Each athletes annual progressions <em>(with their age at the time of performance)</em></li>
 					<li>New Zealand representational honours</li>
 					<li>National Championship medals</li>
 				</ol>
@@ -191,7 +191,7 @@
 				</p>
 			
 			<p>
-				<strong>Note (1)</strong><small> All data displayed is from 2008 onwards.</small><br>
+				<strong>Note (1)</strong><small> All performance data displayed is from 2008 onwards.</small><br>
 				<strong>Note (2)</strong><small> Performance comparisions have been rounded to the nearest decimal.</small><br>
 				<strong>Note (3)</strong><small> Multi events are not currently supported with this feature.</small>
 			</p>
@@ -332,9 +332,9 @@
 			/********************************************************************************************************/
 			
 			echo '<div class="box big-text">';
-				//echo '<span style="font-size:24px;"><i class="fa fa-sliders"></i></span>';
-				//echo '<input type="text" id="date" style="width:100%; text-align:center;" placeholder=" ' . date('d-M-Y') . ' ">';
-			echo '<i class="fa fa-calendar"></i><span class="ath-age">' . date('d M Y') . '</span>';
+				// echo '<span style="font-size:24px;"><i class="fa fa-sliders"></i></span>';
+				// echo '<input type="text" id="date" style="width:100%; text-align:center;" placeholder=" ' . date('d-M-Y') . ' ">';
+				echo 'AND<span class="ath-age">' . date('d M Y') . '</span>';
 			echo '</div>';
 
 			echo '<div class="box">';
@@ -417,7 +417,7 @@
 			if( ! $a_20_insufficient && ! $b_20_insufficient ) {
 				echo '<div class="box">';
 					echo '<div class="hidden-xs">Average of best 10 performances<br><span class="big-text blue">' . $average_b_20 . '</span></div>';
-					echo '<div class="visible-xs">Avg best 10<br><span class="big-text blue">' . $average_b_20 . '</span></div>';
+					echo '<div class="visible-xs">Avg best 20<br><span class="big-text blue">' . $average_b_20 . '</span></div>';
 				echo '</div>';
 			}
 

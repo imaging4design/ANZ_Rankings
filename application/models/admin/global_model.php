@@ -20,7 +20,8 @@ class Global_Model extends CI_Model
 			SELECT *, DATE_FORMAT(date,'%d %b %Y') as newdate
 			FROM records 
 			WHERE date BETWEEN DATE_SUB(NOW(), INTERVAL 1 MONTH) 
-			AND NOW() 
+			AND NOW()
+			AND in_out = 'out'
 			ORDER BY date DESC, ageGroup DESC
 		");
 
@@ -33,51 +34,51 @@ class Global_Model extends CI_Model
 
 
 
-				/********************************************************************/
-				// FUNCTION rankings_added_month()
-				// Retrieves the total number of results for the current month!
-				// Get ALL results for this MONTH of this YEAR!
-				/********************************************************************/
-				function rankings_added_month()
-				{
-					$this->db->where('MONTH(results.date)', date('m'));
-					$this->db->where('YEAR(results.date)', date('Y'));
-					$this->db->from('results');
-					return $this->db->count_all_results(); 
-				
-				} // ENDS rankings_added_month()
+	/********************************************************************/
+	// FUNCTION rankings_added_month()
+	// Retrieves the total number of results for the current month!
+	// Get ALL results for this MONTH of this YEAR!
+	/********************************************************************/
+	function rankings_added_month()
+	{
+		$this->db->where('MONTH(results.date)', date('m'));
+		$this->db->where('YEAR(results.date)', date('Y'));
+		$this->db->from('results');
+		return $this->db->count_all_results(); 
+	
+	} // ENDS rankings_added_month()
 
 
 
-				/********************************************************************/
-				// FUNCTION rankings_seven_days()
-				// Retrieves the total number of results for the past 7 days!
-				// Get ALL results for for the past 7 DAYS!
-				/********************************************************************/
-				function rankings_seven_days()
-				{	
+	/********************************************************************/
+	// FUNCTION rankings_seven_days()
+	// Retrieves the total number of results for the past 7 days!
+	// Get ALL results for for the past 7 DAYS!
+	/********************************************************************/
+	function rankings_seven_days()
+	{	
 
-					$results = $this->db->query("
-						SELECT *
-						FROM results
-						WHERE results.date BETWEEN SUBDATE(CURDATE(), 7) AND CURDATE();
-					");
-					$resMulti = $this->db->query("
-						SELECT *
-						FROM resMulti
-						WHERE resMulti.date BETWEEN SUBDATE(CURDATE(), 7) AND CURDATE();
-					");
-					$resRelays = $this->db->query("
-						SELECT *
-						FROM resRelays
-						WHERE resRelays.date BETWEEN SUBDATE(CURDATE(), 7) AND CURDATE();
-					");
+		$results = $this->db->query("
+			SELECT *
+			FROM results
+			WHERE results.date BETWEEN SUBDATE(CURDATE(), 7) AND CURDATE();
+		");
+		$resMulti = $this->db->query("
+			SELECT *
+			FROM resMulti
+			WHERE resMulti.date BETWEEN SUBDATE(CURDATE(), 7) AND CURDATE();
+		");
+		$resRelays = $this->db->query("
+			SELECT *
+			FROM resRelays
+			WHERE resRelays.date BETWEEN SUBDATE(CURDATE(), 7) AND CURDATE();
+		");
 
 
-					return $results->num_rows() + $resMulti->num_rows() + $resRelays->num_rows();
-						
+		return $results->num_rows() + $resMulti->num_rows() + $resRelays->num_rows();
+			
 
-				} // ENDS rankings_seven_days()
+	} // ENDS rankings_seven_days()
 	
 	
 	
@@ -91,7 +92,7 @@ class Global_Model extends CI_Model
 		$res1 = $this->db->count_all_results('results');
 		$res2 = $this->db->count_all_results('resMulti');
 		$res3 = $this->db->count_all_results('resRelays');
-		$res4 = $this->db->count_all_results('records');
+		//$res4 = $this->db->count_all_results('records');
 		
 		return $res1 + $res2 + $res3 + $res4;
 	

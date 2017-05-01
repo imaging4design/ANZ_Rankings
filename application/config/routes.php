@@ -44,6 +44,10 @@ $route['404_override'] = '';
 // Route ALL admin related pages
 $route['admin(:any)'] = 'admin$1';
 
+
+// Routes to the Contact Us page
+$route['graphs_con'] = "site/graphs_con";
+
 // Routes to the Contact Us page
 // $route['pdf(:any)'] = "pdf/pdf_con";
 

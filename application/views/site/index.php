@@ -58,7 +58,8 @@
 										echo '<div class="news">';
 											echo '<h5 class="news-date">DATE: '. $show_flash_news->date .'</h5>';
 											echo '<h3>' . $show_flash_news->heading . '</h3>';
-											echo $show_flash_news->bodyContent;
+											//echo $show_flash_news->bodyContent;
+											echo auto_link($show_flash_news->bodyContent, 'both', TRUE);
 										echo '</div>';
 
 										if( $admin )
@@ -457,12 +458,45 @@
 
 
 
+		<?php
+
+			/* 
+			| WHAT IS THIS? 
+			| A form that allows the user to click on an event name (e.g., 400m)
+			| and auto submits showing rankings for that event, gender and ageGroup
+			*/
+
+			// Set up initial session vars on page load
+			if( $this->input->post('ageGroup') ) {
+				$this->session->set_userdata('ageGroup', $this->input->post('ageGroup'));
+			} else {
+				$this->session->set_userdata('ageGroup', 'MS');
+			}
+			
+			$this->session->set_userdata('year', date('Y'));
+			$this->session->set_userdata('list_depth', '50');
+			$this->session->set_userdata('list_type', '0');
+
+								
+
+			echo form_open('site/results_con', array( 'class' => 'leadersForm', 'id' => 'leadersForm' ));
+
+				echo form_hidden('token', $token);
+				echo form_hidden('ageGroup', $this->session->userdata('ageGroup'));
+				echo form_hidden('year', $this->session->userdata('year'));
+				echo form_hidden('list_depth', $this->session->userdata('list_depth'));
+				echo form_hidden('list_type', $this->session->userdata('list_type'));
+
+		?>
+
+
+
 		<div class="col-sm-12" style="margin-top:0px;">
 			  
 			<table class="table table-striped" data-toggle-column="last">
 				<thead>
 					<tr>
-						<th>EVENT</th>
+						<th data-type="html">EVENT</th>
 						<th data-type="html">PERF</th>
 						<th data-breakpoints="sm xs">WIND</th>
 						<th data-type="html">ATHLETE</th>
@@ -480,6 +514,7 @@
 				
 			  
 			<?php
+
 				/***************************************************************************************************/
 				// Display individual events for the homepage 'Toplists'
 				/***************************************************************************************************/
@@ -504,7 +539,7 @@
 						$in_out = ($row->in_out == 'in') ? '(i)' : ''; 
 
 						echo '<tr>
-								<td>' . $row->eventName . '</td>
+								<td> <label><input type="radio" name="eventID" value="'.$row->eventID.'"> '.$row->eventName.'</label></td>								
 								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '' . ltrim($row->distHeight, 0) . '</span>&nbsp;'. $in_out . ' <span class="hidden-phone textREDD">' . $row->record . '</span></td>
 								<td>' . $row->wind . '</td>
 								<td>' . anchor('site/profiles_con/athlete/' . $row->athleteID, $row->nameFirst . ' ' . strtoupper($row->nameLast)) . '</td>
@@ -517,6 +552,7 @@
 
 					endforeach;
 				}
+
 			?>
 			  
 			  
@@ -542,7 +578,7 @@
 				$age = 'AGE: ' . $years . ', ' . $days. '<br>' . $coach;
 
 				echo '<tr>
-						<td>' . $topPerformers_Multis->eventName . '</td>
+						<td> <label><input type="radio" name="eventID" value="'.$topPerformers_Multis->eventID.'"> '.$topPerformers_Multis->eventName.'</label></td>
 						<td><span class="'.$dateClass.'">' . $topPerformers_Multis->points . '</span></td>
 						<td>&nbsp;</td>
 						<td>' . anchor('site/profiles_con/athlete/' . $topPerformers_Multis->athleteID, $topPerformers_Multis->nameFirst . ' ' . strtoupper($topPerformers_Multis->nameLast)) . '</td>
@@ -572,7 +608,7 @@
 					$athletes = $row->athlete01 . ',<br>' . $row->athlete02 . ',<br>' . $row->athlete03 . ',<br>' . $row->athlete04;
 					
 						echo '<tr>
-								<td>' . $row->eventName . '</td>
+								<td> <label><input type="radio" name="eventID" value="'.$row->eventID.'"> '.$row->eventName.'</label></td>
 								<td><span class="'.$dateClass.'">' . ltrim($row->time, 0) . '</span></td>
 								<td>&nbsp;</td>
 								<td>' . $athletes . '</td>
@@ -586,6 +622,8 @@
 					endforeach;
 				}
 
+
+
 			?>
 
 			</tbody>
@@ -595,6 +633,16 @@
 			<div class="center"><a href="#" class="btn btn-search" id="bottom_index">New Search &nbsp; <i class="fa fa-chevron-up" aria-hidden="true"></i></a></div>
 
 		</div><!-- ENDS col-sm-12 -->
+
+		<?php
+
+			/* 
+			| WHAT IS THIS? 
+			| Ends the form
+			*/
+
+			echo form_close();
+		?>
 
 	</div><!-- ENDS row -->
 
@@ -630,5 +678,17 @@
 <?php } ?>
 
 
+<script>
+	
+	$(document).ready(function(){
 
+		// Submit form to results_con when user clicks on event name
+		// ************************************************************************
+		$("input[name='eventID']").on('click', function(event){
+			$( ".leadersForm" ).submit();
+		});
+
+	});
+		
+</script>
 

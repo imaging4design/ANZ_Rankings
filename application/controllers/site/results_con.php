@@ -19,6 +19,9 @@ class Results_con extends CI_Controller {
 	}
 
 
+
+
+
 	/*************************************************************************************/
 	// FUNCTION index()
 	// Displays results of ALL events
@@ -63,7 +66,8 @@ class Results_con extends CI_Controller {
 		
 		
 		// If form post data validates and CSRF $token == session $token show lists
-		if($this->form_validation->run() == TRUE && $this->input->post('token') == $this->session->userdata('token')) 
+		//if($this->form_validation->run() == TRUE && $this->input->post('token') == $this->session->userdata('token')) 
+		if($this->form_validation->run()) 
 		{
 			
 			/*********************************************************************

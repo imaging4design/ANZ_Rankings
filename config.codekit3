@@ -7,210 +7,12 @@
 		"uuidString": "FE2BA5D9-F1E3-4837-806A-BD608DB0E3CB"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25813",
 "files": {
 	"\/.htaccess": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.htaccess",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/2014\/JAN\/New Zealand Champions in 2013.docx": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/2014\/JAN\/New Zealand Champions in 2013.docx",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/2014\/JAN\/New Zealand National Championship Results 2013.docx": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/2014\/JAN\/New Zealand National Championship Results 2013.docx",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/2014\/JAN\/NZTop20 - Men2013.xlsx": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/2014\/JAN\/NZTop20 - Men2013.xlsx",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/2014\/JAN\/NZTop20 - Women2013.xlsx": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/2014\/JAN\/NZTop20 - Women2013.xlsx",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/2014\/JAN\/Other National Results 2013.docx": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/2014\/JAN\/Other National Results 2013.docx",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/_ResultsAT100_MEN_ORIG.xls": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/_ResultsAT100_MEN_ORIG.xls",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Athletes\/Men\/AthleteIDAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Athletes\/Men\/AthleteIDAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Athletes\/Men\/AthleteIDAT100_MEN.xls": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Athletes\/Men\/AthleteIDAT100_MEN.xls",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/100\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/100\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/10000\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/10000\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/110m_Hurdles\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/110m_Hurdles\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/1500\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/1500\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/200\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/200\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/20km_walk\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/20km_walk\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/3000\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/3000\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/3000_steeples\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/3000_steeples\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/400\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/400\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/400m_Hurdles\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/400m_Hurdles\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/5000\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/5000\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/50km_Walk\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/50km_Walk\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/800\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/800\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/_ResultsAT100_MEN.xls": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/_ResultsAT100_MEN.xls",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/decathlon\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/decathlon\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/discus_throw\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/discus_throw\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/hammer_throw\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/hammer_throw\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/high_jump\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/high_jump\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/javelin_throw\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/javelin_throw\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/long_jump\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/long_jump\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/marathon\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/marathon\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/mile\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/mile\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/pole_vault\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/pole_vault\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/shot_put\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/shot_put\/_ResultsAT100_MEN.csv",
-		"oF": 0
-		},
-	"\/_SUPPLIED\/ANZ_Rankings\/Events\/triple_jump\/_ResultsAT100_MEN.csv": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/_SUPPLIED\/ANZ_Rankings\/Events\/triple_jump\/_ResultsAT100_MEN.csv",
 		"oF": 0
 		},
 	"\/application\/cache": {
@@ -879,6 +681,12 @@
 		"oAP": "\/application\/views\/admin\/index.php",
 		"oF": 0
 		},
+	"\/application\/views\/admin\/statistics.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/application\/views\/admin\/statistics.php",
+		"oF": 0
+		},
 	"\/application\/views\/index.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -925,6 +733,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/application\/views\/site\/error.php",
+		"oF": 0
+		},
+	"\/application\/views\/site\/graphs.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/application\/views\/site\/graphs.php",
 		"oF": 0
 		},
 	"\/application\/views\/site\/includes\/abbreviations.php": {
@@ -1190,7 +1004,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/icons\/accept_16.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/icons\/arrow01.png": {
 		"ft": 32768,
@@ -1198,7 +1015,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/icons\/arrow01.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/icons\/cross.png": {
 		"ft": 32768,
@@ -1206,7 +1026,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/icons\/cross.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/icons\/delete_16.png": {
 		"ft": 32768,
@@ -1214,7 +1037,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/icons\/delete_16.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/icons\/qual_a.png": {
 		"ft": 32768,
@@ -1222,7 +1048,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/icons\/qual_a.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/icons\/qual_b.png": {
 		"ft": 32768,
@@ -1230,7 +1059,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/icons\/qual_b.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/BGs\/masthead.jpg": {
 		"ft": 16384,
@@ -1238,7 +1070,9 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/BGs\/masthead.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/BGs\/masthead.png": {
 		"ft": 32768,
@@ -1246,7 +1080,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/BGs\/masthead.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/BGs\/website.jpg": {
 		"ft": 16384,
@@ -1254,7 +1091,9 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/BGs\/website.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/BGs\/website.png": {
 		"ft": 32768,
@@ -1262,7 +1101,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/BGs\/website.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/BGs\/website2.jpg": {
 		"ft": 16384,
@@ -1270,7 +1112,9 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/BGs\/website2.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/BGs\/website2.png": {
 		"ft": 32768,
@@ -1278,7 +1122,10 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/BGs\/website2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/championships\/2013_moscow.jpg": {
 		"ft": 16384,
@@ -1286,7 +1133,9 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/championships\/2013_moscow.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/championships\/2014_beijing.jpg": {
 		"ft": 16384,
@@ -1294,7 +1143,9 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/championships\/2014_beijing.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/css\/css_images\/main\/championships\/2014_glasgow.jpg": {
 		"ft": 16384,
@@ -1302,7 +1153,9 @@
 		"oA": 0,
 		"oAP": "\/css\/css_images\/main\/championships\/2014_glasgow.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/css\/ie.css": {
 		"aP": 0,
@@ -1311,6 +1164,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/ie-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/css\/jqueryslidemenu-min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/jqueryslidemenu-min-min.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -1970,7 +1833,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/down.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/css\/img\/minus 2.png": {
 		"ft": 32768,
@@ -1978,7 +1844,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/minus 2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/css\/img\/minus.png": {
 		"ft": 32768,
@@ -1986,7 +1855,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/minus.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/css\/img\/plus 2.png": {
 		"ft": 32768,
@@ -1994,7 +1866,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/plus 2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/css\/img\/plus.png": {
 		"ft": 32768,
@@ -2002,7 +1877,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/plus.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/css\/img\/sorting_sprite.png": {
 		"ft": 32768,
@@ -2010,7 +1888,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/sorting_sprite.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/css\/img\/up.png": {
 		"ft": 32768,
@@ -2018,7 +1899,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/css\/img\/up.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/footable.jquery.json": {
 		"ft": 524288,
@@ -2034,7 +1918,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/images\/active.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/images\/disabled.png": {
 		"ft": 32768,
@@ -2042,7 +1929,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/images\/disabled.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/images\/external.png": {
 		"ft": 32768,
@@ -2050,7 +1940,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/images\/external.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/images\/suspended.png": {
 		"ft": 32768,
@@ -2058,7 +1951,10 @@
 		"oA": 0,
 		"oAP": "\/foo_table\/images\/suspended.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/foo_table\/js\/data-generator.js": {
 		"ft": 64,
@@ -2129,7 +2025,10 @@
 		"oA": 0,
 		"oAP": "\/ico\/apple-touch-icon-114-precomposed.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ico\/apple-touch-icon-144-precomposed.png": {
 		"ft": 32768,
@@ -2137,7 +2036,10 @@
 		"oA": 0,
 		"oAP": "\/ico\/apple-touch-icon-144-precomposed.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ico\/apple-touch-icon-57-precomposed.png": {
 		"ft": 32768,
@@ -2145,7 +2047,10 @@
 		"oA": 0,
 		"oAP": "\/ico\/apple-touch-icon-57-precomposed.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ico\/apple-touch-icon-72-precomposed.png": {
 		"ft": 32768,
@@ -2153,7 +2058,10 @@
 		"oA": 0,
 		"oAP": "\/ico\/apple-touch-icon-72-precomposed.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/ico\/favicon.ico": {
 		"ft": 8192,
@@ -2167,7 +2075,10 @@
 		"oA": 0,
 		"oAP": "\/ico\/favicon.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/adverts\/Adidas.jpg": {
 		"ft": 16384,
@@ -2175,7 +2086,9 @@
 		"oA": 0,
 		"oAP": "\/img\/adverts\/Adidas.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/img\/adverts\/Hertz.jpg": {
 		"ft": 16384,
@@ -2183,7 +2096,9 @@
 		"oA": 0,
 		"oAP": "\/img\/adverts\/Hertz.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/img\/anz_logo.png": {
 		"ft": 32768,
@@ -2191,7 +2106,10 @@
 		"oA": 0,
 		"oAP": "\/img\/anz_logo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/anz_logo_black.png": {
 		"ft": 32768,
@@ -2199,7 +2117,10 @@
 		"oA": 0,
 		"oAP": "\/img\/anz_logo_black.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/anz_logo_small.png": {
 		"ft": 32768,
@@ -2207,7 +2128,10 @@
 		"oA": 0,
 		"oAP": "\/img\/anz_logo_small.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/anz_logo_small.svg": {
 		"ft": 2097152,
@@ -2235,7 +2159,9 @@
 		"oA": 0,
 		"oAP": "\/img\/background.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/img\/background.png": {
 		"ft": 32768,
@@ -2243,7 +2169,10 @@
 		"oA": 0,
 		"oAP": "\/img\/background.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/BG_Fern.png": {
 		"ft": 32768,
@@ -2251,7 +2180,10 @@
 		"oA": 0,
 		"oAP": "\/img\/BG_Fern.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/BGs\/nick_willis.png": {
 		"ft": 32768,
@@ -2259,7 +2191,10 @@
 		"oA": 0,
 		"oAP": "\/img\/BGs\/nick_willis.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/BGs\/tom_walsh.png": {
 		"ft": 32768,
@@ -2267,7 +2202,10 @@
 		"oA": 0,
 		"oAP": "\/img\/BGs\/tom_walsh.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/BGs\/tom_walsh2.png": {
 		"ft": 32768,
@@ -2275,7 +2213,10 @@
 		"oA": 0,
 		"oAP": "\/img\/BGs\/tom_walsh2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/BGs\/tom_walsh3.png": {
 		"ft": 32768,
@@ -2283,7 +2224,10 @@
 		"oA": 0,
 		"oAP": "\/img\/BGs\/tom_walsh3.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/BGs\/willis.png": {
 		"ft": 32768,
@@ -2291,7 +2235,10 @@
 		"oA": 0,
 		"oAP": "\/img\/BGs\/willis.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/flags_sprite.png": {
 		"ft": 32768,
@@ -2299,7 +2246,10 @@
 		"oA": 0,
 		"oAP": "\/img\/flags_sprite.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/glyphicons-halflings-white.png": {
 		"ft": 32768,
@@ -2307,7 +2257,10 @@
 		"oA": 0,
 		"oAP": "\/img\/glyphicons-halflings-white.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/glyphicons-halflings.png": {
 		"ft": 32768,
@@ -2315,7 +2268,10 @@
 		"oA": 0,
 		"oAP": "\/img\/glyphicons-halflings.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/icon_bronze.png": {
 		"ft": 32768,
@@ -2323,7 +2279,10 @@
 		"oA": 0,
 		"oAP": "\/img\/icon_bronze.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/icon_gold.png": {
 		"ft": 32768,
@@ -2331,7 +2290,10 @@
 		"oA": 0,
 		"oAP": "\/img\/icon_gold.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/icon_silver.png": {
 		"ft": 32768,
@@ -2339,7 +2301,10 @@
 		"oA": 0,
 		"oAP": "\/img\/icon_silver.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/loading.gif": {
 		"ft": 4194304,
@@ -2355,7 +2320,9 @@
 		"oA": 0,
 		"oAP": "\/img\/sample_ad.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/img\/top.png": {
 		"ft": 32768,
@@ -2363,7 +2330,10 @@
 		"oA": 0,
 		"oAP": "\/img\/top.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/img\/trans.ai": {
 		"ft": 8192,
@@ -2377,7 +2347,9 @@
 		"oA": 0,
 		"oAP": "\/img\/trans.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/img\/trans.svg": {
 		"ft": 2097152,
@@ -3784,7 +3756,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/about\/dialogs\/logo_ckeditor.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/about\/plugin.js": {
 		"ft": 64,
@@ -4107,7 +4082,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/flash\/images\/placeholder.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/flash\/plugin.js": {
 		"ft": 64,
@@ -4276,7 +4254,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/iframe\/images\/placeholder.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/iframe\/plugin.js": {
 		"ft": 64,
@@ -4669,7 +4650,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_address.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_blockquote.png": {
 		"ft": 32768,
@@ -4677,7 +4661,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_blockquote.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_div.png": {
 		"ft": 32768,
@@ -4685,7 +4672,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_div.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h1.png": {
 		"ft": 32768,
@@ -4693,7 +4683,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h1.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h2.png": {
 		"ft": 32768,
@@ -4701,7 +4694,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h3.png": {
 		"ft": 32768,
@@ -4709,7 +4705,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h3.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h4.png": {
 		"ft": 32768,
@@ -4717,7 +4716,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h4.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h5.png": {
 		"ft": 32768,
@@ -4725,7 +4727,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h5.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h6.png": {
 		"ft": 32768,
@@ -4733,7 +4738,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_h6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_p.png": {
 		"ft": 32768,
@@ -4741,7 +4749,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_p.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_pre.png": {
 		"ft": 32768,
@@ -4749,7 +4760,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/showblocks\/images\/block_pre.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/showblocks\/plugin.js": {
 		"ft": 64,
@@ -5191,7 +5205,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/hue_bg.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/hue_thumb.png": {
 		"ft": 32768,
@@ -5199,7 +5216,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/hue_thumb.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/picker_mask.png": {
 		"ft": 32768,
@@ -5207,7 +5227,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/picker_mask.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/picker_thumb.png": {
 		"ft": 32768,
@@ -5215,7 +5238,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/picker_thumb.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/plugins\/uicolor\/yui\/assets\/yui.css": {
 		"aP": 0,
@@ -5349,7 +5375,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/icons.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/icons_rtl.png": {
 		"ft": 32768,
@@ -5357,7 +5386,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/icons_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/images\/dialog_sides.gif": {
 		"ft": 4194304,
@@ -5373,7 +5405,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/images\/dialog_sides.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/images\/dialog_sides_rtl.png": {
 		"ft": 32768,
@@ -5381,7 +5416,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/images\/dialog_sides_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/images\/mini.gif": {
 		"ft": 4194304,
@@ -5397,7 +5435,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/images\/noimage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/images\/sprites.png": {
 		"ft": 32768,
@@ -5405,7 +5446,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/images\/sprites.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/images\/sprites_ie6.png": {
 		"ft": 32768,
@@ -5413,7 +5457,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/kama\/images\/sprites_ie6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/kama\/images\/toolbar_start.gif": {
 		"ft": 4194304,
@@ -5558,7 +5605,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/icons.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/icons_rtl.png": {
 		"ft": 32768,
@@ -5566,7 +5616,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/icons_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/images\/dialog_sides.gif": {
 		"ft": 4194304,
@@ -5582,7 +5635,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/images\/dialog_sides.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/images\/dialog_sides_rtl.png": {
 		"ft": 32768,
@@ -5590,7 +5646,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/images\/dialog_sides_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/images\/mini.gif": {
 		"ft": 4194304,
@@ -5606,7 +5665,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/images\/noimage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/images\/sprites.png": {
 		"ft": 32768,
@@ -5614,7 +5676,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/images\/sprites.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/images\/sprites_ie6.png": {
 		"ft": 32768,
@@ -5622,7 +5687,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/office2003\/images\/sprites_ie6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/office2003\/mainui.css": {
 		"aP": 0,
@@ -5759,7 +5827,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/icons.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/icons_rtl.png": {
 		"ft": 32768,
@@ -5767,7 +5838,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/icons_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/images\/dialog_sides.gif": {
 		"ft": 4194304,
@@ -5783,7 +5857,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/images\/dialog_sides.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/images\/dialog_sides_rtl.png": {
 		"ft": 32768,
@@ -5791,7 +5868,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/images\/dialog_sides_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/images\/mini.gif": {
 		"ft": 4194304,
@@ -5807,7 +5887,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/images\/noimage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/images\/sprites.png": {
 		"ft": 32768,
@@ -5815,7 +5898,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/images\/sprites.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/images\/sprites_ie6.png": {
 		"ft": 32768,
@@ -5823,7 +5909,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/_source\/skins\/v2\/images\/sprites_ie6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/_source\/skins\/v2\/images\/toolbar_start.gif": {
 		"ft": 4194304,
@@ -7257,7 +7346,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/about\/dialogs\/logo_ckeditor.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/adobeair\/plugin.js": {
 		"ft": 64,
@@ -7391,7 +7483,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/flash\/images\/placeholder.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/forms\/dialogs\/button.js": {
 		"ft": 64,
@@ -7488,7 +7583,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/iframe\/images\/placeholder.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/iframedialog\/plugin.js": {
 		"ft": 64,
@@ -7638,7 +7736,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_address.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_blockquote.png": {
 		"ft": 32768,
@@ -7646,7 +7747,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_blockquote.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_div.png": {
 		"ft": 32768,
@@ -7654,7 +7758,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_div.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_h1.png": {
 		"ft": 32768,
@@ -7662,7 +7769,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_h1.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_h2.png": {
 		"ft": 32768,
@@ -7670,7 +7780,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_h2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_h3.png": {
 		"ft": 32768,
@@ -7678,7 +7791,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_h3.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_h4.png": {
 		"ft": 32768,
@@ -7686,7 +7802,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_h4.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_h5.png": {
 		"ft": 32768,
@@ -7694,7 +7813,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_h5.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_h6.png": {
 		"ft": 32768,
@@ -7702,7 +7824,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_h6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_p.png": {
 		"ft": 32768,
@@ -7710,7 +7835,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_p.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/showblocks\/images\/block_pre.png": {
 		"ft": 32768,
@@ -7718,7 +7846,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/showblocks\/images\/block_pre.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/smiley\/dialogs\/smiley.js": {
 		"ft": 64,
@@ -8052,7 +8183,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/hue_bg.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/hue_thumb.png": {
 		"ft": 32768,
@@ -8060,7 +8194,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/hue_thumb.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/picker_mask.png": {
 		"ft": 32768,
@@ -8068,7 +8205,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/picker_mask.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/picker_thumb.png": {
 		"ft": 32768,
@@ -8076,7 +8216,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/picker_thumb.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/plugins\/uicolor\/yui\/assets\/yui.css": {
 		"aP": 0,
@@ -8163,7 +8306,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/icons.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/icons_rtl.png": {
 		"ft": 32768,
@@ -8171,7 +8317,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/icons_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/images\/dialog_sides.gif": {
 		"ft": 4194304,
@@ -8187,7 +8336,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/images\/dialog_sides.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/images\/dialog_sides_rtl.png": {
 		"ft": 32768,
@@ -8195,7 +8347,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/images\/dialog_sides_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/images\/mini.gif": {
 		"ft": 4194304,
@@ -8211,7 +8366,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/images\/noimage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/images\/sprites.png": {
 		"ft": 32768,
@@ -8219,7 +8377,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/images\/sprites.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/images\/sprites_ie6.png": {
 		"ft": 32768,
@@ -8227,7 +8388,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/kama\/images\/sprites_ie6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/kama\/images\/toolbar_start.gif": {
 		"ft": 4194304,
@@ -8282,7 +8446,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/icons.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/icons_rtl.png": {
 		"ft": 32768,
@@ -8290,7 +8457,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/icons_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/images\/dialog_sides.gif": {
 		"ft": 4194304,
@@ -8306,7 +8476,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/images\/dialog_sides.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/images\/dialog_sides_rtl.png": {
 		"ft": 32768,
@@ -8314,7 +8487,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/images\/dialog_sides_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/images\/mini.gif": {
 		"ft": 4194304,
@@ -8330,7 +8506,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/images\/noimage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/images\/sprites.png": {
 		"ft": 32768,
@@ -8338,7 +8517,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/images\/sprites.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/images\/sprites_ie6.png": {
 		"ft": 32768,
@@ -8346,7 +8528,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/office2003\/images\/sprites_ie6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/office2003\/skin.js": {
 		"ft": 64,
@@ -8393,7 +8578,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/icons.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/icons_rtl.png": {
 		"ft": 32768,
@@ -8401,7 +8589,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/icons_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/images\/dialog_sides.gif": {
 		"ft": 4194304,
@@ -8417,7 +8608,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/images\/dialog_sides.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/images\/dialog_sides_rtl.png": {
 		"ft": 32768,
@@ -8425,7 +8619,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/images\/dialog_sides_rtl.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/images\/mini.gif": {
 		"ft": 4194304,
@@ -8441,7 +8638,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/images\/noimage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/images\/sprites.png": {
 		"ft": 32768,
@@ -8449,7 +8649,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/images\/sprites.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/images\/sprites_ie6.png": {
 		"ft": 32768,
@@ -8457,7 +8660,10 @@
 		"oA": 0,
 		"oAP": "\/js\/ckeditor\/skins\/v2\/images\/sprites_ie6.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/js\/ckeditor\/skins\/v2\/images\/toolbar_start.gif": {
 		"ft": 4194304,
@@ -8584,457 +8790,457 @@
 		},
 	"\/system\/core\/Benchmark.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Benchmark.php",
 		"oF": 0
 		},
 	"\/system\/core\/CodeIgniter.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/CodeIgniter.php",
 		"oF": 0
 		},
 	"\/system\/core\/Common.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Common.php",
 		"oF": 0
 		},
 	"\/system\/core\/Config.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Config.php",
 		"oF": 0
 		},
 	"\/system\/core\/Controller.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Controller.php",
 		"oF": 0
 		},
 	"\/system\/core\/Exceptions.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Exceptions.php",
 		"oF": 0
 		},
 	"\/system\/core\/Hooks.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Hooks.php",
 		"oF": 0
 		},
 	"\/system\/core\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/index.html",
 		"oF": 0
 		},
 	"\/system\/core\/Input.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Input.php",
 		"oF": 0
 		},
 	"\/system\/core\/Lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Lang.php",
 		"oF": 0
 		},
 	"\/system\/core\/Loader.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Loader.php",
 		"oF": 0
 		},
 	"\/system\/core\/Model.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Model.php",
 		"oF": 0
 		},
 	"\/system\/core\/Output.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Output.php",
 		"oF": 0
 		},
 	"\/system\/core\/Router.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Router.php",
 		"oF": 0
 		},
 	"\/system\/core\/Security.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Security.php",
 		"oF": 0
 		},
 	"\/system\/core\/URI.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/URI.php",
 		"oF": 0
 		},
 	"\/system\/core\/Utf8.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/core\/Utf8.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB_active_rec.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB_active_rec.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB_cache.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB_cache.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/DB_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/DB_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/cubrid\/cubrid_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/cubrid\/cubrid_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/cubrid\/cubrid_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/cubrid\/cubrid_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/cubrid\/cubrid_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/cubrid\/cubrid_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/cubrid\/cubrid_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/cubrid\/cubrid_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/cubrid\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/cubrid\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mssql\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mssql\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mssql\/mssql_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mssql\/mssql_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mssql\/mssql_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mssql\/mssql_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mssql\/mssql_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mssql\/mssql_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mssql\/mssql_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mssql\/mssql_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysql\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysql\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysql\/mysql_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysql\/mysql_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysql\/mysql_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysql\/mysql_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysql\/mysql_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysql\/mysql_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysql\/mysql_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysql\/mysql_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysqli\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysqli\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysqli\/mysqli_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysqli\/mysqli_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysqli\/mysqli_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysqli\/mysqli_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysqli\/mysqli_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysqli\/mysqli_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/mysqli\/mysqli_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/mysqli\/mysqli_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/oci8\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/oci8\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/oci8\/oci8_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/oci8\/oci8_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/oci8\/oci8_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/oci8\/oci8_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/oci8\/oci8_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/oci8\/oci8_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/oci8\/oci8_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/oci8\/oci8_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/odbc\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/odbc\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/odbc\/odbc_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/odbc\/odbc_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/odbc\/odbc_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/odbc\/odbc_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/odbc\/odbc_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/odbc\/odbc_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/odbc\/odbc_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/odbc\/odbc_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/pdo\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/pdo\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/pdo\/pdo_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/pdo\/pdo_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/pdo\/pdo_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/pdo\/pdo_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/pdo\/pdo_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/pdo\/pdo_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/pdo\/pdo_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/pdo\/pdo_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/postgre\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/postgre\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/postgre\/postgre_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/postgre\/postgre_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/postgre\/postgre_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/postgre\/postgre_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/postgre\/postgre_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/postgre\/postgre_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/postgre\/postgre_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/postgre\/postgre_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlite\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlite\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlite\/sqlite_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlite\/sqlite_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlite\/sqlite_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlite\/sqlite_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlite\/sqlite_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlite\/sqlite_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlite\/sqlite_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlite\/sqlite_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlsrv\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlsrv\/index.html",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlsrv\/sqlsrv_driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlsrv\/sqlsrv_driver.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlsrv\/sqlsrv_forge.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlsrv\/sqlsrv_forge.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlsrv\/sqlsrv_result.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlsrv\/sqlsrv_result.php",
 		"oF": 0
 		},
 	"\/system\/database\/drivers\/sqlsrv\/sqlsrv_utility.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/drivers\/sqlsrv\/sqlsrv_utility.php",
 		"oF": 0
 		},
 	"\/system\/database\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/database\/index.html",
 		"oF": 0
 		},
@@ -9058,7 +9264,7 @@
 		},
 	"\/system\/fonts\/DIN-Medium.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/DIN-Medium.php",
 		"oF": 0
 		},
@@ -9088,7 +9294,7 @@
 		},
 	"\/system\/fonts\/DIN-Regular.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/DIN-Regular.php",
 		"oF": 0
 		},
@@ -9112,31 +9318,31 @@
 		},
 	"\/system\/fonts\/helvetica.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/helvetica.php",
 		"oF": 0
 		},
 	"\/system\/fonts\/helveticab.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/helveticab.php",
 		"oF": 0
 		},
 	"\/system\/fonts\/helveticabi.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/helveticabi.php",
 		"oF": 0
 		},
 	"\/system\/fonts\/helveticai.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/helveticai.php",
 		"oF": 0
 		},
 	"\/system\/fonts\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/fonts\/index.html",
 		"oF": 0
 		},
@@ -9148,223 +9354,223 @@
 		},
 	"\/system\/helpers\/array_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/array_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/captcha_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/captcha_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/cookie_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/cookie_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/date_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/date_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/directory_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/directory_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/download_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/download_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/email_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/email_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/file_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/file_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/form_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/form_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/html_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/html_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/index.html",
 		"oF": 0
 		},
 	"\/system\/helpers\/inflector_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/inflector_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/language_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/language_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/number_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/number_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/path_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/path_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/security_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/security_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/smiley_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/smiley_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/string_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/string_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/text_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/text_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/typography_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/typography_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/url_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/url_helper.php",
 		"oF": 0
 		},
 	"\/system\/helpers\/xml_helper.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/helpers\/xml_helper.php",
 		"oF": 0
 		},
 	"\/system\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/index.html",
 		"oF": 0
 		},
 	"\/system\/language\/english\/calendar_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/calendar_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/date_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/date_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/db_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/db_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/email_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/email_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/form_validation_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/form_validation_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/ftp_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/ftp_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/imglib_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/imglib_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/index.html",
 		"oF": 0
 		},
 	"\/system\/language\/english\/migration_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/migration_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/number_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/number_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/profiler_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/profiler_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/unit_test_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/unit_test_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/english\/upload_lang.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/english\/upload_lang.php",
 		"oF": 0
 		},
 	"\/system\/language\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/language\/index.html",
 		"oF": 0
 		},
@@ -9376,164 +9582,1124 @@
 		},
 	"\/system\/libraries\/Calendar.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Calendar.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Cart.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Cart.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Driver.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Driver.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Email.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Email.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Encrypt.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Encrypt.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Form_validation.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Form_validation.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Ftp.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Ftp.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Image_lib.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Image_lib.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/index.html",
 		"oF": 0
 		},
 	"\/system\/libraries\/Javascript.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Javascript.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/javascript\/Jquery.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/javascript\/Jquery.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Log.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Log.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Migration.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Migration.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Pagination.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Pagination.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Parser.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Parser.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Profiler.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Profiler.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Session.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Session.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Sha1.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Sha1.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Table.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Table.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Trackback.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Trackback.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Typography.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Typography.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Unit_test.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Unit_test.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Upload.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Upload.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/User_agent.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/User_agent.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Xmlrpc.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Xmlrpc.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Xmlrpcs.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Xmlrpcs.php",
 		"oF": 0
 		},
 	"\/system\/libraries\/Zip.php": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/system\/libraries\/Zip.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/.htaccess": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/.htaccess",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Benchmark.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Benchmark.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/CodeIgniter.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/CodeIgniter.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Common.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Common.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Config.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Config.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Controller.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Controller.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Exceptions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Exceptions.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Hooks.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Hooks.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Input.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Input.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Loader.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Loader.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Model.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Model.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Output.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Output.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Router.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Router.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Security.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Security.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/URI.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/URI.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/core\/Utf8.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/core\/Utf8.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB_active_rec.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB_active_rec.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB_cache.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB_cache.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/DB_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/DB_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/cubrid\/cubrid_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/cubrid\/cubrid_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/cubrid\/cubrid_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/cubrid\/cubrid_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/cubrid\/cubrid_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/cubrid\/cubrid_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/cubrid\/cubrid_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/cubrid\/cubrid_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/cubrid\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/cubrid\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mssql\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mssql\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mssql\/mssql_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mssql\/mssql_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mssql\/mssql_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mssql\/mssql_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mssql\/mssql_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mssql\/mssql_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mssql\/mssql_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mssql\/mssql_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysql\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysql\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysql\/mysql_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysql\/mysql_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysql\/mysql_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysql\/mysql_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysql\/mysql_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysql\/mysql_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysql\/mysql_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysql\/mysql_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysqli\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysqli\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysqli\/mysqli_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysqli\/mysqli_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysqli\/mysqli_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysqli\/mysqli_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysqli\/mysqli_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysqli\/mysqli_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/mysqli\/mysqli_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/mysqli\/mysqli_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/oci8\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/oci8\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/oci8\/oci8_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/oci8\/oci8_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/oci8\/oci8_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/oci8\/oci8_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/oci8\/oci8_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/oci8\/oci8_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/oci8\/oci8_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/oci8\/oci8_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/odbc\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/odbc\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/odbc\/odbc_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/odbc\/odbc_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/odbc\/odbc_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/odbc\/odbc_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/odbc\/odbc_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/odbc\/odbc_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/odbc\/odbc_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/odbc\/odbc_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/pdo\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/pdo\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/pdo\/pdo_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/pdo\/pdo_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/pdo\/pdo_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/pdo\/pdo_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/pdo\/pdo_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/pdo\/pdo_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/pdo\/pdo_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/pdo\/pdo_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/postgre\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/postgre\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/postgre\/postgre_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/postgre\/postgre_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/postgre\/postgre_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/postgre\/postgre_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/postgre\/postgre_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/postgre\/postgre_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/postgre\/postgre_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/postgre\/postgre_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlite\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlite\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlite\/sqlite_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlite\/sqlite_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlite\/sqlite_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlite\/sqlite_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlite\/sqlite_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlite\/sqlite_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlite\/sqlite_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlite\/sqlite_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlsrv\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlsrv\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_forge.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_forge.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_result.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_result.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_utility.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/drivers\/sqlsrv\/sqlsrv_utility.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/database\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/database\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Medium.afm": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Medium.afm",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Medium.pfa": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Medium.pfa",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Medium.pfm": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Medium.pfm",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Medium.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Medium.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Medium.z": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Medium.z",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Regular.afm": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Regular.afm",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Regular.pfa": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Regular.pfa",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Regular.pfm": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Regular.pfm",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Regular.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Regular.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DIN-Regular.z": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DIN-Regular.z",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DINMed.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DINMed.ttf",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/DINReg.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/DINReg.ttf",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/helvetica.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/helvetica.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/helveticab.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/helveticab.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/helveticabi.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/helveticabi.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/helveticai.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/helveticai.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/fonts\/texb.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/fonts\/texb.ttf",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/array_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/array_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/captcha_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/captcha_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/cookie_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/cookie_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/date_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/date_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/directory_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/directory_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/download_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/download_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/email_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/email_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/file_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/file_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/form_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/form_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/html_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/html_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/inflector_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/inflector_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/language_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/language_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/number_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/number_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/path_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/path_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/security_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/security_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/smiley_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/smiley_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/string_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/string_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/text_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/text_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/typography_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/typography_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/url_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/url_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/helpers\/xml_helper.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/helpers\/xml_helper.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/calendar_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/calendar_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/date_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/date_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/db_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/db_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/email_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/email_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/form_validation_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/form_validation_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/ftp_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/ftp_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/imglib_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/imglib_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/migration_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/migration_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/number_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/number_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/profiler_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/profiler_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/unit_test_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/unit_test_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/english\/upload_lang.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/english\/upload_lang.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/language\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/language\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Cache": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/system_KEEP\/libraries\/Cache",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Calendar.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Calendar.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Cart.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Cart.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Driver.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Driver.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Email.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Email.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Encrypt.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Encrypt.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Form_validation.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Form_validation.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Ftp.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Ftp.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Image_lib.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Image_lib.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/index.html",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Javascript.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Javascript.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/javascript\/Jquery.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/javascript\/Jquery.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Log.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Log.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Migration.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Migration.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Pagination.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Pagination.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Parser.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Parser.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Profiler.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Profiler.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Session.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Session.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Sha1.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Sha1.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Table.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Table.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Trackback.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Trackback.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Typography.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Typography.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Unit_test.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Unit_test.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Upload.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Upload.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/User_agent.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/User_agent.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Xmlrpc.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Xmlrpc.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Xmlrpcs.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Xmlrpcs.php",
+		"oF": 0
+		},
+	"\/system_KEEP\/libraries\/Zip.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/system_KEEP\/libraries\/Zip.php",
 		"oF": 0
 		},
 	"\/userfiles\/file\/ANZ_Almanac_2010.pdf": {
@@ -9674,7 +10840,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Almanac\/ANZ_Almanac_2010.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Almanac\/ANZ_Almanac_2011.png": {
 		"ft": 32768,
@@ -9682,7 +10851,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Almanac\/ANZ_Almanac_2011.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Almanac\/ANZ_Almanac_2012.png": {
 		"ft": 32768,
@@ -9690,7 +10862,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Almanac\/ANZ_Almanac_2012.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Almanac\/ANZ_Almanac_2013.png": {
 		"ft": 32768,
@@ -9698,7 +10873,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Almanac\/ANZ_Almanac_2013.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Almanac\/ANZ_Almanac_2014.png": {
 		"ft": 32768,
@@ -9706,7 +10884,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Almanac\/ANZ_Almanac_2014.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Almanac\/ANZ_Almanac_2015.png": {
 		"ft": 32768,
@@ -9714,7 +10895,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Almanac\/ANZ_Almanac_2015.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2012.png": {
 		"ft": 32768,
@@ -9722,7 +10906,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2012.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2013.png": {
 		"ft": 32768,
@@ -9730,7 +10917,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2013.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2014.png": {
 		"ft": 32768,
@@ -9738,7 +10928,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2014.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2015.png": {
 		"ft": 32768,
@@ -9746,7 +10939,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Annual_Report\/ANZ_Annual_Report_2015.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Athletes\/farqhuar.jpg": {
 		"ft": 16384,
@@ -9754,7 +10950,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Athletes\/farqhuar.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/Athletes\/valerie_vili.jpg": {
 		"ft": 16384,
@@ -9762,7 +10960,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Athletes\/valerie_vili.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/Misc\/ANZ_Major_Championships.png": {
 		"ft": 32768,
@@ -9770,7 +10970,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Misc\/ANZ_Major_Championships.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Misc\/National_Champions.png": {
 		"ft": 32768,
@@ -9778,7 +10981,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Misc\/National_Champions.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Misc\/NZ_World_Juniors.png": {
 		"ft": 32768,
@@ -9786,7 +10992,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Misc\/NZ_World_Juniors.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/Misc\/NZ_World_Youths.png": {
 		"ft": 32768,
@@ -9794,7 +11003,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/Misc\/NZ_World_Youths.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/all_time.png": {
 		"ft": 32768,
@@ -9802,7 +11014,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/all_time.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/almanac_2012(1).jpg": {
 		"ft": 16384,
@@ -9810,7 +11025,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/almanac_2012(1).jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/almanac_2012.jpg": {
 		"ft": 16384,
@@ -9818,7 +11035,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/almanac_2012.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/almanac_cover.jpg": {
 		"ft": 16384,
@@ -9826,7 +11045,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/almanac_cover.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/ANZ_Logo.jpg": {
 		"ft": 16384,
@@ -9834,7 +11055,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/ANZ_Logo.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/aust_flag.jpg": {
 		"ft": 16384,
@@ -9842,7 +11065,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/aust_flag.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/bloxham.jpg": {
 		"ft": 16384,
@@ -9850,7 +11075,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/bloxham.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/gill.jpg": {
 		"ft": 16384,
@@ -9858,7 +11085,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/gill.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/Glasgow.jpg": {
 		"ft": 16384,
@@ -9866,7 +11095,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/Glasgow.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/mobile_devices.png": {
 		"ft": 32768,
@@ -9874,7 +11105,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/mobile_devices.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/new_icon.png": {
 		"ft": 32768,
@@ -9882,7 +11116,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/new_icon.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/new_standards.png": {
 		"ft": 32768,
@@ -9890,7 +11127,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/new_standards.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/NZ_Nats_2012.jpg": {
 		"ft": 16384,
@@ -9898,7 +11138,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/NZ_Nats_2012.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/NZSS(1).jpg": {
 		"ft": 16384,
@@ -9906,7 +11148,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/NZSS(1).jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/NZSS.jpg": {
 		"ft": 16384,
@@ -9914,7 +11158,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/NZSS.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/Picture 1.jpg": {
 		"ft": 16384,
@@ -9922,7 +11168,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/Picture 1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/profiles.jpg": {
 		"ft": 16384,
@@ -9930,7 +11178,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/profiles.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/search_new.png": {
 		"ft": 32768,
@@ -9938,7 +11188,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/search_new.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/sec_schools.jpg": {
 		"ft": 16384,
@@ -9946,7 +11199,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/sec_schools.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/start_blocks.jpg": {
 		"ft": 16384,
@@ -9954,7 +11209,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/start_blocks.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/sylvia_potts.jpg": {
 		"ft": 16384,
@@ -9962,7 +11219,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/sylvia_potts.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/waikato_BOP_logo.png": {
 		"ft": 32768,
@@ -9970,7 +11229,10 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/waikato_BOP_logo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/userfiles\/image\/News\/walker.jpg": {
 		"ft": 16384,
@@ -9978,7 +11240,9 @@
 		"oA": 0,
 		"oAP": "\/userfiles\/image\/News\/walker.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		}
 	},
 "hooks": [
@@ -10637,6 +11901,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -10655,6 +11923,10 @@
 			},
 		"no-class-assign": {
 			"active": 1,
+			"optionString": ""
+			},
+		"no-compare-neg-zero": {
+			"active": 0,
 			"optionString": ""
 			},
 		"no-cond-assign": {
@@ -10857,6 +12129,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -10934,6 +12210,10 @@
 			"optionString": ""
 			},
 		"no-proto": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-prototype-builtins": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -11133,6 +12413,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -11177,9 +12461,17 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -11274,6 +12566,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -11720,7 +13016,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -11743,14 +13040,6 @@
 		"autoOutputPathStyle": 0,
 		"orderOutput": 0,
 		"outputStyle": 1
-		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
 		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
@@ -11813,7 +13102,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,

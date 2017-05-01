@@ -1,0 +1,103 @@
+.jqueryslidemenu {
+  font-size: 1.3em;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 1000px;
+  height: 35px;
+  float: right;
+  clear: both;
+  border-bottom: solid 1px #000000;
+  background: #333;
+  /* Old browsers */ }
+
+.jqueryslidemenu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  z-index: 1000;
+  display: inline; }
+
+/*Top level list items*/
+.jqueryslidemenu ul li {
+  position: relative;
+  display: inline;
+  float: left; }
+
+li a:visited {
+  color: #FFF; }
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a {
+  color: #FFF;
+  height: 25px;
+  display: block;
+  background-color: none;
+  /*background of tabs (default state)*/
+  text-decoration: none;
+  margin-bottom: 1px;
+  padding: 10px 34px 0px 34px;
+  border-right: 1px solid #000000; }
+
+* html .jqueryslidemenu ul li a {
+  /*IE6 hack to get sub menu links to behave correctly*/
+  display: inline-block; }
+
+.jqueryslidemenu ul li a:link,
+.jqueryslidemenu ul li a:visited {
+  /*color: white;*/
+  text-decoration: none; }
+
+.jqueryslidemenu ul li a:hover {
+  color: #FFF;
+  background-color: #C00;
+  border-right: 1px solid #000000;
+  background: #000;
+  /* Old browsers */ }
+
+/*************************************************************************/
+/*1st sub level menu*/
+/*************************************************************************/
+.jqueryslidemenu ul li ul {
+  color: #333;
+  position: absolute;
+  left: 0;
+  display: block;
+  visibility: hidden; }
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li {
+  display: list-item;
+  float: none; }
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul {
+  top: 0; }
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a {
+  font-size: .8em;
+  font-weight: bold;
+  color: #666;
+  text-align: left;
+  width: 90px;
+  /*width of sub menus*/
+  height: 26px;
+  margin: 0;
+  padding: 10px 20px 0px 20px;
+  background-color: #EBEBEB;
+  border-top: solid 1px #FAFAFA;
+  border-bottom: solid 1px #CCC;
+  border-right: none;
+  text-shadow: 1px 1px 1px #FFF;
+  filter: dropshadow(color=#FFF, offx=1, offy=1); }
+
+.jqueryslidemenu ul li ul li a:hover {
+  /*sub menus hover style*/
+  color: #333;
+  background-color: #CCC;
+  background-image: none;
+  border-right: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }

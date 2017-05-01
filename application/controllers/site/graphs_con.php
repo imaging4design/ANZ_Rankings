@@ -5,13 +5,18 @@ class Graphs_con extends CI_Controller {
 
 	function getGraph() {
 
+
 		//$this->db->select_max('distHeight', 'distHeight');
 		$this->db->select('time');
 		$this->db->select('distHeight, implement');
 		$this->db->select("DATE_FORMAT(date, '%d %b') AS year", FALSE);
-		$this->db->where('athleteID', $this->input->post('athleteProfileID'));
-		$this->db->where('YEAR(date)', $this->input->post('yearSelected'));
-		$this->db->where('eventID', $this->input->post('postEvent'));
+		// $this->db->where('athleteID', $this->input->post('athleteProfileID'));
+		// $this->db->where('YEAR(date)', $this->input->post('yearSelected'));
+		// $this->db->where('eventID', $this->input->post('postEvent'));
+		$this->db->where('athleteID', 521419);
+		$this->db->where('YEAR(date)', 2016);
+		$this->db->where('eventID', 1);
+
 		$this->db->order_by('date', 'ASC');
 		$query = $this->db->get('results');
 		
@@ -19,6 +24,8 @@ class Graphs_con extends CI_Controller {
 		{
 			$graphs = $query->result();
 		}
+
+
 
 
 		if( $graphs ) {
@@ -35,13 +42,25 @@ class Graphs_con extends CI_Controller {
 				//$time = ltrim($row->time, 0);
 				//$distHeight = ltrim($row->distHeight, 0);
 
-				$graph->rows[] = array('c' => array(array('v' => $row->year), array('v' => $performance,"f"=>$unformatted )));
+				$graph->rows[] = array('c' => array(array('v' => $row->year), array('v' => $performance,"f" => $unformatted )));
 
 			endforeach;
 
-			echo json_encode($graph);
+			echo json_encode($graph, true);
+			
+
 
 		}
+
+
+
+		$data['main_content'] = 'site/graphs';
+			$this->load->view('site/graphs', $data);
+		
+
+		// echo '<pre>';
+		// print_r($graph);
+		// echo '</pre>';
 
 		// EXAMPLE CODE ....
 		// $responce->cols[]=array("id"=>"","label"=>"Mark","pattern"=>"","type"=>"string");
