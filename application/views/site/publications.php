@@ -51,7 +51,9 @@
 			<p class="center"><a href="<?php echo base_url(); ?>userfiles/file/ANZ_Almanac_2015.pdf"><button class="btn btn-small btn-warning">Download</button></a></p>
 		</div>
 		<div class="col-sm-3">
-			&nbsp;
+			<a href="<?php echo base_url(); ?>userfiles/file/ANZ_Almanac_2016.pdf"><img src="<?php echo base_url(); ?>userfiles/image/Almanac/ANZ_Almanac_2016.jpg" class="img-responsive"></a>
+			<p class="center">Athletics New Zealand Almanac 2016</p>
+			<p class="center"><a href="<?php echo base_url(); ?>userfiles/file/ANZ_Almanac_2016.pdf"><button class="btn btn-small btn-warning">Download</button></a></p>
 		</div>
 		<div class="col-sm-3">
 			&nbsp;

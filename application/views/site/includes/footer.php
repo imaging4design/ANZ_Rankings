@@ -7,7 +7,7 @@
 			</div>
 			<div class="col-sm-7 center">
 					<hr>
-					<p>&copy; Athletics New Zealand 2013 - All Rights Reserved. &nbsp; | &nbsp; Website by: <?php echo anchor('http://www.lovegrovedesign.co.nz', 'Lovegrove Design'); ?></p>
+					<p>&copy; Athletics New Zealand 2013 - All Rights Reserved. &nbsp; | &nbsp; Website by: <a href="mailto:lovegrovemail@gmail.com">Gavin Lovegrove</a></p>
 			</div>
 		</div>
 	</div>

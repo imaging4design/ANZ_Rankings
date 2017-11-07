@@ -93,7 +93,7 @@
 			<div class="col-sm-6">
 
 				<p class="opacity-box">
-					The All-Time lists have been constructed by taking the top 20 known and verifiable performances in each event prior to 2008. Since then, performances have been added where they are superior to the 20th best performance.
+					<em>The All-Time lists have been constructed by taking the top 20 known and verifiable performances in each event prior to 2008. Since then, performances have been added where they are superior to the 20th best performance.</em>
 				</p>
 
 				<?php

@@ -113,7 +113,7 @@ class Results_con extends CI_Controller
 		// WHAT IS THE event?
 		// The event is posted as an integer ($this->input->post('eventID'))
 		// Match this integer with its corresponding 'eventName' using the getEvents() function
-		$events = getEvents('rankings_dropdown'); // From global helper
+		$events = getEvents('records_dropdown'); // From global helper
 		
 		foreach($events as $row):
 		
@@ -413,7 +413,7 @@ class Results_con extends CI_Controller
 		// WHAT IS THE event?
 		// The event is posted as an integer ($this->input->post('eventID'))
 		// Match this integer with its corresponding 'eventName' using the getEvents() function
-		$events = getEvents('rankings_dropdown'); // From global helper
+		$events = getEvents(); // From global helper
 		
 		foreach($events as $row):
 		
@@ -517,7 +517,6 @@ class Results_con extends CI_Controller
 					echo '<td>Time</td>';
 					echo '<td>Wind</td>';
 					echo '<td>Dist/Height</td>';
-					echo '<td>Implement</td>';
 					echo '<td>Record</td>';
 					echo '<td>Centre</td>';
 					echo '<td>Placing</td>';
@@ -532,7 +531,6 @@ class Results_con extends CI_Controller
 					echo '<td>' . $data['time'] . '</td>';
 					echo '<td>' . $data['wind'] . '</td>';
 					echo '<td>' . $data['distHeight'] . '</td>';
-					echo '<td>' . $implement . '</td>';
 					echo '<td>' . $data['record'] . '</td>';
 					echo '<td>' . $centreID . '</td>';
 					echo '<td>' . $data['placing'] . '</td>';
@@ -583,37 +581,6 @@ class Results_con extends CI_Controller
 		}
 	
 	} // ENDS delete_results()
-
-
-
-	/*************************************************************************************/
-	// FUNCTION statistics()
-	// Returns the statistics (i.e., number of results in the database)
-	/*************************************************************************************/
-	public function statistics()
-	{
-		
-		$this->form_validation->set_rules('year', 'Year', 'trim|required');
-
-		//Create $data array()
-		$data = array(
-			'year' => $this->input->post('year')
-		);
-
-		if($this->form_validation->run() == TRUE) {
-
-			if($query = $this->results_model->statistics($data))
-			{
-				$data['statistics'] = $query;
-			}
-
-		}
-
-		$data['main_content'] = 'admin/statistics';
-		$this->load->view('admin/includes/template', $data);
-
-	
-	} // ENDS statistics()
 	
 
 	
