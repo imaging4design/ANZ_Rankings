@@ -6,7 +6,7 @@
 		{
 			return $athleteName = $nameFirst.' '.strtoupper($nameLast);
 		}
-		else 
+		else
 		{
 			// Returns the dynamic clickable Athlete Name / Profile / Mini Profile link
 			// Not visible on mobile
